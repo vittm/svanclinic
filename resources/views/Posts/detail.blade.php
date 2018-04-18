@@ -18,8 +18,9 @@
 
 
     <!-- Post Content -->
+    <div class="blog-content">
     {!! $posts -> body !!}
-    
+    </div>      
   </div>
 
   <!-- Sidebar Widgets Column -->
@@ -30,7 +31,7 @@
       <h2 class="card-header font-elsie ">Recent News</h2>
       
       @foreach($randomPost as $key => $value)
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
+        <a href="{{ URL::to('/posts/'.$value->slug) }}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
             <div class="col-lg-6 col-xs-12 pl0">
                 <img src="{{Voyager::image($value->image)}}" alt="" width="100%">
             </div>
@@ -42,7 +43,7 @@
                     <p>{{ $value->excerpt }}</p>
                 </div>
             </div>
-        </div>
+        </a>
         @endforeach
         
     </div>

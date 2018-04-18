@@ -159,7 +159,7 @@
               value = $('.selected-employer').val();
           
           $.ajax({
-              url: "edit-status-customers"+'-'+value+'-'+key,
+              url: "customers/edit-status-customers"+'-'+value+'-'+key,
               type: 'get',
               dataType: 'html',
               data: {'key':key,'user':value,"_token": "{{ csrf_token() }}"},

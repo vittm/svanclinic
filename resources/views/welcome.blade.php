@@ -2,6 +2,16 @@
 @extends('layout')
 
 @section('content')
+<div class="btn-hotline">
+        <div class="icon">
+            <div class="icon-img">
+                <img src="http://www.svanclinic.vn/Content/layout/images/icon/btn-call.png" alt="">
+            </div>
+        </div>
+        <div class="hotline-content">
+            <h4>1900.0117</h4>
+        </div>
+    </div>
 <div id="svanslider" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -73,7 +83,7 @@
                         <div class="item">
                             <div class="service-wrapper">
                                 <a href="{{ 'posts/'.$value->slug }}">
-                                    <div class="service-img" style="{{Voyager::image($value->images)}}"></div>
+                                    <div class="service-img" style="background-image: url('{{Voyager::image($value->images)}}')"></div>
                                 </a>
                                 <div class="service-content">
                                     <div class="service-name">
@@ -163,7 +173,7 @@
                                     
                                 </div>
                                 <div class="created">
-                                    {!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!}
+                                    {!! Carbon\Carbon::parse($value->created_at)->format('m/d/Y')  !!}
                                 </div>
                             </div>
                         </div>

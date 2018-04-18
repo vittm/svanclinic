@@ -214,9 +214,9 @@ $(document).ready(function() {
     });
   }
 });
-// $('#svanslider').carousel({
-//   interval: 5000
-// })
+$('#svanslider').carousel({
+  interval: 5000
+})
 
 $(".service-slider").not('.slick-initialized').slick({
 	slidesToShow: 3,

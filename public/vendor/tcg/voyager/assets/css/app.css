@@ -150,4 +150,6 @@
     }
   }
    
- 
+ body.login {
+   width: inherit;
+}

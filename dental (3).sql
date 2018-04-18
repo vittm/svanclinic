@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 04:22 PM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 7.1.1
+-- Host: localhost
+-- Generation Time: Apr 18, 2018 at 12:40 AM
+-- Server version: 5.6.38
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `dental`
@@ -59,7 +53,7 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `images`, 
 (1, NULL, 1, 'Tin Tức', 'tin-tuc', '', '2018-04-14 00:01:19', '2018-04-14 00:01:19', NULL),
 (2, 1, 1, 'Tin Tức Dịch Vụ', 'tin-tuc-dich-vu', 'categories/April2018/FAerCjg3Te88mKzx0YEE.jpg', '2018-04-14 00:02:02', '2018-04-15 20:11:56', NULL),
 (3, NULL, 1, 'Dịch Vụ', 'dich-vu', 'categories/April2018/i2TX5Dn24PV47JpfBk58.jpg', '2018-04-15 20:33:54', '2018-04-15 20:33:54', NULL),
-(6, 3, 1, 'GIẢM CÂN & GIẢM BÉO', 'giam-can-and-giam-beo', 'categories/April2018/HuH8ZUAzuXKeAWEzvSf1.jpg', '2018-04-15 20:43:05', '2018-04-17 00:43:20', '<ul>\r\n<li style=\"box-sizing: border-box;\"><span style=\"color: #999999;\"><a style=\"box-sizing: border-box; background-color: transparent; color: #999999; font-size: 16.3539px;\" href=\"http://www.svanclinic.vn/dich-vu/giam-can-giam-beo/giam-beo-cong-nghe-contri-ultrashape\">Giảm b&eacute;o c&ocirc;ng nghệ Contri UltraShape</a></span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"color: #999999;\"><a style=\"box-sizing: border-box; background-color: transparent; color: #999999; outline: 0px; font-size: 16.3539px;\" href=\"http://www.svanclinic.vn/dich-vu/giam-can-giam-beo/cong-nghe-giam-beo-hifu-lipo\">C&ocirc;ng Nghệ Giảm B&eacute;o Hifu Lipo</a></span></li>\r\n<li style=\"box-sizing: border-box;\"><span style=\"color: #999999;\"><a style=\"box-sizing: border-box; background-color: transparent; color: #999999; font-size: 16.3539px;\" href=\"http://www.svanclinic.vn/dich-vu/giam-can-giam-beo/giam-beo-tao-form-perfect-shape\">Giảm B&eacute;o Tạo Form Perfect Shape</a></span></li>\r\n</ul>'),
+(6, 3, 1, 'GIẢM CÂN & GIẢM BÉO', 'giam-can-and-giam-beo', 'categories/April2018/HuH8ZUAzuXKeAWEzvSf1.jpg', '2018-04-15 20:43:05', '2018-04-17 16:13:04', '<ul>\r\n<li>abc</li>\r\n<li>cbd</li>\r\n<li>abc</li>\r\n</ul>'),
 (7, 6, 1, 'Giảm béo công nghệ Contri UltraShape', 'giam-beo-cong-nghe-contri-ultrashape', 'categories/April2018/ZOz2g9kOGgmCiaXSo5pI.jpg', '2018-04-16 23:40:02', '2018-04-17 04:50:54', '<ul>\r\n<li>test nhiều category child</li>\r\n</ul>'),
 (8, NULL, 1, 'Giới Thiệu', 'gioi-thieu', 'categories/April2018/ZGqqtVsmxBqdZqICnLDs.png', '2018-04-16 23:58:10', '2018-04-16 23:58:10', NULL),
 (10, 3, 1, 'TRỊ LIỆU CÔNG NGHỆ CAO', 'tri-lieu-cong-nghe-cao', 'categories/April2018/VezrX3vJmCMxojujns27.jpg', '2018-04-17 00:50:22', '2018-04-17 00:51:47', '<ul>\r\n<li style=\"box-sizing: border-box;\"><a style=\"box-sizing: border-box; background-color: transparent; color: #828c8b; text-decoration-line: none; font-size: 16.3539px;\" href=\"http://www.svanclinic.vn/dich-vu/tri-lieu-cong-nghe-cao/nang-co-v-line-new-ultherapy\">N&acirc;ng cơ V-Line New Ultherapy</a></li>\r\n</ul>');
@@ -71,9 +65,9 @@ INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `images`, 
 --
 
 CREATE TABLE `customers` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL,
   `email` text COLLATE utf8_unicode_ci,
   `phone` text COLLATE utf8_unicode_ci,
   `content` text COLLATE utf8_unicode_ci,
@@ -89,9 +83,8 @@ CREATE TABLE `customers` (
 -- Dumping data for table `customers`
 --
 
-INSERT INTO `customers` (`id`, `created_at`, `updated_at`, `email`, `phone`, `content`, `name`, `source`, `medium`, `campaign`, `employer`, `status`) VALUES
-(2, NULL, NULL, 'ádasdas', 'sdasdasd', 'null', 'ádasd', 'null', 'null', 'null', NULL, NULL),
-(3, NULL, '2018-04-15 10:35:30', 'kanbi@gmail.com', '412372183612893', 'null', 'user', 'text', 'ádavasdasdA', 'null', '3', 'Đã Chăm Sóc');
+INSERT INTO `customers` (`created_at`, `updated_at`, `id`, `email`, `phone`, `content`, `name`, `source`, `medium`, `campaign`, `employer`, `status`) VALUES
+(NULL, NULL, 1, 'ádasd', 'sấdasd', 'null', 'ádas', 'null', 'null', 'null', 'null', 'adasd');
 
 -- --------------------------------------------------------
 
@@ -120,19 +113,19 @@ CREATE TABLE `data_rows` (
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
-(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '', 1),
-(2, 1, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, '', 2),
-(3, 1, 'category_id', 'text', 'Category', 1, 0, 1, 1, 1, 0, '', 3),
-(4, 1, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '', 4),
-(5, 1, 'excerpt', 'text_area', 'excerpt', 1, 0, 1, 1, 1, 1, '', 5),
-(6, 1, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, '', 6),
-(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
+(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
+(2, 1, 'author_id', 'text', 'Người đăng', 1, 1, 1, 0, 0, 0, NULL, 2),
+(3, 1, 'category_id', 'text', 'Danh Mục', 0, 0, 1, 1, 1, 0, NULL, 3),
+(4, 1, 'title', 'text', 'Tiêu đề', 1, 1, 1, 1, 1, 1, NULL, 4),
+(5, 1, 'excerpt', 'text_area', 'Tóm tắt', 0, 0, 1, 1, 1, 1, NULL, 5),
+(6, 1, 'body', 'rich_text_box', 'Nội dung', 1, 0, 1, 1, 1, 1, NULL, 6),
+(7, 1, 'image', 'image', 'Post Image', 0, 0, 0, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
 (8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true}}', 8),
-(9, 1, 'meta_description', 'text_area', 'meta_description', 1, 0, 1, 1, 1, 1, '', 9),
-(10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 1, 0, 1, 1, 1, 1, '', 10),
+(9, 1, 'meta_description', 'text_area', 'meta_description', 0, 0, 1, 1, 1, 1, NULL, 9),
+(10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 0, 0, 1, 1, 1, 1, NULL, 10),
 (11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"DRAFT\",\"options\":{\"PUBLISHED\":\"published\",\"DRAFT\":\"draft\",\"PENDING\":\"pending\"}}', 11),
-(12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '', 12),
-(13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 13),
+(12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, NULL, 12),
+(13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, NULL, 13),
 (14, 2, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
 (15, 2, 'author_id', 'text', 'author_id', 1, 0, 0, 0, 0, 0, '', 2),
 (16, 2, 'title', 'text', 'title', 1, 1, 1, 1, 1, 1, '', 3),
@@ -170,8 +163,8 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (48, 6, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '', 3),
 (49, 6, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 4),
 (50, 6, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, '', 5),
-(51, 1, 'seo_title', 'text', 'seo_title', 0, 1, 1, 1, 1, 1, '', 14),
-(52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '', 15),
+(51, 1, 'seo_title', 'text', 'seo_title', 0, 0, 0, 1, 1, 1, NULL, 14),
+(52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, NULL, 15),
 (53, 3, 'role_id', 'text', 'role_id', 1, 1, 1, 1, 1, 1, '', 9),
 (54, 4, 'images', 'image', 'Images', 1, 1, 1, 1, 1, 1, NULL, 6),
 (86, 24, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
@@ -184,19 +177,6 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (93, 26, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
 (94, 26, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
 (95, 26, 'users', 'select_dropdown', 'Users', 0, 1, 1, 1, 1, 1, NULL, 6),
-(123, 29, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(125, 29, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 14),
-(126, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 1, 0, 0, 0, NULL, 13),
-(127, 29, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, NULL, 3),
-(128, 29, 'phone', 'text', 'Điện Thoại', 0, 1, 1, 1, 1, 1, NULL, 4),
-(129, 29, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, NULL, 5),
-(130, 29, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 6),
-(131, 29, 'source', 'text', 'UTM_Source', 0, 1, 1, 1, 1, 1, NULL, 7),
-(132, 29, 'medium', 'text', 'UTM_Medium', 0, 1, 1, 1, 1, 1, NULL, 8),
-(133, 29, 'campaign', 'text', 'UTM_Campaign', 0, 1, 1, 1, 1, 1, NULL, 9),
-(134, 29, 'employer', 'select_dropdown', 'Employer', 0, 1, 1, 1, 1, 1, NULL, 10),
-(135, 29, 'status', 'text', 'Status', 0, 1, 1, 1, 1, 1, '{\"default\":\"Lựa chọn\",\"options\":{\"no\":\"Chưa chăm sóc\",\"yes\":\"Được chăm sóc\"}}', 11),
-(136, 29, 'customer_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"employer\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"Banners\",\"pivot\":\"0\"}', 12),
 (137, 30, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (138, 30, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, NULL, 2),
 (139, 30, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 3),
@@ -235,7 +215,9 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (172, 35, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 6),
 (173, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7),
 (174, 35, 'news_belongsto_post_relationship', 'relationship', 'posts', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Post\",\"table\":\"posts\",\"type\":\"belongsTo\",\"column\":\"link\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 8),
-(175, 4, 'content', 'rich_text_box', 'Content', 0, 1, 1, 1, 1, 1, NULL, 9);
+(175, 4, 'content', 'rich_text_box', 'Content', 0, 1, 1, 1, 1, 1, NULL, 9),
+(176, 1, 'post_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"author_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 16),
+(177, 1, 'post_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 17);
 
 -- --------------------------------------------------------
 
@@ -265,7 +247,7 @@ CREATE TABLE `data_types` (
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `created_at`, `updated_at`) VALUES
-(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
+(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '2018-03-11 23:49:32', '2018-04-17 15:37:57'),
 (2, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (3, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, NULL, NULL, 1, 0, '2018-03-11 23:49:32', '2018-04-15 01:51:49'),
@@ -273,7 +255,6 @@ INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displa
 (6, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (24, 'Banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Banner', NULL, NULL, NULL, 1, 0, '2018-04-15 02:45:13', '2018-04-15 02:45:13'),
 (26, 'whyhomes', 'whyhomes', 'Whyhome', 'Whyhomes', 'voyager-question', NULL, NULL, NULL, NULL, 1, 0, '2018-04-15 02:49:24', '2018-04-15 02:49:24'),
-(29, 'Customers', 'customers', 'Khách Hàng', 'Khách Hàng', NULL, 'App\\Customer', NULL, NULL, NULL, 1, 0, '2018-04-15 10:30:15', '2018-04-15 10:36:56'),
 (30, 'servicesspecialists', 'servicesspecialists', 'Dịch Vụ Nổi Bật', 'Dịch Vụ Nổi Bật', 'voyager-star-two', 'App\\Servicesspecialist', NULL, NULL, NULL, 1, 0, '2018-04-15 10:43:41', '2018-04-15 10:54:17'),
 (31, 'Partners', 'partners', 'Đối Tác', 'Đối Tác', 'voyager-ship', 'App\\Partner', NULL, NULL, NULL, 1, 0, '2018-04-15 11:07:13', '2018-04-15 11:07:13'),
 (32, 'Slidehome1s', 'slidehome1s', 'Slide Trang Chủ', 'Slide Trang Chủ', NULL, 'App\\Slidehome1', NULL, NULL, NULL, 1, 0, '2018-04-15 11:13:50', '2018-04-15 11:13:50'),
@@ -561,11 +542,6 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (73, 'edit_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (74, 'add_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (75, 'delete_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
-(81, 'browse_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(82, 'read_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(83, 'edit_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(84, 'add_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(85, 'delete_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
 (86, 'browse_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (87, 'read_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (88, 'edit_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
@@ -679,11 +655,6 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (73, 1),
 (74, 1),
 (75, 1),
-(81, 1),
-(82, 1),
-(83, 1),
-(84, 1),
-(85, 1),
 (86, 1),
 (87, 1),
 (88, 1),
@@ -793,7 +764,7 @@ CREATE TABLE `servicesspecialists` (
 --
 
 INSERT INTO `servicesspecialists` (`id`, `title`, `images`, `content`, `created_at`, `updated_at`, `link`) VALUES
-(1, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/G7nqk9mpYU3VjPhkWjKI.png', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-15 10:58:53', '1');
+(1, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/3XBPzZgU394NNDesPbDr.jpg', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-17 15:02:29', '1');
 
 -- --------------------------------------------------------
 
@@ -836,17 +807,11 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 
 CREATE TABLE `slidehome1s` (
   `id` int(10) UNSIGNED NOT NULL,
-  `images` text COLLATE utf8_unicode_ci,
+  `images` int(11) DEFAULT NULL,
+  `link` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `slidehome1s`
---
-
-INSERT INTO `slidehome1s` (`id`, `images`, `created_at`, `updated_at`) VALUES
-(1, 'slidehome1s/April2018/MqtlD9xsLFxHNtCMrYg1.png', '2018-04-15 15:55:10', '2018-04-15 16:26:14');
 
 -- --------------------------------------------------------
 
@@ -904,6 +869,13 @@ CREATE TABLE `videos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `title`, `images`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'Single Mom Phan Minh Thảo giảm 20kg tìm lại được hạnh phúc', 'videos/April2018/WLxufahVd6rGKvbP28AD.jpg', 'https://www.youtube.com/watch?v=yOcEN4TqPF4', '2018-04-17 14:29:15', '2018-04-17 14:29:15');
 
 -- --------------------------------------------------------
 
@@ -1100,116 +1072,139 @@ ALTER TABLE `whyhomes`
 --
 ALTER TABLE `banners`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=190;
+
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
 --
 -- AUTO_INCREMENT for table `feedbacks`
 --
 ALTER TABLE `feedbacks`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
 --
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `partners`
 --
 ALTER TABLE `partners`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+
 --
 -- AUTO_INCREMENT for table `permission_groups`
 --
 ALTER TABLE `permission_groups`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `servicesspecialists`
 --
 ALTER TABLE `servicesspecialists`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
 -- AUTO_INCREMENT for table `slidehome1s`
 --
 ALTER TABLE `slidehome1s`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `translations`
 --
 ALTER TABLE `translations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT for table `whyhomes`
 --
 ALTER TABLE `whyhomes`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- Constraints for dumped tables
 --
@@ -1238,7 +1233,3 @@ ALTER TABLE `menu_items`
 ALTER TABLE `permission_role`
   ADD CONSTRAINT `permission_role_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
