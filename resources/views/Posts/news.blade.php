@@ -40,10 +40,10 @@
                             </div>
                             <div class="item-title">
                                 
-                                <a href="{{ URL::to('')}}/{{$value->slug}}"><h1>{{ $value->title }}</h1></a>
+                                <a href="{{ URL::to('posts/')}}/{{$value->slug}}"><h1>{{ $value->title }}</h1></a>
                             </div>
                             <div class="item-image">
-                                <a href="{{ URL::to('')}}/{{$value->slug}}">
+                                <a href="{{ URL::to('posts')}}/{{$value->slug}}">
                                 <img src="{{Voyager::image($value->image)}}"></a>
                             </div>
                             <div class="item-description">
@@ -51,7 +51,7 @@
 </span>
                             </div>
                             <div class="read-more">
-                                <a href="{{ URL::to('posts')}}/{{$value->slug}}" class="readmore">Chi tiết</a>
+                                <a href="{{ URL::to('posts/')}}/{{$value->slug}}" class="readmore">Chi tiết</a>
                                 <div class="clearfix"></div>
                             </div>
                         </div>

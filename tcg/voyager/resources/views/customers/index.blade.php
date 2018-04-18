@@ -30,11 +30,6 @@
                         Họ Và Tên
                      </th>
                      <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
-                        created_at
-                        : activate to sort column ascending" style="width: 118px;">
-                        Nội Dung
-                     </th>
-                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         seo_title
                         : activate to sort column ascending" style="width: 56px;">
                         UTM_Source
@@ -80,10 +75,7 @@
                      {{ $value-> name}}
                         
                      </td>
-                     <td>
-                     {{ $value-> content }}
-                        
-                     </td>
+                     
                      <td>
                         {{ $value-> source}}
                      </td>
@@ -97,17 +89,17 @@
                        
                      </td>
                      <td class="no-sort no-click" id="bread-actions">
-                     @if(!$value->status || $value->status === 'NULL') "Chưa chăm sóc" @else "Đã Chăm Sóc" @endif
+                     @if(!$value->status || $value->status === 'NULL') Chưa chăm sóc @else Đã Chăm Sóc @endif
                        
                      </td>
                      <td class="no-sort no-click" id="bread-actions">
-                     @if(!$value->status || $value->status === 'NULL')
+                     @if(!$value->employer || $value->employer === 'NULL')
                         <select name="dataTable_length" aria-controls="dataTable" class="form-control selected-employer">
-                            <option value="NULL">--- Chọn ---</option>
-                            <option value="yes"> Chăm Sóc</option>
+                            <option key-user="{{ $value->id }}" value="NULL">--- Chọn ---</option>
+                            <option key-user="{{ $value->id }}" value="yes"> Chăm Sóc</option>
                         </select>
                     @else
-                        {{$value->status}}
+                        {{$value->employer}}
                     @endif
                         
                      </td>

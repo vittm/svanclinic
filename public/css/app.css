@@ -175,7 +175,6 @@ h3:hover {
   font-size: 20px;
   text-align: center;
   text-transform: uppercase;
-  font-family: myriadBold;
   color: #fff;
   border-bottom-color: #2a8a55;
   background: #2a8a55;
@@ -300,7 +299,7 @@ h3:hover {
   background: #2a8a55;
   position: fixed;
   right: 20px;
-  top: 50px;
+  top: 71px;
   z-index: 4444;
   border-radius: 20px;
   overflow: hidden;
@@ -351,7 +350,6 @@ h3:hover {
   text-align: center;
   margin: 0;
   line-height: 45px;
-  font-family: myriadBold;
 }
 
 .fb-share-button {
@@ -1087,7 +1085,7 @@ body.modal-open {
 .menu .menu-container .right-container {
   width: 100%;
   position: relative;
-  background: #3d9c74;
+  background: #2a8a55;
   border-bottom-left-radius: 70px;
   float: left;
   z-index: 20;
@@ -2274,6 +2272,7 @@ body.modal-open {
   -webkit-transition: all 500ms;
   transition: all 500ms;
   pointer-events: none;
+  background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-youtube.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -3511,7 +3510,6 @@ body.modal-open {
   list-style: circle;
   margin: 0;
   padding: 0;
-  padding-top: 10px;
   padding-left: 10px;
   margin-bottom: 0px;
   color: #2a8a55;
@@ -3553,6 +3551,7 @@ body.modal-open {
 
 .service .service-group .item .item-content .readmore:before {
   font-family: 'FontAwesome';
+  content: '\F101';
   position: absolute;
   left: -20px;
   top: 0px;
@@ -6215,10 +6214,39 @@ body .pr0 {
   margin-bottom: 2px;
   font-size: 17px;
   font-weight: 500;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 .blog-column > p {
   font-size: 15px;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  color: #8ba4b3;
+}
+
+.blog-content {
+  font-family: 'Roboto',sans-serif;
+}
+
+.blog-content a,
+.blog-content p,
+.blog-content span,
+.blog-content strong,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6,
+.blog-content h7 {
+  font-family: 'Roboto',sans-serif;
 }
 
 .font-elsie {

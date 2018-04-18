@@ -970,11 +970,10 @@ function createCss() {
                             '.item-list': {
                                 ul: {
                                     'padding-left': 10 * scale,
-                                    'padding-top': 10 * scale,
                                     li: {
-                                        'font-size': 11 * scale,
+                                        'font-size': 15 * scale,
                                         a: {
-                                            'font-size': 11 * scale,
+                                            'font-size': 10 * scale,
                                         }
                                     }
                                 }

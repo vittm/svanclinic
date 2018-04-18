@@ -160,7 +160,6 @@
       font-size: 20px;
       text-align: center;
       text-transform: uppercase;
-      font-family: myriadBold;
       color: #fff;
       border-bottom-color: rgb(42, 138, 85);
       background: rgb(42, 138, 85);
@@ -269,7 +268,7 @@
     background: rgb(42, 138, 85);
     position: fixed;
     right: 20px;
-    top: 50px;
+    top: 71px;
     z-index: 4444;
     border-radius: 20px;
     overflow: hidden;
@@ -313,7 +312,6 @@
         text-align: center;
         margin: 0;
         line-height: 45px;
-        font-family: myriadBold;
       }
     }
   }
@@ -1034,7 +1032,7 @@
       .right-container {
         width: 100%;
         position: relative;
-        background: #3d9c74;
+        background: #2a8a55;
         border-bottom-left-radius: 70px;
         float: left;
         z-index: 20;
@@ -2139,7 +2137,7 @@
               height: 70px;
               transition: all 500ms;
               pointer-events: none;
-            //   background-image: url("../images/icon/icon-youtube.png");
+              background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-youtube.png");
               background-size: cover;
               background-repeat: no-repeat;
               background-position: center center;
@@ -3261,7 +3259,6 @@
               list-style: circle;
               margin: 0;
               padding: 0;
-              padding-top: 10px;
               padding-left: 10px;
               margin-bottom: 0px;
               color: rgb(42, 138, 85);
@@ -3295,6 +3292,7 @@
               }
               &:before {
                 font-family: 'FontAwesome';
+                content: '\f101';
                 position: absolute;
                 left: -20px;
                 top: 0px;

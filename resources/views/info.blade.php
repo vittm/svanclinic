@@ -140,32 +140,7 @@
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                            <div class="intro-gallery">
-                    <div class="container">
-                        <div class="row no-mg">
-                                    <div class="col-xs-6 no-pd">
-                                        <div class="item-image">
-                                            <a href="http://www.svanclinic.vn/thu-vien/hinh-anh">
-                                                <img src="http://www.svanclinic.vn/Upload/News/b14050b1-df95-40d6-beee-0fa72481390f/gallery01.jpg" >
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-6 no-pd">
-                                        <div class="item-image">
-                                            <a href="http://www.svanclinic.vn/thu-vien/hinh-anh">
-                                                <img src="http://www.svanclinic.vn/Upload/News/b14050b1-df95-40d6-beee-0fa72481390f/gallery01.jpg" >
-                                            </a>
-                                        </div>
-                                    </div>
-
-                        </div>
-                    </div>
-                    <div class="intro-gallery-btn">
-                        <a href="http://www.svanclinic.vn/thu-vien/hinh-anh"><p>Thư Viện<br />
-Ảnh</p>
-</a>
-                    </div>
-                </div>
+                            
         </div>
     </div>
 </div>

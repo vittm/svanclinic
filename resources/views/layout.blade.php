@@ -57,7 +57,7 @@
                     <ul>
                                     <li class="home">
                                     <a href="{{url('/')}}" class="home-link" rel="nofollow">
-                                        <img width="auto" src="img/logo.png" alt=""> </a>
+                                        <img width="auto" src="{{Voyager::image('img/logo.png')}}" alt=""> </a>
                                 </li>
                                         <li>
                                             <a href="{{url('/gioi-thieu')}}" rel="nofollow">Giới thiệu</a>
@@ -131,10 +131,7 @@
                                             </div> -->
                                         </li>
                                         <li>
-                                            <a href="/bang-gia" rel="nofollow">Bảng Gi&#225;</a>
-                                        </li>
-                                        <li>
-                                            <a href="/khuyen-mai" rel="nofollow">Khuyến M&#227;i</a>
+                                            <a href="{{url('/bang-gia')}}" rel="nofollow">Bảng Gi&#225;</a>
                                         </li>
                                         <li class="hassub">
                                             <a href="{{url('/news/tin-tuc')}}" rel="nofollow">Tin Tức</a>
@@ -151,19 +148,6 @@
                                                         </li>
                                                         <li>
                                                             <a href="/tin-tuc/tuyen-dung">Tuyển Dụng</a>
-                                                        </li>
-                                                </ul>
-                                            </div> -->
-                                        </li>
-                                        <li class="hassub">
-                                            <a href="/thu-vien" rel="nofollow">Thư Viện</a>
-                                            <!-- <div class="submenu">
-                                                <ul>
-                                                        <li>
-                                                            <a href="/thu-vien/hinh-anh">H&#236;nh Ảnh</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/thu-vien/video">Video</a>
                                                         </li>
                                                 </ul>
                                             </div> -->
@@ -189,10 +173,10 @@
             <div class="container">
                 <div class="row">
                         <ul class="footer-menu col-md-6">
-                            <li><img width="45" height="45" src="img/placeholder.png" alt=""><span>363 – 365, Phạm Ngũ Lão, Phường Phạm Ngũ Lão, Quận 1, TP. HCM</span></li>
-                            <li><img width="45" height="45" src="img/placeholder.png" alt=""><span>61 - City Land Center Hill - Trần Thị Nghỉ, Phường 7, Quận Gò Vấp, Tp.HCM</span></li>
-                            <li><img width="35" height="35" src="img/phone-call.png" alt=""><span>Hotline: 19000117</span></li>
-                            <li><img width="30" height="30" src="img/calendar.png" alt=""><span>Thời gian làm việc | T2 -CN 8:00 - 20:00 </span></li>
+                            <li><img width="45" height="45" src="{{Voyager::image('img/placeholder.png')}}" alt=""><span>363 – 365, Phạm Ngũ Lão, Phường Phạm Ngũ Lão, Quận 1, TP. HCM</span></li>
+                            <li><img width="45" height="45" src="{{Voyager::image('img/placeholder.png')}}" alt=""><span>61 - City Land Center Hill - Trần Thị Nghỉ, Phường 7, Quận Gò Vấp, Tp.HCM</span></li>
+                            <li><img width="35" height="35" src="{{Voyager::image('img/phone-call.png')}}" alt=""><span>Hotline: 19000117</span></li>
+                            <li><img width="30" height="30" src="{{Voyager::image('img/calendar.png')}}" alt=""><span>Thời gian làm việc | T2 -CN 8:00 - 20:00 </span></li>
                         </ul>
                         <div class="col-md-6">
                         <div class="fb-page" 

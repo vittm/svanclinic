@@ -10,7 +10,7 @@ class WidgetController extends Controller
     public function index($name,$email,$phone,$utm_source,$utm_medium,$utm_campaign)
     {
         DB::table('customers')->insert(
-            ['email' => $email, 'name' => $name , 'phone' => $phone , 'source'=> $utm_source, 'medium'=>$utm_medium, 'campaign'=>$utm_campaign, 'content' => 'null']
+            ['email' => $email, 'name' => $name , 'phone' => $phone , 'source'=> $utm_source, 'medium'=>$utm_medium, 'campaign'=>$utm_campaign]
         );
         return 'ok';
     }

@@ -46,12 +46,28 @@ body .pr0{
         margin-bottom: 2px;
         font-size: 17px;
         font-weight: 500;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-word;
     }
     & > p {
         font-size: 15px;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        word-break: break-word;
+        color: #8ba4b3;
     }
 }
-
+.blog-content {
+  font-family: 'Roboto',sans-serif!important;
+  a,p,span,strong,h1,h2,h3,h4,h5,h6,h7 {
+    font-family: 'Roboto',sans-serif!important;
+  }
+}
 .font-elsie {
     font-family: 'Elsie', cursive;
 }
