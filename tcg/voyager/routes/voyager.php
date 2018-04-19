@@ -56,7 +56,6 @@ Route::group(['as' => 'voyager.'], function () {
             'prefix' => 'customers',
         ], function () use ($namespacePrefix) {
             Route::get('/', ['uses' => $namespacePrefix.'WidgetController@index',        'as' => 'index']);
-            Route::get('/edit-status-customers-{value}-{key}', ['uses' => $namespacePrefix.'WidgetController@getCustomer',        'as' => 'get']);
         });
         
         // Menu Routes

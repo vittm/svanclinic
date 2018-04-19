@@ -66,23 +66,32 @@
                         <div class="panel">
                             <div class="panel-heading">
                                 <h3 class="panel-title">
-                                    <i class="voyager-character"></i> Post Title
-                                    
-                                    <span class="panel-desc"> The title for your post</span>
+                                    <i class="voyager-character"></i> Phần Header
                                 </h3>
                                 <div class="panel-actions">
                                     <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                                 </div>
                             </div>
-                            <div class="panel-body">
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="">
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="name">Tiêu đề</label>
+                                        <input type="text" class="form-control" id="title" name="tiêu đề" placeholder="Title" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">URL slug</label>
+                                        <input type="text" class="form-control" id="slug" name="slug" placeholder="slug" {="" data-slug-origin="title" data-slug-forceupdate="true}" value="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Nội dung header</label>
+                                        <textarea class="form-control" name="meta_description" data-gramm="true" data-txt_gramm_id="f4f162e2-4765-9f5d-26b1-b73e1ac09da2" data-gramm_id="f4f162e2-4765-9f5d-26b1-b73e1ac09da2" spellcheck="false" data-gramm_editor="true" style="z-index: auto; position: relative; line-height: 20px; font-size: 14px; transition: none; background: transparent !important;"></textarea>
+                                    </div>
                                 </div>
                             </div>
                             <!-- ### CONTENT ### -->
                             <div class="panel">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <i class="icon wb-book"></i> Post Content
+                                        <i class="icon wb-book"></i> HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
                                     </h3>
                                     <div class="panel-actions">
                                         <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
@@ -287,10 +296,6 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="form-group">
-                                <label for="name">URL slug</label>
-                                                                <input type="text" class="form-control" id="slug" name="slug" placeholder="slug" {="" data-slug-origin="title" data-slug-forceupdate="true}" value="">
-                            </div>
                             <div class="form-group">
                                 <label for="name">Post Status</label>
                                 <select class="form-control" name="status">
