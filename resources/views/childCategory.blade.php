@@ -12,7 +12,7 @@
             </h2>
         </div>
         <div class="service-group-name">
-            Giảm C&#226;n &amp; Giảm B&#233;o
+            <!-- Giảm C&#226;n &amp; Giảm B&#233;o -->
         </div>
         <div class="container service-list-wrapper">
             <div class="row">

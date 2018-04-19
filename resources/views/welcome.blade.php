@@ -5,7 +5,7 @@
 <div class="btn-hotline">
         <div class="icon">
             <div class="icon-img">
-                <img src="http://www.svanclinic.vn/Content/layout/images/icon/btn-call.png" alt="">
+                <img src="{{Voyager::image('logo.png')}}" alt="">
             </div>
         </div>
         <div class="hotline-content">
@@ -25,7 +25,7 @@
         <div class="carousel-inner" role="listbox">
         @foreach($slides as $key => $value)
             <div class="item active">
-                <a href="#">
+                <a href="{{$value->link}}">
                     <div class="image" style="background-image:url('{{Voyager::image($value->images)}}')"></div>
                 </a>
             </div>
@@ -33,12 +33,12 @@
         </div>
         <div class="overlay"></div>
     </div>
-    <div class="clearfix"> </div>
+    <div class="clearfix"> </div>   
+    <div class="intro-why-chose">
     <div class="flower-theme-default">
         <div class="left-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/01.png" alt=""></div>
         <div class="right-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/02.png" alt=""></div>
-    </div>      
-    <div class="intro-why-chose">
+    </div>   
         <div class="container">
             <div class="title
                 <h2>
@@ -159,17 +159,17 @@
                 @foreach($videos as $key => $value)
                         <div class="col-xs-4">
                             <div class="video-container">
-                                <a href="#" class="video-btn" data-toggle="modal" data-target="#videoModal" data-thevideo="0INIJ2aS4Mo">
+                                <a href="#" class="video-btn" data-toggle="modal" data-target="#videoModal" data-thevideo="{{$value->link}}">
                                     <img src="{{Voyager::image($value->images)}}">
                                 </a>
                             </div>
                             <div class="video-title">
-                                <h3><a href="#" class="video-btn" data-toggle="modal" data-target="#videoModal" data-thevideo="0INIJ2aS4Mo">{{ $value->title}}
+                                <h3><a href="#" class="video-btn" data-toggle="modal" data-target="#videoModal" data-thevideo="{{$value->link}}">{{ $value->title}}
                                 </a></h3>
                             </div>
                             <div class="video-info">
                                 <div class="view">
-                                    <span id="0INIJ2aS4Mo"></span> <span>&nbsp;Lượt xem</span>
+                                    <span id="{{$value->link}}"></span> <span>&nbsp;Lượt xem</span>
                                     
                                 </div>
                                 <div class="created">

@@ -14,7 +14,8 @@
     <h1 class="mt-4 font-elsie ">{{ $posts->title }}</h1>
 
     <!-- Author -->
-    <div class="author" ><p><i class="fa fa-calendar" style="position: relative; top: -1px;"></i> {!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!}</p><p ><i class="fa fa-user"></i> by <a href="">{{ $users->name}}</a></p></div>
+    <div class="author" ><p><i class="fa fa-calendar" style="position: relative; top: -1px;"></i> 
+    {!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!}</p><p ><i class="fa fa-user"></i> by <a href="">{{ $users->name}}</a></p></div>
 
 
     <!-- Post Content -->

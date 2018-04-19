@@ -6,7 +6,7 @@ $(document).ready(function () {
         sessionStorage.removeItem('pg_id');
     }
     $.urlParam = function(name){
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+      var results = new RegExp('[\?|\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results==null){
           return null;
         }
@@ -17,7 +17,7 @@ $(document).ready(function () {
     $(document).ready(function () {
       $(".btn-customer").click(function (e) {
           e.preventDefault();
-          var url      = $(location).attr('hostname'); 
+          var url= $(location).attr('hostname'); 
           var form = $(this);
           var name = $('#username-customer').val(),
               phone = $('#phone-customer').val(),

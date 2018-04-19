@@ -32,3 +32,6 @@ Route::get('/gioi-thieu', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+Route::get('/edit-status-customers-{value}-{key}', 'WidgetController@getCustomer');
+Route::get('/serivces/{title}', 'ServicesController@index');
+Route::get('/get-customer-{name}-{email}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');

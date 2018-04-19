@@ -14,5 +14,14 @@ class WidgetController extends Controller
         );
         return 'ok';
     }
-
+    public function getCustomer($value,$key)
+    {
+        if($value == 'yes') {
+            $value = Auth::user()->name;
+        }else {
+            $value = null;
+        }
+        DB::table('customers')->where('id',$key)->update(['employer' => $value, 'status'=> "NULL"]);
+        return 'ok';
+    }
 }

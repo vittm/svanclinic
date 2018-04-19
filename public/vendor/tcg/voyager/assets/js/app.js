@@ -153,13 +153,14 @@
   
     $(document).ready(function () {
       $(".selected-employer").change(function(e) {
+        
           e.preventDefault();
           var form = $(this);
-          var key = $('.selected-employer option').attr('key-user'),
-              value = $('.selected-employer').val();
+          var key =  form.find('option:selected').attr('key-user'),
+              value = form.val();
           
           $.ajax({
-              url: "customers/edit-status-customers"+'-'+value+'-'+key,
+              url: "../edit-status-customers"+'-'+value+'-'+key,
               type: 'get',
               dataType: 'html',
               data: {'key':key,'user':value,"_token": "{{ csrf_token() }}"},

@@ -2171,30 +2171,7 @@ function createCss() {
                     'font-size': 12 * scale,
                 }
             }
-        },
-        '.btn-hotline': {
-            'height': 45 * scale,
-            'width': 261 * scale,
-            'border-radius': 18 * scale,
-            '.icon': {
-                'width': 54 * scale,
-                'border-width': 1 * scale,
-                'border-top-left-radius': 18 * scale,
-                'border-bottom-left-radius': 18 * scale,
-                '.icon-img': {
-                    'width': 27 * scale,
-                    'top': 7 * scale,
-                    'left': 13.5 * scale,
-                }
-            },
-            '.hotline-content': {
-                'width': 'calc(100% - ' + 54 * scale + 'px)',
-                'h4': {
-                    'font-size': 25 * scale,
-                    'line-height': 45 * scale,
-                }
-            }
-        }
+        },    
     })
 }
 createCss();

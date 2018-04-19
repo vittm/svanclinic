@@ -11,11 +11,11 @@ class HomeController extends Controller
     {
         $find= DB::table('slidehome1s')->get();
         $whyhomes= DB::table('whyhomes')->get();
-        $videos= DB::table('videos')->get();
-        $servicesspecialists= DB::table('servicesspecialists')->join('posts','posts.id','=','servicesspecialists.link')->select('servicesspecialists.*','posts.slug')->get();
+        $videos= DB::table('videos')->limit('3')->get();
+        $servicesspecialists= DB::table('servicesspecialists')->join('posts','posts.id','=','servicesspecialists.link')->select('servicesspecialists.*','posts.slug')->limit('3')->get();
         $partners= DB::table('partners')->get();
-        $feedbacks= DB::table('feedbacks')->get();
-        $news= DB::table('news')->join('posts','posts.id','=','news.link')->select('news.*','posts.slug')->get();
+        $feedbacks= DB::table('userfeadbacks')->get();
+        $news= DB::table('news')->join('posts','posts.id','=','news.link')->select('news.*','posts.slug')->limit('3')->get();
         return view('welcome',['slides'=>$find,'whyhomes'=>$whyhomes,'videos'=>$videos,'servicesspecialists'=>$servicesspecialists,'partners'=>$partners,'feedbacks'=>$feedbacks, 'news'=>$news]);            
     }
 
