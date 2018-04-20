@@ -11,12 +11,12 @@ use DateTimeZone;
 
 class WidgetController extends Controller
 {
-    public function index($name,$email,$phone,$utm_source,$utm_medium,$utm_campaign)
+    public function index($name,$title,$phone,$utm_source,$utm_medium,$utm_campaign)
     {
         DB::table('customers')->insert(
-            ['email' => $email, 'name' => $name , 'phone' => $phone , 
+            ['title' => $title, 'name' => $name , 'phone' => $phone , 
             'source'=> $utm_source, 'medium'=>$utm_medium, 'campaign'=>$utm_campaign,
-            'created_at' => Carbon\Carbon::now('Asia/Ho_Chi_Minh')->subDay()->format('d/m/y')]
+            'created_at' => Carbon\Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y')]
         );
         return 'ok';
     }
@@ -35,7 +35,10 @@ class WidgetController extends Controller
         $check = true;
         $customers = DB::table('customers')->where([['employer','like' ,"%".$request->search."%"]])->get();
         if(count($customers) == '0'){
-            $customers = DB::table('customers')->whereDate('created_at','like', "%".$request->search."%")->get();
+            $customers = DB::table('customers')->where('created_at','like', "%".$request->search."%")->get();
+            if(count($customers) == '0'){
+                $customers = DB::table('customers')->where('name','like', "%".$request->search."%")->get();
+            }
         }
         return Voyager::view('voyager::customers.index', ['customers'=>$customers,'check' => $check]);     
     }

@@ -25,6 +25,11 @@
                         Ngày
                      </th>
                      <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
+                        seo_title
+                        : activate to sort column ascending" style="width: 56px;">
+                        Tiêu Đề
+                     </th>
+                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         status
                         : activate to sort column ascending" style="width: 100px;">
                         Họ Và Tên
@@ -66,6 +71,9 @@
                   <tr role="row" class="even">
                      <td class="no-sort no-click" id="bread-actions">
                         {!! $value->created_at  !!}
+                     </td>
+                     <td class="no-sort no-click" id="bread-actions">
+                        {!! $value->title  !!}
                      </td>
                      <td>
                      {{ $value-> name }}

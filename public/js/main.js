@@ -21,16 +21,16 @@ $(document).ready(function () {
           var form = $(this);
           var name = $('#username-customer').val(),
               phone = $('#phone-customer').val(),
-              email = $('#email-customer').val(),
-              source = $.urlParam('utm_soucre'),
+              title = $('.title-posts').text(),
+              source = $.urlParam('utm_source'),
               medium= $.urlParam('utm_medium'),
               campaign= $.urlParam('utm_campaign');
           
           $.ajax({
-              url: "../get-customer"+'-'+name+'-'+email+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
+              url: "../get-customer"+'-'+name+'-'+title+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
               type: 'get',
               dataType: 'html',
-              data: {'name':name,'email':email,'phone':phone,'utm_source':source,
+              data: {'name':name,'title':title,'phone':phone,'utm_source':source,
                      'utm_medium':medium,'utm_campaign':campaign,"_token": "{{ csrf_token() }}"},
               processData: false,
               contentType: false,

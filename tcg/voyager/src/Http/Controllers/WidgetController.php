@@ -4,13 +4,13 @@ namespace TCG\Voyager\Http\Controllers;
 
 use Auth;
 use DB;
+use Carbon;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
-use Carbon;
+
 class WidgetController extends Controller {
 
     public function index(){
-        echo dd(Carbon\Carbon::now('Asia/Ho_Chi_Minh')->subDay()->format('d/m/y'));
         $customers = DB::table('customers')->get();
         return Voyager::view('voyager::customers.index', ['customers'=>$customers]);     
     }
@@ -23,5 +23,11 @@ class WidgetController extends Controller {
         }
         DB::table('customers')->where('id',$key)->update(['employer' => $value, 'status'=> "notnull"]);
         return 'ok';
+    }
+    public function search(Request $request)
+    {
+        echo dd($request->search);
+        DB::table('customers')->orWhere('name', $request)->where('id',$key)->get();
+        return Voyager::view('voyager::customers.index');
     }
 }

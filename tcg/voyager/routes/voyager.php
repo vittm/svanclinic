@@ -31,6 +31,7 @@ Route::group(['as' => 'voyager.'], function () {
         Route::get('/', ['uses' => $namespacePrefix.'VoyagerController@index',   'as' => 'dashboard']);
         Route::post('logout', ['uses' => $namespacePrefix.'VoyagerController@logout',  'as' => 'logout']);
         Route::post('upload', ['uses' => $namespacePrefix.'VoyagerController@upload',  'as' => 'upload']);
+
         Route::get('profile', ['uses' => $namespacePrefix.'VoyagerController@profile', 'as' => 'profile']);
 
         try {
@@ -49,12 +50,13 @@ Route::group(['as' => 'voyager.'], function () {
 
         // Role Routes
         Route::resource('roles', $namespacePrefix.'VoyagerRoleController');
-        // Settings
+        // Customer
         Route::group([
             'as'     => 'customers.',
             'prefix' => 'customers',
         ], function () use ($namespacePrefix) {
             Route::get('/', ['uses' => $namespacePrefix.'WidgetController@index',        'as' => 'index']);
+            Route::post('search', ['uses' => $namespacePrefix.'WidgetController@search',        'as' => 'search']);
         });
         
         // Menu Routes

@@ -18,7 +18,7 @@ Route::get('/news/{menu}','PostController@news');
 Route::get('/news/lists/{menu}','PostController@listNews');
 Route::get('/category/child/{name}', 'PostController@childcategory');
 Route::get('/posts/{title}', 'PostController@index');
-Route::get('/get-customer-{name}-{email}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');
+Route::get('/get-customer-{name}-{title}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');
 
 Route::get('/contact', function () {
     return view('contact');
