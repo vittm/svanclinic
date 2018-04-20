@@ -6,19 +6,13 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
-
+use Carbon;
 class WidgetController extends Controller {
 
     public function index(){
+        echo dd(Carbon\Carbon::now('Asia/Ho_Chi_Minh')->subDay()->format('d/m/y'));
         $customers = DB::table('customers')->get();
         return Voyager::view('voyager::customers.index', ['customers'=>$customers]);     
-    }
-    public function change($value)
-    {
-        DB::table('customers')->insert(
-            ['email' => $email, 'name' => $name , 'phone' => $phone , 'source'=> $utm_source, 'medium'=>$utm_medium, 'campaign'=>$utm_campaign, 'content' => 'null']
-        );
-        return 'ok';
     }
     public function getCustomer($value,$key)
     {

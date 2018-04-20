@@ -35,3 +35,4 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/edit-status-customers-{value}-{key}', 'WidgetController@getCustomer');
 Route::get('/serivces/{title}', 'ServicesController@index');
 Route::get('/get-customer-{name}-{email}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');
+Route::get('/customers/search', 'WidgetController@search');
