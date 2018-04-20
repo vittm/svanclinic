@@ -33,13 +33,14 @@ class WidgetController extends Controller
     public function search(Request $request)
     {
         $check = true;
-        $customers = DB::table('customers')->where([['employer','like' ,"%".$request->search."%"]])->get();
+        $customers = DB::table('customers')->where(['employer','like' ,"%".$request->search."%"])->get();
         if(count($customers) == '0'){
             $customers = DB::table('customers')->where('created_at','like', "%".$request->search."%")->get();
             if(count($customers) == '0'){
                 $customers = DB::table('customers')->where('name','like', "%".$request->search."%")->get();
             }
         }
+        echo dd($customers);
         return Voyager::view('voyager::customers.index', ['customers'=>$customers,'check' => $check]);     
     }
 }

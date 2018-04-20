@@ -24,10 +24,4 @@ class WidgetController extends Controller {
         DB::table('customers')->where('id',$key)->update(['employer' => $value, 'status'=> "notnull"]);
         return 'ok';
     }
-    public function search(Request $request)
-    {
-        echo dd($request->search);
-        DB::table('customers')->orWhere('name', $request)->where('id',$key)->get();
-        return Voyager::view('voyager::customers.index');
-    }
 }

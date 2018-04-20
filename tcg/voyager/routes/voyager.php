@@ -56,7 +56,6 @@ Route::group(['as' => 'voyager.'], function () {
             'prefix' => 'customers',
         ], function () use ($namespacePrefix) {
             Route::get('/', ['uses' => $namespacePrefix.'WidgetController@index',        'as' => 'index']);
-            Route::post('search', ['uses' => $namespacePrefix.'WidgetController@search',        'as' => 'search']);
         });
         
         // Menu Routes

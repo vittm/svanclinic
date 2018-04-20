@@ -4,7 +4,9 @@
 <div class="table-responsive">
    <div id="dataTable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
    <br>
+   
    <div class="col-sm-12">
+   <p>Khi search ngày tháng: đối với ngày và tháng đủ 2 số, năm thì 4 số</p>
    @if(empty($check))
    @else
      <i class="voyager-double-left" style="font-size: 15px; top: 2px; position: relative;"></i> <a href="{{ route('voyager.customers.index') }}">Quay lại Danh sách</a>
@@ -73,7 +75,10 @@
                         {!! $value->created_at  !!}
                      </td>
                      <td class="no-sort no-click" id="bread-actions">
-                        {!! $value->title  !!}
+                    <?php
+                        $post = DB::table('posts')->where('id','=',$value->title)->first();  
+                    ?>
+                    <a target="_blank" style="font-size: 14px;text-align: left;" href="{{ URL::to('/posts/'.$post->slug) }}">{{ $post->title}}</a>
                      </td>
                      <td>
                      {{ $value-> name }}
