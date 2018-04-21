@@ -29,7 +29,7 @@
 
     <!-- Side Widget -->
     <div class="card my-4">
-      <h2 class="card-header font-elsie ">Recent News</h2>
+      <h2 class="card-header ">Recent News</h2>
       
       @foreach($randomPost as $key => $value)
         <a href="{{ URL::to('/posts/'.$value->slug) }}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">

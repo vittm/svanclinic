@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2018 at 04:18 PM
+-- Generation Time: Apr 21, 2018 at 05:51 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 7.1.1
 
@@ -825,17 +825,24 @@ INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) V
 
 CREATE TABLE `serivcesposts` (
   `id` int(10) UNSIGNED NOT NULL,
-  `header_titl` text COLLATE utf8_unicode_ci,
+  `header_title` text COLLATE utf8_unicode_ci,
+  `header-slug` text COLLATE utf8_unicode_ci NOT NULL,
   `header_content` longtext COLLATE utf8_unicode_ci,
   `header_images` text COLLATE utf8_unicode_ci,
   `result_content` longtext COLLATE utf8_unicode_ci,
   `result_images` text COLLATE utf8_unicode_ci,
   `images_before_after` text COLLATE utf8_unicode_ci,
   `technical_images` text COLLATE utf8_unicode_ci,
-  `technical_content` longtext COLLATE utf8_unicode_ci,
-  `productive` text COLLATE utf8_unicode_ci,
+  `technical_description` longtext COLLATE utf8_unicode_ci,
+  `productive_images` text COLLATE utf8_unicode_ci,
+  `productive_excerpt` text COLLATE utf8_unicode_ci NOT NULL,
   `why` text COLLATE utf8_unicode_ci,
-  `feedback` text COLLATE utf8_unicode_ci,
+  `why_description` text COLLATE utf8_unicode_ci NOT NULL,
+  `why_images` text COLLATE utf8_unicode_ci NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `name_feedback` text COLLATE utf8_unicode_ci,
+  `description_feedback` text COLLATE utf8_unicode_ci NOT NULL,
+  `images_feedback` text COLLATE utf8_unicode_ci NOT NULL,
   `noted` text COLLATE utf8_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -845,8 +852,8 @@ CREATE TABLE `serivcesposts` (
 -- Dumping data for table `serivcesposts`
 --
 
-INSERT INTO `serivcesposts` (`id`, `header_titl`, `header_content`, `header_images`, `result_content`, `result_images`, `images_before_after`, `technical_images`, `technical_content`, `productive`, `why`, `feedback`, `noted`, `created_at`, `updated_at`) VALUES
-(1, 'qưe', 'qưeqweqwe', 'serivcesposts/April2018/NkhmiyTaYt7dFbuBmra1.png', 'qưeqweqwe', NULL, '[\"serivcesposts\\/April2018\\/UW9HnAjf7tfu78lXVm0d.jpg\"]', 'serivcesposts/April2018/0X5qkc8DJ8SQutJiMI0n.jpg', 'serivcesposts/April2018/loukFBpYUbavLQRKggpT.jpg', 'ưeqw', 'eqưeq', 'ưeqwe', 'qưeqwe', '2018-04-19 03:28:07', '2018-04-19 03:28:07');
+INSERT INTO `serivcesposts` (`id`, `header_title`, `header-slug`, `header_content`, `header_images`, `result_content`, `result_images`, `images_before_after`, `technical_images`, `technical_description`, `productive_images`, `productive_excerpt`, `why`, `why_description`, `why_images`, `category_id`, `name_feedback`, `description_feedback`, `images_feedback`, `noted`, `created_at`, `updated_at`) VALUES
+(1, 'qưe', '', 'qưeqweqwe', 'serivcesposts/April2018/NkhmiyTaYt7dFbuBmra1.png', 'qưeqweqwe', NULL, '[\"serivcesposts\\/April2018\\/UW9HnAjf7tfu78lXVm0d.jpg\"]', 'serivcesposts/April2018/0X5qkc8DJ8SQutJiMI0n.jpg', 'serivcesposts/April2018/loukFBpYUbavLQRKggpT.jpg', 'ưeqw', '', 'eqưeq', '', '', 0, 'ưeqwe', '', '', 'qưeqwe', '2018-04-19 03:28:07', '2018-04-19 03:28:07');
 
 -- --------------------------------------------------------
 
