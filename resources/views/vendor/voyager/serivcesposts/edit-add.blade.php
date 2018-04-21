@@ -60,7 +60,7 @@
 
 @section('content')
             <div class="page-content container-fluid">
-                <form class="form-edit-add" role="form" action="http://localhost/svanclinic/public/admin/posts" method="POST" enctype="multipart/form-data">
+                <form class="form-edit-add" role="form" action="" method="POST" enctype="multipart/form-data">
                     <div class="col-md-6">
                         <!-- ### TITLE ### -->
                         <div class="panel">
@@ -90,191 +90,42 @@
                             <!-- ### CONTENT ### -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">
-                                        <i class="icon wb-book"></i> HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
+                                    <h3 class="panel-title">HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
                                     </h3>
                                     <div class="panel-actions">
-                                        <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
+                                        <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                                     </div>
                                 </div>
-                                <div id="mceu_20" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;">
-                                    <div id="mceu_20-body" class="mce-container-body mce-stack-layout">
-                                        <div id="mceu_21" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item mce-first" hidefocus="1" tabindex="-1" role="group">
-                                            <div id="mceu_21-body" class="mce-container-body mce-stack-layout">
-                                                <div id="mceu_22" class="mce-container mce-toolbar mce-stack-layout-item mce-first mce-last" role="toolbar">
-                                                    <div id="mceu_22-body" class="mce-container-body mce-flow-layout">
-                                                        <div id="mceu_23" class="mce-container mce-flow-layout-item mce-first mce-btn-group" role="group">
-                                                            <div id="mceu_23-body">
-                                                                <div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-haspopup="true">
-                                                                    <button id="mceu_0-open" role="presentation" type="button" tabindex="-1">
-                                                                        <span class="mce-txt">Formats</span>
-                                                                        <i class="mce-caret"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" role="button"
-                                                                aria-label="Bold">
-                                                                    <button id="mceu_1-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-bold"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Italic">
-                                                                    <button id="mceu_2-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-italic"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_3" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="Underline">
-                                                                    <button id="mceu_3-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-underline"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_24" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
-                                                            <div id="mceu_24-body">
-                                                                <div id="mceu_4" class="mce-widget mce-btn mce-colorbutton mce-first" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text color">
-                                                                    <button role="presentation" hidefocus="1" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-forecolor"></i>
-                                                                        <span id="mceu_4-preview" class="mce-preview"></span>
-                                                                    </button>
-                                                                    <button type="button" class="mce-open" hidefocus="1"
-                                                                    tabindex="-1">
-                                                                        <i class="mce-caret"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_5" class="mce-widget mce-btn mce-colorbutton mce-last" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background color">
-                                                                    <button role="presentation" hidefocus="1" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-backcolor"></i>
-                                                                        <span id="mceu_5-preview" class="mce-preview"></span>
-                                                                    </button>
-                                                                    <button type="button" class="mce-open" hidefocus="1"
-                                                                    tabindex="-1">
-                                                                        <i class="mce-caret"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_25" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
-                                                            <div id="mceu_25-body">
-                                                                <div id="mceu_6" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="Align left">
-                                                                    <button id="mceu_6-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-alignleft"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Align center">
-                                                                    <button id="mceu_7-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-aligncenter"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_8" class="mce-widget mce-btn mce-last" tabindex="-1" role="button"
-                                                                aria-label="Align right">
-                                                                    <button id="mceu_8-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-alignright"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_26" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
-                                                            <div id="mceu_26-body">
-                                                                <div id="mceu_9" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="Bullet list">
-                                                                    <button id="mceu_9-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-bullist"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Numbered list">
-                                                                    <button id="mceu_10-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-numlist"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Decrease indent">
-                                                                    <button id="mceu_11-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-outdent"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="Increase indent">
-                                                                    <button id="mceu_12-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-indent"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_27" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
-                                                            <div id="mceu_27-body">
-                                                                <div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" role="button" aria-label="Insert/edit link">
-                                                                    <button id="mceu_13-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-link"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_14" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Insert/edit image">
-                                                                    <button id="mceu_14-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-image"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_15" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_15"
-                                                                role="button" aria-label="Table" aria-haspopup="true">
-                                                                    <button id="mceu_15-open" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-table"></i>
-                                                                        <i class="mce-caret"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" role="button"
-                                                                aria-label="Insert Youtube video">
-                                                                    <button id="mceu_16-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-none" style="background-image: url('http://localhost/svanclinic/public/vendor/tcg/voyager/assets/js/plugins/youtube/icon.png')"></i>
-                                                                    </button>
-                                                                </div>
-                                                                <div
-                                                                id="mceu_17" class="mce-widget mce-btn mce-last" tabindex="-1" role="button" aria-label="Giphy GIF Search">
-                                                                    <button id="mceu_17-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-none" style="background-image: url('http://localhost/svanclinic/public/vendor/tcg/voyager/assets/js/plugins/giphy/html/img/giphy_icon_16.png')"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_28" class="mce-container mce-flow-layout-item mce-btn-group" role="group">
-                                                            <div id="mceu_28-body">
-                                                                <div id="mceu_18" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" role="button" aria-label="Source code">
-                                                                    <button id="mceu_18-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-code"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div id="mceu_29" class="mce-container mce-flow-layout-item mce-last mce-btn-group" role="group">
-                                                            <div id="mceu_29-body">
-                                                                <div id="mceu_19" class="mce-widget mce-btn mce-first mce-last" tabindex="-1" role="button" aria-label="Form điền thông tin">
-                                                                    <button id="mceu_19-button" role="presentation" type="button" tabindex="-1">
-                                                                        <i class="mce-ico mce-i-none" style="background-image: url('http://p.yusukekamiyamane.com/icons/search/fugue/icons/application-form.png')"></i>
-                                                                    </button>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="mceu_30" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
-                                            <iframe id="richtextbody_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help" style="width: 100%; height: 600px; display: block;"></iframe>
-                                        </div>
-                                        <div id="mceu_31"
-                                    class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;">
-                                            <div id="mceu_31-body" class="mce-container-body mce-flow-layout">
-                                                <div id="mceu_32" class="mce-path mce-flow-layout-item mce-first">
-                                                    <div class="mce-path-item">&nbsp;</div>
-                                                </div>
-                                                <div id="mceu_33" class="mce-flow-layout-item mce-last mce-resizehandle">
-                                                    <i class="mce-ico mce-i-resize"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="panel-body">
+                                    
+                                    <textarea class="form-control" name="excerpt"></textarea>
                                 </div>
-                                <textarea class="form-control richTextBox" id="richtextbody" name="body" style="border: 0px; display: none;" aria-hidden="true"></textarea>
+                                
                             </div>
                             <!-- .panel -->
                             <!-- ### EXCERPT ### -->
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Excerpt 
+                                    <h3 class="panel-title">Quy Trình Dịch Vụ</h3>
+                                    <div class="panel-actions">
+                                        <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="panel-body__productive">
+                                        <div class="form-group">
+                                            <input required type="file" class="form-control" name="images[]" placeholder="address" multiple>
+                                        </div>
+                                        <textarea class="form-control" name="productive_excerpt[]"></textarea>
+                                    </div>
+                                    <br>
+                                    <a class="btn btn-sm btn-primary pull-right add-productive">Thêm quy trình</a>
+                                </div>
+                            </div>
+                            <!-- ### EXCERPT ### -->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">TẠI SAO NÊN CHỌN SVAN CLINIC & SPA
                                         <small>Small description of this post</small>
                                     </h3>
                                     <div class="panel-actions">
@@ -327,20 +178,20 @@
                     <!-- ### IMAGE ### -->
                     <div class="panel panel-bordered panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-image"></i> Post Image</h3>
+                            <h3 class="panel-title"><i class="icon wb-image"></i> Hình Ảnh trước và sau</h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
                         </div>
                         <div class="panel-body">
-                                                        <input type="file" name="image">
+                            <input required type="file" class="form-control" name="images[]" placeholder="address" multiple>
                         </div>
                     </div>
 
                     <!-- ### SEO CONTENT ### -->
                     <div class="panel panel-bordered panel-info">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="icon wb-search"></i> SEO Content</h3>
+                            <h3 class="panel-title"><i class="icon wb-search"></i> Nguyên Lý và Công nghệ   </h3>
                             <div class="panel-actions">
                                 <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
                             </div>
@@ -348,18 +199,72 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Meta Description</label>
-                                                                <textarea class="form-control" name="meta_description"></textarea>
+                                <textarea class="form-control" name="result_description"></textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="name">Meta Keywords</label>
-                                                                <textarea class="form-control" name="meta_keywords"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="name">Seo Title</label>
-                                                                <input type="text" class="form-control" name="seo_title" placeholder="SEO Title" value="">
+                            <div class="panel-body">
+                                <input required type="file" class="form-control" name="result_images" placeholder="address">
                             </div>
                         </div>
                     </div>
+                    
+                     <!-- ### SEO CONTENT ### -->
+                    <div class="panel panel-bordered panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-search"></i> TẠI SAO NÊN CHỌN SVAN CLINIC & SPA   </h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="name">Meta Description</label>
+                                <textarea class="form-control" name="result_description"></textarea>
+                            </div>
+                            <div class="panel-body">
+                                <input required type="file" class="form-control" name="result_images" placeholder="address">
+                            </div>
+                        </div>
+                    </div> 
+                      <!-- ### SEO CONTENT ### -->
+                    <div class="panel panel-bordered panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-search"></i> Phản hồi từ khách hàng   </h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="name">Tên của khách hàng</label>
+                                    <textarea class="form-control" name="name_feedback[]"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Nội dung</label>
+                                    <textarea class="form-control" name="description_feedback[]"></textarea>
+                                </div>
+                                <input required type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            </div>
+                        </div>
+                    </div>
+                     <!-- ### SEO CONTENT ### -->
+                     <div class="panel panel-bordered panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-search"></i> LƯU Ý  </h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="name">Meta Description</label>
+                                <textarea class="form-control" name="result_description"></textarea>
+                            </div>
+                            <div class="panel-body">
+                                <input required type="file" class="form-control" name="result_images" placeholder="address">
+                            </div>
+                        </div>
+                    </div>                      
                 </div>
                 </form>
             </div>

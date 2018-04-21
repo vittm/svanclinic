@@ -183,6 +183,9 @@
           });
       });
   });
+  $('.add-productive').click(function(){
+      $('.panel-body__productive').append('<div class="form-group"> <input required type="file" class="form-control" name="images[]" placeholder="address" multiple> </div><textarea class="form-control" name="productive_excerpt[]"></textarea>');
+  });
   function getId(element) {
     return element.getAttribute('data-ps-id');
   }
