@@ -94,15 +94,16 @@
                                     </div>
                                     <div class="form-group">
                                         @if(isset($post->header_images))
-                                            <img src="{{ filter_var($post->header_images, FILTER_VALIDATE_URL) ? $post->header_images : Voyager::image( $post->header_images ) }}" style="width:100%" />
+                                            <img class="col-md-4" src="{{ filter_var($post->header_images, FILTER_VALIDATE_URL) ? $post->header_images : Voyager::image( $post->header_images ) }}" />
+                                            <input type="hidden" class="form-control" name="header_images_hidden" value="@if(isset($post->header_images)) {{$post->header_images}} @endif" placeholder="address">
                                         @endif
                                         <input type="file" class="form-control" name="header_images" placeholder="address">
                                     </div>
                                 </div>
                             </div>
                     
-                            <div class="panel">
-                                <div class="panel-heading">
+                            <div class="panel panel panel-bordered panel-warning">
+                                <div class="panel-heading ">
                                     <h3 class="panel-title">HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
                                     </h3>
                                     <div class="panel-actions">
@@ -113,10 +114,11 @@
                                     <div class="form-group">
                                     @if(!is_null($dataTypeContent->getKey()))
                                         @if(isset($post->result_images))
-                                            <img src="{{ filter_var($post->result_images, FILTER_VALIDATE_URL) ? $post->result_images : Voyager::image( $post->result_images ) }}" style="width:100%" />
+                                            <img  class="col-md-4" src="{{ filter_var($post->result_images, FILTER_VALIDATE_URL) ? $post->result_images : Voyager::image( $post->result_images ) }}" />
+                                            <input type="hidden" class="form-control" name="result_images_hidden" value="@if(isset($post->result_images)) {{$post->result_images}} @endif" >
                                         @endif
                                     @endif
-                                        <input type="file" class="form-control" name="result_images" placeholder="address">
+                                        <input type="file" class="form-control" value="@if(!is_null($dataTypeContent->getKey())){{ $post->result_images }}@endif"name="result_images" placeholder="address">
                                     </div>
                                     <textarea class="form-control"  name="result_excerpt">@if(!is_null($dataTypeContent->getKey())){{$post->result_content}}@endif</textarea>
                                 </div>
@@ -124,7 +126,7 @@
                             </div>
                             <!-- .panel -->
                             <!-- ### EXCERPT ### -->
-                            <div class="panel">
+                            <div class="panel panel-bordered panel-primary">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Quy Trình Dịch Vụ</h3>
                                     <div class="panel-actions">
@@ -132,28 +134,32 @@
                                     </div>
                                 </div>
                                 <div class="panel-body">
+                                    <div class="panel-body__productive">
                                     @if(!is_null($dataTypeContent->getKey()))
                                         <?php $productive = json_decode($post->productive,JSON_BIGINT_AS_STRING); ?>
-                                        
-                                        @foreach ($productive as $key => $value)
-                                            
-                                            <div class="panel-body__productive">
-                                                <div class="form-group">
-                                                <img src="{{ filter_var($value['images'], FILTER_VALIDATE_URL) ? $value['images'] : Voyager::image( $value['images'] ) }}" style="width:100%" />    
+                                        @if(count($productive) > 0)
+                                            @foreach ($productive as $key => $value)
+                                                <div class="panel-body__productive__group">
+                                                    <i class="voyager-x close-productive" style="font-size:25px;"></i>
+                                                    <div class="form-group">
+                                                    <input type="hidden" class="form-control" name="productive_images_hidden[]" value={{$value['name']}} placeholder="address">
+                                                    <img  class="col-md-4" src="{{ filter_var($value['name'], FILTER_VALIDATE_URL) ? $value['name'] : Voyager::image( $value['name'] ) }}" />
+                                                    </div>
+                                                    <textarea class="form-control" name="productive_excerpt[]">{{ $value['description'] }}</textarea>
+                                                    <input type="hidden" class="form-control" name="productive_excerpt_hidden[]" value={{ $value['description'] }} placeholder="address">
+                                                    <input type="file" class="form-control" name="productive_images[]" placeholder="address">
+                                                <br>
                                                 </div>
-                                                <textarea class="form-control" name="productive_excerpt[]">{{ $value['excerpt'] }}</textarea>
-                                            </div>
-                                            <br>
-                                        @endforeach
+                                            @endforeach
+                                        @endif
                                     @else
-                                        <div class="panel-body__productive">
-                                            <div class="form-group">
-                                                <input type="file" class="form-control" name="productive_images[]" placeholder="address">
-                                            </div>
-                                            <textarea class="form-control" name="productive_excerpt[]"></textarea>
+                                        <div class="form-group">
+                                            <input type="file" class="form-control" name="productive_images[]" placeholder="address">
                                         </div>
+                                        <textarea class="form-control" name="productive_excerpt[]"></textarea>
                                         <br>
                                     @endif
+                                    </div>
                                     <a class="btn btn-sm btn-primary pull-right add-productive">Thêm quy trình</a>
                                 </div>
                             </div>
@@ -192,9 +198,14 @@
                         </div>
                         <div class="panel-body">
                             @if(!is_null($dataTypeContent->getKey()))
-                                    <!--  -->
-                            @else
-                                <input type="file" class="form-control" name="[]" placeholder="address" multiple>
+                                <?php $before = json_decode($post->images_before_after,JSON_BIGINT_AS_STRING); ?>
+                                @if(count($before) > 0)
+                                    @foreach($before as $key => $value)
+                                        <img  class="col-md-4"  src="{{ filter_var($value['data'], FILTER_VALIDATE_URL) ? $value['data'] : Voyager::image( $value['data'] ) }}" />
+                                        <input type="hidden" class="form-control" name="services_images_hidden" value='{{ $post->images_before_after }}' placeholder="address" multiple>
+                                    @endforeach
+                                @endif
+                                <input type="file" class="form-control" name="services_images[]" placeholder="address" multiple>
                             @endif
                            
                         </div>
@@ -209,14 +220,15 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="form-group">
+                            <div class="form-group">    
                                 <label for="name">Mô tả</label>
                                 <textarea class="form-control" name="technical_description">@if(!is_null($dataTypeContent->getKey())){{$post->technical_description}}@endif</textarea>
                             </div>
                             <div class="panel-body">
                                     @if(!is_null($dataTypeContent->getKey()))
                                         @if(isset($post->technical_images))
-                                            <img src="{{ filter_var($post->technical_images, FILTER_VALIDATE_URL) ? $post->technical_images : Voyager::image( $post->technical_images ) }}" style="width:100%" />
+                                        <img  class="col-md-4"  src="{{ filter_var($post->technical_images, FILTER_VALIDATE_URL) ? $post->technical_images : Voyager::image( $post->technical_images ) }}" />
+                                        <input type="hidden" class="form-control" name="technical_images_hidden" value="@if(isset($post->technical_images)) {{$post->technical_images}} @endif" placeholder="address">
                                         @endif
                                     @endif
                                 <input type="file" class="form-control" name="technical_images" placeholder="">
@@ -240,7 +252,8 @@
                             <div class="panel-body">
                                     @if(!is_null($dataTypeContent->getKey()))
                                         @if(isset($post->why_images))
-                                            <img src="{{ filter_var($post->why_images, FILTER_VALIDATE_URL) ? $post->why_images : Voyager::image( $post->why_images ) }}" style="width:100%" />
+                                            <img  class="col-md-4" src="{{ filter_var($post->why_images, FILTER_VALIDATE_URL) ? $post->why_images : Voyager::image( $post->why_images ) }}" />
+                                            <input type="hidden" class="form-control" name="why_images_hidden" value="@if(isset($post->why_images)) {{$post->why_images}} @endif" placeholder="address">
                                         @endif
                                     @endif
                                 <input type="file" class="form-control" name="why_images" placeholder="">
@@ -256,28 +269,52 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <label for="name">Tên của khách hàng</label>
-                                    <textarea class="form-control" name="name_feedback[]"></textarea>
+                       
+                        @if(!is_null($dataTypeContent->getKey()) )
+                         <?php $feedback = json_decode($post->feedback,JSON_BIGINT_AS_STRING); ?>
+                                @if(count($feedback) >0)   
+                                    @foreach ($feedback as $key => $value)
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label for="name">Tên của khách hàng</label>
+                                                <textarea class="form-control" name="name_feedback[]">{{$value['name']}}</textarea>
+                                                <input type="hidden" class="form-control" name="name_feedback_hidden[]" value='{{$value['name']}}' placeholder="address">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="name">Nội dung</label>
+                                                <textarea class="form-control" name="description_feedback[]">{{$value['description']}}</textarea>
+                                                <input type="hidden" class="form-control" name="description_feedback_hidden[]" value='{{$value['description']}}' placeholder="address">
+                                            </div>
+                                            <img  class="col-md-4" src="{{ filter_var($value['images'], FILTER_VALIDATE_URL) ? $value['images'] : Voyager::image( $value['images'] ) }}" />
+                                            <input type="hidden" class="form-control" name="images_feedback_hidden[]" value='{{$value['images']}}' placeholder="address">
+                                            <input type="file" class="form-control" name="images_feedback[]" value={{$value['images']}} placeholder="address">
+                                        </div>
+                                    @endforeach
+                            @else
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="name">Tên của khách hàng</label>
+                                        <textarea class="form-control" name="name_feedback[]"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Nội dung</label>
+                                        <textarea class="form-control" name="description_feedback[]"></textarea>
+                                    </div>
+                                    <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
                                 </div>
-                                <div class="form-group">
-                                    <label for="name">Nội dung</label>
-                                    <textarea class="form-control" name="description_feedback[]"></textarea>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="name">Tên của khách hàng</label>
+                                        <textarea class="form-control" name="name_feedback[]"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="name">Nội dung</label>
+                                        <textarea class="form-control" name="description_feedback[]"></textarea>
+                                    </div>
+                                    <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
                                 </div>
-                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
-                            </div>
-                            <div class="panel-body">
-                                <div class="form-group">
-                                    <label for="name">Tên của khách hàng</label>
-                                    <textarea class="form-control" name="name_feedback[]"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Nội dung</label>
-                                    <textarea class="form-control" name="description_feedback[]"></textarea>
-                                </div>
-                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
-                            </div>
+                            @endif    
+                        @endif
                         </div>
                     </div>
                      <!-- ### SEO CONTENT ### -->
@@ -296,7 +333,7 @@
                         </div>
                     </div>                              
                 </div>
-                <button type="submit" class="btn btn-primary pull-right"><i class="icon wb-plus-circle"></i> @if(!is_null($dataTypeContent->getKey())) Cap Nhap @esle Tao bai moi @endif</button>
+                <button type="submit" class="btn btn-primary pull-right"><i class="icon wb-plus-circle"></i> @if(!is_null($dataTypeContent->getKey())) Cap Nhap @else Tao bai moi @endif</button>
                 </form>
             </div>
 @stop
