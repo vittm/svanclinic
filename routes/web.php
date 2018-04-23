@@ -38,3 +38,5 @@ Route::get('/get-customer-{name}-{email}-{phone}-{utm_source}-{utm_medium}-{utm_
 Route::get('/customers/search', 'WidgetController@search');
 
 Route::post('/services/updating', 'ServicesController@update');
+Route::post('/services/editing-{id}', 'ServicesController@editing');
+

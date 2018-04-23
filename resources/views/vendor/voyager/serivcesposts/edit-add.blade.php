@@ -60,8 +60,14 @@
 
 @section('content')
             <div class="page-content container-fluid">
-                <form class="form-edit-add" role="form" action="{{ URL::to('/services/updating') }}" method="POST" enctype="multipart/form-data">
+                <form class="form-edit-add" role="form" action="@if(!is_null($dataTypeContent->getKey())){{ URL::to('/services/editing-')}}{{$dataTypeContent->getKey()}}@else{{ URL::to('/services/updating') }}@endif" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <?php
+                    if(!is_null($dataTypeContent->getKey())) {
+                        $id = $dataTypeContent->getKey();
+                        $post = DB::table('serivcesposts')->where('id','=',$dataTypeContent->getKey())->first();
+                    }
+                ?>
                     <div class="col-md-6">
                         <!-- ### TITLE ### -->
                         <div class="panel">
@@ -76,23 +82,26 @@
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label for="name">Tiêu đề</label>
-                                        <input type="text" class="form-control" id="header-title" name="header_title" placeholder="Title" value="">
+                                        <input type="text" class="form-control" id="header-title" name="header_title" placeholder="Title" value="@if(!is_null($dataTypeContent->getKey())){{$post->header_title}}@endif">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">URL slug</label>
-                                        <input type="text" class="form-control" id="header-slug" name="header_slug" placeholder="slug"  value="">
+                                        <input type="text" class="form-control" id="header-slug" name="header_slug" placeholder="slug"  value="@if(!is_null($dataTypeContent->getKey())){{$post->header_slug}}@endif">
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Nội dung header</label>
-                                        <textarea class="form-control" name="header_description" data-gramm="true" data-txt_gramm_id="f4f162e2-4765-9f5d-26b1-b73e1ac09da2" data-gramm_id="f4f162e2-4765-9f5d-26b1-b73e1ac09da2" spellcheck="false" data-gramm_editor="true" style="z-index: auto; position: relative; line-height: 20px; font-size: 14px; transition: none; background: transparent !important;"></textarea>
+                                        <textarea class="form-control" name="header_description" >@if(!is_null($dataTypeContent->getKey())){{$post->header_content}}@endif</textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input required type="file" class="form-control" name="header_images" placeholder="address" multiple>
+                                        @if(isset($post->header_images))
+                                            <img src="{{ filter_var($post->header_images, FILTER_VALIDATE_URL) ? $post->header_images : Voyager::image( $post->header_images ) }}" style="width:100%" />
+                                        @endif
+                                        <input type="file" class="form-control" name="header_images" placeholder="address">
                                     </div>
                                 </div>
                             </div>
-                    <!-- ### CONTENT ### -->
-                    <div class="panel">
+                    
+                            <div class="panel">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
                                     </h3>
@@ -102,9 +111,14 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input required type="file" class="form-control" name="result_images" placeholder="address" multiple>
+                                    @if(!is_null($dataTypeContent->getKey()))
+                                        @if(isset($post->result_images))
+                                            <img src="{{ filter_var($post->result_images, FILTER_VALIDATE_URL) ? $post->result_images : Voyager::image( $post->result_images ) }}" style="width:100%" />
+                                        @endif
+                                    @endif
+                                        <input type="file" class="form-control" name="result_images" placeholder="address">
                                     </div>
-                                    <textarea class="form-control"  name="result_excerpt"></textarea>
+                                    <textarea class="form-control"  name="result_excerpt">@if(!is_null($dataTypeContent->getKey())){{$post->result_content}}@endif</textarea>
                                 </div>
                                 
                             </div>
@@ -118,27 +132,29 @@
                                     </div>
                                 </div>
                                 <div class="panel-body">
-                                    <div class="panel-body__productive">
-                                        <div class="form-group">
-                                            <input required type="file" class="form-control" name="productive_images[]" placeholder="address" multiple>
+                                    @if(!is_null($dataTypeContent->getKey()))
+                                        <?php $productive = json_decode($post->productive,JSON_BIGINT_AS_STRING); ?>
+                                        
+                                        @foreach ($productive as $key => $value)
+                                            
+                                            <div class="panel-body__productive">
+                                                <div class="form-group">
+                                                <img src="{{ filter_var($value['images'], FILTER_VALIDATE_URL) ? $value['images'] : Voyager::image( $value['images'] ) }}" style="width:100%" />    
+                                                </div>
+                                                <textarea class="form-control" name="productive_excerpt[]">{{ $value['excerpt'] }}</textarea>
+                                            </div>
+                                            <br>
+                                        @endforeach
+                                    @else
+                                        <div class="panel-body__productive">
+                                            <div class="form-group">
+                                                <input type="file" class="form-control" name="productive_images[]" placeholder="address">
+                                            </div>
+                                            <textarea class="form-control" name="productive_excerpt[]"></textarea>
                                         </div>
-                                        <textarea class="form-control" name="productive_excerpt[]"></textarea>
-                                    </div>
-                                    <br>
+                                        <br>
+                                    @endif
                                     <a class="btn btn-sm btn-primary pull-right add-productive">Thêm quy trình</a>
-                                </div>
-                            </div>
-                            <!-- ### EXCERPT ### -->
-                            <div class="panel">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">TẠI SAO NÊN CHỌN SVAN CLINIC & SPA
-                                    </h3>
-                                    <div class="panel-actions">
-                                        <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
-                                    </div>
-                                </div>
-                                <div class="panel-body">
-                                    <textarea class="form-control" name="why"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +175,7 @@
                                        $category = DB::table('categories')->get();
                                     ?>
                                     @foreach( $category as $key => $value)
-                                        <option value="{{ $value->id }}">{{ $value->name }}</option>
+                                        <option @if(!is_null($dataTypeContent->getKey()) && $value->id == $post->category_id ) selected="selected" @endif value="{{ $value->id }}">{{ $value->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -175,7 +191,12 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <input required type="file" class="form-control" name="services_images[]" placeholder="address" multiple>
+                            @if(!is_null($dataTypeContent->getKey()))
+                                    <!--  -->
+                            @else
+                                <input type="file" class="form-control" name="[]" placeholder="address" multiple>
+                            @endif
+                           
                         </div>
                     </div>
 
@@ -190,10 +211,15 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="technical_description"></textarea>
+                                <textarea class="form-control" name="technical_description">@if(!is_null($dataTypeContent->getKey())){{$post->technical_description}}@endif</textarea>
                             </div>
                             <div class="panel-body">
-                                <input required type="file" class="form-control" name="technical_images" placeholder="">
+                                    @if(!is_null($dataTypeContent->getKey()))
+                                        @if(isset($post->technical_images))
+                                            <img src="{{ filter_var($post->technical_images, FILTER_VALIDATE_URL) ? $post->technical_images : Voyager::image( $post->technical_images ) }}" style="width:100%" />
+                                        @endif
+                                    @endif
+                                <input type="file" class="form-control" name="technical_images" placeholder="">
                             </div>
                         </div>
                     </div>
@@ -209,10 +235,15 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="why_description"></textarea>
+                                <textarea class="form-control" name="why_description">@if(!is_null($dataTypeContent->getKey())){{$post->why_description}}@endif</textarea>
                             </div>
                             <div class="panel-body">
-                                <input required type="file" class="form-control" name="why_images" placeholder="">
+                                    @if(!is_null($dataTypeContent->getKey()))
+                                        @if(isset($post->why_images))
+                                            <img src="{{ filter_var($post->why_images, FILTER_VALIDATE_URL) ? $post->why_images : Voyager::image( $post->why_images ) }}" style="width:100%" />
+                                        @endif
+                                    @endif
+                                <input type="file" class="form-control" name="why_images" placeholder="">
                             </div>
                         </div>
                     </div> 
@@ -234,7 +265,7 @@
                                     <label for="name">Nội dung</label>
                                     <textarea class="form-control" name="description_feedback[]"></textarea>
                                 </div>
-                                <input required type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
                             </div>
                             <div class="panel-body">
                                 <div class="form-group">
@@ -245,7 +276,7 @@
                                     <label for="name">Nội dung</label>
                                     <textarea class="form-control" name="description_feedback[]"></textarea>
                                 </div>
-                                <input required type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
                             </div>
                         </div>
                     </div>
@@ -260,12 +291,12 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="noted_description"></textarea>
+                                <textarea class="form-control" name="noted_description">@if(!is_null($dataTypeContent->getKey())){{$post->noted}}@endif</textarea>
                             </div>
                         </div>
                     </div>                              
                 </div>
-                <button type="submit" class="btn btn-primary pull-right"><i class="icon wb-plus-circle"></i> Create New Post</button>
+                <button type="submit" class="btn btn-primary pull-right"><i class="icon wb-plus-circle"></i> @if(!is_null($dataTypeContent->getKey())) Cap Nhap @esle Tao bai moi @endif</button>
                 </form>
             </div>
 @stop
