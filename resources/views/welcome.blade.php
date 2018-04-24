@@ -40,7 +40,7 @@
         <div class="right-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/02.png" alt=""></div>
     </div>   
         <div class="container">
-            <div class="title
+            <div class="title">
                 <h2>
                     <i>TẠI SAO N&#202;N CHỌN SVAN CLINIC &amp; SPA 
                             <span class="line-left"></span>
@@ -82,12 +82,12 @@
                 @foreach($servicesspecialists as $key => $value)
                         <div class="item">
                             <div class="service-wrapper">
-                                <a href="{{ 'posts/'.$value->slug }}">
+                                <a href="{{'services/detail/'.$value->header_slug }}">
                                     <div class="service-img" style="background-image: url('{{Voyager::image($value->images)}}')"></div>
                                 </a>
                                 <div class="service-content">
                                     <div class="service-name">
-                                       <h3><a href="{{ 'posts/'.$value->slug }}">{{ $value->title }}</a></h3>
+                                       <h3><a href="{{ 'services/detail/'.$value->header_slug}}">{{ $value->title }}</a></h3>
                                     </div>
                                     <div class="service-text">
                                         <p>{{ $value->content }}</p>

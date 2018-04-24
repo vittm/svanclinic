@@ -1,6 +1,9 @@
 
+
+//Color 
+$C1: #ffffff;
 // Body
-$body-bg: #f5f8fa;
+$body-bg: $C1;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -38,5 +41,3 @@ $input-color-placeholder: lighten($text-color, 30%);
 $panel-default-heading-bg: #fff;
 
 
-//Color 
-$C1: #ffffff;

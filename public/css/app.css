@@ -134,7 +134,7 @@ h3:hover {
 }
 
 .container {
-  width: 1170px;
+  width: 1300px;
 }
 
 .fb-like,
@@ -749,6 +749,14 @@ body.modal-open {
   background: #2a8a55;
   border-top-right-radius: 22px;
   border-bottom-right-radius: 22px;
+}
+
+.note-btn-wrapper .btn-wrapper .btn-price span:before {
+  background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-money.png");
+}
+
+.note-btn-wrapper .btn-wrapper .btn-form span:before {
+  background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png");
 }
 
 #promotion-modal {
@@ -2293,7 +2301,7 @@ body.modal-open {
   margin: 20px 15px 10px 15px;
   color: #2a8a55;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .wrapper .intro-video .intro-video-wrapper .video-title a {
@@ -6159,11 +6167,11 @@ ul.footer-menu > li::after {
 }
 
 body .pl0 {
-  padding-left: 0;
+  padding-left: 0 !important;
 }
 
 body .pr0 {
-  padding-right: 0;
+  padding-right: 0 !important;
 }
 
 .pd15 {
@@ -7909,7 +7917,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   color: #636b6f;
-  background-color: #f5f8fa;
+  background-color: #ffffff;
 }
 
 input,
@@ -7958,7 +7966,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.6;
-  background-color: #f5f8fa;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -9557,7 +9565,7 @@ th {
 }
 
 .table .table {
-  background-color: #f5f8fa;
+  background-color: #ffffff;
 }
 
 .table-condensed > thead > tr > th,
@@ -11648,7 +11656,7 @@ tbody.collapse.in {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #f5f8fa;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -11749,7 +11757,7 @@ tbody.collapse.in {
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #f5f8fa;
+    border-bottom-color: #ffffff;
   }
 }
 
@@ -12192,7 +12200,7 @@ tbody.collapse.in {
 
 .navbar-default {
   background-color: #fff;
-  border-color: #d3e0e9;
+  border-color: #e6e5e5;
 }
 
 .navbar-default .navbar-brand {
@@ -12248,7 +12256,7 @@ tbody.collapse.in {
 
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #d3e0e9;
+  border-color: #e6e5e5;
 }
 
 .navbar-default .navbar-nav > .open > a,
@@ -12817,7 +12825,7 @@ a.badge:focus {
   padding: 4px;
   margin-bottom: 22px;
   line-height: 1.6;
-  background-color: #f5f8fa;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -13099,7 +13107,7 @@ a.thumbnail.active {
   padding: 10px 15px;
   margin-bottom: -1px;
   background-color: #fff;
-  border: 1px solid #d3e0e9;
+  border: 1px solid #e6e5e5;
 }
 
 .list-group-item:first-child {
@@ -13382,7 +13390,7 @@ button.list-group-item-danger.active:focus {
 .panel-footer {
   padding: 10px 15px;
   background-color: #f5f5f5;
-  border-top: 1px solid #d3e0e9;
+  border-top: 1px solid #e6e5e5;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
@@ -13603,7 +13611,7 @@ button.list-group-item-danger.active:focus {
 
 .panel-group .panel-heading + .panel-collapse > .panel-body,
 .panel-group .panel-heading + .panel-collapse > .list-group {
-  border-top: 1px solid #d3e0e9;
+  border-top: 1px solid #e6e5e5;
 }
 
 .panel-group .panel-footer {
@@ -13611,21 +13619,21 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-group .panel-footer + .panel-collapse .panel-body {
-  border-bottom: 1px solid #d3e0e9;
+  border-bottom: 1px solid #e6e5e5;
 }
 
 .panel-default {
-  border-color: #d3e0e9;
+  border-color: #e6e5e5;
 }
 
 .panel-default > .panel-heading {
   color: #333333;
   background-color: #fff;
-  border-color: #d3e0e9;
+  border-color: #e6e5e5;
 }
 
 .panel-default > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #d3e0e9;
+  border-top-color: #e6e5e5;
 }
 
 .panel-default > .panel-heading .badge {
@@ -13634,7 +13642,7 @@ button.list-group-item-danger.active:focus {
 }
 
 .panel-default > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #d3e0e9;
+  border-bottom-color: #e6e5e5;
 }
 
 .panel-primary {

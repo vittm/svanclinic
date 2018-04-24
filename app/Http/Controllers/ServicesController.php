@@ -110,12 +110,12 @@ class ServicesController extends Controller
             if($request->productive_excerpt){
                 foreach ($request->productive_excerpt as $keys => $values) {
                     for ($i=0; $i < $db_productive ; $i++) { 
-                        $db_feedback[$keys]['description'] = $values;
+                        $db_productive[$keys]['description'] = $values;
                         break;
                     }
                 }
             }
-            $array_productive_change = json_encode($db_feedback);
+            $array_productive_change = json_encode($db_productive);
         }
         foreach ($request->productive_excerpt as $key => $value) {
             $data1 = array(
@@ -184,5 +184,11 @@ class ServicesController extends Controller
         DB::table('serivcesposts')->where('id', $id)->update($data);
         
         return redirect('admin/serivcesposts');
+    }
+    public function detail($title)
+    {
+        $find= DB::table('serivcesposts')->where('header_slug','=',$title)->first();
+        $randomPost = DB::table('serivcesposts')->where('header_slug','!=', $find->header_slug)->inRandomOrder()->get();
+        return view('detailService',['posts'=>$find, 'randomPost' => $randomPost]);            
     }
 }

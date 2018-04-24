@@ -2,10 +2,10 @@
     display: flex;
 }
 body .pl0{
-    padding-left: 0;
+    padding-left: 0!important;
 }
 body .pr0{
-    padding-right: 0;
+    padding-right: 0!important;
 }
 .pd15{
   padding-top: 15px;
@@ -195,4 +195,9 @@ body .pr0{
       -webkit-transform: rotate(360deg);
               transform: rotate(360deg);
     }
+  }
+  .fixed {
+    position: fixed;
+    top:0; left:0;
+    width: 100%; 
   }

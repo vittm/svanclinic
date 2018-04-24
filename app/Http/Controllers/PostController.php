@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         $find= DB::table('posts')->where('slug','=',$title)->first();
         $users= DB::table('users')->where('id','=',$find->author_id)->first();
-        $randomPost = DB::table('posts')->where('slug','!=', $find->slug)->inRandomOrder()->get();
+        $randomPost = DB::table('posts')->where('slug','!=', $find->slug)->inRandomOrder()->limit(4)->get();
         return view('posts.detail',['posts'=>$find, 'users'=> $users, 'randomPost' => $randomPost]);            
     }
     public function category($menu)
@@ -22,7 +22,7 @@ class PostController extends Controller
     }
     public function childcategory($name){
         $category = DB::table('categories')->where('slug','=',$name)->first();
-        $post= DB::table('posts')->where('category_id','=',$category->id)->get();
+        $post= DB::table('serivcesposts')->where('category_id','=',$category->id)->get();
         return view('childCategory',['news'=>$post]);
     }
     

@@ -39,4 +39,4 @@ Route::get('/customers/search', 'WidgetController@search');
 
 Route::post('/services/updating', 'ServicesController@update');
 Route::post('/services/editing-{id}', 'ServicesController@editing');
-
+Route::get('/services/detail/{title}', 'ServicesController@detail');

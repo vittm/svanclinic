@@ -24,22 +24,22 @@
                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         seo_title
                         : activate to sort column ascending" style="width: 56px;">
-                        Ngày
-                     </th>
-                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
-                        seo_title
-                        : activate to sort column ascending" style="width: 56px;">
-                        Tiêu Đề
+                        Date
                      </th>
                      <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         status
                         : activate to sort column ascending" style="width: 100px;">
-                        Họ Và Tên
+                        Name
                      </th>
                      <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         Title
                         : activate to sort column ascending" style="width: 100px;">
-                        Điện Thoại
+                        Mobile
+                     </th>
+                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
+                        seo_title
+                        : activate to sort column ascending" style="width: 56px;">
+                        Link
                      </th>
                      <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                         seo_title
@@ -74,17 +74,18 @@
                      <td class="no-sort no-click" id="bread-actions">
                         {!! $value->created_at  !!}
                      </td>
-                     <td class="no-sort no-click" id="bread-actions">
-                    <?php
-                        $post = DB::table('posts')->where('id','=',$value->title)->first();  
-                    ?>
-                    <a target="_blank" style="font-size: 14px;text-align: left;" href="{{ URL::to('/posts/'.$post->slug) }}">{{ $post->title}}</a>
-                     </td>
+                     
                      <td>
                      {{ $value-> name }}
                      </td>
                      <td>
                        {{ $value-> phone }}
+                     </td>
+                     <td class="no-sort no-click" id="bread-actions">
+                    <?php
+                        $post = DB::table('posts')->where('id','=',$value->title)->first();  
+                    ?>
+                    <a target="_blank" style="font-size: 14px;text-align: left;" href="{{ URL::to('/posts/'.$post->slug) }}">{{ $post->title}}</a>
                      </td>
                      <td>
                         {{ $value-> source}}

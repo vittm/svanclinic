@@ -11,7 +11,7 @@
   <div class="col-lg-8">
 
     <!-- Title -->
-    <h1 class="mt-4">{{ $posts->title }}</h1>
+    <h1 class="mt-4" style="font-size: 25px">{{ $posts->title }}</h1>
     <p class="title-posts hidden">{{ $posts->id }}</p>
     <!-- Author -->
     <div class="author" ><p><i class="fa fa-calendar" style="position: relative; top: -1px;"></i> 
@@ -29,7 +29,7 @@
 
     <!-- Side Widget -->
     <div class="card my-4">
-      <h2 class="card-header ">Recent News</h2>
+      <h2 class="card-header" style="font-size:23px;padding-left:0;">Tin Mới Nhất</h2>
       
       @foreach($randomPost as $key => $value)
         <a href="{{ URL::to('/posts/'.$value->slug) }}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
@@ -58,3 +58,17 @@
 <!-- /.container -->
 
 @endsection
+
+@section('javascript')
+    <script>
+        var stickyOffset = $('.sticky').offset().top;
+
+        $(window).scroll(function(){
+        var sticky = $('.sticky'),
+            scroll = $(window).scrollTop();
+            
+        if (scroll >= stickyOffset) sticky.addClass('fixed');
+        else sticky.removeClass('fixed');
+        });
+    </script>
+@stop

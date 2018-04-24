@@ -38,6 +38,15 @@ class WidgetController extends Controller
             $customers = DB::table('customers')->where('created_at','like', "%".$request->search."%")->get();
             if(count($customers) == '0'){
                 $customers = DB::table('customers')->where('name','like', "%".$request->search."%")->get();
+                if(count($customers) == '0'){
+                    $customers = DB::table('customers')->where('source','like', "%".$request->search."%")->get();
+                    if(count($customers) == '0'){
+                        $customers = DB::table('customers')->where('medium','like', "%".$request->search."%")->get();
+                        if(count($customers) == '0'){
+                            $customers = DB::table('customers')->where('campaign','like', "%".$request->search."%")->get();
+                        }
+                    }
+                }
             }
         }
         return Voyager::view('voyager::customers.index', ['customers'=>$customers,'check' => $check]);     
