@@ -55,8 +55,7 @@ class ServicesController extends Controller
                 );
                 $array_productive[] = $data1;
             }
-            
-            foreach ($request->images_feedback as $key => $value) {
+            foreach ($request->name_feedback as $key => $value) {
                 $data2 = array(
                     "name" => $request->name_feedback[$key],
                     "description" => $request->description_feedback[$key],
@@ -88,6 +87,36 @@ class ServicesController extends Controller
     }
     public function editing(Request $request,$id)
     {
+        $db = DB::table('serivcesposts')->where('id','=',$id)->first();
+        $db_productive = json_decode($db->productive,JSON_BIGINT_AS_STRING);
+        if(!$db_productive){
+            foreach ($request->productive_excerpt as $key => $value) {
+                $data1 = array(
+                    'name' => $this->updateImages('productive_images',$request,'servicesposts',$request->productive_images[$key],'images'),
+                    'description' => $request->productive_excerpt[$key]
+                );
+                $array_productive[] = $data1;
+            }
+        }
+        if($db_productive && count($db_productive) > 0){
+            if($request->productive_images){
+                foreach ($request->productive_images as $keys => $values) {
+                    for ($i=0; $i < $db_productive ; $i++) { 
+                        $db_productive[$keys]['name'] = $this->updateImages('productive_images',$request,'servicesposts', $values,'images') ; 
+                        break;       
+                    }
+                }
+            }
+            if($request->productive_excerpt){
+                foreach ($request->productive_excerpt as $keys => $values) {
+                    for ($i=0; $i < $db_productive ; $i++) { 
+                        $db_feedback[$keys]['description'] = $values;
+                        break;
+                    }
+                }
+            }
+            $array_productive_change = json_encode($db_feedback);
+        }
         foreach ($request->productive_excerpt as $key => $value) {
             $data1 = array(
                 'name' => ($request->hasFile('productive_images') ? $this->updateImages('productive_images',$request,'servicesposts',$request->productive_images[$key],'images') : $request->productive_images_hidden[$key]),
@@ -95,21 +124,45 @@ class ServicesController extends Controller
             );
             $array_productive[] = $data1;
         }
-
-        $db = DB::table('serivcesposts')->where('id','=',$id)->first();
         $db_feedback = json_decode($db->feedback,JSON_BIGINT_AS_STRING);
-        foreach ($request->images_feedback as $keys => $values) {
-            for ($i=0; $i < $db_feedback ; $i++) { 
-                echo dd($db_feedback[$keys]->images);
+        if($db_feedback && count($db_feedback) > 0){
+            if($request->images_feedback){
+                foreach ($request->images_feedback as $keys => $values) {
+                    for ($i=0; $i < $db_feedback ; $i++) { 
+                        $db_feedback[$keys]['images'] = $this->updateImages('images_feedback',$request,'servicesposts', $values,'images') ; 
+                        break;       
+                    }
+                }
+            }
+            if($request->name_feedback){
+                foreach ($request->name_feedback as $keys => $values) {
+                    for ($i=0; $i < $db_feedback ; $i++) { 
+                        $db_feedback[$keys]['name'] = $values;
+                        break;
+                    }
+                }
+            }
+            if($request->description_feedback){
+                foreach ($request->description_feedback as $keys => $values) {
+                    for ($i=0; $i < $db_feedback ; $i++) { 
+                        $db_feedback[$keys]['description'] = $values;
+                        break;
+                    }
+                }
+            }
+            $array_feedback_img = json_encode($db_feedback);
+        }
+        if(!$db_feedback){
+            foreach ($request->name_feedback as $key => $value) {
+                $data2 = array(
+                    "name" => $request->name_feedback[$key],
+                    "description" => $request->description_feedback[$key],
+                    "images" => $this->updateImages('images_feedback',$request,'servicesposts',$request->images_feedback[$key],'images')
+                    
+                );
+                $array_feedback[] = $data2;
             }
         }
-        
-        $data2 = array(
-            "name" => ,
-            "description" =>,
-            "images" =>
-        );
-        $array_feedback[] = $data2;
         $data= ([
             'header_title'=> $request->header_title,
             'header_slug' => $request->header_slug,
@@ -118,17 +171,18 @@ class ServicesController extends Controller
             'result_content'=> $request->result_excerpt,
             'result_images' =>($request->result_images ? $this->updateImages('result_images',$request,'servicesposts',$request->result_images,'images') : $request->result_images_hidden),
             'images_before_after' =>($request->services_images ? $this->updateImages('services_images',$request,'servicesposts',$request->services_images,'multipleImages') : $request->services_images_hidden),
-            'productive'=> json_encode($array_productive),
+            'productive'=> ($db_productive ? $array_productive_change : json_encode($array_productive)),
             'category_id'=> $request->category_id,
             'technical_description'=> $request->technical_description,
             'technical_images'=>($request->technical_images ? $this->updateImages('technical_images',$request,'servicesposts',$request->technical_images,'images') : $request->technical_images_hidden),
             'why_description'=> $request->why_description,
             'why_images'=> ($request->why_images ? $this->updateImages('why_images',$request,'servicesposts',$request->why_images,'images') : $request->why_images_hidden),
-            'feedback'=>  json_encode($array_feedback),
+            'feedback'=> ($db_feedback ? $array_feedback_img : json_encode($array_feedback)),
             'noted'=> $request->noted_description,
         ]);
         
         DB::table('serivcesposts')->where('id', $id)->update($data);
+        
         return redirect('admin/serivcesposts');
     }
 }

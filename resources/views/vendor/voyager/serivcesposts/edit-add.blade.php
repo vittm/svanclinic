@@ -137,7 +137,7 @@
                                     <div class="panel-body__productive">
                                     @if(!is_null($dataTypeContent->getKey()))
                                         <?php $productive = json_decode($post->productive,JSON_BIGINT_AS_STRING); ?>
-                                        @if(count($productive) > 0)
+                                        @if($productive && count($productive) > 0)
                                             @foreach ($productive as $key => $value)
                                                 <div class="panel-body__productive__group">
                                                     <i class="voyager-x close-productive" style="font-size:25px;"></i>
@@ -206,8 +206,10 @@
                                     @endforeach
                                 @endif
                                 <input type="file" class="form-control" name="services_images[]" placeholder="address" multiple>
+                            @else
+                                <input type="file" class="form-control" name="services_images[]" placeholder="address" multiple>
                             @endif
-                           
+                            
                         </div>
                     </div>
 
@@ -272,7 +274,7 @@
                        
                         @if(!is_null($dataTypeContent->getKey()) )
                          <?php $feedback = json_decode($post->feedback,JSON_BIGINT_AS_STRING); ?>
-                                @if(count($feedback) >0)   
+                                @if($feedback)   
                                     @foreach ($feedback as $key => $value)
                                         <div class="panel-body">
                                             <div class="form-group">
@@ -291,29 +293,52 @@
                                         </div>
                                     @endforeach
                             @else
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <label for="name">Tên của khách hàng</label>
-                                        <textarea class="form-control" name="name_feedback[]"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Nội dung</label>
-                                        <textarea class="form-control" name="description_feedback[]"></textarea>
-                                    </div>
-                                    <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="name">Tên của khách hàng</label>
+                                    <textarea class="form-control" name="name_feedback[]"></textarea>
                                 </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <label for="name">Tên của khách hàng</label>
-                                        <textarea class="form-control" name="name_feedback[]"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Nội dung</label>
-                                        <textarea class="form-control" name="description_feedback[]"></textarea>
-                                    </div>
-                                    <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                                <div class="form-group">
+                                    <label for="name">Nội dung</label>
+                                    <textarea class="form-control" name="description_feedback[]"></textarea>
                                 </div>
-                            @endif    
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="name">Tên của khách hàng</label>
+                                    <textarea class="form-control" name="name_feedback[]"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Nội dung</label>
+                                    <textarea class="form-control" name="description_feedback[]"></textarea>
+                                </div>
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            </div>   
+                            @endif
+                        @else
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="name">Tên của khách hàng</label>
+                                    <textarea class="form-control" name="name_feedback[]"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Nội dung</label>
+                                    <textarea class="form-control" name="description_feedback[]"></textarea>
+                                </div>
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="name">Tên của khách hàng</label>
+                                    <textarea class="form-control" name="name_feedback[]"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Nội dung</label>
+                                    <textarea class="form-control" name="description_feedback[]"></textarea>
+                                </div>
+                                <input type="file" class="form-control" name="images_feedback[]" placeholder="address">
+                            </div>    
                         @endif
                         </div>
                     </div>
