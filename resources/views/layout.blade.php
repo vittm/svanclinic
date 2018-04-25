@@ -253,7 +253,7 @@
         <script src="{{ URL::to('js/main.js')}}"></script>
         <script src="{{ URL::to('js/injectCSS.js')}}"></script>
         <script src="{{ URL::to('js/default.js')}}"></script>
-        <!-- <script src="/Content/layout/js/responsive.js"></script> -->
+        <script src="{{ URL::to('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 
 		<script>
 			

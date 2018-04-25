@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 15, 2018 at 11:33 PM
+-- Generation Time: Apr 25, 2018 at 04:31 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Banners`
+-- Table structure for table `banners`
 --
 
-CREATE TABLE `Banners` (
+CREATE TABLE `banners` (
   `id` int(10) UNSIGNED NOT NULL,
   `images` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -41,45 +41,65 @@ CREATE TABLE `categories` (
   `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `images` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
-INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `images`, `created_at`, `updated_at`) VALUES
-(1, NULL, 1, 'Tin Tức', 'tin-tuc', '', '2018-04-14 00:01:19', '2018-04-14 00:01:19'),
-(2, NULL, 1, 'Tin Tức Dịch Vụ', 'tin-tuc-dich-vu', 'categories/April2018/hwWLPe9NgaRvJdtR0b3S.png', '2018-04-14 00:02:02', '2018-04-15 01:52:10');
+INSERT INTO `categories` (`id`, `parent_id`, `order`, `name`, `slug`, `images`, `created_at`, `updated_at`, `content`) VALUES
+(1, NULL, 1, 'Tin Tức', 'tin-tuc', '', '2018-04-14 00:01:19', '2018-04-14 00:01:19', NULL),
+(2, 1, 1, 'Tin Tức Dịch Vụ', 'tin-tuc-dich-vu', 'categories/April2018/FAerCjg3Te88mKzx0YEE.jpg', '2018-04-14 00:02:02', '2018-04-15 20:11:56', NULL),
+(3, NULL, 1, 'Dịch Vụ', 'dich-vu', 'categories/April2018/i2TX5Dn24PV47JpfBk58.jpg', '2018-04-15 20:33:54', '2018-04-15 20:33:54', NULL),
+(6, 3, 1, 'GIẢM CÂN & GIẢM BÉO', 'giam-can-and-giam-beo', 'categories/April2018/HuH8ZUAzuXKeAWEzvSf1.jpg', '2018-04-15 20:43:05', '2018-04-17 16:13:04', '<ul>\r\n<li>abc</li>\r\n<li>cbd</li>\r\n<li>abc</li>\r\n</ul>'),
+(7, 6, 1, 'Giảm béo công nghệ Contri UltraShape', 'giam-beo-cong-nghe-contri-ultrashape', 'categories/April2018/ZOz2g9kOGgmCiaXSo5pI.jpg', '2018-04-16 23:40:02', '2018-04-17 04:50:54', '<ul>\r\n<li>test nhiều category child</li>\r\n</ul>'),
+(8, NULL, 1, 'Giới Thiệu', 'gioi-thieu', 'categories/April2018/ZGqqtVsmxBqdZqICnLDs.png', '2018-04-16 23:58:10', '2018-04-16 23:58:10', NULL),
+(10, 3, 1, 'TRỊ LIỆU CÔNG NGHỆ CAO', 'tri-lieu-cong-nghe-cao', 'categories/April2018/VezrX3vJmCMxojujns27.jpg', '2018-04-17 00:50:22', '2018-04-17 00:51:47', '<ul>\r\n<li style=\"box-sizing: border-box;\"><a style=\"box-sizing: border-box; background-color: transparent; color: #828c8b; text-decoration-line: none; font-size: 16.3539px;\" href=\"http://www.svanclinic.vn/dich-vu/tri-lieu-cong-nghe-cao/nang-co-v-line-new-ultherapy\">N&acirc;ng cơ V-Line New Ultherapy</a></li>\r\n</ul>'),
+(11, 1, 1, 'Kiến Thức Làm Đẹp', 'kien-thuc-lam-dep', 'categories/April2018/BtoQqEpokgOocM9TjyGK.jpg', '2018-04-17 20:55:45', '2018-04-17 20:55:45', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Customers`
+-- Table structure for table `customers`
 --
 
-CREATE TABLE `Customers` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `email` text COLLATE utf8_unicode_ci,
+CREATE TABLE `customers` (
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL,
+  `title` text COLLATE utf8_unicode_ci,
   `phone` text COLLATE utf8_unicode_ci,
-  `content` text COLLATE utf8_unicode_ci,
+  `types` text COLLATE utf8_unicode_ci,
   `name` text COLLATE utf8_unicode_ci,
   `source` text COLLATE utf8_unicode_ci,
   `medium` text COLLATE utf8_unicode_ci,
   `campaign` text COLLATE utf8_unicode_ci,
   `employer` text COLLATE utf8_unicode_ci,
-  `status` text COLLATE utf8_unicode_ci
+  `status` text COLLATE utf8_unicode_ci,
+  `created_at` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `Customers`
+-- Dumping data for table `customers`
 --
 
-INSERT INTO `Customers` (`id`, `created_at`, `updated_at`, `email`, `phone`, `content`, `name`, `source`, `medium`, `campaign`, `employer`, `status`) VALUES
-(2, NULL, NULL, 'ádasdas', 'sdasdasd', 'null', 'ádasd', 'null', 'null', 'null', NULL, NULL),
-(3, NULL, '2018-04-15 10:35:30', 'kanbi@gmail.com', '412372183612893', 'null', 'user', 'text', 'ádavasdasdA', 'null', '3', 'Đã Chăm Sóc');
+INSERT INTO `customers` (`updated_at`, `id`, `title`, `phone`, `types`, `name`, `source`, `medium`, `campaign`, `employer`, `status`, `created_at`) VALUES
+('2018-04-25 11:47:13', 56, '1', '01674644053', 'posts', 'Vi', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 11:52:58', 57, '92', 'hết đăng ký', 'services', 'Đăng ký', 'null', 'null', 'null', 'admin', 'NULL', '25/04/2018'),
+('2018-04-25 11:55:17', 58, '92', 'hết đăng ký', 'services', 'Đăng ký', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 11:56:28', 59, '92', 'sadasd', 'services', 'adasdas', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:00:25', 60, '92', '01674644053', 'services', 'Trần Bảo ANh', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:02:14', 61, '92', 'sdasd', 'services', 'đá', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:02:26', 62, '92', 'sda', 'services', 'áda', 'null', 'null', 'null', 'admin', 'NULL', '25/04/2018'),
+('2018-04-25 12:03:12', 63, '92', 'sad', 'services', 'ádas', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:04:10', 64, '92', 'sadas', 'services', 'ádas', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:04:49', 65, '92', 'ádasd', 'services', 'ádas', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 12:07:27', 66, '92', 'ad', 'services', 'ád', 'null', 'null', 'null', 'admin', 'NULL', '25/04/2018'),
+('2018-04-25 13:56:09', 67, '92', '01674644053', 'services', 'Test', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 13:58:51', 68, '92', '01674644053', 'services', 'sieu nhan', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 15:54:53', 70, '1', '01674644053', 'contact', 'kanbi', 'null', 'null', 'null', NULL, NULL, '25/04/2018'),
+('2018-04-25 16:16:55', 71, '1', '01674644053', 'posts', 'bug ', 'null', 'null', 'null', NULL, NULL, '25/04/2018');
 
 -- --------------------------------------------------------
 
@@ -108,19 +128,19 @@ CREATE TABLE `data_rows` (
 --
 
 INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, `required`, `browse`, `read`, `edit`, `add`, `delete`, `details`, `order`) VALUES
-(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '', 1),
-(2, 1, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, '', 2),
-(3, 1, 'category_id', 'text', 'Category', 1, 0, 1, 1, 1, 0, '', 3),
-(4, 1, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '', 4),
-(5, 1, 'excerpt', 'text_area', 'excerpt', 1, 0, 1, 1, 1, 1, '', 5),
-(6, 1, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, '', 6),
-(7, 1, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
+(1, 1, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1),
+(2, 1, 'author_id', 'text', 'Người đăng', 1, 1, 1, 0, 0, 0, NULL, 2),
+(3, 1, 'category_id', 'text', 'Danh Mục', 0, 0, 1, 1, 1, 0, NULL, 3),
+(4, 1, 'title', 'text', 'Tiêu đề', 1, 1, 1, 1, 1, 1, NULL, 4),
+(5, 1, 'excerpt', 'text_area', 'Tóm tắt', 0, 0, 1, 1, 1, 1, NULL, 5),
+(6, 1, 'body', 'rich_text_box', 'Nội dung', 1, 0, 1, 1, 1, 1, NULL, 6),
+(7, 1, 'image', 'image', 'Post Image', 0, 0, 0, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7),
 (8, 1, 'slug', 'text', 'slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true}}', 8),
-(9, 1, 'meta_description', 'text_area', 'meta_description', 1, 0, 1, 1, 1, 1, '', 9),
-(10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 1, 0, 1, 1, 1, 1, '', 10),
+(9, 1, 'meta_description', 'text_area', 'meta_description', 0, 0, 1, 1, 1, 1, NULL, 9),
+(10, 1, 'meta_keywords', 'text_area', 'meta_keywords', 0, 0, 1, 1, 1, 1, NULL, 10),
 (11, 1, 'status', 'select_dropdown', 'status', 1, 1, 1, 1, 1, 1, '{\"default\":\"DRAFT\",\"options\":{\"PUBLISHED\":\"published\",\"DRAFT\":\"draft\",\"PENDING\":\"pending\"}}', 11),
-(12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, '', 12),
-(13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 13),
+(12, 1, 'created_at', 'timestamp', 'created_at', 0, 1, 1, 0, 0, 0, NULL, 12),
+(13, 1, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, NULL, 13),
 (14, 2, 'id', 'number', 'id', 1, 0, 0, 0, 0, 0, '', 1),
 (15, 2, 'author_id', 'text', 'author_id', 1, 0, 0, 0, 0, 0, '', 2),
 (16, 2, 'title', 'text', 'title', 1, 1, 1, 1, 1, 1, '', 3),
@@ -158,33 +178,10 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (48, 6, 'created_at', 'timestamp', 'created_at', 0, 0, 0, 0, 0, 0, '', 3),
 (49, 6, 'updated_at', 'timestamp', 'updated_at', 0, 0, 0, 0, 0, 0, '', 4),
 (50, 6, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, '', 5),
-(51, 1, 'seo_title', 'text', 'seo_title', 0, 1, 1, 1, 1, 1, '', 14),
-(52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, '', 15),
+(51, 1, 'seo_title', 'text', 'seo_title', 0, 0, 0, 1, 1, 1, NULL, 14),
+(52, 1, 'featured', 'checkbox', 'featured', 1, 1, 1, 1, 1, 1, NULL, 15),
 (53, 3, 'role_id', 'text', 'role_id', 1, 1, 1, 1, 1, 1, '', 9),
 (54, 4, 'images', 'image', 'Images', 1, 1, 1, 1, 1, 1, NULL, 6),
-(86, 24, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(87, 24, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
-(88, 24, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
-(89, 24, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
-(90, 26, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(91, 26, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
-(92, 26, 'text', 'text', 'Text', 0, 1, 1, 1, 1, 1, NULL, 3),
-(93, 26, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
-(94, 26, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
-(95, 26, 'users', 'select_dropdown', 'Users', 0, 1, 1, 1, 1, 1, NULL, 6),
-(123, 29, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(125, 29, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 14),
-(126, 29, 'updated_at', 'timestamp', 'Updated At', 0, 0, 1, 0, 0, 0, NULL, 13),
-(127, 29, 'email', 'text', 'Email', 0, 1, 1, 1, 1, 1, NULL, 3),
-(128, 29, 'phone', 'text', 'Điện Thoại', 0, 1, 1, 1, 1, 1, NULL, 4),
-(129, 29, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, NULL, 5),
-(130, 29, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 6),
-(131, 29, 'source', 'text', 'UTM_Source', 0, 1, 1, 1, 1, 1, NULL, 7),
-(132, 29, 'medium', 'text', 'UTM_Medium', 0, 1, 1, 1, 1, 1, NULL, 8),
-(133, 29, 'campaign', 'text', 'UTM_Campaign', 0, 1, 1, 1, 1, 1, NULL, 9),
-(134, 29, 'employer', 'select_dropdown', 'Employer', 0, 1, 1, 1, 1, 1, NULL, 10),
-(135, 29, 'status', 'text', 'Status', 0, 1, 1, 1, 1, 1, '{\"default\":\"Lựa chọn\",\"options\":{\"no\":\"Chưa chăm sóc\",\"yes\":\"Được chăm sóc\"}}', 11),
-(136, 29, 'customer_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"employer\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"Banners\",\"pivot\":\"0\"}', 12),
 (137, 30, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (138, 30, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, NULL, 2),
 (139, 30, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 3),
@@ -192,29 +189,79 @@ INSERT INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`, 
 (141, 30, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 7),
 (142, 30, 'updated_at', 'timestamp', 'Cập Nhập', 0, 0, 1, 0, 0, 0, NULL, 8),
 (143, 30, 'link', 'select_dropdown', 'Link', 0, 1, 1, 1, 1, 1, NULL, 5),
-(144, 30, 'servicesspecialist_belongsto_post_relationship', 'relationship', 'posts', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Post\",\"table\":\"posts\",\"type\":\"belongsTo\",\"column\":\"link\",\"key\":\"id\",\"label\":\"slug\",\"pivot_table\":\"Banners\",\"pivot\":\"0\"}', 6),
-(145, 31, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(146, 31, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
-(147, 31, 'history', 'rich_text_box', 'Lịch Sử', 0, 0, 1, 0, 0, 0, NULL, 3),
-(148, 31, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 4),
-(149, 31, 'updated_at', 'timestamp', 'Thời Gian', 0, 0, 1, 0, 0, 0, NULL, 5),
-(150, 31, 'partner_belongsto_user_relationship', 'relationship', 'users', 0, 0, 1, 0, 0, 0, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"history\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"Banners\",\"pivot\":\"0\"}', 6),
-(151, 32, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(152, 32, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
-(153, 32, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 3),
-(154, 32, 'updated_at', 'timestamp', 'Updated At', 0, 0, 1, 0, 0, 0, NULL, 4),
-(155, 33, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
-(156, 33, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
-(157, 33, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, NULL, 3),
-(158, 33, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 4),
-(159, 33, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
-(160, 33, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
 (161, 34, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
 (162, 34, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, NULL, 2),
 (163, 34, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 3),
 (164, 34, 'link', 'text_area', 'Link', 0, 1, 1, 1, 1, 1, NULL, 4),
 (165, 34, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 5),
-(166, 34, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6);
+(166, 34, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
+(167, 35, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(168, 35, 'title', 'text_area', 'Title', 0, 1, 1, 1, 1, 1, NULL, 2),
+(169, 35, 'content', 'text_area', 'Content', 0, 1, 1, 1, 1, 1, NULL, 3),
+(170, 35, 'link', 'select_dropdown', 'Link', 0, 1, 1, 1, 1, 1, NULL, 4),
+(171, 35, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 5),
+(172, 35, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 6),
+(173, 35, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7),
+(174, 35, 'news_belongsto_post_relationship', 'relationship', 'posts', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Post\",\"table\":\"posts\",\"type\":\"belongsTo\",\"column\":\"link\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 8),
+(175, 4, 'content', 'rich_text_box', 'Content', 0, 1, 1, 1, 1, 1, NULL, 9),
+(176, 1, 'post_belongsto_user_relationship', 'relationship', 'users', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\User\",\"table\":\"users\",\"type\":\"belongsTo\",\"column\":\"author_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 16),
+(177, 1, 'post_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 17),
+(195, 46, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
+(196, 46, 'link', 'text', 'Link', 0, 1, 1, 1, 1, 1, NULL, 3),
+(197, 46, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(198, 46, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
+(199, 46, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
+(200, 47, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(201, 47, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
+(202, 47, 'text', 'text', 'Text', 0, 1, 1, 1, 1, 1, NULL, 3),
+(203, 47, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 4),
+(204, 47, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 5),
+(205, 47, 'users', 'text', 'Link', 0, 1, 1, 1, 1, 1, NULL, 6),
+(212, 49, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(213, 49, 'name', 'text', 'Name', 0, 1, 1, 1, 1, 1, NULL, 2),
+(214, 49, 'content', 'text', 'Content', 0, 1, 1, 1, 1, 1, NULL, 3),
+(215, 49, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 4),
+(216, 49, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 5),
+(217, 49, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 6),
+(222, 51, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(223, 51, 'images', 'image', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
+(224, 51, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
+(225, 51, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
+(226, 52, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(228, 52, 'header_content', 'text', 'Header Content', 0, 1, 1, 1, 1, 1, NULL, 3),
+(229, 52, 'header_images', 'image', 'Header Images', 0, 1, 1, 1, 1, 1, NULL, 4),
+(230, 52, 'result_content', 'text_area', 'Result Content', 0, 0, 1, 1, 1, 1, NULL, 5),
+(231, 52, 'result_images', 'image', 'Result Images', 0, 0, 1, 1, 1, 1, NULL, 6),
+(232, 52, 'images_before_after', 'text', 'Images Before After', 0, 0, 1, 1, 1, 1, NULL, 7),
+(233, 52, 'technical_images', 'image', 'Technical Images', 0, 0, 1, 1, 1, 1, NULL, 8),
+(238, 52, 'noted', 'text', 'Noted', 0, 0, 1, 1, 1, 1, NULL, 13),
+(239, 52, 'created_at', 'timestamp', 'Created At', 0, 0, 0, 0, 0, 0, NULL, 14),
+(240, 52, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 15),
+(241, 53, 'created_at', 'timestamp', 'Created At', 1, 1, 1, 1, 0, 1, NULL, 2),
+(242, 53, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 3),
+(243, 53, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(245, 53, 'phone', 'checkbox', 'Phone', 0, 1, 1, 1, 1, 1, NULL, 5),
+(246, 53, 'content', 'checkbox', 'Content', 0, 1, 1, 1, 1, 1, NULL, 6),
+(247, 53, 'name', 'checkbox', 'Name', 0, 1, 1, 1, 1, 1, NULL, 7),
+(248, 53, 'source', 'checkbox', 'Source', 0, 1, 1, 1, 1, 1, NULL, 8),
+(249, 53, 'medium', 'checkbox', 'Medium', 0, 1, 1, 1, 1, 1, NULL, 9),
+(250, 53, 'campaign', 'checkbox', 'Campaign', 0, 1, 1, 1, 1, 1, NULL, 10),
+(251, 53, 'employer', 'checkbox', 'Employer', 0, 1, 1, 1, 1, 1, NULL, 11),
+(252, 53, 'status', 'checkbox', 'Status', 0, 1, 1, 1, 1, 1, NULL, 12),
+(253, 53, 'title', 'checkbox', 'Title', 0, 1, 1, 1, 1, 1, NULL, 3),
+(258, 56, 'id', 'checkbox', 'Id', 1, 0, 0, 0, 0, 0, NULL, 1),
+(259, 56, 'images', 'multiple_images', 'Images', 0, 1, 1, 1, 1, 1, NULL, 2),
+(260, 56, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, NULL, 3),
+(261, 56, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4),
+(262, 52, 'header_title', 'text', 'Header Title', 0, 1, 1, 1, 1, 1, NULL, 2),
+(264, 52, 'technical_description', 'text', 'Technical Description', 0, 0, 1, 1, 1, 1, NULL, 10),
+(267, 52, 'why_description', 'text', 'Why Description', 0, 0, 1, 1, 1, 1, NULL, 13),
+(268, 52, 'why_images', 'image', 'Why Images', 0, 0, 1, 1, 1, 1, NULL, 14),
+(269, 52, 'category_id', 'text', 'Category Id', 0, 0, 1, 1, 1, 1, NULL, 15),
+(273, 52, 'header_slug', 'text', 'Header Slug', 0, 1, 1, 1, 1, 1, NULL, 3),
+(274, 52, 'productive', 'text', 'Productive', 0, 0, 1, 1, 1, 1, NULL, 11),
+(275, 52, 'feedback', 'text', 'Feedback', 0, 0, 1, 1, 1, 1, NULL, 15),
+(276, 30, 'servicesspecialist_belongsto_serivcespost_relationship', 'relationship', 'serivcesposts', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Serivcespost\",\"table\":\"serivcesposts\",\"type\":\"belongsTo\",\"column\":\"link\",\"key\":\"id\",\"label\":\"header_title\",\"pivot_table\":\"banners\",\"pivot\":\"0\"}', 9);
 
 -- --------------------------------------------------------
 
@@ -244,35 +291,22 @@ CREATE TABLE `data_types` (
 --
 
 INSERT INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `created_at`, `updated_at`) VALUES
-(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
+(1, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '2018-03-11 23:49:32', '2018-04-17 15:37:57'),
 (2, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (3, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, NULL, NULL, 1, 0, '2018-03-11 23:49:32', '2018-04-15 01:51:49'),
 (5, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
 (6, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, '', '', 1, 0, '2018-03-11 23:49:32', '2018-03-11 23:49:32'),
-(24, 'Banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Banner', NULL, NULL, NULL, 1, 0, '2018-04-15 02:45:13', '2018-04-15 02:45:13'),
-(26, 'whyhomes', 'whyhomes', 'Whyhome', 'Whyhomes', 'voyager-question', NULL, NULL, NULL, NULL, 1, 0, '2018-04-15 02:49:24', '2018-04-15 02:49:24'),
-(29, 'Customers', 'customers', 'Khách Hàng', 'Khách Hàng', NULL, 'App\\Customer', NULL, NULL, NULL, 1, 0, '2018-04-15 10:30:15', '2018-04-15 10:36:56'),
 (30, 'servicesspecialists', 'servicesspecialists', 'Dịch Vụ Nổi Bật', 'Dịch Vụ Nổi Bật', 'voyager-star-two', 'App\\Servicesspecialist', NULL, NULL, NULL, 1, 0, '2018-04-15 10:43:41', '2018-04-15 10:54:17'),
-(31, 'Partners', 'partners', 'Đối Tác', 'Đối Tác', 'voyager-ship', 'App\\Partner', NULL, NULL, NULL, 1, 0, '2018-04-15 11:07:13', '2018-04-15 11:07:13'),
-(32, 'Slidehome1s', 'slidehome1s', 'Slide Trang Chủ', 'Slide Trang Chủ', NULL, 'App\\Slidehome1', NULL, NULL, NULL, 1, 0, '2018-04-15 11:13:50', '2018-04-15 11:13:50'),
-(33, 'feedbacks', 'feedbacks', 'Feedback', 'Feedback', 'voyager-smile', 'App\\Feedback', NULL, NULL, NULL, 1, 0, '2018-04-15 15:47:27', '2018-04-15 15:47:27'),
-(34, 'Videos', 'videos', 'Video', 'Videos', 'voyager-video', 'App\\Video', NULL, NULL, NULL, 1, 0, '2018-04-15 15:53:18', '2018-04-15 15:53:18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `feedbacks`
---
-
-CREATE TABLE `feedbacks` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` int(11) DEFAULT NULL,
-  `content` int(11) DEFAULT NULL,
-  `images` int(11) DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+(34, 'Videos', 'videos', 'Video', 'Videos', 'voyager-video', 'App\\Video', NULL, NULL, NULL, 1, 0, '2018-04-15 15:53:18', '2018-04-15 15:53:18'),
+(35, 'news', 'news', 'Tin Tức', 'Tin Tức', 'voyager-window-list', 'App\\News', NULL, NULL, NULL, 1, 0, '2018-04-16 22:14:33', '2018-04-16 22:14:33'),
+(46, 'slidehome1s', 'slidehome1s', 'Slidehome1', 'Slidehome1s', NULL, 'App\\Slidehome1', NULL, NULL, NULL, 1, 0, '2018-04-17 19:54:00', '2018-04-17 19:54:00'),
+(47, 'whyhomes', 'whyhomes', 'Whyhome', 'Whyhomes', NULL, 'App\\Whyhome', NULL, NULL, NULL, 1, 0, '2018-04-17 19:59:57', '2018-04-17 19:59:57'),
+(49, 'userfeadbacks', 'userfeadbacks', 'Phản Hồi', 'Phản Hồi', NULL, 'App\\Userfeadback', NULL, NULL, NULL, 1, 0, '2018-04-17 21:18:35', '2018-04-17 21:18:35'),
+(51, 'partners', 'partners', 'Partner', 'Partners', NULL, 'App\\Partner', NULL, NULL, NULL, 1, 0, '2018-04-17 21:29:06', '2018-04-17 21:29:06'),
+(52, 'serivcesposts', 'serivcesposts', 'Serivcespost', 'Serivcesposts', NULL, 'App\\Serivcespost', NULL, NULL, NULL, 1, 0, '2018-04-19 03:05:37', '2018-04-19 03:05:37'),
+(53, 'customers', 'customers', 'Customer', 'Customers', NULL, 'App\\Customer', NULL, 'WidgetController', NULL, 1, 0, '2018-04-19 04:38:18', '2018-04-20 07:08:50'),
+(56, 'banners', 'banners', 'Banner', 'Banners', NULL, 'App\\Banner', NULL, NULL, NULL, 1, 0, '2018-04-22 04:49:45', '2018-04-22 04:49:45');
 
 -- --------------------------------------------------------
 
@@ -344,7 +378,12 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (21, 1, 'Đối Tác', '/admin/partners', '_self', 'voyager-ship', NULL, NULL, 21, '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL, NULL),
 (22, 1, 'Slide Trang Chủ', '/admin/slidehome1s', '_self', NULL, NULL, NULL, 22, '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL, NULL),
 (23, 1, 'Feedback', '/admin/feedbacks', '_self', 'voyager-smile', NULL, NULL, 23, '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL, NULL),
-(24, 1, 'Videos', '/admin/videos', '_self', 'voyager-video', NULL, NULL, 24, '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL, NULL);
+(24, 1, 'Videos', '/admin/videos', '_self', 'voyager-video', NULL, NULL, 24, '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL, NULL),
+(25, 1, 'Tin Tức', '/admin/news', '_self', 'voyager-window-list', NULL, NULL, 25, '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL, NULL),
+(26, 1, 'Slidehome1s', '/admin/slidehome1s', '_self', NULL, NULL, NULL, 26, '2018-04-17 19:49:08', '2018-04-17 19:49:08', NULL, NULL),
+(27, 1, 'Phản Hồi', '/admin/userfeadbacks', '_self', NULL, NULL, NULL, 27, '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL, NULL),
+(28, 1, 'Partners', '/admin/partners', '_self', NULL, NULL, NULL, 28, '2018-04-17 21:28:24', '2018-04-17 21:28:24', NULL, NULL),
+(29, 1, 'Serivcesposts', '/admin/serivcesposts', '_self', NULL, NULL, NULL, 29, '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -390,6 +429,31 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` text COLLATE utf8_unicode_ci,
+  `content` text COLLATE utf8_unicode_ci,
+  `link` text COLLATE utf8_unicode_ci,
+  `images` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `content`, `link`, `images`, `created_at`, `updated_at`) VALUES
+(1, 'Hơn 30 KH Đã Giảm 5 - 20kg Nhờ Phác Đồ Giảm Mỡ 90\' J-US UnFAT', 'Nếu bạn từng thất bại với mọi biên pháp giảm béo trước đây và muốn nhanh chóng giảm 5-20kg sở hữu một vóc dáng cân đối, thu hút, thì phác đồ giảm mỡ 90 phút J-US UnFAT chính là phương pháp có thể thực hiện cho bạn.', '1', 'news/April2018/R1P9Q9fr5hu1S6yho6IC.jpg', '2018-04-16 22:17:00', '2018-04-17 21:05:51'),
+(2, '100 Suất Tham Dự Hội Thảo Công Bố Phác Đồ Giảm Mỡ 90\' J-US UnFAT', 'Cơ hội giảm béo miễn phí lên đến 100 triệu đồng, được tư vấn trực tiếp từ những chuyên gia giảm béo hàng đầu đến từ Mỹ và chứng thực hơn 30 khách hàng đã giảm béo thành công 5-20kg chỉ có tại hội thảo công bố phác đồ giảm mỡ 90 phút J-US UnFAT', '9', 'news/April2018/VjObwsX8jpsjw4lmhUMY.jpg', '2018-04-17 21:03:50', '2018-04-17 21:03:50'),
+(3, '100 Suất Tham Dự Hội Thảo Công Bố Phác Đồ Giảm Mỡ 90\' J-US UnFAT', 'Cơ hội giảm béo miễn phí lên đến 100 triệu đồng, được tư vấn trực tiếp từ những chuyên gia giảm béo hàng đầu đến từ Mỹ và chứng thực hơn 30 khách hàng đã giảm béo thành công 5-20kg chỉ có tại hội thảo công bố phác đồ giảm mỡ 90 phút J-US UnFAT', '9', 'news/April2018/zFvC6h1puyfXIilecv2O.jpg', '2018-04-17 21:03:50', '2018-04-17 21:03:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pages`
 --
 
@@ -418,16 +482,27 @@ INSERT INTO `pages` (`id`, `author_id`, `title`, `excerpt`, `body`, `image`, `sl
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Partners`
+-- Table structure for table `partners`
 --
 
-CREATE TABLE `Partners` (
+CREATE TABLE `partners` (
   `id` int(10) UNSIGNED NOT NULL,
   `images` text COLLATE utf8_unicode_ci,
-  `history` text COLLATE utf8_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `partners`
+--
+
+INSERT INTO `partners` (`id`, `images`, `created_at`, `updated_at`) VALUES
+(1, 'partners/April2018/bGwKCG8206H5TWOGr0Wo.png', '2018-04-17 21:29:32', '2018-04-17 21:29:32'),
+(2, 'partners/April2018/CPxPv71vuLLV623A6Vuf.png', '2018-04-17 21:29:40', '2018-04-17 21:29:40'),
+(3, 'partners/April2018/Xt4ITc383YfFSTnglqGl.png', '2018-04-17 21:29:40', '2018-04-17 21:29:40'),
+(4, 'partners/April2018/1FzDvpxvLaXpSNPHvHl2.png', '2018-04-17 21:29:49', '2018-04-17 21:29:49'),
+(5, 'partners/April2018/og0j2ej1SCIWu6tDpppC.png', '2018-04-17 21:29:56', '2018-04-17 21:29:56'),
+(6, 'partners/April2018/qshQzdzl5OmMPuGap7RT.png', '2018-04-17 21:29:56', '2018-04-17 21:29:56');
 
 -- --------------------------------------------------------
 
@@ -506,46 +581,56 @@ INSERT INTO `permissions` (`id`, `key`, `table_name`, `created_at`, `updated_at`
 (48, 'edit_sildehome1', 'sildehome1', '2018-04-15 01:58:29', '2018-04-15 01:58:29', NULL),
 (49, 'add_sildehome1', 'sildehome1', '2018-04-15 01:58:29', '2018-04-15 01:58:29', NULL),
 (50, 'delete_sildehome1', 'sildehome1', '2018-04-15 01:58:29', '2018-04-15 01:58:29', NULL),
-(66, 'browse_Banners', 'Banners', '2018-04-15 02:45:13', '2018-04-15 02:45:13', NULL),
-(67, 'read_Banners', 'Banners', '2018-04-15 02:45:13', '2018-04-15 02:45:13', NULL),
-(68, 'edit_Banners', 'Banners', '2018-04-15 02:45:13', '2018-04-15 02:45:13', NULL),
-(69, 'add_Banners', 'Banners', '2018-04-15 02:45:13', '2018-04-15 02:45:13', NULL),
-(70, 'delete_Banners', 'Banners', '2018-04-15 02:45:13', '2018-04-15 02:45:13', NULL),
 (71, 'browse_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (72, 'read_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (73, 'edit_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (74, 'add_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
 (75, 'delete_whyhomes', 'whyhomes', '2018-04-15 02:49:24', '2018-04-15 02:49:24', NULL),
-(81, 'browse_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(82, 'read_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(83, 'edit_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(84, 'add_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
-(85, 'delete_Customers', 'Customers', '2018-04-15 10:30:15', '2018-04-15 10:30:15', NULL),
 (86, 'browse_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (87, 'read_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (88, 'edit_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (89, 'add_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
 (90, 'delete_servicesspecialists', 'servicesspecialists', '2018-04-15 10:43:41', '2018-04-15 10:43:41', NULL),
-(91, 'browse_Partners', 'Partners', '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL),
-(92, 'read_Partners', 'Partners', '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL),
-(93, 'edit_Partners', 'Partners', '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL),
-(94, 'add_Partners', 'Partners', '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL),
-(95, 'delete_Partners', 'Partners', '2018-04-15 11:07:13', '2018-04-15 11:07:13', NULL),
-(96, 'browse_Slidehome1s', 'Slidehome1s', '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL),
-(97, 'read_Slidehome1s', 'Slidehome1s', '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL),
-(98, 'edit_Slidehome1s', 'Slidehome1s', '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL),
-(99, 'add_Slidehome1s', 'Slidehome1s', '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL),
-(100, 'delete_Slidehome1s', 'Slidehome1s', '2018-04-15 11:13:50', '2018-04-15 11:13:50', NULL),
-(101, 'browse_feedbacks', 'feedbacks', '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL),
-(102, 'read_feedbacks', 'feedbacks', '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL),
-(103, 'edit_feedbacks', 'feedbacks', '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL),
-(104, 'add_feedbacks', 'feedbacks', '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL),
-(105, 'delete_feedbacks', 'feedbacks', '2018-04-15 15:47:27', '2018-04-15 15:47:27', NULL),
 (106, 'browse_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL),
 (107, 'read_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL),
 (108, 'edit_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL),
 (109, 'add_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL),
-(110, 'delete_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL);
+(110, 'delete_Videos', 'Videos', '2018-04-15 15:53:18', '2018-04-15 15:53:18', NULL),
+(111, 'browse_news', 'news', '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL),
+(112, 'read_news', 'news', '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL),
+(113, 'edit_news', 'news', '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL),
+(114, 'add_news', 'news', '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL),
+(115, 'delete_news', 'news', '2018-04-16 22:14:34', '2018-04-16 22:14:34', NULL),
+(116, 'browse_slidehome1s', 'slidehome1s', '2018-04-17 19:54:00', '2018-04-17 19:54:00', NULL),
+(117, 'read_slidehome1s', 'slidehome1s', '2018-04-17 19:54:00', '2018-04-17 19:54:00', NULL),
+(118, 'edit_slidehome1s', 'slidehome1s', '2018-04-17 19:54:00', '2018-04-17 19:54:00', NULL),
+(119, 'add_slidehome1s', 'slidehome1s', '2018-04-17 19:54:00', '2018-04-17 19:54:00', NULL),
+(120, 'delete_slidehome1s', 'slidehome1s', '2018-04-17 19:54:00', '2018-04-17 19:54:00', NULL),
+(126, 'browse_userfeadbacks', 'userfeadbacks', '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL),
+(127, 'read_userfeadbacks', 'userfeadbacks', '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL),
+(128, 'edit_userfeadbacks', 'userfeadbacks', '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL),
+(129, 'add_userfeadbacks', 'userfeadbacks', '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL),
+(130, 'delete_userfeadbacks', 'userfeadbacks', '2018-04-17 21:18:35', '2018-04-17 21:18:35', NULL),
+(131, 'browse_partners', 'partners', '2018-04-17 21:29:06', '2018-04-17 21:29:06', NULL),
+(132, 'read_partners', 'partners', '2018-04-17 21:29:06', '2018-04-17 21:29:06', NULL),
+(133, 'edit_partners', 'partners', '2018-04-17 21:29:06', '2018-04-17 21:29:06', NULL),
+(134, 'add_partners', 'partners', '2018-04-17 21:29:06', '2018-04-17 21:29:06', NULL),
+(135, 'delete_partners', 'partners', '2018-04-17 21:29:06', '2018-04-17 21:29:06', NULL),
+(136, 'browse_serivcesposts', 'serivcesposts', '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL),
+(137, 'read_serivcesposts', 'serivcesposts', '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL),
+(138, 'edit_serivcesposts', 'serivcesposts', '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL),
+(139, 'add_serivcesposts', 'serivcesposts', '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL),
+(140, 'delete_serivcesposts', 'serivcesposts', '2018-04-19 03:05:37', '2018-04-19 03:05:37', NULL),
+(141, 'browse_customers', 'customers', '2018-04-19 04:38:18', '2018-04-19 04:38:18', NULL),
+(142, 'read_customers', 'customers', '2018-04-19 04:38:18', '2018-04-19 04:38:18', NULL),
+(143, 'edit_customers', 'customers', '2018-04-19 04:38:18', '2018-04-19 04:38:18', NULL),
+(144, 'add_customers', 'customers', '2018-04-19 04:38:18', '2018-04-19 04:38:18', NULL),
+(145, 'delete_customers', 'customers', '2018-04-19 04:38:18', '2018-04-19 04:38:18', NULL),
+(146, 'browse_banners', 'banners', '2018-04-22 04:49:45', '2018-04-22 04:49:45', NULL),
+(147, 'read_banners', 'banners', '2018-04-22 04:49:45', '2018-04-22 04:49:45', NULL),
+(148, 'edit_banners', 'banners', '2018-04-22 04:49:45', '2018-04-22 04:49:45', NULL),
+(149, 'add_banners', 'banners', '2018-04-22 04:49:45', '2018-04-22 04:49:45', NULL),
+(150, 'delete_banners', 'banners', '2018-04-22 04:49:45', '2018-04-22 04:49:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -599,15 +684,25 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (23, 1),
 (24, 1),
 (25, 1),
+(25, 3),
 (26, 1),
+(26, 3),
 (27, 1),
+(27, 3),
 (28, 1),
+(28, 3),
 (29, 1),
+(29, 3),
 (30, 1),
+(30, 3),
 (31, 1),
+(31, 3),
 (32, 1),
+(32, 3),
 (33, 1),
+(33, 3),
 (34, 1),
+(34, 3),
 (35, 1),
 (36, 1),
 (37, 1),
@@ -619,46 +714,56 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (48, 1),
 (49, 1),
 (50, 1),
-(66, 1),
-(67, 1),
-(68, 1),
-(69, 1),
-(70, 1),
 (71, 1),
 (72, 1),
 (73, 1),
 (74, 1),
 (75, 1),
-(81, 1),
-(82, 1),
-(83, 1),
-(84, 1),
-(85, 1),
 (86, 1),
 (87, 1),
 (88, 1),
 (89, 1),
 (90, 1),
-(91, 1),
-(92, 1),
-(93, 1),
-(94, 1),
-(95, 1),
-(96, 1),
-(97, 1),
-(98, 1),
-(99, 1),
-(100, 1),
-(101, 1),
-(102, 1),
-(103, 1),
-(104, 1),
-(105, 1),
 (106, 1),
 (107, 1),
 (108, 1),
 (109, 1),
-(110, 1);
+(110, 1),
+(111, 1),
+(112, 1),
+(113, 1),
+(114, 1),
+(115, 1),
+(116, 1),
+(117, 1),
+(118, 1),
+(119, 1),
+(120, 1),
+(126, 1),
+(127, 1),
+(128, 1),
+(129, 1),
+(130, 1),
+(131, 1),
+(132, 1),
+(133, 1),
+(134, 1),
+(135, 1),
+(136, 1),
+(137, 1),
+(138, 1),
+(139, 1),
+(140, 1),
+(141, 1),
+(142, 1),
+(143, 1),
+(144, 1),
+(145, 1),
+(146, 1),
+(147, 1),
+(148, 1),
+(149, 1),
+(150, 1);
 
 -- --------------------------------------------------------
 
@@ -689,8 +794,11 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
-(1, 3, 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', NULL, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.', '<div class=\"login\">\r\n<div class=\"login_inner\">\r\n<div class=\"login_inner__avatar\">&nbsp;</div>\r\n<input id=\"username-customer\" type=\"text\" placeholder=\"Give yourself a username\" /> <input id=\"email-customer\" type=\"email\" placeholder=\"What is your email?\" /> <input id=\"phone-customer\" type=\"text\" placeholder=\"phone\" /> <input value=\"Sign up\" type=\"button\" class=\"btn-customer\" /></div>\r\n<div class=\"login_inner__check\">&nbsp;</div>\r\n</div>\r\n<h2>&nbsp;</h2>', 'posts/April2018/z5Rcrhb1R0ogaceI7WRV.png', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-', 'ád', 'dá', 'PUBLISHED', 0, '2018-04-13 19:56:34', '2018-04-14 16:30:12'),
-(2, 3, 2, 'ádasdasd', NULL, NULL, '<p>sdasdasdasd</p>', 'posts/April2018/yQobEiZE8tQ6ThS60UvI.png', 'adasdasd', NULL, NULL, 'PUBLISHED', 0, '2018-04-14 00:53:46', '2018-04-14 19:49:51');
+(1, 3, 2, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', NULL, 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.', '<p>&nbsp;</p>\r\n<div class=\"login\">\r\n<div class=\"login_inner\" style=\"text-align: center;\">\r\n<div class=\"login_inner__avatar\">&nbsp;</div>\r\n<input id=\"username-customer\" type=\"text\" placeholder=\"Họ v&agrave; T&ecirc;n\" /><input id=\"phone-customer\" type=\"text\" placeholder=\"Điện Thoại\" /> <input value=\"Đăng K&yacute;\" type=\"button\" class=\"btn-customer btn-customer__center\" /></div>\r\n<div class=\"login_inner__check\">&nbsp;</div>\r\n</div>', 'posts/April2018/kJmgUH9bS6nYGLZyWZXO.jpg', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-', 'ád', 'dá', 'PUBLISHED', 0, '2018-04-13 19:56:34', '2018-04-25 09:08:25'),
+(6, 3, 7, 'BÀI VIẾT BÉO CÔNG NGHỆ CONTRI ULTRASHAPE', 'đâsd', 'ádasdas', '<p style=\"box-sizing: border-box; margin: 0px 0px 10px; color: #828c8b; font-family: san; font-size: 23.7875px; text-align: justify;\">R&uacute;t ngắn thời gian giảm b&eacute;o chỉ c&ograve;n 1 tuần l&agrave; bước tiến lớn nhất năm 2017 trong lĩnh vực giảm b&eacute;o của Nhật Bản, khi cho ra đời phương ph&aacute;p giảm b&eacute;o thủy ph&acirc;n Contri Ultra Shape. Phương ph&aacute;p giảm b&eacute;o mới trong thời gian cực ngắn n&agrave;y l&agrave; giải ph&aacute;p đầy hi vọng cho những phụ nữ từng thất bại khi giảm b&eacute;o hoặc muốn giảm b&eacute;o trong thời gian gấp.</p>\r\n<p><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; margin-bottom: 10px; color: #828c8b; font-family: san; font-size: 23.7875px; width: 1555.95px;\" src=\"http://www.svanclinic.vn/Upload/ServiceObjects/4c6adfe8-ca65-4417-b6de-f8c59bf3d970/Hinh-sau-tieu-de.jpg\" alt=\"Giới Thiệu - Giảm b&eacute;o c&ocirc;ng nghệ Contri UltraShape\" /></p>', 'posts/April2018/S3sBGYcTSVDTlOvmXRMR.png', 'bai-viet-beo-cong-nghe-contri-ultrashape', 'ádasd', 'ádas', 'PUBLISHED', 0, '2018-04-16 23:44:18', '2018-04-17 04:31:19'),
+(8, 3, 10, 'NÂNG CƠ V-LINE NEW ULTHERAPY', 'ádasd', 'ádasd', '<p style=\"box-sizing: border-box; margin: 0px 0px 10px; color: #828c8b; font-family: san; font-size: 23.7875px; text-align: justify;\">New Ultherapy - Đỉnh cao c&ocirc;ng nghệ trẻ h&oacute;a da v&agrave; n&acirc;ng cơ năm 2016. C&ocirc;ng nghệ tuyệt đỉnh n&agrave;y gi&uacute;p x&oacute;a mờ nếp nhăn, l&agrave;m da săn chắc trở lại, t&aacute;i tạo gương mặt V-line kh&ocirc;ng cần phẫu thuật. Hiệu quả trẻ h&oacute;a da đạt mức độ cao nhất trong thời gian điều trị ngắn nhất, ph&ugrave; hợp với c&aacute;c kh&aacute;ch h&agrave;ng cao cấp, th&iacute;ch l&agrave;m đẹp theo xu hướng thời thượng.</p>\r\n<p><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; margin-bottom: 10px; color: #828c8b; font-family: san; font-size: 23.7875px; width: 1555.95px;\" src=\"http://www.svanclinic.vn/Upload/ServiceObjects/4bd23023-f97f-450e-84f1-1388352c6b0f/daidiendichvu.jpg\" alt=\"Giới thiệu\" /></p>', 'posts/April2018/rs3JytfpHfuqq49XZ13a.jpg', 'nang-c-v-line-new-ultherapy', 'sad', 'đá', 'PUBLISHED', 0, '2018-04-17 02:16:49', '2018-04-17 05:04:26'),
+(9, 3, 11, 'Giảm mỡ thừa, xóa rạn da sau 7 ngày', 'ádasd', 'áđâsd', '<div class=\"news-detail-title\" style=\"box-sizing: border-box; color: #3ab572; font-size: 32.7078px; margin-bottom: 29.7344px; font-family: san;\">\r\n<h1 style=\"box-sizing: border-box; font-size: 32.7078px; margin: 20px 0px 10px; font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit;\">Giảm mỡ thừa, x&oacute;a rạn da sau 7 ng&agrave;y</h1>\r\n</div>\r\n<div class=\"info-row\" style=\"box-sizing: border-box; color: #828c8b; font-family: san; font-size: 23.7875px;\">\r\n<div class=\"col-xs-12 no-pd\" style=\"box-sizing: border-box; position: relative; min-height: 1px; float: left; width: 1605.67px; padding: 0px !important 22.3008px 0px !important 22.3008px;\">\r\n<div class=\"short-description\" style=\"box-sizing: border-box; color: #3ab572; font-size: 23.7875px; text-align: justify;\">\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\"><span style=\"color: #3ab572; font-family: san;\"><span style=\"font-size: 23.7875px;\">Sau 7 ng&agrave;y trị liệu, 32% lượng mỡ thừa sẽ được loại ra khỏi cơ thể, tương đương với việc c&oacute; thể giảm từ 15cm - 20cm v&ograve;ng eo (t&ugrave;y cơ địa mỗi người) m&agrave; kh&ocirc;ng cần phẫu thuật.</span></span></p>\r\n</div>\r\n</div>\r\n<div class=\"clearfix\" style=\"box-sizing: border-box;\">&nbsp;</div>\r\n</div>\r\n<div class=\"text-content\" style=\"box-sizing: border-box; font-size: 23.7875px; margin-top: 44.6016px; color: #828c8b; font-family: san;\">\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; text-align: center;\"><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; margin-bottom: 10px; width: 736.719px;\" src=\"http://www.svanclinic.vn/files/Files/Kien-thuc-lam-dep/Gi%E1%BA%A3m%20m%E1%BB%A1%20th%E1%BB%ABa%2C%20x%C3%B3a%20r%E1%BA%A1n%20da%20sau%207%20ng%C3%A0y/TR%C6%AF%E1%BB%9AC%20SAU_M%E1%BB%99c%20tr%C3%A0.png\" alt=\"\" /></p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Sau khi sinh th&igrave; nhiều chị em phụ nữ phải đối mặt với t&igrave;nh trạng tăng c&acirc;n, mỡ thừa t&iacute;ch tụ khiến v&ograve;ng eo ph&igrave;nh to, chảy xệ v&agrave; đặc biệt l&agrave; rạn da mất thẩm mỹ khiến chị em tự ti lo lắng.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Tuy nhi&ecirc;n, sau sinh v&igrave; t&acirc;m l&yacute; ăn uống đầy đủ cho con v&agrave; chủ quan cho rằng t&igrave;nh trạng mỡ thừa v&agrave; l&agrave;n da bụng chảy xệ sau sinh c&oacute; thể được phục hồi sau một thời gian nghỉ dưỡng.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Tr&ecirc;n thực tế, mỡ thừa quanh v&ugrave;ng h&ocirc;ng bụng, c&aacute;c vết rạn da nếu kh&ocirc;ng c&oacute; c&aacute;ch điều trị kịp thời sẽ dần trở n&ecirc;n &ldquo;v&ocirc; phương cứu chữa&rdquo;, những vết sẹo m&agrave;u đỏ, n&acirc;u sẽ dần trở th&agrave;nh sẹo trắng.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">C&aacute;c bạn c&oacute; thể &aacute;p dụng c&aacute;c phương ph&aacute;p ph&aacute;p giảm c&acirc;n th&ocirc;ng thường như ăn ki&ecirc;ng, tập thể dục, thể thao, detox&hellip; nhưng những phương ph&aacute;p n&agrave;y đ&ograve;i hỏi bạn phải ki&ecirc;n tr&igrave;, duy tr&igrave; thực hiện trong một thời gian d&agrave;i mới c&oacute; hiệu quả.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Hiện nay, ngh&agrave;nh thẩm mỹ ph&aacute;t triển c&aacute;c chuy&ecirc;n gia dinh dưỡng khuy&ecirc;n bạn, nếu muốn giảm b&eacute;o nhanh, khắc phục t&igrave;nh trạng rạn gia an to&agrave;n hiệu quả bạn c&oacute; thể &aacute;p dụng phương ph&aacute;p giảm b&eacute;o bằng c&ocirc;ng nghệ cao, nổi bật l&agrave; c&ocirc;ng nghệ giảm mỡ kh&ocirc;ng phẫu thuật Contri Ultrashape.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; text-align: center;\"><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; margin-bottom: 10px; width: 736.719px;\" src=\"http://www.svanclinic.vn/files/Files/Kien-thuc-lam-dep/Gi%E1%BA%A3m%20m%E1%BB%A1%20th%E1%BB%ABa%2C%20x%C3%B3a%20r%E1%BA%A1n%20da%20sau%207%20ng%C3%A0y/cong-nghe-contri-ultra-shape-1.png\" alt=\"\" /></p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">C&ocirc;ng nghệ n&agrave;y sử dụng năng lượng nhiệt v&agrave; s&oacute;ng si&ecirc;u &acirc;m cực k&igrave; ch&iacute;nh x&aacute;c về th&ocirc;ng số để t&aacute;c động đ&aacute;nh m&aacute;y cơ học l&ecirc;n th&agrave;nh da bụng để ph&aacute; hủy c&oacute; chọn lọc đ&uacute;ng những tế b&agrave;o mỡ tr&uacute; ngụ dưới da, ngay cả những tế b&agrave;o ở tầng s&acirc;u 1.5cm.Tế b&agrave;o mỡ thừa bị ph&aacute; hủy sẽ dần ti&ecirc;u biến v&agrave; chuyển h&oacute;a th&agrave;nh dạng dịch lỏng v&agrave; đ&agrave;o thải qua đường mồ h&ocirc;i, nước tiểu để ra ngo&agrave;i cơ thể.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">C&ocirc;ng nghệ giảm b&eacute;o contri ultra shape đ&atilde; được FDA Hoa Kỳ chứng nhận hiệu quả sử dụng s&oacute;ng si&ecirc;u &acirc;m ph&aacute; hủy m&ocirc; mỡ kh&ocirc;ng g&acirc;y tổn thương cơ địa. Kh&ocirc;ng phẫu thuật, kh&ocirc;ng dao k&eacute;o n&ecirc;n kh&ocirc;ng đau đớn, bỏng r&aacute;t, kh&ocirc;ng cần thời gian nghỉ dưỡng. Sau thời gian trị liệu, c&aacute;c kh&aacute;ch h&agrave;ng ho&agrave;n to&agrave;n thoải m&aacute;i đi l&agrave;m, v&agrave; sinh hoạt b&igrave;nh thường.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; text-align: center;\"><img style=\"box-sizing: border-box; border: 0px; vertical-align: middle; max-width: 100%; height: auto; margin-bottom: 10px; width: 736.719px;\" src=\"http://www.svanclinic.vn/files/Files/Kien-thuc-lam-dep/Gi%E1%BA%A3m%20m%E1%BB%A1%20th%E1%BB%ABa%2C%20x%C3%B3a%20r%E1%BA%A1n%20da%20sau%207%20ng%C3%A0y/giam-beo-hieu-qua-sau-7-ngay.png\" alt=\"\" /></p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Sau 7 ng&agrave;y trị liệu, 32% lượng mỡ thừa sẽ được loại ra khỏi cơ thể, tương đương với việc c&oacute; thể giảm từ 10cm đến 10cm v&ograve;ng eo (t&ugrave;y cơ địa mỗi người) m&agrave; kh&ocirc;ng cần phẫu thuật.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">&nbsp;Từ c&aacute;c kết quả khả quan trong việc điều trị cho h&agrave;ng ng&agrave;n chị em phụ nữ sau sinh,&nbsp; Contri UltraShape đang được xem l&agrave; giải ph&aacute;p tối ưu cho việc trị liệu giảm mỡ v&ugrave;ng bụng vốn kh&oacute; giảm m&agrave; lại dễ tăng c&ugrave;ng diện t&iacute;ch trị liệu rộng.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px;\">Đặc biệt, khắc phục t&igrave;nh trạng chảy xệ, ch&ugrave;ng nh&atilde;o nặng, gi&uacute;p v&ugrave;ng da bụng sau điều trị trở n&ecirc;n săn chắc, mềm mại, kh&ocirc;ng gồ ghề, m&eacute;o m&oacute;, kh&ocirc;ng bị xơ cứng. Cải thiện 80% t&igrave;nh trạng rạn da bụng ở phụ nữ sau sinh ngo&agrave;i 8 tuần v&agrave; đang cho con b&uacute;.&nbsp;</p>\r\n</div>', 'posts/April2018/RQaQDSttW8fxxmwhh6cY.jpg', 'giam-mo-thua-xoa-ran-da-sau-7-ngay', 'đâsd', 'sadas', 'PUBLISHED', 0, '2018-04-17 20:57:42', '2018-04-25 09:29:12'),
+(11, 3, 11, '7 loại quả dưỡng da mùa hè', 'ádasd', 'Mùa hè là mùa mà làn da thường bị đen hơn, bóng nhờn, dễ bị sưng đỏ và dễ bị mụn hơn.', '<div class=\"login\" style=\"text-align: center;\">\r\n<div class=\"login_inner\">\r\n<div class=\"login_inner__avatar\">&nbsp;</div>\r\n<input id=\"username-customer\" type=\"text\" placeholder=\"Họ v&agrave; T&ecirc;n\" /><input id=\"phone-customer\" type=\"text\" placeholder=\"Điện Thoại\" /> <input value=\"Đăng K&yacute;\" type=\"button\" class=\"btn-customer btn-customer__center\" /></div>\r\n<div class=\"login_inner__check\">&nbsp;</div>\r\n<div class=\"login_inner__check\">&nbsp;</div>\r\n</div>\r\n<h2 style=\"text-align: center;\">&nbsp;<iframe title=\"D&ugrave; Chẳng Phải Anh - Đinh Mạnh Ninh [Lyric Video]\" src=\"https://www.youtube.com/embed/Sd2S_dVOwq4?wmode=opaque&amp;theme=dark\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"\"></iframe></h2>', 'posts/April2018/xVRGidhFMYpnhjfcEiY2.jpg', '7-loai-qua-d-ong-da-mua-he', 'ád', 'ádasd', 'PUBLISHED', 0, '2018-04-17 20:59:07', '2018-04-25 09:24:21');
 
 -- --------------------------------------------------------
 
@@ -712,7 +820,42 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2018-03-11 23:49:35', '2018-03-11 23:49:35'),
-(2, 'user', 'Normal User', '2018-03-11 23:49:35', '2018-03-11 23:49:35');
+(2, 'user', 'Normal User', '2018-03-11 23:49:35', '2018-03-11 23:49:35'),
+(3, 'sale', 'sale', '2018-04-18 00:16:43', '2018-04-18 00:16:43');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `serivcesposts`
+--
+
+CREATE TABLE `serivcesposts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `header_title` text COLLATE utf8_unicode_ci,
+  `header_slug` text COLLATE utf8_unicode_ci,
+  `header_content` longtext COLLATE utf8_unicode_ci,
+  `header_images` text COLLATE utf8_unicode_ci,
+  `result_content` longtext COLLATE utf8_unicode_ci,
+  `result_images` text COLLATE utf8_unicode_ci,
+  `images_before_after` text COLLATE utf8_unicode_ci,
+  `technical_images` text COLLATE utf8_unicode_ci,
+  `technical_description` longtext COLLATE utf8_unicode_ci,
+  `productive` text COLLATE utf8_unicode_ci,
+  `why_description` text COLLATE utf8_unicode_ci,
+  `why_images` text COLLATE utf8_unicode_ci,
+  `category_id` int(11) DEFAULT NULL,
+  `feedback` text COLLATE utf8_unicode_ci,
+  `noted` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `serivcesposts`
+--
+
+INSERT INTO `serivcesposts` (`id`, `header_title`, `header_slug`, `header_content`, `header_images`, `result_content`, `result_images`, `images_before_after`, `technical_images`, `technical_description`, `productive`, `why_description`, `why_images`, `category_id`, `feedback`, `noted`, `created_at`, `updated_at`) VALUES
+(92, 'GIẢM BÉO CÔNG NGHỆ CONTRI ULTRASHAPE', 'giam-beo-cong-nghe-cotrol', 'Rút ngắn thời gian giảm béo chỉ còn 1 tuần là bước tiến lớn nhất năm 2017 trong lĩnh vực giảm béo của Nhật Bản, khi cho ra đời phương pháp giảm béo thủy phân Contri Ultra Shape. Phương pháp giảm béo mới trong thời gian cực ngắn này là giải pháp đầy hi vọng cho những phụ nữ từng thất bại khi giảm béo hoặc muốn giảm béo trong thời gian gấp.', 'servicesposts/April2018/VHJXPZ2kcZ4DOHLPLTjj.jpg', '<p style=\"box-sizing: border-box; margin: 0px 0px 10px; color: #828c8b; font-family: san; font-size: 17.7875px; text-align: justify;\"><strong style=\"box-sizing: border-box;\"><span style=\"box-sizing: border-box; color: #3ab572;\">Hiệu quả:</span></strong><br style=\"box-sizing: border-box;\" />- Giảm 32% lượng mỡ thừa chỉ sau một lần điều trị.<br style=\"box-sizing: border-box;\" />- Giảm nhanh mỡ v&ugrave;ng bụng, gi&uacute;p v&ograve;ng 2 săn chắc v&agrave; r&otilde; n&eacute;t đường cong.<br style=\"box-sizing: border-box;\" />- C&oacute; t&aacute;c dụng giảm r&otilde; rệt mỡ cứng.<br style=\"box-sizing: border-box;\" />- Tăng khả năng thải độc của hệ bạch huyết - cơ quan quan trọng nhất đối với sắc đẹp của phụ nữ.<br style=\"box-sizing: border-box;\" />- L&agrave;m săn chắc da, da mịn s&aacute;ng.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 10px; color: #828c8b; font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"box-sizing: border-box; color: #3ab572;\"><strong style=\"box-sizing: border-box;\">Giảm b&eacute;o Contri Ultra Shape đặc biệt ph&ugrave; hợp với:</strong></span><br style=\"box-sizing: border-box;\" />- Những người cần giảm b&eacute;o trong thời gian gấp<br style=\"box-sizing: border-box;\" />- Những người muốn giảm b&eacute;o nhanh để duy tr&igrave; một v&oacute;c d&aacute;ng thon gọn như mong ước.<br style=\"box-sizing: border-box;\" />- Những người bị b&eacute;o l&acirc;u năm, từng giảm c&acirc;n thất bại.<br style=\"box-sizing: border-box;\" />- Những người bị mỡ cứng, v&ograve;ng bụng eo \"xồ xề \". &nbsp; &nbsp; &nbsp;&nbsp;</p>', 'servicesposts/April2018/3nIso1S8xqr74xShcV1f.png', '[{\"data\":\"servicesposts\\/April2018\\/B7hpepj7zwCo2W27VL1u.png\"}]', 'servicesposts/April2018/CXMAqz0gLEIyuyTOhyUa.png', '<p><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">Giảm béo Contri Ultra Shape là phương pháp đầu tiên kết hợp công nghệ giảm béo từ bên ngoài da với công nghệ phân hủy mỡ ngay trong nhân tế bào mỡ:</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">-&nbsp;</span><strong style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"box-sizing: border-box; color: rgb(58, 181, 114);\">Công nghệ Ultra Shape</span>:</strong><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">&nbsp;sử dụng sóng siêu âm hội tụ để phát hiện chính xác các tế bào mỡ thừa, sau đó nhiệt lượng sẽ đốt cháy mỡ, mỡ cứng bị tan lỏng dưới sức nóng tập trung, vì vậy khả năng tiêu hủy mỡ là rất lớn. Ưu điểm nổi bật của công nghệ này là đốt cháy mỡ một cách chính xác, không ảnh hưởng đến bất kỳ bộ phận nào khác ngoài tế bào mỡ thừa. Ultra Shape là công nghệ làm tan mỡ được FDA Hoa Kỳ chứng nhận an toàn và hiệu quả.</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">-&nbsp;</span><strong style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"box-sizing: border-box; color: rgb(58, 181, 114);\">Công nghệ cấy Cellulysis - công nghệ&nbsp;thủy phân chất béo</span></strong><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">: hợp chất Cellulysis khi thẩm thấu vào mỡ, sẽ làm tan lớp lipid, giúp mô mỡ bị hóa lỏng và hòa tan vào nước. Do mỡ bị phân hủy mỡ trực tiếp từ trong nhân mỡ nên mức độ triệt tiêu mỡ thừa đạt đến triệt để. Bên cạnh đó, Cellulysis còn giúp giảm tình trạng phù nước, từ đó làm giảm độ \"phình\" của cơ thể, giúp vóc dáng trông thon gọn như vốn phải thế.</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">-&nbsp;</span><strong style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"box-sizing: border-box; color: rgb(58, 181, 114);\">Kỹ thuật massage ấn huyệt Hosomi</span>:</strong><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">&nbsp;có nguồn gốc từ môn võ Aikido cổ truyền nổi tiếng của Nhật, có tác dụng phục hồi khí lực. Khi được vận dụng sáng tạo vào lĩnh vực giảm béo, phương pháp này có khả năng thải độc thải mỡ ra khỏi cơ thể nhanh gấp 1,5 lần so với chạy bộ thông thường. Cùng với 2 công nghệ tiêu mỡ từ bên ngoài của sóng siêu âm và từ bên trong của Cellulysis, phương pháp giải phóng mỡ Hosomi sẽ giúp thời gian giảm béo ngắn lại 1/3 so với các phương pháp trước đây.</span><br></p>', '[{\"name\":\"servicesposts\\/April2018\\/qIHgzSJl8PosuZVH6rdu.png\",\"description\":\"D\\u00f9ng nhi\\u1ec7t t\\u1eeb s\\u00f3ng si\\u00eau \\u00e2m Ultra Shape \\u0111\\u1ed1t ch\\u00e1y m\\u1ee1, l\\u00e0m tan l\\u1ecfng m\\u1ee1.\"}]', '<p>sdasd</p>', 'servicesposts/April2018/qMXN2U1Erxo0BivBc7Ds.png', 7, '[{\"name\":\"\\u00e1dasd\",\"description\":\"M\\u1ecdi ng\\u01b0\\u1eddi t\\u1eebng n\\u00f3i m\\u00ecnh l\\u00e0 ng\\u01b0\\u1eddi m\\u1eb9 \\u0111\\u01a1n th\\u00e2n qu\\u00e1 xu\\u1ec1 x\\u00f2a v\\u00e0 kh\\u00f4ng bi\\u1ebft ch\\u0103m s\\u00f3c b\\u1ea3n th\\u00e2n, \\u0111\\u1ebfn khi con \\u0111\\u00e3 g\\u1ea7n 4 tu\\u1ed5i m\\u1edbi gi\\u1eadt m\\u00ecnh khi nh\\u00ecn \\u1ea3nh ch\\u1ee5p. Nh\\u01b0ng nh\\u00ecn h\\u00ecnh m\\u00ecnh t\\u1ef1 ch\\u1ee5p m\\u1edbi \\u0111\\u00e2y n\\u00e0y, qu\\u00e1 kh\\u00e1c so v\\u1edbi l\\u00fac \\u0111\\u1ea7u \\u0111\\u00fang ko, b\\u1ee5ng m\\u00ecnh gi\\u1ea3m g\\u1ea7n 10cm v\\u00e0 c\\u00e2n c\\u0169ng xu\\u1ed1ng r\\u00f5 r\\u1ec7t \\u0111\\u1ea5y.\",\"images\":\"servicesposts\\/April2018\\/s7YtIo49Tq5DOntrazcC.png\"},{\"name\":\"\\u00e1dasd\",\"description\":\"M\\u1ecdi ng\\u01b0\\u1eddi t\\u1eebng n\\u00f3i m\\u00ecnh l\\u00e0 ng\\u01b0\\u1eddi m\\u1eb9 \\u0111\\u01a1n th\\u00e2n qu\\u00e1 xu\\u1ec1 x\\u00f2a v\\u00e0 kh\\u00f4ng bi\\u1ebft ch\\u0103m s\\u00f3c b\\u1ea3n th\\u00e2n, \\u0111\\u1ebfn khi con \\u0111\\u00e3 g\\u1ea7n 4 tu\\u1ed5i m\\u1edbi gi\\u1eadt m\\u00ecnh khi nh\\u00ecn \\u1ea3nh ch\\u1ee5p. Nh\\u01b0ng nh\\u00ecn h\\u00ecnh m\\u00ecnh t\\u1ef1 ch\\u1ee5p m\\u1edbi \\u0111\\u00e2y n\\u00e0y, qu\\u00e1 kh\\u00e1c so v\\u1edbi l\\u00fac \\u0111\\u1ea7u \\u0111\\u00fang ko, b\\u1ee5ng m\\u00ecnh gi\\u1ea3m g\\u1ea7n 10cm v\\u00e0 c\\u00e2n c\\u0169ng xu\\u1ed1ng r\\u00f5 r\\u1ec7t \\u0111\\u1ea5y.\",\"images\":\"servicesposts\\/April2018\\/52YQvm0rnlH1NIsCuW2q.png\"}]', '<p><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">Lưu ý sau khi trị liệu giảm béo tại Svan Clinic &amp; Spa: Giảm béo Contri Ultra Shape không chỉ giảm mỡ thừa trong 7 ngày trị liệu, mà còn giúp khách hàng tiếp tục tự giảm sau đó thêm 2 - 3kg nữa. Vì vậy để tăng hiệu quả tối đa giảm mỡ thừa, khách hàng nên:&nbsp;</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">-Cân đối thực đơn ăn uống, Hạn chế các thực phẩm &nbsp;dầu mỡ và tinh bột, bổ sung thêm vitamin từ rau xanh và trái cây.</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">- Nên chia nhiều &nbsp;bữa nhỏ trong ngày, không để cơ thể có cảm giác “bị bỏ đói”</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">- Hạn chế các thức uống có cồn, chất kích thích.</span><br style=\"box-sizing: border-box; color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\"><span style=\"color: rgb(130, 140, 139); font-family: san; font-size: 17.7875px; text-align: justify;\">- Nên uống nước ấm.</span><br></p>', '2018-04-25 04:59:59', '2018-04-25 04:59:59');
 
 -- --------------------------------------------------------
 
@@ -735,7 +878,9 @@ CREATE TABLE `servicesspecialists` (
 --
 
 INSERT INTO `servicesspecialists` (`id`, `title`, `images`, `content`, `created_at`, `updated_at`, `link`) VALUES
-(1, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/G7nqk9mpYU3VjPhkWjKI.png', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-15 10:58:53', '1');
+(1, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/3XBPzZgU394NNDesPbDr.jpg', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-24 21:36:38', '89'),
+(2, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/3XBPzZgU394NNDesPbDr.jpg', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-24 21:36:43', '89'),
+(3, 'Giảm Béo Tạo Form Perfect Shape', 'servicesspecialists/April2018/3XBPzZgU394NNDesPbDr.jpg', 'Phương pháp giảm cân tự nhiên, giảm ngay 15-20 cm chỉ sau 1 liệu trình. Cam kết không giảm béo hoàn lại tiền cho quý khách hàng.', '2018-04-15 10:58:53', '2018-04-24 21:36:48', '89');
 
 -- --------------------------------------------------------
 
@@ -773,22 +918,23 @@ INSERT INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Slidehome1s`
+-- Table structure for table `slidehome1s`
 --
 
-CREATE TABLE `Slidehome1s` (
-  `id` int(10) UNSIGNED NOT NULL,
+CREATE TABLE `slidehome1s` (
   `images` text COLLATE utf8_unicode_ci,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `link` text COLLATE utf8_unicode_ci,
+  `id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `Slidehome1s`
+-- Dumping data for table `slidehome1s`
 --
 
-INSERT INTO `Slidehome1s` (`id`, `images`, `created_at`, `updated_at`) VALUES
-(1, 'slidehome1s/April2018/MqtlD9xsLFxHNtCMrYg1.png', '2018-04-15 15:55:10', '2018-04-15 16:26:14');
+INSERT INTO `slidehome1s` (`images`, `link`, `id`, `created_at`, `updated_at`) VALUES
+('slidehome1s/April2018/XVLauDCkZzbf66Cyh2Gn.png', 'http://www.svanclinic.vn/', 1, '2018-04-17 19:48:00', '2018-04-17 19:54:30');
 
 -- --------------------------------------------------------
 
@@ -806,6 +952,33 @@ CREATE TABLE `translations` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userfeadbacks`
+--
+
+CREATE TABLE `userfeadbacks` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` text COLLATE utf8_unicode_ci,
+  `content` text COLLATE utf8_unicode_ci,
+  `images` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `userfeadbacks`
+--
+
+INSERT INTO `userfeadbacks` (`id`, `name`, `content`, `images`, `created_at`, `updated_at`) VALUES
+(1, 'DIỄN VIÊN DƯƠNG CẨM LYNH', 'Vì sinh mổ và muốn nuôi con bằng sữa mẹ nên Dương Cẩm Lynh đã lựa chọn hình thức giảm béo Perfect Shape tại Svan Clinic & Spa. Và thật ấn tượng chỉ 1,5 tháng sau sinh, Lynh đã giảm đến 15kg với chỉ số cơ thể thu gọn săn chắc, tinh thần thoải mái và lượng sữa dồi dào cho bé yêu.', 'userfeadbacks/April2018/TuMLyQvdNAX5Ijfl9AHc.jpg', '2018-04-17 21:19:22', '2018-04-17 21:19:22'),
+(2, 'DƯƠNG KIM ÁNH – NỮ HOÀNG DU LỊCH VN 2014', '“ Vì cơ địa khá dễ béo nên Ánh gặp nhiều khó khăn với việc ăn uống. Sau khi được nhân viên Svan tư vấn tận tình liệu trình giảm béo Hifu Lipo, giờ đây Ánh thoải mái ăn nhiều món ăn ưa thích mà không lo tích mỡ”', 'userfeadbacks/April2018/c9zGA29Q7TE55axB6Rea.jpg', '2018-04-17 21:20:00', '2018-04-17 21:20:22'),
+(3, 'DƯƠNG KIM ÁNH – NỮ HOÀNG DU LỊCH VN 2014', '“ Vì cơ địa khá dễ béo nên Ánh gặp nhiều khó khăn với việc ăn uống. Sau khi được nhân viên Svan tư vấn tận tình liệu trình giảm béo Hifu Lipo, giờ đây Ánh thoải mái ăn nhiều món ăn ưa thích mà không lo tích mỡ”', 'userfeadbacks/April2018/Rr41boSBJZRrXLyxn0Mp.jpg', '2018-04-17 21:20:00', '2018-04-17 21:20:12'),
+(4, 'Á HẬU THẾ GIỚI NGƯỜI VIỆT – VICTORIA THÚY VY', '“Thúy Vy rất thích làn da mộc săn chắc sau liệu trình nâng cơ Ultherapy. Khuôn mặt trẻ trung lâu dài hơn, đặc biệt Thúy Vy rất ấn tượng về không gian đẳng cấp của Svan như những Clinic tại Hoa kỳ”.', 'userfeadbacks/April2018/ixLJICc84vy5Duq9BmPm.jpg', '2018-04-17 21:22:00', '2018-04-17 21:22:50'),
+(5, 'TỐ UYÊN – Á HẬU MEKONG 1998', '“Vẻ trắng sáng, mềm mại và không bắt nắng là ưu điểm Tố Uyên rất thích từ tắm trắng phun phủ Nano. Lựa chọn Svan làm bạn đồng hành là quyết định đúng đắn nhất Uyên từng làm.”', 'userfeadbacks/April2018/WC1IXchm1Bz3DcGJH6T9.jpg', '2018-04-17 21:22:41', '2018-04-17 21:22:41'),
+(6, 'TỐ UYÊN – Á HẬU MEKONG 1998', '“Vẻ trắng sáng, mềm mại và không bắt nắng là ưu điểm Tố Uyên rất thích từ tắm trắng phun phủ Nano. Lựa chọn Svan làm bạn đồng hành là quyết định đúng đắn nhất Uyên từng làm.”', 'userfeadbacks/April2018/qrqzL2ZTexGl3goBuFDv.jpg', '2018-04-17 21:22:41', '2018-04-17 21:22:41');
 
 -- --------------------------------------------------------
 
@@ -830,15 +1003,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(3, 1, 'admin', 'your@email.com', 'users/March2018/APdWAhi9bYDVE3DydLgn.jpg', '$2y$10$08OxEbSTXn3Gfhd18fyuPOjoVGNxsp/1MVVjTmhGQbJaTx3k8Hi/i', '6w6fNd584xVRV5aGAlPq730YrjcANtDhBRRnrpupxijlOIsKrXX2HepUkJFY', '2018-03-11 23:53:41', '2018-03-11 23:56:34');
+(3, 1, 'admin', 'your@email.com', 'users/March2018/APdWAhi9bYDVE3DydLgn.jpg', '$2y$10$08OxEbSTXn3Gfhd18fyuPOjoVGNxsp/1MVVjTmhGQbJaTx3k8Hi/i', 'w6NEWtJWNJeL9aud2YaATHNNicvzHDKZ8ARdLcl8Slzr5KstdhG5Hq8t0NO1', '2018-03-11 23:53:41', '2018-03-11 23:56:34'),
+(4, 1, 'kanbi', 'kanbi1995@gmail.com', 'users/default.png', '$2y$10$.eI77O1OpqSR1SCr9215weh6KuSwUct8w.jz1J9CrSoOh.lgMZRLG', NULL, '2018-04-20 06:40:11', '2018-04-20 06:40:11');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Videos`
+-- Table structure for table `videos`
 --
 
-CREATE TABLE `Videos` (
+CREATE TABLE `videos` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` text COLLATE utf8_unicode_ci,
   `images` text COLLATE utf8_unicode_ci,
@@ -846,6 +1020,15 @@ CREATE TABLE `Videos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`id`, `title`, `images`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'Single Mom Phan Minh Thảo giảm 20kg tìm lại được hạnh phúc', 'videos/April2018/WLxufahVd6rGKvbP28AD.jpg', 'o9n-ilA9xOY', '2018-04-17 14:29:15', '2018-04-17 21:34:00'),
+(2, 'Diễn viên Dương Cẩm Lynh chia sẻ cảm nghĩ về công nghệ Contri UltraShape', 'videos/April2018/xtuaRnIYoz134ZfM1bJw.jpg', 'Ci69veao6ZU', '2018-04-17 21:32:42', '2018-04-17 21:32:42'),
+(4, 'Diễn viên Dương Cẩm Lynh chia sẻ cảm nghĩ về công nghệ Contri UltraShape', 'videos/April2018/ZxekTrEjuiPiyG62NqJg.jpg', 'uCeZQAH8RSk', '2018-04-17 21:33:36', '2018-04-17 21:33:36');
 
 -- --------------------------------------------------------
 
@@ -863,13 +1046,22 @@ CREATE TABLE `whyhomes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Dumping data for table `whyhomes`
+--
+
+INSERT INTO `whyhomes` (`id`, `images`, `text`, `created_at`, `updated_at`, `users`) VALUES
+(1, 'whyhomes/April2018/eRSAdVaDLGbLY5uPMpNp.png', 'Đội Ngũ Chuyên Môn Cao', '2018-04-17 20:01:42', '2018-04-17 20:01:42', 'http://www.svanclinic.vn/gioi-thieu'),
+(2, 'whyhomes/April2018/FsJc4UVBCPuLoTI83jH7.png', 'Công Nghệ Hiện Đại', '2018-04-17 20:01:00', '2018-04-17 20:02:05', 'http://www.svanclinic.vn/gioi-thieu'),
+(3, 'whyhomes/April2018/hMfVSEsdXbAto7aDZBaY.png', 'Cơ Sở Vật Chất', '2018-04-17 20:02:30', '2018-04-17 20:02:30', 'http://www.svanclinic.vn/gioi-thieu');
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Banners`
+-- Indexes for table `banners`
 --
-ALTER TABLE `Banners`
+ALTER TABLE `banners`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -881,9 +1073,9 @@ ALTER TABLE `categories`
   ADD KEY `categories_parent_id_foreign` (`parent_id`);
 
 --
--- Indexes for table `Customers`
+-- Indexes for table `customers`
 --
-ALTER TABLE `Customers`
+ALTER TABLE `customers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -900,12 +1092,6 @@ ALTER TABLE `data_types`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `data_types_name_unique` (`name`),
   ADD UNIQUE KEY `data_types_slug_unique` (`slug`);
-
---
--- Indexes for table `feedbacks`
---
-ALTER TABLE `feedbacks`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menus`
@@ -928,6 +1114,12 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pages`
 --
 ALTER TABLE `pages`
@@ -935,9 +1127,9 @@ ALTER TABLE `pages`
   ADD UNIQUE KEY `pages_slug_unique` (`slug`);
 
 --
--- Indexes for table `Partners`
+-- Indexes for table `partners`
 --
-ALTER TABLE `Partners`
+ALTER TABLE `partners`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -972,15 +1164,19 @@ ALTER TABLE `permission_role`
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `posts_slug_unique` (`slug`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `roles_name_unique` (`name`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `serivcesposts`
+--
+ALTER TABLE `serivcesposts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `servicesspecialists`
@@ -996,9 +1192,9 @@ ALTER TABLE `settings`
   ADD UNIQUE KEY `settings_key_unique` (`key`);
 
 --
--- Indexes for table `Slidehome1s`
+-- Indexes for table `slidehome1s`
 --
-ALTER TABLE `Slidehome1s`
+ALTER TABLE `slidehome1s`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1009,6 +1205,12 @@ ALTER TABLE `translations`
   ADD UNIQUE KEY `translations_table_name_column_name_foreign_key_locale_unique` (`table_name`,`column_name`,`foreign_key`,`locale`);
 
 --
+-- Indexes for table `userfeadbacks`
+--
+ALTER TABLE `userfeadbacks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -1016,9 +1218,9 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Indexes for table `Videos`
+-- Indexes for table `videos`
 --
-ALTER TABLE `Videos`
+ALTER TABLE `videos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1032,40 +1234,34 @@ ALTER TABLE `whyhomes`
 --
 
 --
--- AUTO_INCREMENT for table `Banners`
+-- AUTO_INCREMENT for table `banners`
 --
-ALTER TABLE `Banners`
+ALTER TABLE `banners`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `Customers`
+-- AUTO_INCREMENT for table `customers`
 --
-ALTER TABLE `Customers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `data_rows`
 --
 ALTER TABLE `data_rows`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=277;
 
 --
 -- AUTO_INCREMENT for table `data_types`
 --
 ALTER TABLE `data_types`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT for table `feedbacks`
---
-ALTER TABLE `feedbacks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `menus`
@@ -1077,7 +1273,7 @@ ALTER TABLE `menus`
 -- AUTO_INCREMENT for table `menu_items`
 --
 ALTER TABLE `menu_items`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1086,22 +1282,28 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `Partners`
+-- AUTO_INCREMENT for table `partners`
 --
-ALTER TABLE `Partners`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `partners`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `permission_groups`
@@ -1113,19 +1315,25 @@ ALTER TABLE `permission_groups`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `serivcesposts`
+--
+ALTER TABLE `serivcesposts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `servicesspecialists`
 --
 ALTER TABLE `servicesspecialists`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -1134,10 +1342,10 @@ ALTER TABLE `settings`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `Slidehome1s`
+-- AUTO_INCREMENT for table `slidehome1s`
 --
-ALTER TABLE `Slidehome1s`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `slidehome1s`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `translations`
@@ -1146,22 +1354,28 @@ ALTER TABLE `translations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `userfeadbacks`
+--
+ALTER TABLE `userfeadbacks`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `Videos`
+-- AUTO_INCREMENT for table `videos`
 --
-ALTER TABLE `Videos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `videos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `whyhomes`
 --
 ALTER TABLE `whyhomes`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

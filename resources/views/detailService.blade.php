@@ -336,3 +336,24 @@
         </div>
     </div>
 @endsection
+@section('javascript')
+    <script>
+        (function ($) {
+            $(window).load(function () {
+                $(".sroller").mCustomScrollbar({
+                    theme: "rounded-dots-dark"
+                }).on("mouseenter", function () {
+                    $(this).find("iframe").css("pointer-events", "none");
+                }).on("mouseup", function () {
+                    if (!$(this).find(".mCSB_scrollTools_onDrag").length) return;
+                    setTimeout(function () { $("#content").trigger("mouseenter"); }, 1);
+                });
+                $(window).on("blur", function () {
+                    $("#content iframe").css("pointer-events", "auto");
+                }).on("focus", function () {
+                    $("#content").trigger("mouseenter");
+                });
+            });
+        })(jQuery);
+    </script>
+@endsection
