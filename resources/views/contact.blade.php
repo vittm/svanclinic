@@ -7,30 +7,32 @@
     <div class="form-area">  
         <form role="form">
         <br style="clear:both">
-                    <h2 class="font-elsie" style="margin-bottom: 25px; text-align: center;">Contact Form</h2>
+                    <h2 class="" style="margin-bottom: 25px; text-align: center;">Thông tin khách hàng</h2>
+                    <p class="title-posts hidden">1</p>
+                    <p class="type-posts hidden">contact</p> 
     				<div class="form-group">
-						<input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+						<input type="text" class="form-control" id="username-customer" name="name" placeholder="Họ và Tên" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+						<input type="text" class="form-control" id="phone-customer" name="phone" placeholder="Số điện thoại" required>
 					</div>
                     <div class="form-group">
-                    <textarea class="form-control" type="textarea" id="message" placeholder="Message" maxlength="140" rows="7"></textarea>                  
+                    <textarea class="form-control" type="textarea" id="message" placeholder="Nội dung" maxlength="140" rows="7"></textarea>                  
                     </div>
             
-        <button type="button" id="submit" name="submit" class="btn btn-primary submit-contact ">Submit Form</button>
+        <button type="button" id="submit" name="submit" class="btn btn-primary submit-contact btn-customer">Gửi</button>
         </form>
     </div>
 </div>
 <div class="col-md-6 text-center top30">
-<h2 class="font-elsie " style="margin-bottom: 25px; text-align: center;">Our Contact</h2>
+<h2 class="" style="margin-bottom: 25px; text-align: center;">Liên hệ với chúng tôi</h2>
 
 <p> 136 Phạm Ngũ Lão Thành phố Hồ Chí Minh <p>
     <p> +84 623 12315 </p>
 
     <p> your@gmail.com </p>
 
-<h2 class="font-elsie top30" style="margin-bottom: 25px; text-align: center;">Follow Us</h2>
+<h2 class="top30" style="margin-bottom: 25px; text-align: center;"> </h2>
 
                     <ul class="social-network social-circle ">
                         <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>

@@ -1255,7 +1255,6 @@ function createCss() {
                             },
                             '.item': {
                                 'width': 440 * scale,
-                                'height': 270 * scale,
                                 'padding-top': 80 * scale,
                                 'border-radius': 25 * scale,
                                 'border-width': 3 * scale,

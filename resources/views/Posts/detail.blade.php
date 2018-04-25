@@ -13,6 +13,7 @@
     <!-- Title -->
     <h1 class="mt-4" style="font-size: 25px">{{ $posts->title }}</h1>
     <p class="title-posts hidden">{{ $posts->id }}</p>
+    <p class="type-posts hidden">posts</p>
     <!-- Author -->
     <div class="author" ><p><i class="fa fa-calendar" style="position: relative; top: -1px;"></i> 
     {!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!}</p><p ><i class="fa fa-user"></i> by <a href="">{{ $users->name}}</a></p></div>
@@ -25,7 +26,7 @@
   </div>
 
   <!-- Sidebar Widgets Column -->
-  <div class="col-md-4 pl0">
+  <div class="siderbar-detail col-md-4 pl0">
 
     <!-- Side Widget -->
     <div class="card my-4">
@@ -61,14 +62,13 @@
 
 @section('javascript')
     <script>
-        var stickyOffset = $('.sticky').offset().top;
-
-        $(window).scroll(function(){
-        var sticky = $('.sticky'),
-            scroll = $(window).scrollTop();
-            
-        if (scroll >= stickyOffset) sticky.addClass('fixed');
-        else sticky.removeClass('fixed');
+        var stickyOffset = $('.siderbar-detail').height();
+        var body = $('body').height();
+        $(window).scroll(function(){    
+            var scroll = $(window).scrollTop() + 800;
+            if ( body >= stickyOffset) $('.siderbar-detail > .card').addClass('fixed');
+            else $('.siderbar-detail').removeClass('fixed');
+            if( scroll >= body) $('.siderbar-detail > .card').removeClass('fixed'); else $('.siderbar-detail > .card').addClass('fixed');
         });
     </script>
 @stop

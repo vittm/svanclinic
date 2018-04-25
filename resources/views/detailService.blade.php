@@ -41,6 +41,8 @@
                     <div class="col-xs-8">
                         <div class="service-name-wrapper">
                             <h1 class="service-name"><span>{{ $posts-> header_title }}</span></h1>
+                                <p class="title-posts hidden">{{ $posts->id }}</p>
+                                <p class="type-posts hidden">services</p>
                                 <div class="service-name-text text-content">
                                     <p style="text-align: justify;">{{ $posts-> header_content }}</p>
 
@@ -63,8 +65,7 @@
                             <div class="col-xs-6">
                                 <div class="effective-left">
                                     <div class="effective-text-content text-content sroller">
-                                    <p style="text-align: justify;"><strong><span style="color:#3ab572;">Hiệu quả:</span></strong><br />
-                                     {{ $posts->result_content }}
+                                     {!! $posts->result_content !!}
                                     </div>
                                 </div>
                                 <div class="btn-wrapper text-right">
@@ -142,7 +143,7 @@
                             <div class="col-xs-6">
                                 <div class="technology-right">
                                     <div class="technology-text-content text-content sroller">
-                                    {{ $posts->technical_description }}
+                                    {!! $posts->technical_description !!}
 
                                     </div>
                                     <div class="btn-wrapper text-left">
@@ -201,7 +202,7 @@
                             <div class="col-xs-12">
                                 <div class="why-chose-content">
                                     <div class="text-content">
-                                    {{ $posts->why_description }}    
+                                    {!! $posts->why_description !!}    
                                     </div>
                                 </div>
                             </div>
@@ -222,6 +223,7 @@
                     <div class="feedback-wrapper">
                         <div class="container">
                             <div class="row">
+                            @if($posts->feedback)
                             @foreach(json_decode($posts->feedback,JSON_BIGINT_AS_STRING) as $key => $value)
                                     <div class="col-xs-6">
                                         <div class="item">
@@ -241,6 +243,7 @@
                                         </div>
                                     </div> 
                             @endforeach
+                            @endif
                             </div>
                         </div>
                     </div>
@@ -257,7 +260,7 @@
                     </div>
                     <div class="note-wrapper">
                         <div class="note-content-wrapper">
-                            {{ $posts->noted }}
+                            {!! $posts->noted !!}
 
                         </div>
                         <div class="note-btn-wrapper">
@@ -307,16 +310,17 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">ĐĂNG KÝ TƯ VẤN</h4>
                 </div>
-                <form id="consultant-form" action="/ConsultantSubmit" method="POST">
+                <form id="consultant-form" action="/ConsultantSubmit" method="get">
+                {{ csrf_field() }}
                     <div class="modal-body">
                             <div class="form-group">
-                                <input type="text" name="name" class="form-control" placeholder="Họ t&#234;n">
+                                <input id="username-customer" type="text" name="name" class="form-control" placeholder="Họ t&#234;n">
                             </div>
                             <div class="form-group">
                                 <input type="text" name="email" class="form-control" placeholder="Email">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
+                                <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
                                 <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
                             </div>
                             <div class="form-group">
@@ -325,25 +329,10 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
-                        <button type="submit" class="btn btn-primary">Gửi</button>
+                        <button type="submit" class="btn btn-primary btn-customer">Gửi</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-<script>
-    function vote(value) {
-        //$(".rate-content").empty();
-        $.ajax({
-                url: "/VotingService/" + 103 + "/" + value,
-                dataType: "json",
-                type: "GET",
-                success: function (result) {
-                    var htmlStr = result.votingRate + ' &#x2215; 5 (' + result.votingCount + 'votes)';
-                    $(".rate-value").html(htmlStr);
-                    $(".vote-radio").attr("disabled", true);
-                }
-            });
-    }
-</script> 
 @endsection

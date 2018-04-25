@@ -51,7 +51,7 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/svanclinic/storage/app/public',
+            'url' => env('APP_URL').'/sv/storage/app/public',
             'visibility' => 'public',
         ],
 

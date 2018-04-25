@@ -37085,7 +37085,7 @@
       setup: function setup(editor) {
   
         function toTimeHtml(date) {
-          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' placeholder='Give yourself a username' type='text'> <input id='email-customer' placeholder='What is your email?' type='email'> <input id='phone-customer' placeholder='phone' type='text'> <input type='button' class='btn-customer' value='Sign up'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
+          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' placeholder='Họ và Tên' type='text'><input id='phone-customer' placeholder='Điện Thoại' type='text'> <input type='button' class='btn-customer btn-customer__center' value='Đăng Ký'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
         }
   
         function insertDate() {

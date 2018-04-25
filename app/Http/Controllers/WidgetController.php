@@ -11,11 +11,11 @@ use DateTimeZone;
 
 class WidgetController extends Controller
 {
-    public function index($name,$title,$phone,$utm_source,$utm_medium,$utm_campaign)
+    public function index(Request $request)
     {
         DB::table('customers')->insert(
-            ['title' => $title, 'name' => $name , 'phone' => $phone , 
-            'source'=> $utm_source, 'medium'=>$utm_medium, 'campaign'=>$utm_campaign,
+            ['title' => $request->title, 'name' => $request->name ,'types' =>$request->typepost, 'phone' => $request->phone , 
+            'source'=> $request->utm_source, 'medium'=>$request->utm_medium, 'campaign'=>$request->utm_campaign,
             'created_at' => Carbon\Carbon::now('Asia/Ho_Chi_Minh')->format('d/m/Y')]
         );
         return 'ok';
@@ -33,22 +33,7 @@ class WidgetController extends Controller
     public function search(Request $request)
     {
         $check = true;
-        $customers = DB::table('customers')->where('employer','like' ,"%".$request->search."%")->get();
-        if(count($customers) == '0'){
-            $customers = DB::table('customers')->where('created_at','like', "%".$request->search."%")->get();
-            if(count($customers) == '0'){
-                $customers = DB::table('customers')->where('name','like', "%".$request->search."%")->get();
-                if(count($customers) == '0'){
-                    $customers = DB::table('customers')->where('source','like', "%".$request->search."%")->get();
-                    if(count($customers) == '0'){
-                        $customers = DB::table('customers')->where('medium','like', "%".$request->search."%")->get();
-                        if(count($customers) == '0'){
-                            $customers = DB::table('customers')->where('campaign','like', "%".$request->search."%")->get();
-                        }
-                    }
-                }
-            }
-        }
+        $customers = DB::table('customers')->where('id','!=',null)->orWhere('name','like', "%".$request->search."%")->get();
         return Voyager::view('voyager::customers.index', ['customers'=>$customers,'check' => $check]);     
     }
 }

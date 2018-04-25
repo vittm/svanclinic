@@ -17,32 +17,25 @@ $(document).ready(function () {
     $(document).ready(function () {
       $(".btn-customer").click(function (e) {
           e.preventDefault();
-          var url= $(location).attr('hostname'); 
+          var url= $(location).attr('origin'); 
           var form = $(this);
           var name = $('#username-customer').val(),
               phone = $('#phone-customer').val(),
-              title = $('.title-posts').text(),
-              source = $.urlParam('utm_sourcdataTablee'),
+              title = $('.title-posts').text();
+              typepost = $('.type-posts').text(),
+              source = $.urlParam('utm_source'),
               medium= $.urlParam('utm_medium'),
               campaign= $.urlParam('utm_campaign');
-          
           $.ajax({
-              url: "../get-customer"+'-'+name+'-'+title+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
+              url: url+"/sv/public/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
               type: 'get',
               dataType: 'html',
-              data: {'name':name,'title':title,'phone':phone,'utm_source':source,
-                     'utm_medium':medium,'utm_campaign':campaign,"_token": "{{ csrf_token() }}"},
+              data: {'name':name,'title':title,'phone':phone,'typepost':typepost,'utm_source':source,'utm_medium':medium,'utm_campaign':campaign,"_token": "{{ csrf_token() }}"},
               processData: false,
               contentType: false,
-  
-              beforeSend: function () {
-                  $("body").css("cursor", "progress");
-                  $(".has-error").removeClass("has-error");
-                  $(".help-block").remove();
-              },
-  
               success: function (d) {
-                  alert('thành công rồi nhé')
+                $('#modal-19').modal('hide');
+                $('#modal-20').modal('show');
               },
   
               error: function () {

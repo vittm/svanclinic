@@ -224,12 +224,26 @@
     </div>
 </div>
 <button class="totop" titlle="Đầu trang"> </button>
-
-
-		<input type="text" value="Vui l&#242;ng nhập điện thoại" hidden id="EmptyValidate">
-        <input type="text" value="Vui l&#242;ng chọn gi&#225; trị" hidden id="ChooseValidate">
-        <input type="text" value="Gửi th&#224;nh c&#244;ng" hidden id="SendSuccess">
-
+<div class="custom-form style-2" >
+    <div class="modal fade in" id="modal-20">
+        <div class="modal-dialog" style="margin-top:150px;">
+            <div class="modal-content" style="margint: auto">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">ĐĂNG KÝ TƯ VẤN</h4>
+                </div>
+                
+                    <div class="modal-body">
+                            <p> Cảm ơn bạn đã đăng ký, chúng tôi sẽ sớm liên hệ lại với bạn. </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
+                        
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 		<!--<script type="text/javascript">window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push([&quot;_setAccount&quot;,47095]);var n=e.location.protocol==&quot;https:&quot;?&quot;https:&quot;:&quot;http:&quot;;var r=document.createElement(&quot;script&quot;);r.type=&quot;text/javascript&quot;;r.async=true;r.src=n+&quot;//static.subiz.com/public/js/loader.js&quot;;var i=document.getElementsByTagName(&quot;script&quot;)[0];i.parentNode.insertBefore(r,i)}(window);</script>-->
         <!-- Jquery core JavaScript -->
         <script src="{{ URL::to('js/bootstrap.js')}}"></script>
@@ -254,6 +268,7 @@
             // });
 			
         </script>
+        @yield('javascript')
 		<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
         <script src="https://apis.google.com/js/platform.js" async defer>
           {lang: 'vi'}

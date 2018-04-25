@@ -464,10 +464,6 @@ h3:hover {
   clear: both;
 }
 
-.custom-form .modal {
-  font-family: myriad;
-}
-
 .custom-form .modal button.close {
   color: #fff;
   opacity: 1;
@@ -479,7 +475,6 @@ h3:hover {
 
 .custom-form .modal .modal-title {
   font-size: 28px;
-  font-family: myriad;
 }
 
 .custom-form .modal .modal-content {
@@ -759,10 +754,6 @@ body.modal-open {
   background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png");
 }
 
-#promotion-modal {
-  font-family: myriad;
-}
-
 #promotion-modal button.close {
   color: #fff;
   opacity: 1;
@@ -781,7 +772,6 @@ body.modal-open {
 
 #promotion-modal .modal-title {
   font-size: 28px;
-  font-family: myriad;
 }
 
 #promotion-modal .modal-content {
@@ -3838,6 +3828,7 @@ body.modal-open {
 }
 
 .service-detail .service-detail-wrapper .service-detail-title:before {
+  content: '\F105';
   font-family: "FontAwesome";
   font-size: 50px;
   position: absolute;
@@ -4087,6 +4078,7 @@ body.modal-open {
   margin-top: 50px;
   width: 100%;
   height: 550px;
+  height: auto;
   position: relative;
 }
 
@@ -4110,8 +4102,9 @@ body.modal-open {
 
 .service-detail .service-detail-wrapper .feedback .feedback-wrapper .item {
   width: 440px;
-  height: 270px;
+  height: inherit;
   padding-top: 80px;
+  padding-bottom: 20px;
   position: relative;
   border: 3px dashed #2a8a55;
   border-radius: 25px;
@@ -4238,6 +4231,7 @@ body.modal-open {
 
 .service-detail .service-detail-wrapper .btn-wrapper .btn-icon span:before {
   content: '';
+  background-image: url(http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png);
   width: 30px;
   height: 30px;
   left: 6px;
@@ -4904,19 +4898,22 @@ body.modal-open {
 
 .news .news-container .news-list-wrapper .item .item-image {
   overflow: hidden;
+  position: relative;
+}
+
+.news .news-container .news-list-wrapper .item .item-image:hover::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid #2a8a55;
 }
 
 .news .news-container .news-list-wrapper .item .item-image img {
   width: 100%;
   height: auto;
   display: block;
-  -webkit-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-}
-
-.news .news-container .news-list-wrapper .item .item-image img:hover {
-  -webkit-transform: scale(1.3);
-  transform: scale(1.3);
 }
 
 .news .news-container .news-list-wrapper .item .item-description {
@@ -6270,7 +6267,7 @@ body .pr0 {
 }
 
 .login {
-  background: #2B2D42;
+  background: #2a8a55;
   border-radius: 4px;
   width: 300px;
   height: auto;
@@ -6290,7 +6287,7 @@ body .pr0 {
 }
 
 .login_inner__avatar {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217538/default-avatar-ponsy-deer.png);
+  background: url(https://scontent.fsgn5-1.fna.fbcdn.net/v/t1.0-1/p100x100/13254612_1855128438047796_8812353629692476883_n.jpg?_nc_cat=0&oh=5a498b9e218a951edeea7a22881f6b58&oe=5B981D49);
   background-size: cover;
   border: 3px solid #EDF2F4;
   width: 4em;
@@ -6318,6 +6315,10 @@ body .pr0 {
   opacity: 0;
 }
 
+#username-customer {
+  border-top: 1px dotted #ffffff;
+}
+
 .login_inner input {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -6326,7 +6327,7 @@ body .pr0 {
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 1px solid #33354e;
+  border-bottom: 1px dotted #ffffff;
   width: 100%;
   padding: 1.1em;
   color: #FFF;
@@ -6349,7 +6350,7 @@ body .pr0 {
 }
 
 .loggedin {
-  background: #2B2D42;
+  background: #2a8a55;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6410,6 +6411,17 @@ body .pr0 {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.siderbar-detail .fixed {
+  position: fixed;
+  top: 95px;
+  right: 31px;
+  width: inherit;
+}
+
+input.btn-customer__center {
+  text-align: center;
 }
 
 button.submit-contact {

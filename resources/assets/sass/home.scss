@@ -424,7 +424,7 @@
   }
   
   .custom-form .modal {
-    font-family: myriad;
+
     button.close {
       color: #fff;
       opacity: 1;
@@ -434,7 +434,7 @@
     }
     .modal-title {
       font-size: 28px;
-      font-family: myriad;
+  
     }
     .modal-content {
       background: transparent;
@@ -684,7 +684,7 @@
   }
   
   #promotion-modal {
-    font-family: myriad;
+
     button.close {
       color: #fff;
       opacity: 1;
@@ -700,7 +700,7 @@
     }
     .modal-title {
       font-size: 28px;
-      font-family: myriad;
+  
     }
     .modal-content {
       background: transparent;
@@ -3552,6 +3552,7 @@
           position: relative;
           color: #3d9c74;
           &:before {
+            content: '\f105';
             font-family: "FontAwesome";
             font-size: 50px;
             position: absolute;
@@ -3763,6 +3764,7 @@
           margin-top: 50px;
           width: 100%;
           height: 550px;
+          height: auto;
           position: relative;
           .feedback-wrapper {
             width: 100%;
@@ -3781,8 +3783,9 @@
             }
             .item {
               width: 440px;
-              height: 270px;
+              height: inherit;
               padding-top: 80px;
+              padding-bottom: 20px;
               position: relative;
               border: 3px dashed rgb(42, 138, 85);
               border-radius: 25px;
@@ -3893,6 +3896,7 @@
             position: relative;
             span:before {
               content: '';
+              background-image: url(http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png);
               width: 30px;
               height: 30px;
               left: 6px;
@@ -4482,19 +4486,21 @@
             }
             .item-image {
               overflow: hidden;
+              position: relative;
+                &:hover {
+                  &::before {
+                    position: absolute;
+                    content: "";
+                    top:0;
+                    width: 100%;
+                    height: 100%;
+                    border: 3px solid rgb(42, 138, 85);
+                }
+              }
               img {
                 width: 100%;
                 height: auto;
                 display: block;
-                -webkit-transition: all 0.7s ease;
-                -moz-transition: all 0.7s ease;
-                -ms-transition: all 0.7s ease;
-                -o-transition: all 0.7s ease;
-                transition: all 0.7s ease;
-                &:hover {
-                  -webkit-transform: scale(1.3);
-                  transform: scale(1.3);
-                }
               }
             }
             .item-description {

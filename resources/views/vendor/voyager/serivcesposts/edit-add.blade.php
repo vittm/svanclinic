@@ -120,7 +120,7 @@
                                     @endif
                                         <input type="file" class="form-control" value="@if(!is_null($dataTypeContent->getKey())){{ $post->result_images }}@endif"name="result_images" placeholder="address">
                                     </div>
-                                    <textarea class="form-control"  name="result_excerpt">@if(!is_null($dataTypeContent->getKey())){{$post->result_content}}@endif</textarea>
+                                    <textarea class="form-control richTextBox" id="richtextbody" name="result_excerpt" style="border:0px;">@if(!is_null($dataTypeContent->getKey())){!!$post->result_content!!}@endif</textarea>
                                 </div>
                                 
                             </div>
@@ -224,7 +224,8 @@
                         <div class="panel-body">
                             <div class="form-group">    
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="technical_description">@if(!is_null($dataTypeContent->getKey())){{$post->technical_description}}@endif</textarea>
+                                <textarea class="form-control richTextBox" id="richtextbody" name="technical_description">@if(!is_null($dataTypeContent->getKey())){!!$post->technical_description!!}@endif</textarea>
+                                
                             </div>
                             <div class="panel-body">
                                     @if(!is_null($dataTypeContent->getKey()))
@@ -249,7 +250,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="why_description">@if(!is_null($dataTypeContent->getKey())){{$post->why_description}}@endif</textarea>
+                                <textarea class="form-control richTextBox" id="richtextbody" name="why_description">@if(!is_null($dataTypeContent->getKey())){!!$post->why_description!!}@endif</textarea>
                             </div>
                             <div class="panel-body">
                                     @if(!is_null($dataTypeContent->getKey()))
@@ -353,7 +354,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Mô tả</label>
-                                <textarea class="form-control" name="noted_description">@if(!is_null($dataTypeContent->getKey())){{$post->noted}}@endif</textarea>
+                                <textarea class="form-control richTextBox" id="richtextbody" name="noted_description">@if(!is_null($dataTypeContent->getKey())){!!$post->noted!!}@endif</textarea>
                             </div>
                         </div>
                     </div>                              
