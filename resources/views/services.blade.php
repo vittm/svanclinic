@@ -12,7 +12,7 @@
         </div>
         <div class="container service-group">
             @foreach($news as $key => $value)
-                <div class="col-xs-6">
+                <div class="col-md-6">
                     <div class="item">
                         <div class="item-image">
                             <div class="border-circle">&nbsp;</div>

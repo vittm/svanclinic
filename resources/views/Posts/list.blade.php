@@ -17,10 +17,10 @@
             <div class="container">
                 <div class="row">
                 
-                    <div class="col-xs-12">
+                    <div class="col-md-12">
                         <div class="news-list-title"></div>
                     </div>
-                    <div class="col-xs-12">
+                    <div class="col-md-12">
                         <div class="news-list-item">
                         @foreach($news as $key => $value)
                                 <div class="item">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
   
-                    <!-- <div class="col-xs-12">
+                    <!-- <div class="col-md-12">
                         <nav aria-label="Page navigation">
                             <ul class='pagination f-right'><li class='page-item active'><a rel='nofollow' class='page-link' href='#' >1</a></li><li class='page-item'><a rel='nofollow' class='page-link' href='/tin-tuc/tin-tuc-dich-vu/2'>2</a></li><li class='page-item'><a rel='nofollow' class='page-link' href='/tin-tuc/tin-tuc-dich-vu/3'>3</a></li><li class='page-item'><a rel='nofollow' class='page-link'>...</a></li><li class='page-item'><a rel='nofollow' class='page-link' href='/tin-tuc/tin-tuc-dich-vu/11'>11</a></li><li class='page-item'><a rel='nofollow' class='page-link' href='/tin-tuc/tin-tuc-dich-vu/12'>12</a></li><li class='page-item btn-next'><a rel='nofollow' class='page-link' aria-label='Next' href='/tin-tuc/tin-tuc-dich-vu/2' ></a></li></ul>
                             <div class="clearfix"></div>

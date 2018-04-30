@@ -51,7 +51,7 @@
             </div>
             <div class="row intro-why-chose-content">
             @foreach($whyhomes as $key => $value)
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <a href="">
                             <figure>
                                 <img src="{{Voyager::image($value->images)}}" alt="" class="img-responsive center-block">
@@ -116,7 +116,7 @@
             <div class="container">
                 <div class="row">
                 @foreach($news as $key => $value)
-                        <div class="col-xs-4">
+                        <div class="col-md-4">
                             <div class="news-item">
                                 <div class="news-img">
                                     <a href="{{ 'posts/'.$value->slug }}">
@@ -157,7 +157,7 @@
             <div class="container">
                 <div class="row">
                 @foreach($videos as $key => $value)
-                        <div class="col-xs-4">
+                        <div class="col-md-4">
                             <div class="video-container">
                                 <a href="#" class="video-btn" data-toggle="modal" data-target="#videoModal" data-thevideo="{{$value->link}}">
                                     <img src="{{Voyager::image($value->images)}}">
@@ -245,7 +245,7 @@
             </div>
         </div>
     </div>
-        <div class="col-xs-6 img_popup">
+        <div class="col-md-6 img_popup">
             <div class="close">
                 <img src="/Content/layout/images/img_popup/close.png" alt="Close button">
             </div>

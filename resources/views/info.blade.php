@@ -31,7 +31,7 @@
                     <div class="intro-place-container">
                         <div class="container">
                             <div class="row no-mg">
-                                <div class="col-xs-6 intro-place-left">
+                                <div class="col-md-6 intro-place-left">
                                     <div class="intro-place-left-wrapper">
                                         <div class="intro-place-text">
                                             <p>Nằm tr&ecirc;n con phố sầm uất bậc nhất S&agrave;i th&agrave;nh, sở hữu kiến tr&uacute;c nổi bật v&agrave; cuốn h&uacute;t c&ugrave;ng hệ thống c&ocirc;ng nghệ thẩm mỹ cao cấp, Svan Clinic &amp; Spa đang l&agrave; điểm hẹn l&agrave;m đẹp l&yacute; tưởng cho ph&aacute;i đẹp S&agrave;i Th&agrave;nh. Cơ sở vật chất hạ tầng mang đến sự ho&agrave;n hảo về thẩm mỹ v&agrave; chất lượng. Kiến tr&uacute;c Svan Clinic &amp; Spa mang phong c&aacute;ch sang trọng v&agrave; hiện đại nhưng lu&ocirc;n ch&uacute; trong kh&ocirc;ng gian xanh, mang đến sự thư th&aacute;i v&agrave; gần gũi nhất cho kh&aacute;ch h&agrave;ng.</p>
@@ -39,7 +39,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-6 intro-place-right">
+                                <div class="col-md-6 intro-place-right">
                                     <div class="intro-place-right-wrapper">
                                                 <div class="image-01">
                                                     <a class="btn-fancy" rel="group-intro" title="" href="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-2.jpg">
@@ -96,7 +96,7 @@
                             <div class="intro-text-2">
                     <div class="container intro-text-2-container">
                         <div class="row no-mg">
-                            <div class="col-xs-6 no-pd">
+                            <div class="col-md-6 no-pd">
                                 <div class="intro-text-left-container">
                                     <div class="intro-text-left-wrapper">
                                         <div class="intro-text-content">
@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-6 no-pd">
+                            <div class="col-md-6 no-pd">
                                 <div class="intro-text-right-container">
                                     <div class="image">
                                         <img src="http://www.svanclinic.vn/Upload/News/6c3abed9-05f2-4f44-a2e7-634b3eeef4f3/02.jpg" >

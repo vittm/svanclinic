@@ -2173,9 +2173,11 @@ function createCss() {
         },    
     })
 }
-createCss();
 $(function() {
     $(window).on('resize', function() {
-        createCss();
+        var deviceWidth = $(window).width() - 17;
+        if(deviceWidth > minWidth) {
+            createCss();
+        }
     });
 })

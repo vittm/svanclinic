@@ -26,7 +26,7 @@
                     $post = DB::table('posts')->where('category_id','=',$value->id)->get();  
                 ?>
                 @foreach($post as $key => $value)
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div class="item">
                             <div class="item-date">
                                 <div class="date-wrapper">

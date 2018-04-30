@@ -49,7 +49,12 @@
 
 </head>
     <body>
-<header class="header">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{url('/')}}"><img width="100" src="{{Voyager::image('img/logo.png')}}" alt=""></a>
+        <button class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+      </nav>
+<header class="header" id="navbarCollapse">
     <div class="menu">
         <div class="menu-container">
             <div class="right-container">

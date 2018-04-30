@@ -200,6 +200,9 @@ body .pr0{
     }
   }
   .siderbar-detail {
+    @media only screen and (max-width: 1024px) { 
+      display: none;
+    }
     .fixed {
       position: fixed;
       top: 95px; 

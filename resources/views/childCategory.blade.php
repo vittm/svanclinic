@@ -17,7 +17,7 @@
         <div class="container service-list-wrapper">
             <div class="row">
             @foreach($news as $key => $value)
-                <div class="col-xs-4">
+                <div class="col-md-4">
                     <div class="item">
                         <div class="item-image">
                             <a href="{{ URL::to('services/detail')}}/{{$value->header_slug}}">
