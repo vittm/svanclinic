@@ -98,7 +98,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="effective-image-slider">
-                                     @foreach(array_slice(json_decode($posts->images_before_after,JSON_BIGINT_AS_STRING),0,2) as $key => $value)
+                                     @foreach(json_decode($posts->images_before_after,JSON_BIGINT_AS_STRING) as $key => $value)
                                         <div class="item">
                                             <figure>
                                                 <img src="{{Voyager::image($value['data'])}}">

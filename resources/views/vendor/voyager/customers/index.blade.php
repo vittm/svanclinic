@@ -85,11 +85,13 @@
                     <?php
                         if($value->types == "posts"){
                             $post = DB::table('posts')->where('id','=',$value->title)->first(); 
+                            
                         }elseif($value->types == "services") {
                             $post = DB::table('serivcesposts')->where('id','=',$value->title)->first();
                         }elseif($value->types == 'contact') {
                             $post = 'Form liên hệ';
                         }
+                    
                     ?>
                     <a target="_blank" style="font-size: 14px;text-align: left;" 
                        href="@if($value->types == 'posts' ){{ URL::to('/posts/'.$post->slug) }} 

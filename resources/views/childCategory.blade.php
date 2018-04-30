@@ -30,7 +30,7 @@
                             <p style="text-align: justify;"></p>
                             {!!$value->header_content!!}    
                         </div>
-                        <div><a href="{{ URL::to('services/detail')}}/{{$value->header_slug}}" class="readmore">Chi tiết</a><div class="clearfix"></div>
+                        <div><a href="{{ URL::to('services/detail')}}/{{$value->header_slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

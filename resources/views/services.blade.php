@@ -39,7 +39,7 @@
                                     {!! $value->content!!}
                                 </div>
                                 <div>
-                                    <a href="{{ URL::to('')}}/{{$slug}}" class="readmore">Chi tiết</a><div class="clearfix"></div>
+                                    <a href="{{ URL::to('')}}/{{$slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
                                 </div>
                         </div>
                     </div>

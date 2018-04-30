@@ -47,7 +47,7 @@
 
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to('/posts/'.$value->slug) }}" class="readmore">Chi tiết</a>
+                                                <a href="{{ URL::to('/posts/'.$value->slug) }}" class="readmore">Xem Thêm</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>

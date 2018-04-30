@@ -65,7 +65,7 @@
         var stickyOffset = $('.siderbar-detail').height();
         var body = $('body').height();
         $(window).scroll(function(){    
-            var scroll = $(window).scrollTop() + 800;
+            var scroll = $(window).scrollTop() + $('.footer').height();
             if ( body >= stickyOffset) $('.siderbar-detail > .card').addClass('fixed');
             else $('.siderbar-detail').removeClass('fixed');
             if( scroll >= body) $('.siderbar-detail > .card').removeClass('fixed'); else $('.siderbar-detail > .card').addClass('fixed');

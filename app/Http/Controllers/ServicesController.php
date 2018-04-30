@@ -63,8 +63,7 @@ class ServicesController extends Controller
                 );
                 $array_feedback[] = $data2;
             }
-        
-        $data[] = [
+        $data= ([
             'header_title'=> $request->header_title,
             'header_slug' => $request->header_slug,
             'header_content' => $request->header_description,
@@ -78,9 +77,9 @@ class ServicesController extends Controller
             'technical_images'=>$this->updateImages('technical_images',$request,'servicesposts',$request->technical_images,'images'),
             'why_description'=> $request->why_description,
             'why_images'=> $this->updateImages('why_images',$request,'servicesposts',$request->why_images,'images'),
-            'feedback'=> json_encode($request->array_feedback),
+            'feedback'=> json_encode($array_feedback),
             'noted'=> $request->noted_description,
-        ];
+        ]);
 
         Serivcespost::insert($data);
         return redirect('admin/serivcesposts');
