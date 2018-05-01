@@ -185,8 +185,19 @@
                                                     <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">{{ __('voyager.generic.edit') }}</span>
                                                 </a>
                                             @endcan
+                                            <?php 
+                                                    if($dataType->slug =='posts'){
+                                                        
+                                                        $sub= '/'.$dataType->slug.'/'.$data->slug;
+                                                    }else {
+                                                        
+                                                        $sub= '/services/detail/'.$data->header_slug;
+                                                    }
+                                                ?>
+                                               
                                             @can('read', $data)
-                                                <a href="{{ route('voyager.'.$dataType->slug.'.show', $data->{$data->getKeyName()}) }}" title="{{ __('voyager.generic.view') }}" class="btn btn-sm btn-warning pull-right">
+                                                
+                                                <a target="_blank" href="{{ URL::to('')}}{{$sub}}" title="{{ __('voyager.generic.view') }}" class="btn btn-sm btn-warning pull-right">
                                                     <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">{{ __('voyager.generic.view') }}</span>
                                                 </a>
                                             @endcan

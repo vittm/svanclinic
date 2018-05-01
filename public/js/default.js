@@ -2173,11 +2173,8 @@ function createCss() {
         },    
     })
 }
-$(function() {
-    $(window).on('resize', function() {
-        var deviceWidth = $(window).width() - 17;
-        if(deviceWidth > minWidth) {
-            createCss();
-        }
-    });
-})
+
+var deviceWidth = $(window).width() - 17;
+if(deviceWidth > minWidth) {
+    createCss();
+}

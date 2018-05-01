@@ -245,14 +245,14 @@
             </div>
         </div>
     </div>
-        <div class="col-md-6 img_popup">
-            <div class="close">
-                <img src="/Content/layout/images/img_popup/close.png" alt="Close button">
-            </div>
-            <a href="http://www.svanclinic.vn/uu-dai-thang/"><img src="/Upload/Popup/45c655c8-dc15-4842-bcd2-df977e49f8a1/popup_web.png	" alt="http://www.svanclinic.vn/uu-dai-thang/" class="img-responsive"></a>
-        </div>
+        
         <div class="opacity"></div>
-
+        <div class="col-xs-6 img_popup">
+<div class="close">
+    <img src="http://www.svanclinic.vn/Content/layout/images/img_popup/close.png" alt="Close button">
+</div>
+<a href="{{$banners->link}}"><img src="{{Voyager::image($banners->images)}}" alt="" class="img-responsive"></a>
+</div>
 @endsection        
          
 

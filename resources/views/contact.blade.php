@@ -26,18 +26,16 @@
 </div>
 <div class="col-md-6 text-center top30">
 <h2 class="" style="margin-bottom: 25px; text-align: center;">Liên hệ với chúng tôi</h2>
-
-<p> 136 Phạm Ngũ Lão Thành phố Hồ Chí Minh <p>
-    <p> +84 623 12315 </p>
-
-    <p> your@gmail.com </p>
+{!! 
+    $info->info
+!!}
 
 <h2 class="top30" style="margin-bottom: 25px; text-align: center;"> </h2>
 
                     <ul class="social-network social-circle ">
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google"></i></a></li>
+                        <li><a href="{{$info->facebook}}" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                        <li><a href="{{$info->twitter}}" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="{{$info->gmail}}" class="icoGoogle" title="Google +"><i class="fa fa-google"></i></a></li>
                     </ul>				
                     </div>			
 </div>

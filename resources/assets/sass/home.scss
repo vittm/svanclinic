@@ -2,7 +2,32 @@
 /* --------------------------------------------------------
 
 ----------------------------------------------------------*/
-  
+div.img_popup {
+    position: fixed;
+    top: -200px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: -1;
+    opacity: 0;
+    transition: all 500ms;
+}
+.close {
+  position: absolute;
+  right: 15px;
+  opacity: 1;
+}
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .2;
+    filter: alpha(opacity=20);
+}
   .slick-slide {
     outline: none;
     img, p, a, div {
@@ -2281,7 +2306,10 @@
       .intro-feedback-wrapper {
         margin-top: 40px;
         .feedback-img-slider {
-          width: 100%;
+          width: 900px;
+          @media only screen and (max-width: 1024px) { 
+            width: 100%;
+          }
           padding: 0 30px;
           margin: 0 auto;
           .slick-list {
@@ -5298,20 +5326,6 @@
   
   /*# sourceMappingURL=style.css.map */
   
-  .img_popup {
-    position: fixed;
-    top: -200px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    z-index: -1;
-    opacity: 0;
-    transition: all 500ms;
-    img {
-      width: 100%;
-    }
-  }
   
   .opacity {
     background: rgba(0, 0, 0, 0.7);
@@ -5330,7 +5344,7 @@
     z-index: 995;
   }
   
-  .display {
+  div.img_popup.display {
     opacity: 1;
     top: 80px;
     z-index: 999;
@@ -5570,3 +5584,4 @@ ul.footer-menu {
               transform: rotate(360deg);
     }
   }
+  

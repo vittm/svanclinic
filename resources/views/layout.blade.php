@@ -44,9 +44,27 @@
   display: none;
 }
 	</style>
-	
-	
-
+    @if(isset($script->script1))
+    <script>
+    {!! 
+        $script->script1
+    !!}
+    </script>
+    @endif
+    @if(isset($script->script2))
+    <script>
+    {!! 
+        $script->script2
+    !!}
+    </script>
+    @endif
+    @if(isset($script->script1))
+    <script>
+    {!! 
+        $script->script1
+    !!}
+    </script>
+    @endif
 </head>
     <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -261,17 +279,14 @@
         <script src="{{ URL::to('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 
 		<script>
-			
-			
-            // setTimeout(function () {
-            //     $(".img_popup").addClass("display");
-            //     $(".opacity").addClass("opacity1");
-            // }, 5000);
-            // $("html").click(function () {
-            //     $(".img_popup").addClass("hidden");
-            //     $(".opacity").css('display', 'none');
-            // });
-			
+		setTimeout(function () {
+            $(".img_popup").addClass("display");
+            $(".opacity").addClass("opacity1");
+        }, 5000);
+        $("html").click(function () {
+            $(".img_popup").addClass("hidden");
+            $(".opacity").css('display', 'none');
+        });	
         </script>
         @yield('javascript')
 		<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->

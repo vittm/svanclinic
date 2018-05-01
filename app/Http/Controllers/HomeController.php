@@ -15,8 +15,13 @@ class HomeController extends Controller
         $servicesspecialists= DB::table('servicesspecialists')->join('serivcesposts','serivcesposts.id','=','servicesspecialists.link')->select('servicesspecialists.*','serivcesposts.header_slug')->limit('3')->get();
         $partners= DB::table('partners')->get();
         $feedbacks= DB::table('userfeadbacks')->get();
+        $banner = DB::table('banners')->first();
         $news= DB::table('news')->join('posts','posts.id','=','news.link')->select('news.*','posts.slug')->limit('3')->get();
-        return view('welcome',['slides'=>$find,'whyhomes'=>$whyhomes,'videos'=>$videos,'servicesspecialists'=>$servicesspecialists,'partners'=>$partners,'feedbacks'=>$feedbacks, 'news'=>$news]);            
+        return view('welcome',['slides'=>$find,'whyhomes'=>$whyhomes,'videos'=>$videos,'servicesspecialists'=>$servicesspecialists,'partners'=>$partners,'feedbacks'=>$feedbacks, 'news'=>$news, 'banners' => $banner]);            
     }
-
+    public function info()
+    {
+        $info= DB::table('infos')->first();
+        return view('contact',['info'=>$info]);            
+    }
 }
