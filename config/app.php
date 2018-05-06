@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        InsertOnDuplicateKey\InsertOnDuplicateKeyServiceProvider::class,
         /*
          * Application Service Providers...
          */

@@ -20,5 +20,5 @@
     RewriteRule ^ index.php [L]
 
     #Change Url
-    RewriteRule ^dich-vu.html$ /c/{$1}
+    RewriteRule ^dich-vu.html$ tin-tuc/{$1}/{$2}
 </IfModule>

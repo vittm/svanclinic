@@ -23,8 +23,8 @@ Route::get('/dich-vu/{child}/{title}', 'ServicesController@detail');
 
 //Tin Tức
 Route::get('/n/{menu}','PostController@news');
-Route::get('/tin-tuc/{menu}','PostController@listNews');
-Route::get('/tin-tuc/{child}/{title}', 'PostController@index');
+Route::get('/{category}/{menu}','PostController@listNews');
+Route::get('/{category}/{child}/{title}', 'PostController@index');
 
 Route::get('/bang-gia', function () {
     return view('price');
@@ -41,4 +41,4 @@ Route::get('/lien-he', 'HomeController@info');
 Route::get('/edit-status-customers-{value}-{key}', 'WidgetController@getCustomer');
 Route::get('/get-customer-{name}-{title}-{typepost}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');
 Route::get('/customers/search', 'WidgetController@search');
-Route::get('downloadExcel/{type}', 'WidgController@downloadExcel');
+Route::get('downloadExcel/{type}', 'WidgetController@downloadExcel');

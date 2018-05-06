@@ -80,7 +80,7 @@ class ServicesController extends Controller
             'feedback'=> json_encode($array_feedback),
             'noted'=> $request->noted_description,
         ]);
-
+            
         Serivcespost::insert($data);
         return redirect('admin/serivcesposts');
     }

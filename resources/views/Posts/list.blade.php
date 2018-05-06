@@ -25,7 +25,7 @@
                         @foreach($news as $key => $value)
                                 <div class="item">
                                     <div class="item-image">
-                                        <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}">
+                                        <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}">
                                             <img src="{{Voyager::image($value->image)}}">
                                         </a>
                                     </div>
@@ -40,13 +40,13 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="item-name">
-                                                <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
+                                                <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
                                                 {{ $value->excerpt}}
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
+                                                <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
