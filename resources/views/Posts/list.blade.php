@@ -43,8 +43,7 @@
                                                 <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
-                                              <p><em>{{ $value->excerpt}} </em></p>
-
+                                                {{ $value->excerpt}}
                                             </div>
                                             <div class="read-more">
                                                 <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>

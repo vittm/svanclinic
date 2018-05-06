@@ -3594,6 +3594,7 @@ div.img_popup {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             word-break: break-word;
+            overflow: hidden;
           }
           .readmore {
             float: right;
@@ -4717,6 +4718,7 @@ div.img_popup {
               display: -webkit-box;
               -webkit-box-orient: vertical;
               word-break: break-word;
+              overflow: hidden;
             }
             .readmore {
               height: 30px;

@@ -20,17 +20,16 @@
                 <div class="col-md-4">
                     <div class="item">
                         <div class="item-image">
-                            <a href="{{ URL::to('services/detail')}}/{{$value->header_slug}}">
+                            <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">
                                 <img src="{{Voyager::image($value->header_images)}}" alt=""></a>
                             <div class="item-caption">
                                 {{$value->header_title}}
                             </div>
                         </div>
                         <div class="item-description">
-                            <p style="text-align: justify;"></p>
-                            {!!$value->header_content!!}    
+                            {{ $value->header_content }}   
                         </div>
-                        <div><a href="{{ URL::to('services/detail')}}/{{$value->header_slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
+                        <div><a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

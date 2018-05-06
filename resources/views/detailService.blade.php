@@ -26,16 +26,16 @@
                             </div>
                             <div class="other-service-nav"></div>
                             <div class="other-service-list">
-                                @foreach($randomPost->slice(1,2) as $key => $values)
+                                @foreach($randomPost->chunk(2,0) as $key => $value)
                                     <div class="list-item">
-                                    @foreach($randomPost->slice(1,2) as $keys => $value)
+                                    @foreach($value as $keys => $values)
                                         <div class="item">
-                                            <a href="{{ URL::to('services/detail')}}/{{$value-> header_slug}}">
-                                                <img src="{{Voyager::image($value->header_images)}}" alt="{{ $value-> header_title }}">
+                                            <a href="{{ URL::to('services/detail')}}/{{$values-> header_slug}}">
+                                                <img src="{{Voyager::image($values->header_images)}}" alt="{{ $values-> header_title }}">
                                             </a>
                                             <div class="item-caption">
                                                 <i class="small-logo"></i>
-                                                <a href="{{ URL::to('services/detail')}}/{{$value-> header_slug}}">{{ $value-> header_title }}
+                                                <a href="{{ URL::to('services/detail')}}/{{$values-> header_slug}}">{{ $values-> header_title }}
                                                 </a>
                                             </div>
                                         </div>
@@ -106,12 +106,6 @@
                             <div class="col-xs-12">
                                 <div class="effective-image-slider">
                                      @foreach(json_decode($posts->images_before_after,JSON_BIGINT_AS_STRING) as $key => $value)
-                                        <div class="item">
-                                            <figure>
-                                                <img src="{{Voyager::image($value['data'])}}">
-                                                <figcaption></figcaption>
-                                            </figure>
-                                        </div>
                                         <div class="item">
                                             <figure>
                                                 <img src="{{Voyager::image($value['data'])}}">

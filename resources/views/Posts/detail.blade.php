@@ -1,6 +1,12 @@
 
 @extends('layout')
-
+@section('facebook_meta')
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{ $posts->title }}" />
+	<meta property="og:description"   content="{{ $posts->meta_description}}" />
+    <meta property="og:image"         content="{{Voyager::image($posts->image)}}    " />
+    <meta name="keywords"             content="{{ $posts->meta_keywords}}"/>
+@endsection
 @section('content')
 <!-- Page Content -->
 <div class="container detail">

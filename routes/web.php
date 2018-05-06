@@ -15,12 +15,11 @@ Route::get('/', 'HomeController@index');
 
 //Dịch Vụ
 Route::get('/c/{menu}','PostController@category');
-Route::get('/dich-vu/{name}', 'PostController@childcategory');
-Route::get('/dich-vu/{child}/{title}', 'ServicesController@index');
+Route::get('/dich-vu/{title}', 'ServicesController@childcategory');
 
 Route::post('/services/updating', 'ServicesController@update');
 Route::post('/services/editing-{id}', 'ServicesController@editing');
-Route::get('/services/detail/{title}', 'ServicesController@detail');
+Route::get('/dich-vu/{child}/{title}', 'ServicesController@detail');
 
 //Tin Tức
 Route::get('/n/{menu}','PostController@news');

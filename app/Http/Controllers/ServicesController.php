@@ -183,9 +183,14 @@ class ServicesController extends Controller
         
         return redirect('admin/serivcesposts');
     }
-    public function detail($title)
+    public function childcategory($name){
+        $category = DB::table('categories')->where('slug','=',$name)->first();
+        $post= DB::table('serivcesposts')->where('category_id','=',$category->id)->get();
+        return view('childCategory',['news'=>$post,'categories'=>$category]);
+    }
+    public function detail(Request $request)
     {
-        $find= DB::table('serivcesposts')->where('header_slug','=',$title)->first();
+        $find= DB::table('serivcesposts')->where('header_slug','=',$request->title)->first();
         $randomPost = DB::table('serivcesposts')->where('header_slug','!=', $find->header_slug)->inRandomOrder()->get();
         return view('detailService',['posts'=>$find, 'randomPost' => $randomPost]);            
     }

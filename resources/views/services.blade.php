@@ -16,30 +16,21 @@
                     <div class="item">
                         <div class="item-image">
                             <div class="border-circle">&nbsp;</div>
-                            <?php
-                                $db = DB::table('categories')->where('parent_id','=',$value->id)->select('slug')->first();
-                                if($db != null){
-                                    $slug = 'category/'.$value->slug;
-                                }else{
-                                    $slug = 'category/child/'.$value->slug;    
-
-                                }
-                            ?>
-                            <a href="{{ URL::to('')}}/{{$slug}}">
+                            <a href="{{ URL::to('dich-vu')}}/{{$value->slug}}">
                                 <img src="{{Voyager::image($value->images)}}" alt="">
                             </a>
                         </div>
                         <div class="item-content">
                             <div class="item-title">
                                 <div class="item-title-wrapper">
-                                    <a href="{{ URL::to('')}}/{{$slug}}">{{ $value->name}}</a>
+                                    <a href="{{ URL::to('dich-vu')}}/{{$value->slug}}">{{ $value->name}}</a>
                                 </div>
                             </div>
                                 <div class="item-list">
                                     {!! $value->content!!}
                                 </div>
                                 <div>
-                                    <a href="{{ URL::to('')}}/{{$slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
+                                    <a href="{{ URL::to('dich-vu')}}/{{$value->slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
                                 </div>
                         </div>
                     </div>

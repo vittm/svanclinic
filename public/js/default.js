@@ -547,7 +547,7 @@ function createCss() {
                             },
                             '.item-description': {
                                 'padding-top': 10 * scale,
-                                'padding-bottom': 10 * scale,
+                                'padding-bottom': 8 * scale,
                                 'padding-left': 5 * scale,
                                 'padding-right': 5 * scale,
                                 'font-size': 15 * scale,

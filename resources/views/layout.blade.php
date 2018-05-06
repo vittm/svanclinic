@@ -5,17 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO -->
-    <!--<meta name="title" content='Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />-->
-    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
-    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
-    <meta property="og:locale" content="vi_VN" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" itemprop="headline" content='Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
-    <meta property="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
-    <meta property="og:url" content="http://www.svanclinic.vn/trang-chu" />
-    <meta property="og:site_name" content="SVAN CLINIC" />
-    <meta property="og:image" content="http://www.svanclinic.vn" />
-    <meta property="fb:app_id" content="233253610499667" />
     <link href="https://fonts.googleapis.com/css?family=Elsie:400,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	

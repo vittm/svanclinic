@@ -3960,6 +3960,7 @@ nav.fixed-top {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  overflow: hidden;
 }
 
 .service-list .service-list-wrapper .item .readmore {
@@ -5245,6 +5246,7 @@ nav.fixed-top {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  overflow: hidden;
 }
 
 .news .news-container .news-list-wrapper .item .readmore {
