@@ -7,7 +7,7 @@
         <div class="title">
             <p>
                 <i>
-                    Tin Tức 
+                    {{ $categories->name }}
                     <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
@@ -27,7 +27,7 @@
                 ?>
                 @foreach($post as $key => $value)
                     <div class="col-md-4">
-                        <div class="item">
+                        <div class="item" style="margin-top: 60px">
                             <div class="item-date">
                                 <div class="date-wrapper">
                                     <div class="motnh">

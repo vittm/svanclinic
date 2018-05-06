@@ -22,7 +22,18 @@
     <!-- Post Content -->
     <div class="blog-content">
     {!! $posts -> body !!}
-    </div>      
+    </div>
+    <!-- List -->
+    <br>
+    <br>
+    <h3>Bài viết liên quan: </h3>
+    <ul class="list-more">
+        @foreach($more as $key => $value)
+            <li>
+                <a href="{{ URL::to('posts')}}/{{$value->slug}}"> {{ $value->title}} <span style="color: #ccc; font-size: 12px; font-weight: 100;">({!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!})</span></a>
+            </li>
+        @endforeach
+    </ul>   
   </div>
 
   <!-- Sidebar Widgets Column -->
@@ -63,7 +74,7 @@
 @section('javascript')
     <script>
         var stickyOffset = $('.siderbar-detail').height();
-        var body = $('body').height();
+        var body = $('body').height() - $('.footer').height() - 150;
         $(window).scroll(function(){    
             var scroll = $(window).scrollTop() + $('.footer').height();
             if ( body >= stickyOffset) $('.siderbar-detail > .card').addClass('fixed');

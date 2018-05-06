@@ -1,6 +1,11 @@
 
 @extends('layout')
-
+@section('facebook_meta')
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="{{ $posts-> header_title }}" />
+	<meta property="og:description"   content="{{ $posts-> header_content }}" />
+	<meta property="og:image"         content="{{Voyager::image($posts->header_images)}}    " />
+@endsection
 @section('content')
 <div class="service-detail">
         <div class="title">
@@ -21,8 +26,9 @@
                             </div>
                             <div class="other-service-nav"></div>
                             <div class="other-service-list">
+                                @foreach($randomPost->slice(1,2) as $key => $values)
                                     <div class="list-item">
-                                    @foreach($randomPost as $key => $value)
+                                    @foreach($randomPost->slice(1,2) as $keys => $value)
                                         <div class="item">
                                             <a href="{{ URL::to('services/detail')}}/{{$value-> header_slug}}">
                                                 <img src="{{Voyager::image($value->header_images)}}" alt="{{ $value-> header_title }}">
@@ -35,6 +41,7 @@
                                         </div>
                                     @endforeach
                                     </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -111,7 +118,7 @@
                                                 <figcaption></figcaption>
                                             </figure>
                                         </div>
-                                        @endforeach
+                                    @endforeach
                                 </div>
                                 <div class="btn-wrapper text-center">
                                     <button class="btn-icon btn-form"  data-toggle="modal" data-target="#modal-19">
@@ -172,7 +179,7 @@
                                 @foreach(JSON_decode($posts->productive,JSON_BIGINT_AS_STRING) as $key => $value)
                                     <div class="col-xs-6">
                                         <div class="item">
-                                            <span class="number"><i>1</i></span>
+                                            <span class="number"><i>{{ $key + 1 }}</i></span>
                                             <div class="content">
                                                 <span>{{$value['description']}}
                                                 </span>
@@ -302,39 +309,7 @@
 
 </div>
 
-<div class="custom-form style-2">
-    <div class="modal fade in" id="modal-19">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">ĐĂNG KÝ TƯ VẤN</h4>
-                </div>
-                <form id="consultant-form" action="/ConsultantSubmit" method="get">
-                {{ csrf_field() }}
-                    <div class="modal-body">
-                            <div class="form-group">
-                                <input id="username-customer" type="text" name="name" class="form-control" placeholder="Họ t&#234;n">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" name="email" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
-                                <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="content" style="resize:none" rows="6" cols="30" placeholder="Nội dung"></textarea>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
-                        <button type="submit" class="btn btn-primary btn-customer">Gửi</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
 @endsection
 @section('javascript')
     <script>
@@ -354,6 +329,16 @@
                     $("#content").trigger("mouseenter");
                 });
             });
+            $('.other-service-list').not('.slick-initialized').slick({
+                slidesToShow: 1,
+                infinite:true,
+                dots: false,
+                centerMode: false,
+                // autoplay: true,
+                swipeToSlide:true,
+                autoplaySpeed:5000,
+                appendArrows: $('.other-service-nav')
+                });
         })(jQuery);
     </script>
 @endsection

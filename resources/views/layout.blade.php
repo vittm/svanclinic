@@ -58,13 +58,14 @@
     !!}
     </script>
     @endif
-    @if(isset($script->script1))
+    @if(isset($script->head))
     <script>
     {!! 
-        $script->script1
+        $script->head
     !!}
     </script>
     @endif
+    @yield('facebook_meta')
 </head>
     <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -81,103 +82,61 @@
                                     <li class="home">
                                     <a href="{{url('/')}}" class="home-link" rel="nofollow">
                                         <img width="auto" src="{{Voyager::image('img/logo.png')}}" alt=""> </a>
-                                </li>
-                                        <li>
-                                            <a href="{{url('/gioi-thieu')}}" rel="nofollow">Giới thiệu</a>
-                                        </li>
-                                        <li class="hassub">
-                                            <a href="{{url('/category/dich-vu')}}" rel="nofollow">Dịch vụ</a>
-                                            <!-- <div class="submenu">
+                                    </li>
+                                    @foreach($menuhome as $key => $value)
+                                            <?php
+                                                $slug = "";
+                                                if($value->themes == '1'){
+                                                    $slug = 'c/';
+                                                }
+                                                if($value->themes == '2'){
+                                                    $slug = 'n/';
+                                                }
+                                            ?>
+                                        <li class="@if($value->child != null) hassub @endif">
+                                            <a href="{{url('/')}}/{{$slug}}{{$value->slug}}" rel="nofollow">{{ $value->name }}</a>
+                                            <?php 
+                                                if($value->child != null) {
+                                                    $child = DB::table('categories')->where('parent_id','=',$value->child)->get();
+                                                    $id_cate = DB::table('categories')->where('slug','=','dich-vu')->get();
+                                                }
+                                            ?>
+                                            
+                                            @if(isset($child)  && count($child) > 0 && $value->themes != '3')
+                                            <div class="submenu">
                                                 <ul>
+                                                    @foreach($child as $key => $values)
+                                                    <?php
+                                                        $slugs ='';
+                                                        if($value->themes == '1'){
+                                                            $slugs = 'dich-vu/';
+                                                        }
+                                                        if($value->themes == '2'){
+                                                            $slugs = 'tin-tuc/';
+                                                        }
+                                                    ?>
                                                         <li>
-                                                            <a href="/dich-vu/giam-can-giam-beo">Giảm C&#226;n &amp; Giảm B&#233;o</a>
+                                                            <a href="{{url('/')}}/{{$slugs}}{{$values->slug}}">{{ $values->name }}</a>
+                                                            <?php 
+                                                                $childs = DB::table('categories')->where('parent_id','=',$values->id)->get();      
+                                                            ?>
+                                                                @if(isset($childs) && count($childs) > 0)
                                                                 <div class="secondsub">
                                                                     <ul>
-                                                                            <li><a href="/dich-vu/giam-can-giam-beo/giam-beo-cong-nghe-contri-ultrashape">Giảm b&#233;o c&#244;ng nghệ Contri UltraShape</a></li>
-                                                                            <li><a href="/dich-vu/giam-can-giam-beo/cong-nghe-giam-beo-hifu-lipo">C&#244;ng Nghệ Giảm B&#233;o Hifu Lipo</a></li>
-                                                                            <li><a href="/dich-vu/giam-can-giam-beo/giam-beo-tao-form-perfect-shape">Giảm B&#233;o Tạo Form Perfect Shape</a></li>
-                                                                            <li><a href="/dich-vu/giam-can-giam-beo/giam-beo-duong-sinh">Giảm B&#233;o Dưỡng Sinh</a></li>
+                                                                        @foreach($childs as $key => $valuess)
+                                                                                <li><a href="{{url('/')}}/{{$values->slug}}/{{$valuess->slug}}">Giảm b&#233;o c&#244;ng nghệ Contri UltraShape</a></li>
+                                                                        @endforeach
                                                                     </ul>
                                                                 </div>
+                                                                @endif
+                                                            
                                                         </li>
-                                                        <li>
-                                                            <a href="/dich-vu/tri-lieu-cong-nghe-cao">Trị Liệu C&#244;ng Nghệ Cao</a>
-                                                                <div class="secondsub">
-                                                                    <ul>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/nang-co-v-line-new-ultherapy">N&#226;ng cơ V-Line New Ultherapy</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/tri-nam-tre-hoa-da-xoa-xam-cong-nghe-laser-nano-plus">Trị n&#225;m - Trẻ h&#243;a da - X&#243;a xăm c&#244;ng nghệ Laser Nano Plus</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/cang-da-xoa-nhan-cong-nghe-ultra-rejuv">Căng da xo&#225; nhăn c&#244;ng nghệ Ultra Rejuv</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/giam-beo-cong-nghe-hifu-lipo">Giảm B&#233;o C&#244;ng Nghệ Hifu Lipo</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/tre-hoa-da-tri-seo-te-bao-goc-tu-than-prp">Trẻ Hóa Da – Trị sẹo Tế B&#224;o Gốc Tự Th&#226;n PRP</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/tao-hinh-mat-khong-phau-thuat-bang-hoat-chat-lam-day">Tạo H&#236;nh Mặt Kh&#244;ng Phẫu Thuật Bằng Hoạt Chất L&#224;m Đầy</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/tre-hoa-da-toan-dien-skin-booster">Trẻ H&#243;a Da To&#224;n Diện Skin Booster</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-cong-nghe-cao/triet-long-trang-da-cong-nghe-diode-laser">Triệt L&#244;ng Trắng Da C&#244;ng Nghệ Diode Laser</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/dich-vu/tri-lieu-da-mat">Trị Liệu Da Mặt</a>
-                                                                <div class="secondsub">
-                                                                    <ul>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/trang-da-tre-hoa-rose-white">Trắng Da Trẻ Ho&#225; Rose White</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/phu-bong-trang-da-meso-pure-white">Phủ B&#243;ng Trắng Da Meso Pure White</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/trang-da-thai-doc-cong-nghe-hydrogen">Trắng Da Thải Độc C&#244;ng Nghệ Hydrogen</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/trang-da-cong-nghe-ice-skin">Trắng Da C&#244;ng Nghệ Ice Skin</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/trang-da-tri-nam-cong-nghe-thay-da-sinh-hoc-ipeel">Trắng Da - Trị N&#225;m C&#244;ng Nghệ Thay Da Sinh Học Ipeel</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/tri-mun-cong-nghe-thay-da-sinh-hoc-ipeel">Trị Mụn C&#244;ng Nghệ Thay Da Sinh Học Ipeel</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/tre-hoa-da-bang-te-bao-noan">Trẻ H&#243;a Da Bằng Tế B&#224;o No&#227;n</a></li>
-                                                                            <li><a href="/dich-vu/tri-lieu-da-mat/tre-hoa-va-tai-tao-da">Trẻ H&#243;a V&#224; T&#225;i Tạo Da</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/dich-vu/tam-trang-toan-than">Tắm Trắng To&#224;n Th&#226;n</a>
-                                                                <div class="secondsub">
-                                                                    <ul>
-                                                                            <li><a href="/dich-vu/tam-trang-toan-than/tam-trang-phun-phu-nano-cong-nghe-lightherapy">Tắm Trắng Phun Phủ Nano C&#244;ng Nghệ Lightherapy</a></li>
-                                                                            <li><a href="/dich-vu/tam-trang-toan-than/tam-trang-cong-nghe-micro-c-nhat-ban">Tắm Trắng C&#244;ng Nghệ Micro C Nhật Bản</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/dich-vu/cham-soc-co-ban">Chăm S&#243;c Cơ Bản</a>
-                                                                <div class="secondsub">
-                                                                    <ul>
-                                                                            <li><a href="/dich-vu/cham-soc-co-ban/bao-duong-vung-nguc-ngua-ung-thu">Bảo Dưỡng V&#249;ng Ngực Ngừa Ung Thư</a></li>
-                                                                            <li><a href="/dich-vu/cham-soc-co-ban/tao-kieu-toc-cham-soc-mong">Tạo Kiểu T&#243;c - Chăm S&#243;c M&#243;ng</a></li>
-                                                                            <li><a href="/dich-vu/cham-soc-co-ban/massage-thu-gian">Massage Thư Gi&#227;n</a></li>
-                                                                            <li><a href="/dich-vu/cham-soc-co-ban/cham-soc-toan-than">Chăm S&#243;c To&#224;n Th&#226;n</a></li>
-                                                                    </ul>
-                                                                </div>
-                                                        </li>
+                                                    @endforeach
                                                 </ul>
-                                            </div> -->
+                                            </div>
+                                            @endif
                                         </li>
-                                        <li>
-                                            <a href="{{url('/bang-gia')}}" rel="nofollow">Bảng Gi&#225;</a>
-                                        </li>
-                                        <li class="hassub">
-                                            <a href="{{url('/news/tin-tuc')}}" rel="nofollow">Tin Tức</a>
-                                            <!-- <div class="submenu">
-                                                <ul>
-                                                        <li>
-                                                            <a href="/tin-tuc/kien-thuc-lam-dep">Kiến Thức L&#224;m Đẹp</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/tin-tuc/tin-tuc-dich-vu">Tin Tức Dịch Vụ</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/tin-tuc/su-kien-noi-bat">Sự Kiện Nổi Bật</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="/tin-tuc/tuyen-dung">Tuyển Dụng</a>
-                                                        </li>
-                                                </ul>
-                                            </div> -->
-                                        </li>
-                                        <li>
-                                            <a href="{{url('/contact')}}" rel="nofollow">Li&#234;n Hệ</a>
-                                        </li>
+                                    @endforeach
                     </ul>
                 </div>
             </div>
@@ -267,6 +226,57 @@
         </div>
     </div>
 </div>
+<div class="custom-form style-2">
+    <div class="modal fade in" id="modal-19">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">ĐĂNG KÝ TƯ VẤN</h4>
+                </div>
+                <form id="consultant-form" action="/ConsultantSubmit" method="get">
+                {{ csrf_field() }}
+                    <div class="modal-body">
+                            <div class="form-group">
+                                <input id="username-customer" type="text" name="name" class="form-control" placeholder="Họ t&#234;n">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
+                                <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="content" style="resize:none" rows="6" cols="30" placeholder="Nội dung"></textarea>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
+                        <button type="submit" class="btn btn-primary btn-customer">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="button">
+        <div class="button">
+            <!--<button class="btn btn-default" data-toggle="modal" data-target="#modal-19">
+                <img src="/Content/layout/mobile/images/icon/mobile-icon-1.png" alt="">
+                Ưu Đ&#227;i
+            </button>-->
+            <a href="http://www.svanclinic.vn/uu-dai-thang/" class="btn btn-default">
+                <img src="/Content/layout/mobile/images/icon/mobile-icon-4.png" alt="">
+                Ưu Đãi
+            </a>
+        </div>
+        <div class="button">
+            <button class="btn btn-default" onclick="_sbzq.push(['expandWidget']);">
+                <img src="/Content/layout/mobile/images/icon/mobile-icon-3.png" alt="">
+                chat
+            </button>
+        </div>
+    </div>
 		<!--<script type="text/javascript">window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push([&quot;_setAccount&quot;,47095]);var n=e.location.protocol==&quot;https:&quot;?&quot;https:&quot;:&quot;http:&quot;;var r=document.createElement(&quot;script&quot;);r.type=&quot;text/javascript&quot;;r.async=true;r.src=n+&quot;//static.subiz.com/public/js/loader.js&quot;;var i=document.getElementsByTagName(&quot;script&quot;)[0];i.parentNode.insertBefore(r,i)}(window);</script>-->
         <!-- Jquery core JavaScript -->
         <script src="{{ URL::to('js/bootstrap.js')}}"></script>

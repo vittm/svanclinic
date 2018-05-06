@@ -6,7 +6,7 @@
         <div class="title">
             <p>
                 <i>
-                    TIN TỨC
+                    {{ $categories->name }}
                     <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
@@ -25,7 +25,7 @@
                         @foreach($news as $key => $value)
                                 <div class="item">
                                     <div class="item-image">
-                                        <a href="{{ URL::to('/posts/'.$value->slug) }}">
+                                        <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}">
                                             <img src="{{Voyager::image($value->image)}}">
                                         </a>
                                     </div>
@@ -40,14 +40,14 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="item-name">
-                                                <a href="{{ URL::to('/posts/'.$value->slug) }}">{{ $value->title}}</a>
+                                                <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
                                               <p><em>{{ $value->excerpt}} </em></p>
 
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to('/posts/'.$value->slug) }}" class="readmore">Xem Thêm</a>
+                                                <a href="{{ URL::to('/tin-tuc/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>

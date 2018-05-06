@@ -7,6 +7,8 @@
    
    <div class="col-sm-12">
    <p>Khi search ngày tháng: đối với ngày và tháng đủ 2 số, năm thì 4 số</p>
+   <a href="{{ URL::to('downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>
+   <br>
    @if(empty($check))
    @else
      <i class="voyager-double-left" style="font-size: 15px; top: 2px; position: relative;"></i> <a href="{{ route('voyager.customers.index') }}">Quay lại Danh sách</a>

@@ -2,14 +2,14 @@
 @extends('layout')
 
 @section('content')
-<div class="btn-hotline">
+<div class="btn-hotline" data-toggle="modal" data-target="#modal-19" style="cursor: pointer">
         <div class="icon">
             <div class="icon-img">
                 <img src="{{Voyager::image('logo.png')}}" alt="">
             </div>
         </div>
         <div class="hotline-content">
-            <h4>1900.0117</h4>
+            <h4>Tư Vấn Miễn Phí</h4>
         </div>
     </div>
 <div id="svanslider" class="carousel slide" data-ride="carousel">
@@ -49,7 +49,7 @@
 
                 </h2>
             </div>
-            <div class="row intro-why-chose-content">
+            <div class="intro-why-chose-content">
             @foreach($whyhomes as $key => $value)
                     <div class="col-md-4">
                         <a href="">
@@ -183,16 +183,14 @@
         </div>
     </div>
     <div class="intro-feedback">
-        <div class="container">
-            <div class="title">
-                <h2>
-                    <i>KH&#193;CH H&#192;NG N&#211;I G&#204; VỀ SVAN CLINIC &amp; SPA 
-                            <span class="line-left"></span>
-                        <span class="line-right"></span>
-                    </i>
+        <div class="title">
+            <h2>
+                <i>KH&#193;CH H&#192;NG N&#211;I G&#204; VỀ SVAN CLINIC &amp; SPA 
+                    <span class="line-left"></span>
+                    <span class="line-right"></span>
+                </i>
 
-                </h2>
-            </div>
+            </h2>
         </div>
         <div class="intro-feedback-wrapper">
             <div class="container">

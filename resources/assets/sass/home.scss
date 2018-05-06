@@ -337,7 +337,7 @@ div.img_popup {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4929', endColorstr='#570100', GradientType=1 );
 
       h4 {
-        font-size: 27px;
+        font-size: 21px;
         text-align: center;
         margin: 0;
         line-height: 55px;
@@ -2030,11 +2030,7 @@ div.img_popup {
             }
           }
         }
-        @media only screen and (max-width: 1024px) {
-          .slick-slide {
-            width: 100%!important;
-          }
-        }
+        
         .slick-next {
           height: 50px;
           width: 50px;
@@ -3594,6 +3590,10 @@ div.img_popup {
             margin-top: 20px;
             text-align: justify;
             font-size: 14px;
+            -webkit-line-clamp: 6;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            word-break: break-word;
           }
           .readmore {
             float: right;
@@ -4713,6 +4713,10 @@ div.img_popup {
               padding-left: 5px;
               padding-right: 5px;
               font-size: 15px;
+              -webkit-line-clamp: 4;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              word-break: break-word;
             }
             .readmore {
               height: 30px;
@@ -5584,4 +5588,26 @@ ul.footer-menu {
               transform: rotate(360deg);
     }
   }
+  #button {
+    display: none;
+  }
+@media only screen and (max-width: 1024px) {
+  .wrapper {
+    & .title {
+      & > h2 {
+        font-size: 21px;
+        .line-left,.line-right {
+          display: none;
+        }
+      }
+    }
+  }
+  #button{position:fixed;display:block;left:0;bottom:0;width:100%;min-height:20px;z-index:5000;}
+  #button .button{display:block;float:left;background:#CC9933;color:#fff;text-align:center;}
+  #button .button:first-child{width:50%;border-top-left-radius:15px;}
+  #button .button:last-child{width:50%;border-top-right-radius:15px;}
+  #button .button:nth-child(2){width:50%;border-left:2px solid #fff;border-right:2px solid #fff;}
+  #button .button .btn{background:transparent;outline:none;border:none;width:100%;color:#fff;text-transform:uppercase;padding-top:10px;padding-bottom:10px;}
+  #button .button .btn img{height:20px;width:auto;margin-right:5px;}
+}
   

@@ -21,11 +21,17 @@ $(document).ready(function () {
           var form = $(this);
           var name = $('#username-customer').val(),
               phone = $('#phone-customer').val(),
-              title = $('.title-posts').text();
+              title = $('.title-posts').text(),
               typepost = $('.type-posts').text(),
               source = $.urlParam('utm_source'),
               medium= $.urlParam('utm_medium'),
               campaign= $.urlParam('utm_campaign');
+              if(tilte == null){
+                title = 'null';
+              }
+              if(typepost == null){
+                typepost = 'null'; 
+              }
           $.ajax({
               url: url+"/svanclinic/public/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
               type: 'get',
@@ -98,7 +104,6 @@ function scrollToID(id, speed) {
     if(obj.length){
       var offs = obj.offset();
       var targetOffset = offs.top - offSet;
-      $('html,body').animate({ scrollTop: targetOffset }, speed);
     }
 }
 
@@ -267,16 +272,7 @@ $('.other-promotion-list').not('.slick-initialized').slick({
   appendArrows: $('.other-promotion-nav')
 });
 
-$('.other-service-list').not('.slick-initialized').slick({
-  slidesToShow: 1,
-  infinite:true,
-  dots: false,
-  centerMode: false,
-  // autoplay: true,
-  swipeToSlide:true,
-  autoplaySpeed:5000,
-  appendArrows: $('.other-service-nav')
-});
+
 
 $('.effective-image-slider').not('.slick-initialized').slick({
   slidesToShow: 1,

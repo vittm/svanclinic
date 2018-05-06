@@ -157,7 +157,6 @@ class ServicesController extends Controller
                     "name" => $request->name_feedback[$key],
                     "description" => $request->description_feedback[$key],
                     "images" => $this->updateImages('images_feedback',$request,'servicesposts',$request->images_feedback[$key],'images')
-                    
                 );
                 $array_feedback[] = $data2;
             }

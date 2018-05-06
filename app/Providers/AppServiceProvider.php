@@ -16,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         $script= DB::table('scriptcodes')->first();
-        view()->share(['script'=>$script]);
+        $menuhome= DB::table('menuhomes')->get();
+        view()->share(['script'=>$script,'menuhome' => $menuhome]);
     }
 
     /**

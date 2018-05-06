@@ -4,7 +4,7 @@
 <div class="service-list">
         <div class="title">
            <h2>
-                <i>Dịch vụ
+                <i>{{ $categories->name }}
                         <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>

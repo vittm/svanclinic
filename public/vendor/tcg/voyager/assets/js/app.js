@@ -37078,14 +37078,14 @@
           $('#upload_file').trigger('click');
         }
       },
-      toolbar: 'styleselect bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image table youtube giphy | code | customer',
+      toolbar: 'styleselect bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image table youtube giphy | code | customer | removeformat ',
       convert_urls: false,
       image_caption: true,
       image_title: true,
       setup: function setup(editor) {
   
         function toTimeHtml(date) {
-          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' placeholder='Họ và Tên' type='text'><input id='phone-customer' placeholder='Điện Thoại' type='text'> <input type='button' class='btn-customer btn-customer__center' value='Đăng Ký'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
+          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' class='username-customer' placeholder='Họ và Tên' type='text'><input id='phone-customer' placeholder='Điện Thoại' type='text'> <input type='button' class='btn-customer btn-customer__center' value='Đăng Ký'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
         }
   
         function insertDate() {
