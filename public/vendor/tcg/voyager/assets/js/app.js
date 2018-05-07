@@ -153,13 +153,14 @@
   
     $(document).ready(function () {
       $(".selected-employer").change(function(e) {
+        
           e.preventDefault();
           var form = $(this);
-          var key = $('.selected-employer option').attr('key-user'),
-              value = $('.selected-employer').val();
+          var key =  form.find('option:selected').attr('key-user'),
+              value = form.val();
           
           $.ajax({
-              url: "customers/edit-status-customers"+'-'+value+'-'+key,
+              url: "../edit-status-customers"+'-'+value+'-'+key,
               type: 'get',
               dataType: 'html',
               data: {'key':key,'user':value,"_token": "{{ csrf_token() }}"},
@@ -182,6 +183,12 @@
           });
       });
   });
+  $('.add-productive').click(function(){
+      $('.panel-body__productive').append('<br><div class="panel-body__productive__group"><i class="voyager-x close-productive" style="font-size:25px;"></i><div class="form-group"> <input required type="file" class="form-control" name="productive_images[]" placeholder="address"> </div><textarea class="form-control" name="productive_excerpt[]"></textarea></div>');
+  });
+  $('.close-productive').click(function(){
+    $(this).parent().html("");
+  }); 
   function getId(element) {
     return element.getAttribute('data-ps-id');
   }
@@ -37071,14 +37078,14 @@
           $('#upload_file').trigger('click');
         }
       },
-      toolbar: 'styleselect bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image table youtube giphy | code | customer',
+      toolbar: 'styleselect bold italic underline | forecolor backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | link image table youtube giphy | code | customer | removeformat ',
       convert_urls: false,
       image_caption: true,
       image_title: true,
       setup: function setup(editor) {
   
         function toTimeHtml(date) {
-          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' placeholder='Give yourself a username' type='text'> <input id='email-customer' placeholder='What is your email?' type='email'> <input id='phone-customer' placeholder='phone' type='text'> <input type='button' class='btn-customer' value='Sign up'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
+          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' class='username-customer' placeholder='Họ và Tên' type='text'><input id='phone-customer' placeholder='Điện Thoại' type='text'> <input type='button' class='btn-customer btn-customer__center' value='Đăng Ký'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
         }
   
         function insertDate() {

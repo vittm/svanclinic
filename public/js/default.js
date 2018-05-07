@@ -547,7 +547,7 @@ function createCss() {
                             },
                             '.item-description': {
                                 'padding-top': 10 * scale,
-                                'padding-bottom': 10 * scale,
+                                'padding-bottom': 8 * scale,
                                 'padding-left': 5 * scale,
                                 'padding-right': 5 * scale,
                                 'font-size': 15 * scale,
@@ -1255,7 +1255,6 @@ function createCss() {
                             },
                             '.item': {
                                 'width': 440 * scale,
-                                'height': 270 * scale,
                                 'padding-top': 80 * scale,
                                 'border-radius': 25 * scale,
                                 'border-width': 3 * scale,
@@ -2171,35 +2170,11 @@ function createCss() {
                     'font-size': 12 * scale,
                 }
             }
-        },
-        '.btn-hotline': {
-            'height': 45 * scale,
-            'width': 261 * scale,
-            'border-radius': 18 * scale,
-            '.icon': {
-                'width': 54 * scale,
-                'border-width': 1 * scale,
-                'border-top-left-radius': 18 * scale,
-                'border-bottom-left-radius': 18 * scale,
-                '.icon-img': {
-                    'width': 27 * scale,
-                    'top': 7 * scale,
-                    'left': 13.5 * scale,
-                }
-            },
-            '.hotline-content': {
-                'width': 'calc(100% - ' + 54 * scale + 'px)',
-                'h4': {
-                    'font-size': 25 * scale,
-                    'line-height': 45 * scale,
-                }
-            }
-        }
+        },    
     })
 }
-createCss();
-$(function() {
-    $(window).on('resize', function() {
-        createCss();
-    });
-})
+
+var deviceWidth = $(window).width() - 17;
+if(deviceWidth > minWidth) {
+    createCss();
+}

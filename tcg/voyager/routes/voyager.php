@@ -50,13 +50,12 @@ Route::group(['as' => 'voyager.'], function () {
 
         // Role Routes
         Route::resource('roles', $namespacePrefix.'VoyagerRoleController');
-        // Settings
+        // Customer
         Route::group([
             'as'     => 'customers.',
             'prefix' => 'customers',
         ], function () use ($namespacePrefix) {
             Route::get('/', ['uses' => $namespacePrefix.'WidgetController@index',        'as' => 'index']);
-            Route::get('/edit-status-customers-{value}-{key}', ['uses' => $namespacePrefix.'WidgetController@getCustomer',        'as' => 'get']);
         });
         
         // Menu Routes

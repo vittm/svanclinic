@@ -7,27 +7,27 @@
         <div class="title">
             <p>
                 <i>
-                    Tin Tức 
+                    {{ $categories->name }}
                     <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
 
             </p>
         </div>
-        @foreach($news as $key => $value)
+        @foreach($news as $key => $values)
         <div class="container news-container">
             <div class="row">
                 <div class="news-tab">
-                    <a href="{{ URL::to('news/lists')}}/{{$value->slug}}"><h2>{{ $value-> name }}</h2></a>
+                    <a href="{{ URL::to('')}}/{{ $categories->slug }}/{{$values->slug}}"><h2>{{ $values-> name }}</h2></a>
                 </div>
             </div>
             <div class="row news-list-wrapper">
                 <?php
-                    $post = DB::table('posts')->where('category_id','=',$value->id)->get();  
+                    $post = DB::table('posts')->where('category_id','=',$values->id)->get();
                 ?>
                 @foreach($post as $key => $value)
-                    <div class="col-xs-4">
-                        <div class="item">
+                    <div class="col-md-4">
+                        <div class="item" style="margin-top: 60px">
                             <div class="item-date">
                                 <div class="date-wrapper">
                                     <div class="motnh">
@@ -40,18 +40,17 @@
                             </div>
                             <div class="item-title">
                                 
-                                <a href="{{ URL::to('posts/')}}/{{$value->slug}}"><h1>{{ $value->title }}</h1></a>
+                            <a href="{{ URL::to(''.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}"><h1>{{ $value->title }}</h1></a>
                             </div>
-                            <div class="item-image">
-                                <a href="{{ URL::to('posts')}}/{{$value->slug}}">
-                                <img src="{{Voyager::image($value->image)}}"></a>
-                            </div>
+                           
+                            <a class="item-image" href="{{ URL::to(''.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}">
+                            <img src="{{Voyager::image($value->image)}}"></a>
+
                             <div class="item-description">
-                                <span><p><em>{{ $value->excerpt }}</em></p>
-</span>
+                                {{ $value->excerpt }}
                             </div>
                             <div class="read-more">
-                                <a href="{{ URL::to('posts/')}}/{{$value->slug}}" class="readmore">Chi tiết</a>
+                            <a href="{{ URL::to(''.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
                                 <div class="clearfix"></div>
                             </div>
                         </div>
