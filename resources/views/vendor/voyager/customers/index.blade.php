@@ -87,17 +87,19 @@
                     <?php
                         if($value->types == "posts"){
                             $post = DB::table('posts')->where('id','=',$value->title)->first(); 
-                            
                         }elseif($value->types == "services") {
                             $post = DB::table('serivcesposts')->where('id','=',$value->title)->first();
                         }elseif($value->types == 'contact') {
                             $post = 'Form liên hệ';
                         }
-                    
+                        
+                        $category = DB::table('categories')->where('parent_id','=',$post->category_id)->first(); 
+                        $categoryParent = DB::table('categories')->where('id','=',$category->parent_id)->first(); 
+
                     ?>
                     <a target="_blank" style="font-size: 14px;text-align: left;" 
-                       href="@if($value->types == 'posts' ){{ URL::to('/posts/'.$post->slug) }} 
-                             @elseif($value->types == 'services') {{ URL::to('/services/detail/'.$post->header_slug) }} @endif ">@if($value->types == 'posts') {{ $post->title}} @elseif ($value->types == 'services') {{ $post->header_title}} @elseif ($value->types == 'contact') 'Form Liên Hệ' @endif </a>
+                       href="@if($value->types == 'posts' ){{ URL::to('n/'.$categoryParent->slug.'/'.$category->slug.'/'.$post->slug) }} 
+                             @elseif($value->types == 'services') {{ URL::to('/dich-vu/'.$category->slug.'/'.$post->header_slug) }} @endif ">@if($value->types == 'posts') {{ $post->title}} @elseif ($value->types == 'services') {{ $post->header_title}} @elseif ($value->types == 'contact') 'Form Liên Hệ' @endif </a>
                      </td>
                      <td>
                         {{ $value-> source}}

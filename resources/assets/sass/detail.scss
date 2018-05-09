@@ -221,7 +221,10 @@ body .pr0{
       position: relative;
       & > a {
         font-size: 16px;
-        color: #000000;
+        color:#7f7c7c;
+        &:hover {
+          color: #3097D1;
+        }
       }
     }
     li::before {

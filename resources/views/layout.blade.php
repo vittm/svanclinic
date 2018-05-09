@@ -98,14 +98,15 @@
                                                     <?php
                                                         $slugs ='';
                                                         if($value->themes == '1'){
-                                                            $slugs = 'dich-vu/';
+                                                            $slugs = 'dich-vu';
                                                         }
+                                                        $categoryParent = DB::table('categories')->where('id','=',$values->parent_id)->first(); 
                                                         if($value->themes == '2'){
-                                                            $slugs = 'tin-tuc/';
+                                                            $slugs = 'n/'.$categoryParent->slug;
                                                         }
                                                     ?>
                                                         <li>
-                                                            <a href="{{url('/')}}/{{$slugs}}{{$values->slug}}">{{ $values->name }}</a>
+                                                            <a href="{{url('')}}/{{$slugs}}/{{$values->slug}}">{{ $values->name }}</a>
                                                             <?php 
                                                                 $childs = DB::table('categories')->where('parent_id','=',$values->id)->get();      
                                                             ?>

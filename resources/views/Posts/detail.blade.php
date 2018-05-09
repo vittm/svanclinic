@@ -48,8 +48,9 @@
     <!-- Side Widget -->
     <div class="card my-4">
       <h2 class="card-header" style="font-size:23px;padding-left:0;">Tin Mới Nhất</h2>
-      
       @foreach($randomPost as $key => $value)
+      <?php $category1 = DB::table('ar')->first(); ?>
+      {!!  $category1->body !!}
         <a href="{{ URL::to('/posts/'.$value->slug) }}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
             <div class="col-lg-6 col-xs-12 pl0">
                 <img src="{{Voyager::image($value->image)}}" alt="" width="100%">

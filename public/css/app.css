@@ -1666,6 +1666,12 @@ nav.fixed-top {
   margin-top: 63px;
 }
 
+@media only screen and (max-width: 1024px) {
+  #svanslider {
+    height: 220px;
+  }
+}
+
 #svanslider img {
   width: 100%;
   height: auto;
@@ -4019,6 +4025,12 @@ nav.fixed-top {
   margin-right: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .other-service-wrapper {
+    width: 100%;
+  }
+}
+
 .service-detail .service-detail-wrapper .other-service-wrapper .other-service-title {
   font-size: 19px;
   text-transform: uppercase;
@@ -4222,6 +4234,14 @@ nav.fixed-top {
   margin-right: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .effective-image .effective-image-slider {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .service-detail .service-detail-wrapper .effective-image .effective-image-slider .item {
   padding-left: 5px;
   padding-right: 5px;
@@ -4311,11 +4331,29 @@ nav.fixed-top {
   margin-top: 50px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .process .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .service-detail .service-detail-wrapper .process .container .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .service-detail .service-detail-wrapper .process .process-map {
   margin-top: 35px;
   width: 960px;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .process .process-map {
+    width: 100%;
+  }
 }
 
 .service-detail .service-detail-wrapper .process .process-map .col-xs-6:nth-child(odd) .item {
@@ -4333,12 +4371,24 @@ nav.fixed-top {
   position: relative;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .process .process-map .item {
+    width: 100%;
+  }
+}
+
 .service-detail .service-detail-wrapper .process .process-map .item .number {
   position: absolute;
   top: -60px;
   left: -65px;
   font-family: arial;
   font-size: 170px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .process .process-map .item .number {
+    display: none;
+  }
 }
 
 .service-detail .service-detail-wrapper .process .process-map .item .number i {
@@ -4394,6 +4444,12 @@ nav.fixed-top {
   margin-right: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .why-chose .why-chose-content {
+    width: 100%;
+  }
+}
+
 .service-detail .service-detail-wrapper .feedback {
   margin-top: 50px;
   width: 100%;
@@ -4420,6 +4476,10 @@ nav.fixed-top {
   background: #eff3f2;
 }
 
+.service-detail .service-detail-wrapper .feedback .feedback-wrapper .container > .row > .col-md-6:nth-child(2) {
+  margin-top: 170px;
+}
+
 .service-detail .service-detail-wrapper .feedback .feedback-wrapper .item {
   width: 440px;
   height: inherit;
@@ -4431,6 +4491,12 @@ nav.fixed-top {
   margin-right: auto;
   margin-left: auto;
   background: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .feedback .feedback-wrapper .item {
+    width: 100%;
+  }
 }
 
 .service-detail .service-detail-wrapper .feedback .feedback-wrapper .item .image {
@@ -4492,6 +4558,12 @@ nav.fixed-top {
   margin-right: auto;
 }
 
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .note .note-wrapper {
+    width: 100%;
+  }
+}
+
 .service-detail .service-detail-wrapper .note .note-wrapper .note-content-wrapper {
   width: 800px;
   min-height: 50px;
@@ -4499,6 +4571,18 @@ nav.fixed-top {
   border: 2px solid #2a8a55;
   border-radius: 15px;
   float: right;
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .note .note-wrapper .note-content-wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .note .note-wrapper .note-content-wrapper {
+    float: inherit;
+  }
 }
 
 .service-detail .service-detail-wrapper .note .note-wrapper .note-content-wrapper p {
@@ -4523,6 +4607,13 @@ nav.fixed-top {
   position: absolute;
   left: -20px;
   bottom: 0;
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-detail .service-detail-wrapper .note .note-wrapper .note-btn-wrapper {
+    left: 0;
+    bottom: -60px;
+  }
 }
 
 .service-detail .service-detail-wrapper .btn-wrapper {
@@ -5939,8 +6030,6 @@ nav.fixed-top {
   width: 100%;
 }
 
-
-
 .opacity {
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
@@ -6819,7 +6908,11 @@ input.btn-customer__center {
 
 .list-more li > a {
   font-size: 16px;
-  color: #000000;
+  color: #7f7c7c;
+}
+
+.list-more li > a:hover {
+  color: #3097D1;
 }
 
 .list-more li::before {
@@ -8329,7 +8422,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -14815,7 +14908,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-control.left {
@@ -14904,7 +14997,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-indicators .active {
