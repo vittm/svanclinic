@@ -47,7 +47,7 @@
                             <img src="{{Voyager::image($value->image)}}"></a>
 
                             <div class="item-description">
-                                {{ $value->excerpt }}
+                                {!! $value->excerpt !!}
                             </div>
                             <div class="read-more">
                             <a href="{{ URL::to('n/'.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>

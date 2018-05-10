@@ -46,7 +46,7 @@
                                                 <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
-                                                {{ $value->excerpt}}
+                                                {!! $value->excerpt !!}
                                             </div>
                                             <div class="read-more">
                                                 <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
