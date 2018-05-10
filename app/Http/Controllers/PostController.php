@@ -29,7 +29,7 @@ class PostController extends Controller
     }
     public function listNews(Request $request){
         $category = DB::table('categories')->where('slug','=',$request->menu)->first();
-        $post= DB::table('posts')->where('category_id','=',$category->id)->get();
+        $post= DB::table('posts')->where('category_id','=',$category->id)->paginate(15);
         return view('posts.list',['news'=>$post,'categories'=>$category]);          
     }
 }

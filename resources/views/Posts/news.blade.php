@@ -23,7 +23,7 @@
             </div>
             <div class="row news-list-wrapper">
                 <?php
-                    $post = DB::table('posts')->where('category_id','=',$values->id)->get();
+                    $post = DB::table('posts')->where('category_id','=',$values->id)->limit('3')->get();
                 ?>
                 @foreach($post as $key => $value)
                     <div class="col-md-4">
@@ -42,7 +42,6 @@
                                 
                             <a href="{{ URL::to('n/'.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}"><h1>{{ $value->title }}</h1></a>
                             </div>
-                           
                             <a class="item-image" href="{{ URL::to('n/'.$categories->slug.'/'.$values->slug.'/'.$value->slug)}}">
                             <img src="{{Voyager::image($value->image)}}"></a>
 

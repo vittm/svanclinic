@@ -57,6 +57,7 @@
                                 </div>
                             @endforeach
                         </div>
+                        {{ $news->links() }}
                     </div>
   
                     <!-- <div class="col-md-12">

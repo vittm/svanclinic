@@ -6925,6 +6925,40 @@ input.btn-customer__center {
   /* or whatever color you prefer */
 }
 
+ul.pagination {
+  float: right;
+}
+
+ul.pagination > li.disabled > span {
+  border: none;
+}
+
+ul.pagination > li.active > span {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #3ab572;
+  border-width: 2px;
+  padding: 5px 13px;
+  font-size: 19px;
+  background: #f2f8f8;
+  color: #3d9c74;
+  margin-right: 3px;
+}
+
+ul.pagination > li > a {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #f2f8f8;
+  border-width: 2px;
+  padding: 5px 13px;
+  font-size: 19px;
+  background: #f2f8f8;
+  color: #3d9c74;
+  margin-right: 3px;
+}
+
 button.submit-contact {
   border: none;
   margin: auto;
