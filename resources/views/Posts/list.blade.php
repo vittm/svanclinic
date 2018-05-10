@@ -23,9 +23,12 @@
                     <div class="col-md-12">
                         <div class="news-list-item">
                         @foreach($news as $key => $value)
+                        <?php 
+                             $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+                        ?>
                                 <div class="item">
                                     <div class="item-image">
-                                        <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}">
+                                        <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
                                             <img src="{{Voyager::image($value->image)}}">
                                         </a>
                                     </div>
@@ -40,13 +43,13 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="item-name">
-                                                <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
+                                                <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
                                                 {{ $value->excerpt}}
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to(''.$categories->slug.'/'.$value->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
+                                                <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>

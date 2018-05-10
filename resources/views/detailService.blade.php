@@ -19,7 +19,7 @@
         <div class="service-detail-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <div class="other-service-wrapper">
                             <div class="other-service-title">
                                 <span>DỊCH VỤ C&#211; THỂ BẠN MUỐN XEM</span>
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <div class="service-name-wrapper">
                             <h1 class="service-name"><span>{{ $posts-> header_title }}</span></h1>
                                 <p class="title-posts hidden">{{ $posts->id }}</p>
@@ -62,14 +62,14 @@
                 <div class="effective">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="effective-left">
                                     <div class="effective-text-content text-content sroller">
                                      {!! $posts->result_content !!}
@@ -81,7 +81,7 @@
 									</button>
                                 </div>
                             </div>
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="effective-right">
                                     <figure>
                                         <img src="{{Voyager::image($posts->result_images)}}">
@@ -96,14 +96,14 @@
                             <div class="effective-image">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     H&#204;NH ẢNH TRƯỚC V&#192; SAU KHI SỬ DỤNG DỊCH VỤ
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="effective-image-slider">
                                      @foreach(json_decode($posts->images_before_after,JSON_BIGINT_AS_STRING) as $key => $value)
                                         <div class="item">
@@ -126,14 +126,14 @@
                             <div class="technology">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     NGUY&#202;N L&#221; - C&#212;NG NGHỆ
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="technology-left">
                                     <figure>
                                         <img src="{{Voyager::image($posts->technical_images)}}">
@@ -141,7 +141,7 @@
                                     </figure>
                                 </div>
                             </div>
-                            <div class="col-xs-6">
+                            <div class="col-md-6">
                                 <div class="technology-right">
                                     <div class="technology-text-content text-content sroller">
                                     {!! $posts->technical_description !!}
@@ -161,7 +161,7 @@
                 <div class="process">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     QUY TR&#204;NH DỊCH VỤ
                                 </div>
@@ -171,7 +171,7 @@
                             <div class="process-map">
                             @if($posts->productive)
                                 @foreach(JSON_decode($posts->productive,JSON_BIGINT_AS_STRING) as $key => $value)
-                                    <div class="col-xs-6">
+                                    <div class="col-md-6">
                                         <div class="item">
                                             <span class="number"><i>{{ $key + 1 }}</i></span>
                                             <div class="content">
@@ -193,14 +193,14 @@
                             <div class="why-chose">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     TẠI SAO N&#202;N CHỌN SVAN CLINIC &amp; SPA
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="why-chose-content">
                                     <div class="text-content">
                                     {!! $posts->why_description !!}    
@@ -214,7 +214,7 @@
                 <div class="feedback">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     NHẬN X&#201;T CỦA KH&#193;CH H&#192;NG
                                 </div>
@@ -226,7 +226,7 @@
                             <div class="row">
                             @if($posts->feedback)
                             @foreach(json_decode($posts->feedback,JSON_BIGINT_AS_STRING) as $key => $value)
-                                    <div class="col-xs-6">
+                                    <div class="col-md-6">
                                         <div class="item">
                                             <div class="image">
                                                 <img src="{{Voyager::image($value['images'])}}" alt="{{$value['name']}}">
@@ -252,7 +252,7 @@
                             <div class="note">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xs-12">
+                            <div class="col-md-12">
                                 <div class="service-detail-title">
                                     LƯU &#221;
                                 </div>
@@ -274,30 +274,6 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-			<div class="container" >
-                <div class="rate-wrapper">
-	                <div class="rate-title">
-		                <span>Đ&#225;nh gi&#225;</span>
-	                </div>
-	
-	                <div class="rate-content">
-		                <ul class="form">
-                                <li class="rating">
-				                    <input class="vote-radio" type="radio" name="rating" value="0" checked /><span class="hide"></span>
-				                    <input class="vote-radio" type="radio" name="rating" value="1" onclick="vote(this.value);"/><span></span>
-				                    <input class="vote-radio" type="radio" name="rating" value="2" onclick="vote(this.value);"/><span></span>
-				                    <input class="vote-radio" type="radio" name="rating" value="3" onclick="vote(this.value);"/><span></span>
-				                    <input class="vote-radio" type="radio" name="rating" value="4" onclick="vote(this.value);"/><span></span>
-				                    <input class="vote-radio" type="radio" name="rating" value="5" onclick="vote(this.value);"/><span></span>
-			                    </li>
-		                </ul> 
-		                <div class="rate-value">
-			                5 &#x2215; 5 (9 votes)
-		                </div>
-	                </div>
-                </div>
-            </div>
-			
         </div>
     </div>
 

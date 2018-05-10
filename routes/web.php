@@ -23,8 +23,8 @@ Route::get('/dich-vu/{child}/{title}', 'ServicesController@detail');
 
 //Tin Tức
 Route::get('/n/{menu}','PostController@news');
-Route::get('/{category}/{menu}','PostController@listNews');
-Route::get('/{category}/{child}/{title}', 'PostController@index');
+Route::get('/n/{category}/{menu}','PostController@listNews');
+Route::get('/n/{category}/{child}/{title}', 'PostController@index');
 
 Route::get('/bang-gia', function () {
     return view('price');

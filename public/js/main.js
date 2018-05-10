@@ -14,6 +14,7 @@ $(document).ready(function () {
           return decodeURI(results[1]) || 0;
         }
     }
+    
     $(document).ready(function () {
       $(".btn-customer").click(function (e) {
           e.preventDefault();
@@ -224,6 +225,12 @@ $(".service-slider").not('.slick-initialized').slick({
   autoplay: false,
   swipeToSlide:true,
   autoplaySpeed:3000,
+  responsive: [
+    {
+     breakpoint: 660,
+     settings: "unslick"
+    }
+  ]
 });	
 
 $(".intro-partner-slider").not('.slick-initialized').slick({
