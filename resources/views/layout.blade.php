@@ -222,33 +222,28 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">ĐĂNG KÝ TƯ VẤN</h4>
+                    <h4 class="modal-title">ĐĂNG KÝ NHẬN ƯU ĐÃI & TƯ VẤN MIỄN PHÍ</h4>
                 </div>
-                <form id="consultant-form" action="/ConsultantSubmit" method="get">
-                {{ csrf_field() }}
-                    <div class="modal-body">
+                <form id="consultant-form" method="get">
+                    <div class="modal-body" style="background: url('{{Voyager::image('background.jpg')}}') no-repeat left">
                             <div class="form-group">
                                 <input id="username-customer" type="text" name="name" class="form-control" placeholder="Họ t&#234;n">
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="email" class="form-control" placeholder="Email">
-                            </div>
+                            
                             <div class="form-group">
                                 <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
                                 <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
                             </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="content" style="resize:none" rows="6" cols="30" placeholder="Nội dung"></textarea>
-                            </div>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
-                        <button type="submit" class="btn btn-primary btn-customer">Gửi</button>
+                        <button type="submit" class="btn btn-primary btn-customer">Đăng Ký</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+</div>
     <div id="button">
         <div class="button">
             <!--<button class="btn btn-default" data-toggle="modal" data-target="#modal-19">

@@ -37085,7 +37085,7 @@
       setup: function setup(editor) {
   
         function toTimeHtml(date) {
-          return "<div class='login'> <div class='login_inner'> <div class='login_inner__avatar'></div> <input id='username-customer' class='username-customer' placeholder='Họ và Tên' type='text'><input id='phone-customer' placeholder='Điện Thoại' type='text'> <input type='button' class='btn-customer btn-customer__center' value='Đăng Ký'> </div> <div class='login_inner__check'> <div class='login_inner__check--complete'> <i class='fa fa-check'></i> </div> </div></div><h2></h2></div>";
+          return '<div class="custom-form style-2"><div class="modal fade in" id="modal-19"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button><h4 class="modal-title">ĐĂNG KÝ NHẬN ƯU ĐÃI & TƯ VẤN MIỄN PHÍ</h4></div><form id="consultant-form" method="get"><div class="modal-body" style="background: url("{{Voyager::image("background.jpg")}}") no-repeat left"><div class="form-group"><input id="username-customer" type="text" name="name" class="form-control" placeholder="Họ t&#234;n"></div><div class="form-group"><input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!"><span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span></div></div><div class="modal-footer"><button type="submit" class="btn btn-primary btn-customer">Đăng Ký</button></div></form></div></div></div></div>';
         }
   
         function insertDate() {

@@ -505,6 +505,12 @@ h3:hover {
   margin-top: 15px;
 }
 
+@media (min-width: 768px) {
+  .custom-form .modal .modal-dialog {
+    width: 440px;
+  }
+}
+
 .custom-form .modal .modal-title {
   font-size: 28px;
 }
@@ -518,29 +524,22 @@ h3:hover {
   text-align: center;
   background: #2a8a55;
   color: #fff;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
 }
 
-.custom-form .modal .modal-body {
+.custom-form .modal div.modal-body {
   background: #fff;
+  padding: 15px 15px 1px 15px !important;
 }
 
 .custom-form .modal .modal-footer {
   background: #fff;
   position: relative;
+  border: none;
 }
 
-.custom-form .modal .modal-footer:before {
-  content: '';
-  width: 100%;
-  height: 10px;
-  background: #2a8a55;
-  left: 0;
-  top: 100%;
-  position: absolute;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+.custom-form .modal .modal-footer > .btn-customer {
+  padding: 6px 40px;
+  font-size: 21px;
 }
 
 .custom-form .modal .date {
@@ -566,9 +565,13 @@ h3:hover {
 .custom-form .modal input.form-control,
 .custom-form .modal textarea,
 .custom-form .modal select {
-  border: 2px dashed #2a8a55;
-  border-radius: 10px;
+  border: 1px solid #2a8a55;
   font-size: 1em;
+}
+
+.custom-form .modal input.form-control {
+  border-radius: 0;
+  height: 60px;
 }
 
 .custom-form .modal label {
@@ -8456,7 +8459,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -14942,7 +14945,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .carousel-control.left {
@@ -15031,7 +15034,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .carousel-indicators .active {

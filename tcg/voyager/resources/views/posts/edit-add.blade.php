@@ -242,10 +242,9 @@
     <script>
         $('document').ready(function () {
             $('#slug').slugify();
-
-        @if ($isModelTranslatable)
-            $('.side-body').multilingual({"editing": true});
-        @endif
+            @if ($isModelTranslatable)
+                $('.side-body').multilingual({"editing": true});
+            @endif
         });
     </script>
 @stop

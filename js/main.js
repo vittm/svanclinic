@@ -34,7 +34,7 @@ $(document).ready(function () {
                 typepost = 'null'; 
               }
           $.ajax({
-              url: url+"/sv/public/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
+              url: url+"/sv/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
               type: 'get',
               dataType: 'html',
               data: {'name':name,'title':title,'phone':phone,'typepost':typepost,'utm_source':source,'utm_medium':medium,'utm_campaign':campaign,"_token": "{{ csrf_token() }}"},

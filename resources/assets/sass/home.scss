@@ -456,10 +456,12 @@ div.img_popup {
     }
     .modal-dialog {
       margin-top: 15px;
+      @media (min-width: 768px) {
+        width: 440px;
+      }
     }
     .modal-title {
       font-size: 28px;
-  
     }
     .modal-content {
       background: transparent;
@@ -469,25 +471,18 @@ div.img_popup {
       text-align: center;
       background: rgb(42, 138, 85);
       color: #fff;
-      border-top-right-radius: 15px;
-      border-top-left-radius: 15px;
     }
-    .modal-body {
+    div.modal-body {
       background: #fff;
+      padding: 15px 15px 1px 15px!important;
     }
     .modal-footer {
       background: #fff;
       position: relative;
-      &:before {
-        content: '';
-        width: 100%;
-        height: 10px;
-        background: rgb(42, 138, 85);
-        left: 0;
-        top: 100%;
-        position: absolute;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+      border: none;
+      & > .btn-customer {
+        padding: 6px 40px;
+        font-size: 21px;
       }
     }
     .date {
@@ -508,9 +503,12 @@ div.img_popup {
       }
     }
     input.form-control, textarea, select {
-      border: 2px dashed rgb(42, 138, 85);
-      border-radius: 10px;
+      border: 1px solid #2a8a55;
       font-size: 1em;
+    }
+    input.form-control {
+      border-radius: 0;
+      height: 60px;
     }
     label {
       font-weight: normal;
