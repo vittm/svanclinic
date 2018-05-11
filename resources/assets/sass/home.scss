@@ -447,15 +447,23 @@ div.img_popup {
       }
     }
   }
-  
+  div.customer-form {
+    & > .modal {
+      display: block;
+      position: relative;
+      z-index: 1;
+      .modal-body {
+        background: url("https://b.f6.photo.talk.zdn.vn/530662192593270056/128e9da11e78f026a969.jpg") no-repeat left;
+      }
+    }
+  }
   .custom-form .modal {
-
     button.close {
       color: #fff;
       opacity: 1;
     }
     .modal-dialog {
-      margin-top: 15px;
+      margin-top: 30%;
       @media (min-width: 768px) {
         width: 440px;
       }
@@ -473,11 +481,9 @@ div.img_popup {
       color: #fff;
     }
     div.modal-body {
-      background: #fff;
       padding: 15px 15px 1px 15px!important;
     }
     .modal-footer {
-      background: #fff;
       position: relative;
       border: none;
       & > .btn-customer {
@@ -697,9 +703,6 @@ div.img_popup {
         border-top-right-radius: 22px;
         border-bottom-right-radius: 22px;
       }
-    }
-    .btn-price span:before {
-      background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-money.png");
     }
     .btn-form span:before {
       background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png");
@@ -1087,6 +1090,7 @@ div.img_popup {
     content: "";
     background: no-repeat center center;
     background-size: 100% 100%;
+    border: 1px solid $C1;
   }
   .menu {
     background: #f2f8f8;
@@ -2348,10 +2352,12 @@ div.img_popup {
               margin: 15px 0;
               color: rgb(42, 138, 85);
               font-weight: bold;
-
               font-size: 20px;
               text-transform: uppercase;
               text-align: center;
+              & > h3 {
+                font-size: 20px;
+              }
             }
             .star-wrapper ul {
               list-style: none;
@@ -2385,6 +2391,9 @@ div.img_popup {
                 position: absolute;
                 left: -10px;
                 top: -10px;
+                @media only screen and (max-width: 1024px) { 
+                  display: none;
+                }
               }
               &:before {
                 content: '\f10e';
@@ -2394,6 +2403,9 @@ div.img_popup {
                 position: absolute;
                 right: -10px;
                 bottom: -10px;
+                @media only screen and (max-width: 1024px) { 
+                  display: none;
+                }
               }
             }
           }
@@ -4017,8 +4029,10 @@ div.img_popup {
               position: absolute;
               background: #eff3f2;
             }
-            .container > .row > .col-md-6:nth-child(2) {
-              margin-top: 170px;
+            @media only screen and (max-width: 1024px) { 
+              .container > .row > .col-md-6:nth-child(2) {
+                margin-top: 170px;
+              }
             }
             .item {
               width: 440px;
@@ -4149,6 +4163,25 @@ div.img_popup {
             background: #fff;
             font-size: 13px;
             position: relative;
+            cursor: pointer;
+            p{
+              cursor: pointer;
+              margin-top: 10px;
+              margin-bottom: 0;
+              &::before {
+                content:" ";
+                width: 40px;
+                height: 40px;
+                left: 11px;
+                top: 11px;
+                z-index: 10;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                position: absolute;
+                background-image: url("http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png");
+              }
+            }
             span:before {
               content: '';
               background-image: url(http://www.svanclinic.vn/Content/layout/images/icon/icon-form.png);
@@ -4184,12 +4217,6 @@ div.img_popup {
               border-top-right-radius: 22px;
               border-bottom-right-radius: 22px;
             }
-          }
-          .btn-price span:before {
-            // background-image: url("../images/icon/icon-money.png");
-          }
-          .btn-form span:before {
-            // background-image: url("../images/icon/icon-form.png");
           }
         }
       }

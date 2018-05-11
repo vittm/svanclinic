@@ -34,25 +34,25 @@
 }
 	</style>
     @if(isset($script->script1))
-    <script>
+    
     {!! 
         $script->script1
     !!}
-    </script>
+ 
     @endif
     @if(isset($script->script2))
-    <script>
+   
     {!! 
         $script->script2
     !!}
-    </script>
+   
     @endif
     @if(isset($script->head))
-    <script>
+   
     {!! 
         $script->head
     !!}
-    </script>
+    
     @endif
     @yield('facebook_meta')
 </head>
@@ -108,9 +108,9 @@
                                                         <li>
                                                             <a href="{{url('')}}/{{$slugs}}/{{$values->slug}}">{{ $values->name }}</a>
                                                             <?php 
-                                                                $childs = DB::table('categories')->where('parent_id','=',$values->id)->get();      
+                                                                // $childs = DB::table('categories')->where('parent_id','=',$values->id)->get();      
                                                             ?>
-                                                                @if(isset($childs) && count($childs) > 0)
+                                                                <!-- @if(isset($childs) && count($childs) > 0)
                                                                 <div class="secondsub">
                                                                     <ul>
                                                                         @foreach($childs as $key => $valuess)
@@ -118,7 +118,7 @@
                                                                         @endforeach
                                                                     </ul>
                                                                 </div>
-                                                                @endif
+                                                                @endif -->
                                                             
                                                         </li>
                                                     @endforeach
@@ -134,10 +134,21 @@
         </div>
     </div>
 </header>
+<div class="btn-hotline" data-toggle="modal" data-target="#modal-19" style="cursor: pointer">
+    <div class="icon">
+        <div class="icon-img">
+            <img src="{{Voyager::image('logo.png')}}" alt="">
+        </div>
+    </div>
+    <div class="hotline-content">
+        <h4>Tư Vấn Miễn Phí</h4>
+    </div>
+</div> 
 <div class="wrapper">
         <div class="flower-theme-default">
             <div class="bottom-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/01.png" alt=""></div>
         </div>
+      
     @yield('content')
 </div>
 <footer class="footer">
@@ -205,12 +216,11 @@
                     <h4 class="modal-title">ĐĂNG KÝ</h4>
                 </div>
                 
-                    <div class="modal-body">
+                    <div class="modal-body" style="background: url('{{Voyager::image('background.jpg')}}') no-repeat left">
                             <p> Cảm ơn bạn đã đăng ký, chúng tôi sẽ sớm liên hệ lại với bạn. </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
-                        
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Đ&#243;ng</button>
+                            </div>
                     </div>
             </div>
         </div>
@@ -222,7 +232,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">ĐĂNG KÝ NHẬN ƯU ĐÃI & TƯ VẤN MIỄN PHÍ</h4>
+                    <h4 class="modal-title">ĐĂNG KÝ NHẬN ƯU ĐÃI <br>& TƯ VẤN MIỄN PHÍ</h4>
                 </div>
                 <form id="consultant-form" method="get">
                     <div class="modal-body" style="background: url('{{Voyager::image('background.jpg')}}') no-repeat left">
@@ -234,10 +244,9 @@
                                 <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
                                 <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
                             </div>
-
-                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary btn-customer">Đăng Ký</button>
+                    </div>
                     </div>
                 </form>
             </div>

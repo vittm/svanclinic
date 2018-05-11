@@ -2,16 +2,6 @@
 @extends('layout')
 
 @section('content')
-<div class="btn-hotline" data-toggle="modal" data-target="#modal-19" style="cursor: pointer">
-        <div class="icon">
-            <div class="icon-img">
-                <img src="{{Voyager::image('logo.png')}}" alt="">
-            </div>
-        </div>
-        <div class="hotline-content">
-            <h4>Tư Vấn Miễn Phí</h4>
-        </div>
-    </div>
 <div id="svanslider" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -80,14 +70,18 @@
             <div class="container">
                 <div class="service-slider">
                 @foreach($servicesspecialists as $key => $value)
+                        <?php
+                            $post = DB::table('posts')->where('id','=',$value->link)->first();
+                            $categories = DB::table('categories')->where('id','=',$post->category_id)->first();
+                        ?>
                         <div class="item">
                             <div class="service-wrapper">
-                                <a href="{{'services/detail/'.$value->header_slug }}">
+                                <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">
                                     <div class="service-img" style="background-image: url('{{Voyager::image($value->images)}}')"></div>
                                 </a>
                                 <div class="service-content">
                                     <div class="service-name">
-                                       <h3><a href="{{ 'services/detail/'.$value->header_slug}}">{{ $value->title }}</a></h3>
+                                       <h3><a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">{{ $value->title }}</a></h3>
                                     </div>
                                     <div class="service-text">
                                         <p>{{ $value->content }}</p>
@@ -116,22 +110,26 @@
             <div class="container">
                 <div class="row">
                 @foreach($news as $key => $value)
+                <?php 
+                    $categories = DB::table('categories')->where('id','=',$value->category_id)->first();
+                    $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+                ?>
                         <div class="col-md-4">
                             <div class="news-item">
                                 <div class="news-img">
-                                    <a href="{{ 'posts/'.$value->slug }}">
-                                        <img src="{{Voyager::image($value->images)}}" alt="Th&#225;ng v&#224;ng tri &#226;n" title="Th&#225;ng v&#224;ng tri &#226;n - giảm gi&#225; trực tiếp 50% tất cả c&#225;c dịch vụ l&#224;m đẹp">
+                                    <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
+                                        <img src="{{Voyager::image($value->image)}}" alt="Th&#225;ng v&#224;ng tri &#226;n" title="Th&#225;ng v&#224;ng tri &#226;n - giảm gi&#225; trực tiếp 50% tất cả c&#225;c dịch vụ l&#224;m đẹp">
                                     </a>
                                 </div>
                                 <div class="news-title">
-                                    <h3><a href="{{ 'posts/'.$value->slug }}">{{$value->title}}</a> </h3>
+                                    <h3><a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{$value->title}}</a> </h3>
                                 </div>
                                 <div class="news-description">
-                                    <p><em><span style="color: rgb(61, 156, 116);">{{$value->content}}</em></p>
+                                    <p><em><span style="color: rgb(61, 156, 116);">{!!$value->excerpt!!}</em></p>
 
                                 </div>
                                 <div class="read-more">
-                                    <a href="{{ 'posts/'.$value->slug }}">Xem Thêm</a>
+                                    <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">Xem Thêm</a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -244,13 +242,13 @@
         </div>
     </div>
         
-        <div class="opacity"></div>
-        <div class="col-xs-6 img_popup">
-<div class="close">
-    <img src="http://www.svanclinic.vn/Content/layout/images/img_popup/close.png" alt="Close button">
-</div>
-<a href="{{$banners->link}}"><img src="{{Voyager::image($banners->images)}}" alt="" class="img-responsive"></a>
-</div>
-@endsection        
+    <div class="opacity"></div>
+    <div class="col-xs-12 col-md-6 img_popup">
+        <div class="close">
+            <img src="http://www.svanclinic.vn/Content/layout/images/img_popup/close.png" alt="Close button">
+        </div>
+        <a href="{{$banners->link}}"><img src="{{Voyager::image($banners->images)}}" alt="" class="img-responsive"></a>
+    </div>
+@endsection
          
 

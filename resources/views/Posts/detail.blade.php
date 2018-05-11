@@ -34,9 +34,14 @@
     <br>
     <h3>Bài viết liên quan: </h3>
     <ul class="list-more">
+        
         @foreach($more as $key => $value)
+            <?php 
+                $categories = DB::table('categories')->where('id','=',$value->category_id)->first();
+                $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+            ?>
             <li>
-                <a href="{{ URL::to('posts')}}/{{$value->slug}}"> {{ $value->title}} <span style="color: #ccc; font-size: 12px; font-weight: 100;">({!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!})</span></a>
+                <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}"> {{ $value->title}} <span style="color: #ccc; font-size: 12px; font-weight: 100;">({!! Carbon\Carbon::parse($posts->created_at)->format('m/d/Y')  !!})</span></a>
             </li>
         @endforeach
     </ul>   
@@ -49,7 +54,11 @@
     <div class="card my-4">
       <h2 class="card-header" style="font-size:23px;padding-left:0;">Tin Mới Nhất</h2>
       @foreach($randomPost as $key => $value)
-        <a href="{{ URL::to('/posts/'.$value->slug) }}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
+        <?php 
+            $categories = DB::table('categories')->where('id','=',$value->category_id)->first();
+            $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+        ?>
+        <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pl0" style="margin-top: 15px" data-aos="fade-right">
             <div class="col-lg-6 col-xs-12 pl0">
                 <img src="{{Voyager::image($value->image)}}" alt="" width="100%">
             </div>

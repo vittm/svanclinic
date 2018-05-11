@@ -191,7 +191,8 @@ class ServicesController extends Controller
     public function detail(Request $request)
     {
         $find= DB::table('serivcesposts')->where('header_slug','=',$request->title)->first();
+        $category = DB::table('categories')->where('id','=', $find->category_id)->first();
         $randomPost = DB::table('serivcesposts')->where('header_slug','!=', $find->header_slug)->inRandomOrder()->get();
-        return view('detailService',['posts'=>$find, 'randomPost' => $randomPost]);            
+        return view('detailService',['posts'=>$find, 'randomPost' => $randomPost,'categories' =>$category]);            
     }
 }

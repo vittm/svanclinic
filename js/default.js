@@ -1977,22 +1977,6 @@ function createCss() {
         }
     })
     $.injectCSS({
-        '.custom-form': {
-            '.modal-dialog': {
-                width: 600 * scale,
-                '.modal-title': {
-                    'font-size': 30 * scale,
-                    'padding': 10 * scale,
-                },
-                '.modal-content': {
-                    '.modal-header': {},
-                    '.modal-body': {
-                        padding: 20 * scale,
-                    },
-                    '.modal-footer': {}
-                }
-            },
-        },
         '#promotion-modal': {
             '.promotion-description': {
                 'font-size': 14 * scale,

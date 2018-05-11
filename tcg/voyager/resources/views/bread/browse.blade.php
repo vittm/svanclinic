@@ -78,14 +78,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+        
                                     @foreach($dataTypeContent as $data)
+                                    
                                     <tr>
                                         @can('delete',app($dataType->model_name))
                                             <td>
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
                                             </td>
                                         @endcan
+                                        
                                         @foreach($dataType->browseRows as $row)
+                                        
                                             <td>
                                                 <?php $options = json_decode($row->details); ?>
                                                 @if($row->type == 'image')
@@ -190,8 +194,8 @@
                                                         
                                                         $sub= '/'.$dataType->slug.'/'.$data->slug;
                                                     }else {
-                                                        
-                                                        $sub= '/services/detail/'.$data->header_slug;
+                                                        $categoryParent = DB::table('categories')->where('id','=',$data->category_id)->first();
+                                                        $sub= '/dich-vu/'.$categoryParent->slug.'/'.$data->header_slug;
                                                     }
                                                 ?>
                                                

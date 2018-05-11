@@ -5,6 +5,8 @@ use DB;
 use Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use TCG\Voyager\Facades\Voyager;
+
 class PostController extends Controller
 {
     public function index(Request $request)
@@ -24,12 +26,17 @@ class PostController extends Controller
     
     public function news($name){
         $category = DB::table('categories')->where('slug','=',$name)->first();
-        $post= DB::table('categories')->where('parent_id','=',$category->id)->get();
+        $post= DB::table('categories')->where('parent_id','=',$category->id)->orderBy('id', 'desc')->get();
         return view('posts.news',['news'=>$post,'categories'=>$category]);            
     }
     public function listNews(Request $request){
         $category = DB::table('categories')->where('slug','=',$request->menu)->first();
-        $post= DB::table('posts')->where('category_id','=',$category->id)->paginate(15);
+        $post= DB::table('posts')->where('category_id','=',$category->id)->orderBy('id', 'desc')->paginate(15);
         return view('posts.list',['news'=>$post,'categories'=>$category]);          
+    }
+    public function search(Request $request){
+        $check = true;
+        $post = DB::table('posts')->where('title','like', "%".$request->search."%")->paginate(15);
+        return Voyager::view('voyager::posts.index', ['news'=>$post,'check' => $check]);
     }
 }

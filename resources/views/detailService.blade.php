@@ -30,12 +30,12 @@
                                     <div class="list-item">
                                     @foreach($value as $keys => $values)
                                         <div class="item">
-                                            <a href="{{ URL::to('services/detail')}}/{{$values-> header_slug}}">
+                                            <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$values->header_slug}}">
                                                 <img src="{{Voyager::image($values->header_images)}}" alt="{{ $values-> header_title }}">
                                             </a>
                                             <div class="item-caption">
                                                 <i class="small-logo"></i>
-                                                <a href="{{ URL::to('services/detail')}}/{{$values-> header_slug}}">{{ $values-> header_title }}
+                                                <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$values->header_slug}}">{{ $values-> header_title }}
                                                 </a>
                                             </div>
                                         </div>
@@ -59,6 +59,7 @@
                     </div>
                 </div>
             </div>
+            @if(isset($posts->result_content))
                 <div class="effective">
                     <div class="container">
                         <div class="row">
@@ -91,9 +92,10 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-                            <div class="effective-image">
+                @endif
+                @if(count(json_decode($posts->images_before_after,JSON_BIGINT_AS_STRING)) > 0)
+                <div class="effective-image">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -123,7 +125,9 @@
                         </div>
                     </div>
                 </div>
-                            <div class="technology">
+                @endif
+                @if($posts->technical_description != '<p>&nbsp;<br></p>' && $posts->technical_description != NULL)
+                <div class="technology">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -157,40 +161,41 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="process">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    QUY TR&#204;NH DỊCH VỤ
+                @endif
+                @if(JSON_decode($posts->productive,JSON_BIGINT_AS_STRING)['0']['name'] != " ") 
+                    <div class="process">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="service-detail-title">
+                                        QUY TR&#204;NH DỊCH VỤ
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="process-map">
+                                    @foreach(JSON_decode($posts->productive,JSON_BIGINT_AS_STRING) as $key => $value)
+                                        <div class="col-md-6">
+                                            <div class="item">
+                                                <span class="number"><i>{{ $key + 1 }}</i></span>
+                                                <div class="content">
+                                                    <span>{{$value['description']}}
+                                                    </span>
+                                                </div>
+                                                <div class="image">
+                                                    <img src="{{Voyager::image($value['name'])}}" alt="{{$value['description']}}">
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="process-map">
-                            @if($posts->productive)
-                                @foreach(JSON_decode($posts->productive,JSON_BIGINT_AS_STRING) as $key => $value)
-                                    <div class="col-md-6">
-                                        <div class="item">
-                                            <span class="number"><i>{{ $key + 1 }}</i></span>
-                                            <div class="content">
-                                                <span>{{$value['description']}}
-                                                </span>
-                                            </div>
-                                            <div class="image">
-                                                <img src="{{Voyager::image($value['name'])}}" alt="{{$value['description']}}">
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                @endforeach
-                            @endif
-                            </div>
-                        </div>
                     </div>
-                </div>
-                            <div class="why-chose">
+                @endif
+                @if($posts->why_description != '<p>&nbsp;<br></p>' &&  $posts->why_description != NULL)
+                <div class="why-chose">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -210,7 +215,8 @@
                         </div>
                     </div>
                 </div>
-
+                @endif
+                @if(isset(JSON_decode($posts->feedback,JSON_BIGINT_AS_STRING)['0']['name'] ))
                 <div class="feedback">
                     <div class="container">
                         <div class="row">
@@ -224,7 +230,6 @@
                     <div class="feedback-wrapper">
                         <div class="container">
                             <div class="row">
-                            @if($posts->feedback)
                             @foreach(json_decode($posts->feedback,JSON_BIGINT_AS_STRING) as $key => $value)
                                     <div class="col-md-6">
                                         <div class="item">
@@ -244,12 +249,13 @@
                                         </div>
                                     </div> 
                             @endforeach
-                            @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                            <div class="note">
+                @endif
+                @if($posts->noted != '<p>&nbsp;<br></p>' && $posts->noted != "" && $posts->noted != NULL )
+                <div class="note">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -274,6 +280,7 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
+                @endif
         </div>
     </div>
 

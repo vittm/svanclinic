@@ -16,7 +16,7 @@ class HomeController extends Controller
         $partners= DB::table('partners')->get();
         $feedbacks= DB::table('userfeadbacks')->get();
         $banner = DB::table('banners')->inRandomOrder()->first();
-        $news= DB::table('news')->join('posts','posts.id','=','news.link')->select('news.*','posts.slug')->limit('3')->get();
+        $news= DB::table('posts')->limit('3')->orderBy('id', 'desc')->get();
         return view('welcome',['slides'=>$find,'whyhomes'=>$whyhomes,'videos'=>$videos,'servicesspecialists'=>$servicesspecialists,'partners'=>$partners,'feedbacks'=>$feedbacks, 'news'=>$news, 'banners' => $banner]);            
     }
     public function info()

@@ -216,7 +216,6 @@ $(document).ready(function() {
 $('#svanslider').carousel({
   interval: 5000
 })
-
 $(".service-slider").not('.slick-initialized').slick({
 	slidesToShow: 3,
   infinite:true,
@@ -227,8 +226,27 @@ $(".service-slider").not('.slick-initialized').slick({
   autoplaySpeed:3000,
   responsive: [
     {
-     breakpoint: 660,
-     settings: "unslick"
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
     }
   ]
 });	
@@ -255,6 +273,7 @@ $('.feedback-img-slider').not('.slick-initialized').slick({
   variableWidth: true,
   autoplay: true,
   autoplaySpeed:3000,
+  
 });
 $('.feedback-content-slider').not('.slick-initialized').slick({
   slidesToShow: 1,

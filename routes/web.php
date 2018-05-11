@@ -41,4 +41,5 @@ Route::get('/lien-he', 'HomeController@info');
 Route::get('/edit-status-customers-{value}-{key}', 'WidgetController@getCustomer');
 Route::get('/get-customer-{name}-{title}-{typepost}-{phone}-{utm_source}-{utm_medium}-{utm_campaign}', 'WidgetController@index');
 Route::get('/customers/search', 'WidgetController@search');
+Route::get('/posts/search', 'PostController@search');
 Route::get('downloadExcel/{type}', 'WidgetController@downloadExcel');

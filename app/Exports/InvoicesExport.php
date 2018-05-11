@@ -22,11 +22,17 @@ class InvoicesExport implements FromView
             }elseif($value->types == 'contact') {
                 $post = 'Form liên hệ';
             }
+            if(isset($post->title)){
+                    $title = $post->title;
+            } 
+            else{
+                $title = "Rỗng"; 
+            }
             $postArray = ([
                 'date'=> $value->created_at,
                 'name' => $value->name,
                 'mobile' => $value->phone,
-                'title' => $post->title,
+                'title' =>  $title,
                 'source' => $value->source,
                 'medium' => $value->medium,
                 'campaign' => $value->campaign

@@ -57,7 +57,13 @@ Route::group(['as' => 'voyager.'], function () {
         ], function () use ($namespacePrefix) {
             Route::get('/', ['uses' => $namespacePrefix.'WidgetController@index',        'as' => 'index']);
         });
-        
+        Route::group([
+            'as'     => 'posts.',
+            'prefix' => 'posts',
+        ], function () use ($namespacePrefix) {
+            Route::get('/', ['uses' => $namespacePrefix.'PostController@indexAdmin',        'as' => 'index']);
+            Route::get('{id}/delete', ['uses' => $namespacePrefix.'PostController@delete',        'as' => 'delete']);
+        });
         // Menu Routes
         Route::group([
             'as'     => 'menus.',
