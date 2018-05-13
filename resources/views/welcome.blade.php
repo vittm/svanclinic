@@ -71,17 +71,19 @@
                 <div class="service-slider">
                 @foreach($servicesspecialists as $key => $value)
                         <?php
-                            $post = DB::table('posts')->where('id','=',$value->link)->first();
-                            $categories = DB::table('categories')->where('id','=',$post->category_id)->first();
+                            $postService = DB::table('posts')->where('id','=',$value->link)->first();
+                            if( $postService != null){
+                            $categoriesService = DB::table('categories')->where('id','=',$postService->category_id)->first();
+                            }
                         ?>
                         <div class="item">
                             <div class="service-wrapper">
-                                <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">
+                                <a href="{{ URL::to('dich-vu')}}/{{ $categoriesService->slug }}/{{$value->header_slug}}">
                                     <div class="service-img" style="background-image: url('{{Voyager::image($value->images)}}')"></div>
                                 </a>
                                 <div class="service-content">
                                     <div class="service-name">
-                                       <h3><a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">{{ $value->title }}</a></h3>
+                                       <h3><a href="{{ URL::to('dich-vu')}}/{{ $categoriesService->slug }}/{{$value->header_slug}}">{{ $value->title }}</a></h3>
                                     </div>
                                     <div class="service-text">
                                         <p>{{ $value->content }}</p>

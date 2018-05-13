@@ -27,7 +27,7 @@
                 ?>
                 @foreach($post as $key => $value)
                     <div class="col-md-4">
-                        <div class="item" style="margin-top: 60px">
+                        <div class="item">
                             <div class="item-date">
                                 <div class="date-wrapper">
                                     <div class="motnh">

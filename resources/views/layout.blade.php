@@ -82,7 +82,7 @@
                                                     $slug = 'n/';
                                                 }
                                             ?>
-                                        <li class="@if($value->child != null) hassub @endif">
+                                        <li class="@if($value->child != '1' ) hassub @endif @if($value->slug == 'tin-tuc' ) hassub @endif"">
                                             <a href="{{url('/')}}/{{$slug}}{{$value->slug}}" rel="nofollow">{{ $value->name }}</a>
                                             <?php 
                                                 if($value->child != null) {
@@ -92,6 +92,7 @@
                                             ?>
                                             
                                             @if(isset($child)  && count($child) > 0 && $value->themes != '3')
+                                            <span class="icon-caret"></span>
                                             <div class="submenu">
                                                 <ul>
                                                     @foreach($child as $key => $values)
@@ -143,7 +144,11 @@
     <div class="hotline-content">
         <h4>Tư Vấn Miễn Phí</h4>
     </div>
-</div> 
+</div>
+    
+<a class="hotline-mobile" href="tel:19000117">
+    <img src="{{Voyager::image('icon-hotline.gif')}}" width="50px" alt="">
+</a>
 <div class="wrapper">
         <div class="flower-theme-default">
             <div class="bottom-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/01.png" alt=""></div>
@@ -241,8 +246,8 @@
                             </div>
                             
                             <div class="form-group">
-                                <input type="text" id="phone-customer" name="phone" class="form-control" placeholder="Số điện thoại (bắt buộc)" data-val="true" data-val-regex="Số điện thoại không hợp lệ" data-val-regex-pattern="^[0-9]{10,11}$" data-val-required="Vui lòng nhập số điện thoại!">
-                                <span class="field-validation-valid" data-valmsg-for="phone" data-valmsg-replace="false"></span>
+                           
+                                <input  onKeyDown="if(this.value.length==11 && event.keyCode!=8) return false;" type="tel" pattern="[0-9]" id="phone-customer" name="phone" maxlength="11" class="form-control" placeholder="Số điện thoại (bắt buộc)" require>
                             </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary btn-customer">Đăng Ký</button>
@@ -260,13 +265,13 @@
                 Ưu Đ&#227;i
             </button>-->
             <a href="http://www.svanclinic.vn/uu-dai-thang/" class="btn btn-default">
-                <img src="/Content/layout/mobile/images/icon/mobile-icon-4.png" alt="">
+                <img src="{{Voyager::image('discount.png')}}" alt="" style="position:relative;top: -2px;">
                 Ưu Đãi
             </a>
         </div>
         <div class="button">
             <button class="btn btn-default" onclick="_sbzq.push(['expandWidget']);">
-                <img src="/Content/layout/mobile/images/icon/mobile-icon-3.png" alt="">
+                <img src="{{Voyager::image('chat.png')}}" alt="">
                 chat
             </button>
         </div>
@@ -279,7 +284,7 @@
         <!-- my core JavaScript-->
         <script src="{{ URL::to('js/main.js')}}"></script>
         <script src="{{ URL::to('js/injectCSS.js')}}"></script>
-        <script src="{{ URL::to('js/default.js')}}"></script>
+       
         <script src="{{ URL::to('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 
 		<script>
@@ -290,7 +295,7 @@
         $("html").click(function () {
             $(".img_popup").addClass("hidden");
             $(".opacity").css('display', 'none');
-        });	
+        });
         </script>
         @yield('javascript')
 		<!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
