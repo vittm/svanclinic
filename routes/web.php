@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 //Dịch Vụ
-Route::get('/dich-vu','PostController@category');
+Route::get('c/{menu}','PostController@category');
 Route::get('/dich-vu/{title}', 'ServicesController@childcategory');
 
 Route::post('/services/updating', 'ServicesController@update');

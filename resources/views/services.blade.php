@@ -1,5 +1,18 @@
 @extends('layout')
-
+@section('title')
+    <title>Dịch Vụ Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
+@stop
+@section('facebook_meta')
+    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
+    <meta name="keywords" content='dich vu,spa quận 1, spa giảm cân, spa trắng da'>
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" itemprop="headline" content='Dịch Vụ Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
+    <meta property="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
+    <meta property="og:url" content="http://www.svanclinic.vn/lien-he" />
+    <meta property="og:site_name" content="SVAN CLINIC" />
+    <meta property="og:image" content="{{Voyager::image('imageLogo.png')}}"  />
+@stop
 @section('content')
 <div class="service">
         <div class="title">

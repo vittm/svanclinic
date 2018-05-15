@@ -26,7 +26,7 @@ class PostController extends Controller
     
     public function news($name){
         $category = DB::table('categories')->where('slug','=',$name)->first();
-        $post= DB::table('categories')->where('parent_id','=',$category->id)->orderBy('id', 'desc')->get();
+        $post= DB::table('categories')->where([['parent_id','=',$category->id],['id','!=','44']])->orderBy('id', 'desc')->get();
         return view('posts.news',['news'=>$post,'categories'=>$category]);            
     }
     public function listNews(Request $request){

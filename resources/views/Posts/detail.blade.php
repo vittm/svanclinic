@@ -1,11 +1,17 @@
 
 @extends('layout')
+    
+@section('title')
+<title>{{ $posts->title }}</title>
+@endsection
 @section('facebook_meta')
+    <meta property="og:locale" content="vi_VN" />
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{ $posts->title }}" />
 	<meta property="og:description"   content="{{ $posts->meta_description}}" />
     <meta property="og:image"         content="{{Voyager::image($posts->image)}}    " />
     <meta name="keywords"             content="{{ $posts->meta_keywords}}"/>
+    <meta property="og:site_name" content="SVAN CLINIC" />
 @endsection
 @section('content')
 <!-- Page Content -->

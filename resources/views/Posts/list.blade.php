@@ -1,6 +1,18 @@
 
 @extends('layout')
-
+@section('title')
+    <title>{{ $categories->name }}</title>
+@stop
+@section('facebook_meta')
+    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
+    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" itemprop="headline" content='{{$categories->name}}' />
+    <meta property="og:description" content='{{ $categories->name}}' />
+    <meta property="og:site_name" content="SVAN CLINIC" />
+    <meta property="og:image" content="{{Voyager::image($categories->images)}}"  />
+@stop
 @section('content')
 <div class="news-list">
         <div class="title">
@@ -29,7 +41,7 @@
                                 <div class="item">
                                     <div class="item-image">
                                         <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
-                                            <img src="{{Voyager::image($value->image)}}">
+                                        <div style="height: 246px;background: url('{{Voyager::image($value->image)}}') no-repeat;background-size:cover;"></div>
                                         </a>
                                     </div>
                                     <div class="item-content">

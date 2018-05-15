@@ -34,7 +34,7 @@ $(document).ready(function () {
                 typepost = 'null'; 
               }
           $.ajax({
-              url: url+"/sv/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
+              url: url+"/get-customer"+'-'+name+'-'+title+'-'+typepost+'-'+phone+'-'+source+'-'+medium+'-'+campaign,
               type: 'get',
               dataType: 'html',
               data: {'name':name,'title':title,'phone':phone,'typepost':typepost,'utm_source':source,'utm_medium':medium,'utm_campaign':campaign,"_token": "{{ csrf_token() }}"},
@@ -136,22 +136,22 @@ $(document).ready(function() {
     });
     $('.menu-wrapper > ul > li.hassub > a').hover(function() {
        $(this).addClass('active');
-       var submenu = $(this).find('.submenu').hasClass('active');
+        var submenu = $(this).find('.submenu').hasClass('active');
+        var eqOne = $(this).parents('.hassub').index();
+        $('.menu-wrapper > ul > li').not(':eq('+eqOne+')').removeClass('active');
+        $('.menu-wrapper > ul > li').not(':eq('+eqOne+')').find('.submenu').removeClass('active');
        if(submenu == false){
         $(this).parents('.hassub').find('.submenu').addClass('active');
        }
-    }, function() {
-      $(this).parents('.hassub').removeClass('active');
-      $(this).parents('.hassub').find('.submenu').removeClass('active');
     });
+    $('body').on({
+      mouseleave: function(){
+        $('.menu-wrapper > ul > li.hassub').removeClass('active');
+        $('.menu-wrapper > ul > li.hassub').find('.submenu').removeClass('active');
+      }
+    },'.menu-wrapper');
     
-    $(document).on('hover', function () {
-      $('.menu-wrapper > ul > li.hassub').removeClass('active');
-      $('.menu-wrapper > ul > li.hassub').find('.submenu').removeClass('active');
-    });
-    $('.menu-wrapper > ul > li').on('hover', function (e) {
-        e.stopPropagation();
-    });
+    
     // $('.submenu > ul > li').hover(function() {
     //    $(this).addClass('active');
     // }, function() {
@@ -186,26 +186,26 @@ $(document).ready(function() {
 // });
 
 
-$(window).on('load resize', function () {
+// $(window).on('load resize', function () {
 
-  $(function() {
-    var minWidth = 1024;
-    var deviceWidth = $(window).width() - 17;
-      if (deviceWidth < minWidth) {
-          deviceWidth = minWidth;
-      }
-     var scale = deviceWidth / 1280;
-      $(function() {
-        $(".text-content img").map(function () {
-          img_width = $(this).width();
-          $(this).css({
-            width: img_width *scale,
-            height: 'auto'
-          });
-        });
-      })
-  })
-});
+//   $(function() {
+//     var minWidth = 1024;
+//     var deviceWidth = $(window).width() - 17;
+//       if (deviceWidth < minWidth) {
+//           deviceWidth = minWidth;
+//       }
+//      var scale = deviceWidth / 1280;
+//       $(function() {
+//         $(".text-content img").map(function () {
+//           img_width = $(this).width();
+//           $(this).css({
+//             width: img_width *scale,
+//             height: 'auto'
+//           });
+//         });
+//       })
+//   })
+// });
 
 $(document).ready(function() {
   new WOW().init();

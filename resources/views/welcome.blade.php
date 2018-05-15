@@ -1,20 +1,34 @@
 
 @extends('layout')
-
+@section('title')
+    <title>Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
+@stop
+@section('facebook_meta')
+    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
+    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" itemprop="headline" content='Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
+    <meta property="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
+    <meta property="og:url" content="http://www.svanclinic.vn/trang-chu" />
+    <meta property="og:site_name" content="SVAN CLINIC" />
+    <meta property="og:image" content="{{Voyager::image('imageLogo.png')}}"  />
+@stop
 @section('content')
 <div id="svanslider" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
+        
         <ol class="carousel-indicators">
             <!-- In case: Banners count == 1 => Do not show slide button -->
-                        <li data-target="#svanslider" data-slide-to="0" class="active"></li>
-                        <li data-target="#svanslider" data-slide-to="1"></li>
-                        <li data-target="#svanslider" data-slide-to="2"></li>
-                        <li data-target="#svanslider" data-slide-to="3"></li>
+            @foreach($slides as $key => $value)
+            <li data-target="#svanslider" class="@if($key == 0 ) active @endif" data-slide-to="{{ $key}}" ></li>
+            @endforeach
         </ol>
+       
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
         @foreach($slides as $key => $value)
-            <div class="item active">
+            <div class="item @if($key == 0 ) active @endif">
                 <a href="{{$value->link}}">
                     <div class="image" style="background-image:url('{{Voyager::image($value->images)}}')"></div>
                 </a>
@@ -30,7 +44,7 @@
         <div class="right-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/02.png" alt=""></div>
     </div>   
         <div class="container">
-            <div class="title">
+            <div class="title" style="margin-bottom: 60px">
                 <h2>
                     <i>TẠI SAO N&#202;N CHỌN SVAN CLINIC &amp; SPA 
                             <span class="line-left"></span>

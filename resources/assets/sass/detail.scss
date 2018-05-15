@@ -26,6 +26,7 @@ body .pr0{
         flex-basis: 30%;
         & > a {
             color: rgb(42, 138, 85);
+
         }
     }
 }
@@ -47,7 +48,7 @@ body .pr0{
         font-size: 17px;
         font-weight: 500;
         overflow: hidden;
-        -webkit-line-clamp: 1;
+        -webkit-line-clamp: 2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         word-break: break-word;
@@ -60,6 +61,13 @@ body .pr0{
         -webkit-box-orient: vertical;
         word-break: break-word;
         color: #8ba4b3;
+    }
+    @media only screen and (max-width: 1024px) { 
+      p {
+        & > img {
+          width: 100%;
+        }
+      }
     }
 }
 .blog-content {

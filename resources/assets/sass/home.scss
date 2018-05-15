@@ -290,8 +290,8 @@ div.img_popup {
   }
   
   .btn-hotline {
-    height: 93px;
-    width: 289px;
+    height: 70px;
+    width: 203px;
     position: fixed;
     right: 1px;
     display: flex;
@@ -303,7 +303,7 @@ div.img_popup {
       display: none;
     }
     .icon {
-      width: 130px;
+      width: 107px;
       height: 95px;
       position: relative;
       border-width: 1px;
@@ -311,8 +311,8 @@ div.img_popup {
       border-top-left-radius: 18px;
       border-radius: 50%;
       float: left;
-      top: -7px;
-      left: 5px;
+      top: 0px;
+      left: 2px;
       float: left;
       .icon-img {
         width: 100%;
@@ -327,8 +327,8 @@ div.img_popup {
       }
     }
     .hotline-content {
-      width: calc(100% - 46.346875px);
-      height: 55px;
+      width: 100%;
+      height: 46px;
       position: relative;
       top: 17px;
       border-bottom-right-radius: 15px;
@@ -343,10 +343,10 @@ div.img_popup {
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff4929', endColorstr='#570100', GradientType=1 );
 
       h4 {
-        font-size: 21px;
+        font-size: 14px;
         text-align: center;
         margin: 0;
-        line-height: 55px;
+        line-height: 48px;
         font-weight: 700;
         color: #ffffff;
       }
@@ -1227,7 +1227,8 @@ div.img_popup {
                 position: absolute;
                 padding-left: 0;
                 left: -25px;
-                top: 70px;
+                top: 62px;
+                padding-top: 10px;
                 height: 100%;
                 z-index: 8000;
                 &.active {
@@ -1913,6 +1914,7 @@ div.img_popup {
               background-size: cover;
               background-position: center center;
               background-repeat: no-repeat;
+              margin: auto;
             }
             .service-content {
               width: 100%;
@@ -1996,7 +1998,7 @@ div.img_popup {
               .service-text {
                 padding: 15px 25px;
                 color: #a7b1b0;
-                font-size: 1.4em;
+                font-size: 1.3em;
                 @media only screen and (max-width: 1024px) { 
                   font-size: 1.2em;
                 }
@@ -2256,7 +2258,6 @@ div.img_popup {
           margin: 20px 15px 10px 15px;
           color: rgb(42, 138, 85);
           font-weight: bold;
-          font-size: 16px;
           a {
             color: rgb(42, 138, 85);
             overflow: hidden;
@@ -2264,6 +2265,10 @@ div.img_popup {
             display: -webkit-box;
             -webkit-box-orient: vertical;
             word-break: break-word;
+            font-size: 20px;
+            @media only screen and (max-width: 1024px) { 
+              margin-top: 17px;
+            }
           }
         }
         .video-info {
@@ -3665,6 +3670,7 @@ div.img_popup {
           width: 320px;
           @media only screen and (max-width: 1024px) { 
             width: 100%;
+            display: none;
           }
           min-height: 1px;
           margin-left: auto;
@@ -4862,9 +4868,21 @@ div.img_popup {
       padding-top: 80px;
       padding-bottom: 40px;
       @media only screen and (max-width: 1024px) {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-top: 120px;
+        .title {
+          padding-left: 10px;
+          & > p {
+            text-align: left;
+            font-size: 23px;
+            & > i {
+              & > span {
+                display: none;
+              }
+            }
+          }
+        }
       }
+      
       .news-list-wrapper {
         padding-top: 40px;
         .news-list-title {
@@ -4877,6 +4895,9 @@ div.img_popup {
           .item {
             width: 100%;
             height: 220px;
+            @media only screen and (max-width: 1024px) {
+              height: 168px;
+            }
             margin-bottom: 40px;
             .item-image {
               width: 470px;
@@ -4930,6 +4951,9 @@ div.img_popup {
                 border-top: 1px solid #707F7B;
                 .item-name {
                   font-size: 22px;
+                  @media only screen and (max-width: 1024px) {
+                    font-size: 17px;
+                  }
                   padding-top: 5px;
                   padding-bottom: 5px;
                   a {
@@ -4961,9 +4985,10 @@ div.img_popup {
                   }
                   &:before {
                     font-family: 'FontAwesome';
+                    content: '\F101 ';
                     position: absolute;
                     left: -20px;
-                    top: 0px;
+                    top: -2px;
                     width: 24px;
                     height: 24px;
                     line-height: 23px;

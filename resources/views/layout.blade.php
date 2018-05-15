@@ -8,10 +8,11 @@
     <link href="https://fonts.googleapis.com/css?family=Elsie:400,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	
-	<title>Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
+	@yield('title')
 	
     <link rel="canonical" href="http://www.svanclinic.vn/trang-chu" />
-
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{Voyager::image('favicon.ico')}}" type="image/x-icon">
     <!-- Custom Style -->
     <link rel="stylesheet" href="{{ URL::to('css/app.css') }}">
     <link rel="stylesheet" href="{{ URL::to('css/font-awesome.min.css')}}">
@@ -86,7 +87,7 @@
                                             <a href="{{url('/')}}/{{$slug}}{{$value->slug}}" rel="nofollow">{{ $value->name }}</a>
                                             <?php 
                                                 if($value->child != null) {
-                                                    $child = DB::table('categories')->where('parent_id','=',$value->child)->get();
+                                                    $child = DB::table('categories')->where([['parent_id','=',$value->child],['hide','!=', '1']])->get();
                                                     $id_cate = DB::table('categories')->where('slug','=','dich-vu')->get();
                                                 }
                                             ?>
@@ -146,7 +147,7 @@
     </div>
 </div>
     
-<a class="hotline-mobile" href="tel:19000117">
+<a class="hotline-mobile" href="tel:0901690084">
     <img src="{{Voyager::image('icon-hotline.gif')}}" width="50px" alt="">
 </a>
 <div class="wrapper">
@@ -270,7 +271,7 @@
             </a>
         </div>
         <div class="button">
-            <button class="btn btn-default" onclick="_sbzq.push(['expandWidget']);">
+            <button class="btn btn-default subiz-expand" onclick="_sbzq.push(['expandWidget']);">
                 <img src="{{Voyager::image('chat.png')}}" alt="">
                 chat
             </button>
@@ -283,8 +284,6 @@
         <script src="{{ URL::to('js/wow.js')}}"></script>
         <!-- my core JavaScript-->
         <script src="{{ URL::to('js/main.js')}}"></script>
-        <script src="{{ URL::to('js/injectCSS.js')}}"></script>
-       
         <script src="{{ URL::to('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 
 		<script>
