@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 //Dịch Vụ
-Route::get('c/{menu}','PostController@category');
+Route::get('dich-vu','PostController@category');
 Route::get('/dich-vu/{title}', 'ServicesController@childcategory');
 
 Route::post('/services/updating', 'ServicesController@update');
@@ -22,10 +22,22 @@ Route::post('/services/editing-{id}', 'ServicesController@editing');
 Route::get('/dich-vu/{child}/{title}', 'ServicesController@detail');
 
 //Tin Tức
-Route::get('/n/{menu}','PostController@news');
-Route::get('/n/{category}/{menu}','PostController@listNews');
-Route::get('/n/{category}/{child}/{title}', 'PostController@index');
-
+Route::group([
+    'as'     => 'tin-tuc.',
+    'prefix' => 'tin-tuc',
+], function () {
+    Route::get('/', ['uses' => 'PostController@news',        'as' => 'index']);
+    Route::get('{menu}', ['uses' => 'PostController@listNews',        'as' => 'listing']);
+    Route::get("{child}/{title}", ["uses" => "PostController@index", "as" => "detailNew"]);
+});
+Route::group([
+    'as'     => 'bi-quyet.',
+    'prefix' => 'bi-quyet',
+], function (){
+    Route::get('/', ['uses' => 'PostController@know',        'as' => 'index']);
+    Route::get('{menu}', ['uses' => 'PostController@listingknow',        'as' => 'listing']);
+    Route::get("{child}/{title}", ["uses" => "PostController@indexknow", "as" => "detailNew"]);
+});
 Route::get('/bang-gia', function () {
     return view('price');
 });

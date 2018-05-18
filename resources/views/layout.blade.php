@@ -9,7 +9,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
 	
 	@yield('title')
-	
+	<meta property="fb:app_id" content="233253610499667" />
+	@yield('facebook_meta')
     <link rel="canonical" href="http://www.svanclinic.vn/trang-chu" />
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{Voyager::image('favicon.ico')}}" type="image/x-icon">
@@ -55,7 +56,6 @@
     !!}
     
     @endif
-    @yield('facebook_meta')
 </head>
     <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -74,20 +74,11 @@
                                         <img width="auto" src="{{Voyager::image('img/logo.png')}}" alt=""> </a>
                                     </li>
                                     @foreach($menuhome as $key => $value)
-                                            <?php
-                                                $slug = "";
-                                                if($value->themes == '1'){
-                                                    $slug = 'c/';
-                                                }
-                                                if($value->themes == '2'){
-                                                    $slug = 'n/';
-                                                }
-                                            ?>
                                         <li class="@if($value->child != '1' ) hassub @endif @if($value->slug == 'tin-tuc' ) hassub @endif"">
-                                            <a href="{{url('/')}}/{{$slug}}{{$value->slug}}" rel="nofollow">{{ $value->name }}</a>
+                                            <a href="{{url('/')}}/{{$value->slug}}" rel="nofollow">{{ $value->name }}</a>
                                             <?php 
                                                 if($value->child != null) {
-                                                    $child = DB::table('categories')->where([['parent_id','=',$value->child],['hide','!=', '1']])->get();
+                                                    $child = DB::table('categories')->where([['parent_id','=',$value->child],['hide','!=', '1']])->orderBy('id', 'desc')->get();
                                                     $id_cate = DB::table('categories')->where('slug','=','dich-vu')->get();
                                                 }
                                             ?>
@@ -104,7 +95,7 @@
                                                         }
                                                         $categoryParent = DB::table('categories')->where('id','=',$values->parent_id)->first(); 
                                                         if($value->themes == '2'){
-                                                            $slugs = 'n/'.$categoryParent->slug;
+                                                            $slugs = $categoryParent->slug;
                                                         }
                                                     ?>
                                                         <li>
@@ -179,9 +170,8 @@
   data-width="380" 
   data-hide-cover="false"></div>
                         <ul class="social-network social-circle ">
-                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google"></i></a></li>
+                            <li><a href="https://www.facebook.com/svanclinic.vn" class="icoFacebook" title="Facebook"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCcgNpU8MzgEuEpgbWVhvLCw" class="icoGoogle" title="Twitter"><i class="fa fa fa-youtube"></i></a></li>
                         </ul>
                         </div>
                 </div>
@@ -261,14 +251,16 @@
 </div>
     <div id="button">
         <div class="button">
-            <!--<button class="btn btn-default" data-toggle="modal" data-target="#modal-19">
-                <img src="/Content/layout/mobile/images/icon/mobile-icon-1.png" alt="">
-                Ưu Đ&#227;i
-            </button>-->
             <a href="http://www.svanclinic.vn/uu-dai-thang/" class="btn btn-default">
                 <img src="{{Voyager::image('discount.png')}}" alt="" style="position:relative;top: -2px;">
                 Ưu Đãi
             </a>
+        </div>
+        <div class="button">
+            <button class="btn btn-default" data-toggle="modal" data-target="#modal-19">
+                <img src="{{Voyager::image('add-user.png')}}" alt="">
+                Đăng Ký
+            </button>
         </div>
         <div class="button">
             <button class="btn btn-default subiz-expand" onclick="_sbzq.push(['expandWidget']);">

@@ -4,8 +4,6 @@
     <title>Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
 @stop
 @section('facebook_meta')
-    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
-    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
@@ -133,19 +131,19 @@
                         <div class="col-md-4">
                             <div class="news-item">
                                 <div class="news-img">
-                                    <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
+                                    <a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
                                         <img src="{{Voyager::image($value->image)}}" alt="Th&#225;ng v&#224;ng tri &#226;n" title="Th&#225;ng v&#224;ng tri &#226;n - giảm gi&#225; trực tiếp 50% tất cả c&#225;c dịch vụ l&#224;m đẹp">
                                     </a>
                                 </div>
                                 <div class="news-title">
-                                    <h3><a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{$value->title}}</a> </h3>
+                                    <h3><a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{$value->title}}</a> </h3>
                                 </div>
                                 <div class="news-description">
                                     <p><em><span style="color: rgb(61, 156, 116);">{!!$value->excerpt!!}</em></p>
 
                                 </div>
                                 <div class="read-more">
-                                    <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">Xem Thêm</a>
+                                    <a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">Xem Thêm</a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>

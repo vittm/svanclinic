@@ -3,8 +3,6 @@
     <title>Giới thiệu Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
 @stop
 @section('facebook_meta')
-    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
-    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='Giới thiệu Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
@@ -56,18 +54,18 @@
                                 <div class="col-md-6 intro-place-right">
                                     <div class="intro-place-right-wrapper">
                                                 <div class="image-01">
-                                                    <a class="btn-fancy" rel="group-intro" title="" href="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-2.jpg">
-                                                        <img src="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-1.jpg" >
+                                                    <a class="btn-fancy" rel="group-intro" title="" href="{{Voyager::image('info/intro-image-2.jpg')}}">
+                                                        <img src="{{Voyager::image('info/intro-image-1.jpg')}}" >
                                                     </a>
                                                 </div>
                                                 <div class="image-02">
-                                                    <a class="btn-fancy" rel="group-intro" title="" href="/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-2.jpg">
-                                                        <img src="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-2.jpg" >
+                                                    <a class="btn-fancy" rel="group-intro" title="" href="{{Voyager::image('info/intro-image-2.jpg')}}">
+                                                        <img src="{{Voyager::image('info/intro-image-2.jpg')}}" >
                                                     </a>
                                                 </div>
                                                 <div class="image-03">
-                                                    <a class="btn-fancy" rel="group-intro" title="" href="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-3.jpg">
-                                                        <img src="http://www.svanclinic.vn/Upload/News/48c96493-58d9-46d9-b7af-c2dbc13ecd4a/intro-image-3.jpg" >
+                                                    <a class="btn-fancy" rel="group-intro" title="" href="{{Voyager::image('info/intro-image-3.jpg')}}">
+                                                        <img src="{{Voyager::image('info/intro-image-3.jpg')}}" >
                                                     </a>
                                                 </div>
 
@@ -89,18 +87,18 @@
                     <div class="intro-machine-container">
                         <div class="icon-machine-wrapper">
                                         <div class="icon-center">
-                                            <a class="btn-fancy" rel="group-machine" title="" href="/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-1.jpg">
-                                                <img src="http://www.svanclinic.vn/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-2.jpg" >
+                                            <a class="btn-fancy" rel="group-machine" title="" href="{{Voyager::image('info/machine-1.jpg')}}">
+                                                <img src="{{Voyager::image('info/machine-2.jpg')}}" >
                                             </a>
                                         </div>
                                         <div class="icon-left">
                                             <a class="btn-fancy" rel="group-machine" title="" href="/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-2.jpg">
-                                                <img src="http://www.svanclinic.vn/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-1.jpg" >
+                                                <img src="{{Voyager::image('info/machine-1.jpg')}}" >
                                             </a>
                                         </div>
                                         <div class="icon-right">
-                                            <a class="btn-fancy" rel="group-machine" title="" href="/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-3.jpg">
-                                                <img src="http://www.svanclinic.vn/Upload/News/7f6a23fc-e74a-4d31-b3a2-a5e63974e91c/machine-3.jpg" >
+                                            <a class="btn-fancy" rel="group-machine" title="" href="{{Voyager::image('info/machine-3.jpg')}}">
+                                                <img src="{{Voyager::image('info/machine-3.jpg')}}" >
                                             </a>
                                         </div>
 
@@ -123,7 +121,7 @@
                             <div class="col-md-6 no-pd">
                                 <div class="intro-text-right-container">
                                     <div class="image">
-                                        <img src="http://www.svanclinic.vn/Upload/News/6c3abed9-05f2-4f44-a2e7-634b3eeef4f3/02.jpg" >
+                                        <img src="{{Voyager::image('info/02.jpg')}}" >
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +147,7 @@
                     </div>
                     <div class="intro-team-image">
                         <div class="image">
-                            <img src="http://www.svanclinic.vn/Upload/News/9cef1b74-3fa3-45dd-912b-bb6717c55219/intro-team.png" >
+                            <img src="{{Voyager::image('info/intro-team.png')}}" >
                         </div>
                     </div>
                     <div class="clearfix"></div>

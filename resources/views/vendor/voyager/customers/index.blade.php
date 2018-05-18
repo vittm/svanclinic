@@ -90,7 +90,7 @@
                                 $post = DB::table('posts')->where('id','=',$value->title)->first(); 
                             }elseif($value->types == "services") {
                                 $post = DB::table('serivcesposts')->where('id','=',$value->title)->first();
-                            }elseif($value->types == 'contact') {
+                            }elseif($value->types == 'null' || $value->types == "") {
                                 $post = '';
                             }
                             if($post) {
@@ -100,7 +100,7 @@
                         }
                     ?>
                     <a target="_blank" style="font-size: 14px;text-align: left;" 
-                       href="@if($post)@if($value->types == 'posts' ){{ URL::to('n/'.$categoryParent->slug.'/'.$category->slug.'/'.$post->slug) }} 
+                       href="@if($post)@if($value->types == 'posts' ){{ URL::to(''.$categoryParent->slug.'/'.$category->slug.'/'.$post->slug) }} 
                              @elseif($value->types == 'services') {{ URL::to('/dich-vu/'.$category->slug.'/'.$post->header_slug) }} @endif @endif">@if($value->types == 'posts' && $post != "") @if($post->title){{ $post->title}}@endif @elseif ($value->types == 'services') {{ $post->header_title}} @elseif ($value->types == 'contact') 'Form Liên Hệ' @endif </a>
                      </td>
                      <td>

@@ -4,8 +4,6 @@
     <title>Liên hệ Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam</title>
 @stop
 @section('facebook_meta')
-    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
-    <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='Liên hệ Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />

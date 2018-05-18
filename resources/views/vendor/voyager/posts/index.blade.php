@@ -123,7 +123,7 @@
                                                         <i class="voyager-edit"></i> <span class="hidden-xs hidden-sm">Chỉnh sửa</span>
                                                     </a>
 
-                                                    <a target="_blank" href="{{ URL::to('n/'.$slug.'/'.$category->slug.'/'.$value->slug)}}" title="Xem" class="btn btn-sm btn-warning pull-right">
+                                                    <a target="_blank" href="{{ URL::to(''.$slug.'/'.$category->slug.'/'.$value->slug)}}" title="Xem" class="btn btn-sm btn-warning pull-right">
                                                         <i class="voyager-eye"></i> <span class="hidden-xs hidden-sm">Xem</span>
                                                     </a>
                                                 </td>

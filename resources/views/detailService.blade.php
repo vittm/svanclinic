@@ -1,5 +1,8 @@
 
 @extends('layout')
+@section('title')
+    <title>{{ $posts-> header_title }}</title>
+@stop
 @section('facebook_meta')
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{ $posts-> header_title }}" />

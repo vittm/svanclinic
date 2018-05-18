@@ -4,7 +4,6 @@
     <title>{{ $categories->name }}</title>
 @stop
 @section('facebook_meta')
-    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao'>
     <meta name="keywords" content='spa quận 1, spa giảm cân, spa trắng da'>
     <meta property="og:locale" content="vi_VN" />
     <meta property="og:type" content="website" />
@@ -40,8 +39,8 @@
                         ?>
                                 <div class="item">
                                     <div class="item-image">
-                                        <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
-                                        <div style="height: 246px;background: url('{{Voyager::image($value->image)}}') no-repeat;background-size:cover;"></div>
+                                        <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
+                                        <div style="height: 300px;background-image: url('{{Voyager::image($value->image)}}');"></div>
                                         </a>
                                     </div>
                                     <div class="item-content">
@@ -55,13 +54,13 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="item-name">
-                                                <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
+                                                <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
                                             </div>
                                             <div class="item-description">
                                                 {!! $value->excerpt !!}
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to('n/'.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
+                                                <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>
