@@ -106,7 +106,7 @@
                                                     }
                                                 ?> 
                                                 <td>
-                                                    {{$user->name}}
+                                                    {{optional($user)->name}}
                                                 </td>
 
                                                 <td>
