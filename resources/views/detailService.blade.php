@@ -7,38 +7,44 @@
 	<meta property="og:type"          content="website" />
 	<meta property="og:title"         content="{{ $posts-> header_title }}" />
 	<meta property="og:description"   content="{{ $posts-> header_content }}" />
+	<meta name="og:description"   content="{{ $posts-> header_content }}" />
 	<meta property="og:image"         content="{{Voyager::image($posts->header_images)}}    " />
 @endsection
 @section('content')
 <div class="service-detail">
         <div class="title">
-            <h2>
-                <i>Dịch vụ
-                        <span class="line-left"></span>
-                    <span class="line-right"></span>
-                </i>
-            </h2>
+            <!--<h2>-->
+            <!--    <i>{{ __('web.services') }}-->
+            <!--            <span class="line-left"></span>-->
+            <!--        <span class="line-right"></span>-->
+            <!--    </i>-->
+            <!--</h2>-->
         </div>
         <div class="service-detail-wrapper">
+            <div class="hidden id__btn">{{$posts->header_slug}}</div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="other-service-wrapper">
                             <div class="other-service-title">
-                                <span>DỊCH VỤ C&#211; THỂ BẠN MUỐN XEM</span>
+                                <span>{{ __('web.detailServices.otherServices') }}</span>
                             </div>
                             <div class="other-service-nav"></div>
                             <div class="other-service-list">
                                 @foreach($randomPost->chunk(2,0) as $key => $value)
                                     <div class="list-item">
                                     @foreach($value as $keys => $values)
+                                        <?php
+                                            $categoriesChild = DB::table('categories')->where('id','=', $values->category_id)->first(); 
+                                        ?>
                                         <div class="item">
-                                            <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$values->header_slug}}">
+                                            <a target="_blank" href="{{ URL::to('dich-vu')}}/{{ $categoriesChild->slug }}/{{$values->header_slug}}">
                                                 <img src="{{Voyager::image($values->header_images)}}" alt="{{ $values-> header_title }}">
                                             </a>
+                                            
                                             <div class="item-caption">
                                                 <i class="small-logo"></i>
-                                                <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$values->header_slug}}">{{ $values-> header_title }}
+                                                <a target="_blank" href="{{ URL::to('dich-vu')}}/{{ $categoriesChild->slug }}/{{$values->header_slug}}">{{ $values-> header_title }}
                                                 </a>
                                             </div>
                                         </div>
@@ -50,7 +56,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="service-name-wrapper">
-                            <h1 class="service-name"><span>{{ $posts-> header_title }}</span></h1>
+                            <h1 class="service-name title__btn"><span>{{ $posts-> header_title }}</span></h1>
                                 <p class="title-posts hidden">{{ $posts->id }}</p>
                                 <p class="type-posts hidden">services</p>
                                 <div class="service-name-text text-content">
@@ -67,9 +73,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    HIỆU QUẢ SAU KHI SỬ DỤNG DỊCH VỤ
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.effectiv') }}
+                                </h2>
                             </div>
                         </div>
                         <div class="row">
@@ -81,7 +87,7 @@
                                 </div>
                                 <div class="btn-wrapper text-right">
 									<button class="btn-icon btn-form"  data-toggle="modal" data-target="#modal-19">
-										<span>ĐĂNG KÝ TƯ VẤN</span>
+										<span>{{ __('web.detailServices.register') }}</span>
 									</button>
                                 </div>
                             </div>
@@ -102,9 +108,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    H&#204;NH ẢNH TRƯỚC V&#192; SAU KHI SỬ DỤNG DỊCH VỤ
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.before') }}
+                                </h2>
                             </div>
                         </div>
                         <div class="row">
@@ -121,7 +127,7 @@
                                 </div>
                                 <div class="btn-wrapper text-center">
                                     <button class="btn-icon btn-form"  data-toggle="modal" data-target="#modal-19">
-										<span>ĐĂNG KÝ TƯ VẤN</span>
+										<span>{{ __('web.detailServices.register') }}</span>
 									</button>
                                 </div>
                             </div>
@@ -134,9 +140,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    NGUY&#202;N L&#221; - C&#212;NG NGHỆ
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.tech') }}
+                                </h2>
                             </div>
                         </div>
                         <div class="row">
@@ -156,7 +162,7 @@
                                     </div>
                                     <div class="btn-wrapper text-left">
                                         <button class="btn-icon btn-form"  data-toggle="modal" data-target="#modal-19">
-											<span>ĐĂNG KÝ TƯ VẤN</span>
+											<span>{{ __('web.detailServices.register') }}</span>
 										</button>
                                     </div>
                                 </div>
@@ -170,9 +176,9 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="service-detail-title">
-                                        QUY TR&#204;NH DỊCH VỤ
-                                    </div>
+                                    <h2 class="service-detail-title">
+                                        {{ __('web.detailServices.process') }}
+                                    </h2>
                                 </div>
                             </div>
                             <div class="row">
@@ -202,9 +208,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    TẠI SAO N&#202;N CHỌN SVAN CLINIC &amp; SPA
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.why') }}
+                                </h2>
                             </div>
                         </div>
                         <div class="row">
@@ -224,9 +230,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    NHẬN X&#201;T CỦA KH&#193;CH H&#192;NG
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.reviews') }}
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -262,9 +268,9 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="service-detail-title">
-                                    LƯU &#221;
-                                </div>
+                                <h2 class="service-detail-title">
+                                    {{ __('web.detailServices.note') }}
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -276,7 +282,7 @@
                         <div class="note-btn-wrapper">
                             <div class="btn-wrapper">
                                 <button class="btn-icon btn-form"  data-toggle="modal" data-target="#modal-19">
-                                    <span>ĐĂNG KÝ TƯ VẤN</span>
+                                    <span>{{ __('web.detailServices.register') }}</span>
                                 </button>
                             </div>
                         </div>

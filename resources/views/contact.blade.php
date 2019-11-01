@@ -8,6 +8,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='Liên hệ Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
     <meta property="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
+    <meta name="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
     <meta property="og:url" content="http://www.svanclinic.vn/lien-he" />
     <meta property="og:site_name" content="SVAN CLINIC" />
     <meta property="og:image" content="{{Voyager::image('imageLogo.png')}}"  />
@@ -18,25 +19,25 @@
     <div class="form-area">  
         <form role="form">
         <br style="clear:both">
-                    <h2 class="" style="margin-bottom: 25px; text-align: center;">Thông tin khách hàng</h2>
+                    <h2 class="" style="margin-bottom: 25px; text-align: center;">{{ __('web.contact.info') }}</h2>
                     <p class="title-posts hidden">1</p>
                     <p class="type-posts hidden">contact</p> 
     				<div class="form-group">
-						<input type="text" class="form-control" id="username-customer" name="name" placeholder="Họ và Tên" required>
+						<input type="text" class="form-control" id="username-customer" name="name" placeholder="{{ __('web.contact.name') }}" required>
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" id="phone-customer" name="phone" placeholder="Số điện thoại" required>
+						<input type="text" class="form-control" id="phone-customer" name="phone" placeholder="{{ __('web.contact.phone') }}" required>
 					</div>
                     <div class="form-group">
-                    <textarea class="form-control" type="textarea" id="message" placeholder="Nội dung" maxlength="140" rows="7"></textarea>                  
+                    <textarea class="form-control" type="textarea" id="message" placeholder="{{ __('web.contact.content') }}" maxlength="140" rows="7"></textarea>                  
                     </div>
             
-        <button type="button" id="submit" name="submit" class="btn btn-primary submit-contact btn-customer">Gửi</button>
+        <button type="button" id="submit" name="submit" class="btn btn-primary submit-contact btn-customer">{{ __('web.contact.sent') }}</button>
         </form>
     </div>
 </div>
 <div class="col-md-6 text-center top30">
-<h2 class="" style="margin-bottom: 25px; text-align: center;">Liên hệ với chúng tôi</h2>
+<h2 class="" style="margin-bottom: 25px; text-align: center;">{{ __('web.contact.withUs') }}</h2>
 {!! 
     $info->info
 !!}

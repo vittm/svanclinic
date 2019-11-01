@@ -126,6 +126,8 @@
                             </div>
                             <!-- .panel -->
                             <!-- ### EXCERPT ### -->
+                            
+                            
                             <div class="panel panel-bordered panel-primary">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">Quy Trình Dịch Vụ</h3>
@@ -166,6 +168,26 @@
                         </div>
                         <div class="col-md-6">
                     <!-- ### DETAILS ### -->
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Ngôn ngữ</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="form-group  ">
+                                            
+                                            <label for="name">Tiếng Anh</label>
+                                                                                                                                        <br>
+
+    <input type="checkbox" @if(isset($post) && $post->location == 1) checked @else "" @endif name="location" class="toggleswitch">
+
+                                            
+                                                                                    </div>
+                                                                                                                        </div>
+                    </div>
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-heading">
                             <h3 class="panel-title"><i class="icon wb-clipboard"></i> Category</h3>

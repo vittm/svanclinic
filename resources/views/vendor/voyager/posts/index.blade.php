@@ -27,7 +27,7 @@
                                 <div class="col-sm-6">
                                 @if(empty($check))
                                 @else
-                                    <i class="voyager-double-left" style="font-size: 15px; top: 2px; position: relative;"></i> <a href="{{ route('voyager.customers.index') }}">Quay lại Danh sách</a>
+                                    <i class="voyager-double-left" style="font-size: 15px; top: 2px; position: relative;"></i> <a href="{{ route('voyager.posts.index') }}">Quay lại Danh sách</a>
                                 @endif
                                 </div>
                                 <div class="col-sm-6">
@@ -51,6 +51,11 @@
                                                                                                                                     Tiêu đề
                                                                                                                                 : activate to sort column ascending" style="width: 747px;">
                                                     Tiêu đề
+                                                </th>
+                                                <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
+                                                                                                                                    created_at
+                                                                                                                                : activate to sort column ascending" style="width: 139px;">
+                                                    Images
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="
                                                                                                                                     status
@@ -82,11 +87,15 @@
                                                 <td>
                                                     <input type="checkbox" name="row_id" id="checkbox_1" value="1">
                                                 </td>
-
+    
                                                 <td>
                                                     <div class="readmore" style="max-height: none;">{{ $value->title }}</div>
                                                 </td>
+                                                <td>
 
+                                                   <img src="{{Voyager::image($value->image)}}" width="200" />
+
+                                                </td>
                                                 <td>
 
                                                     {{$value->status}}
@@ -104,6 +113,7 @@
                                                     foreach ($categoryParent as $key => $values) {
                                                         $slug = $values->slug;
                                                     }
+                                                   
                                                 ?> 
                                                 <td>
                                                     {{optional($user)->name}}

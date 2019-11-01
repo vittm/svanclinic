@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use App\User;
 use DB;
 use Auth;
+use App;
 use Illuminate\Support\Facades\Input;
 use App\Serivcespost;
 use App\Http\Requests;
@@ -63,6 +64,11 @@ class ServicesController extends Controller
                 );
                 $array_feedback[] = $data2;
             }
+            if(isset($request->location)){
+                $checkbox = 1;
+            }else {
+                $checkbox = 0;
+            }
         $data= ([
             'header_title'=> $request->header_title,
             'header_slug' => $request->header_slug,
@@ -79,6 +85,7 @@ class ServicesController extends Controller
             'why_images'=> $this->updateImages('why_images',$request,'servicesposts',$request->why_images,'images'),
             'feedback'=> json_encode($array_feedback),
             'noted'=> $request->noted_description,
+            'location' => $checkbox
         ]);
             
         Serivcespost::insert($data);
@@ -161,6 +168,11 @@ class ServicesController extends Controller
                 $array_feedback[] = $data2;
             }
         }
+        if(isset($request->location)){
+                $checkbox = 1;
+        }else {
+            $checkbox = 0;
+        }
         $data= ([
             'header_title'=> $request->header_title,
             'header_slug' => $request->header_slug,
@@ -177,6 +189,7 @@ class ServicesController extends Controller
             'why_images'=> ($request->why_images ? $this->updateImages('why_images',$request,'servicesposts',$request->why_images,'images') : $request->why_images_hidden),
             'feedback'=> ($db_feedback ? $array_feedback_img : json_encode($array_feedback)),
             'noted'=> $request->noted_description,
+            'location' => $checkbox
         ]);
         
         DB::table('serivcesposts')->where('id', $id)->update($data);
@@ -185,14 +198,15 @@ class ServicesController extends Controller
     }
     public function childcategory($name){
         $category = DB::table('categories')->where('slug','=',$name)->first();
-        $post= DB::table('serivcesposts')->where('category_id','=',$category->id)->get();
+        $post= DB::table('serivcesposts')->where([['category_id','=',$category->id]])->get();
         return view('childCategory',['news'=>$post,'categories'=>$category]);
     }
     public function detail(Request $request)
     {
+       
         $find= DB::table('serivcesposts')->where('header_slug','=',$request->title)->first();
         $category = DB::table('categories')->where('id','=', $find->category_id)->first();
-        $randomPost = DB::table('serivcesposts')->where('header_slug','!=', $find->header_slug)->inRandomOrder()->get();
+        $randomPost = DB::table('serivcesposts')->where([['header_slug','!=', $find->header_slug],App::isLocale('en') ? ['location','=','1'] : ['location','!=',1]])->inRandomOrder()->get();
         return view('detailService',['posts'=>$find, 'randomPost' => $randomPost,'categories' =>$category]);            
     }
 }

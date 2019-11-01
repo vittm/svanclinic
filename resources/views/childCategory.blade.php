@@ -7,6 +7,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='{{$categories->name}}' />
     <meta property="og:description" content='{{ $categories->name}}' />
+    <meta name="description" content='{{ $categories->name}}' />
     <meta property="og:site_name" content="SVAN CLINIC" />
     <meta property="og:image" content="{{Voyager::image($categories->images)}}"  />
 @stop
@@ -30,16 +31,16 @@
                 <div class="col-md-4">
                     <div class="item">
                         <div class="item-image">
-                            <a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}">
+                            <a target="_blank" href="{{url('')}}{{App::isLocale('en')?"/en/services" : "/dich-vu"}}/{{ $categories->slug }}/{{$value->header_slug}}">
                                 <img src="{{Voyager::image($value->header_images)}}" alt=""></a>
-                            <div class="item-caption">
+                            <h2 class="item-caption">
                                 {{$value->header_title}}
-                            </div>
+                            </h2>
                         </div>
                         <div class="item-description">
                             {{ $value->header_content }}   
                         </div>
-                        <div><a href="{{ URL::to('dich-vu')}}/{{ $categories->slug }}/{{$value->header_slug}}" class="readmore">Xem Thêm</a><div class="clearfix"></div>
+                        <div><a target="_blank" href="{{url('')}}{{App::isLocale('en')?"/en/services" : "/dich-vu"}}/{{ $categories->slug }}/{{$value->header_slug}}" class="readmore">{{ __('web.more') }}</a><div class="clearfix"></div>
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,8 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='Svan Clinic & Spa - Giảm béo và trị liệu da hàng đầu Việt Nam' />
     <meta property="og:description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
-    <meta property="og:url" content="http://www.svanclinic.vn/trang-chu" />
+    <meta name="description" content='Spa hàng đầu Việt Nam về Giảm béo không phẫu thuật.Cam kết hiệu quả - Công nghệ tiên tiến - Không gian chuẩn 5 sao' />
+    <meta property="og:url" content="https://www.svanclinic.vn" />
     <meta property="og:site_name" content="SVAN CLINIC" />
     <meta property="og:image" content="{{Voyager::image('imageLogo.png')}}"  />
 @stop
@@ -28,7 +29,7 @@
         @foreach($slides as $key => $value)
             <div class="item @if($key == 0 ) active @endif">
                 <a href="{{$value->link}}">
-                    <div class="image" style="background-image:url('{{Voyager::image($value->images)}}')"></div>
+                    <img src="{{Voyager::image($value->images)}}" class="image">
                 </a>
             </div>
         @endforeach
@@ -38,18 +39,18 @@
     <div class="clearfix"> </div>   
     <div class="intro-why-chose">
     <div class="flower-theme-default">
-        <div class="left-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/01.png" alt=""></div>
-        <div class="right-flower"><img src="http://www.svanclinic.vn/Content/layout/images/flower/02.png" alt=""></div>
+        <div class="left-flower"><img src="{{Voyager::image('01.png')}}" alt=""></div>
+        <div class="right-flower"><img src="{{Voyager::image('02.png')}}" alt=""></div>
     </div>   
         <div class="container">
             <div class="title" style="margin-bottom: 60px">
-                <h2>
-                    <i>TẠI SAO N&#202;N CHỌN SVAN CLINIC &amp; SPA 
+                <h1>
+                    <i>{{ __('web.welcome.why') }}
                             <span class="line-left"></span>
                         <span class="line-right"></span>
                     </i>
 
-                </h2>
+                </h1>
             </div>
             <div class="intro-why-chose-content">
             @foreach($whyhomes as $key => $value)
@@ -57,7 +58,7 @@
                         <a href="">
                             <figure>
                                 <img src="{{Voyager::image($value->images)}}" alt="" class="img-responsive center-block">
-                                <figcaption><h3>{{ $value->text }}</h3></figcaption>
+                                <!--<figcaption><h3>{{ $value->text }}</h3></figcaption>-->
                             </figure>
                         </a>
                     </div>
@@ -71,7 +72,7 @@
             <div class="container">
                 <div class="title" style="padding-top: 40px">
                     <h2>
-                        <i>DỊCH VỤ NỔI BẬT 
+                        <i>{{ __('web.welcome.hotServices') }} 
                                 <span class="line-left"></span>
                             <span class="line-right"></span>
                         </i>
@@ -83,19 +84,19 @@
                 <div class="service-slider">
                 @foreach($servicesspecialists as $key => $value)
                         <?php
-                            $postService = DB::table('posts')->where('id','=',$value->link)->first();
+                            $postService = DB::table('serivcesposts')->where('id','=',$value->link)->first();
                             if( $postService != null){
                             $categoriesService = DB::table('categories')->where('id','=',$postService->category_id)->first();
                             }
                         ?>
                         <div class="item">
                             <div class="service-wrapper">
-                                <a href="{{ URL::to('dich-vu')}}/{{ $categoriesService->slug }}/{{$value->header_slug}}">
+                                <a href="{{ URL::to('/')}}{{App::isLocale('en')?"/en/services/" : "/dich-vu/"}}{{ $categoriesService->slug }}/{{$value->header_slug}}">
                                     <div class="service-img" style="background-image: url('{{Voyager::image($value->images)}}')"></div>
                                 </a>
                                 <div class="service-content">
                                     <div class="service-name">
-                                       <h3><a href="{{ URL::to('dich-vu')}}/{{ $categoriesService->slug }}/{{$value->header_slug}}">{{ $value->title }}</a></h3>
+                                       <h3><a href="{{ URL::to('/')}}{{App::isLocale('en')?"/en/services/" : "/dich-vu/"}}{{ $categoriesService->slug }}/{{$value->header_slug}}">{{ $value->title }}</a></h3>
                                     </div>
                                     <div class="service-text">
                                         <p>{{ $value->content }}</p>
@@ -112,7 +113,7 @@
         <div class="container">
             <div class="title">
                 <h2>
-                    <i>TIN TỨC 
+                    <i>{{ __('web.welcome.news') }}
                             <span class="line-left"></span>
                         <span class="line-right"></span>
                     </i>
@@ -126,24 +127,23 @@
                 @foreach($news as $key => $value)
                 <?php 
                     $categories = DB::table('categories')->where('id','=',$value->category_id)->first();
-                    $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
                 ?>
                         <div class="col-md-4">
                             <div class="news-item">
                                 <div class="news-img">
-                                    <a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
+                                    <a href="{{ URL::to('/')}}{{App::isLocale('en')?"/en/news/" : "/tin-tuc/"}}{{$categories->slug}}/{{$value->slug}}">
                                         <img src="{{Voyager::image($value->image)}}" alt="Th&#225;ng v&#224;ng tri &#226;n" title="Th&#225;ng v&#224;ng tri &#226;n - giảm gi&#225; trực tiếp 50% tất cả c&#225;c dịch vụ l&#224;m đẹp">
                                     </a>
                                 </div>
                                 <div class="news-title">
-                                    <h3><a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{$value->title}}</a> </h3>
+                                    <h3><a href="{{ URL::to('/')}}{{App::isLocale('en')?"/en/news/" : "/tin-tuc/"}}{{$categories->slug}}/{{$value->slug}}">{{$value->title}}</a> </h3>
                                 </div>
                                 <div class="news-description">
                                     <p><em><span style="color: rgb(61, 156, 116);">{!!$value->excerpt!!}</em></p>
 
                                 </div>
                                 <div class="read-more">
-                                    <a href="{{ URL::to($categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">Xem Thêm</a>
+                                    <a href="{{ URL::to('/')}}{{App::isLocale('en')?"/en/news/" : "/tin-tuc/"}}{{$categories->slug}}/{{$value->slug}}">{{ __('web.more') }}</a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@
                             </div>
                             <div class="video-info">
                                 <div class="view">
-                                    <span id="{{$value->link}}"></span> <span>&nbsp;Lượt xem</span>
+                                    <span id="{{$value->link}}"></span> <span>{{$value->view}}&nbsp; {{ __('web.view') }}</span>
                                     
                                 </div>
                                 <div class="created">
@@ -197,7 +197,7 @@
     <div class="intro-feedback">
         <div class="title">
             <h2>
-                <i>KH&#193;CH H&#192;NG N&#211;I G&#204; VỀ SVAN CLINIC &amp; SPA 
+                <i>{{ __('web.welcome.feedback') }} 
                     <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
@@ -235,7 +235,7 @@
         <div class="container">
             <div class="title">
                 <h2>
-                    <i>ĐỐI T&#193;C 
+                    <i>{{ __('web.welcome.partner') }} 
                             <span class="line-left"></span>
                         <span class="line-right"></span>
                     </i>
@@ -255,14 +255,19 @@
             </div>
         </div>
     </div>
-        
+    @if(isset($banners))
     <div class="opacity"></div>
     <div class="col-xs-12 col-md-6 img_popup">
-        <div class="close">
-            <img src="http://www.svanclinic.vn/Content/layout/images/img_popup/close.png" alt="Close button">
-        </div>
-        <a href="{{$banners->link}}"><img src="{{Voyager::image($banners->images)}}" alt="" class="img-responsive"></a>
+         @foreach($banners as $key => $value)
+            <div class="img_popup__group">
+                <div class="close">
+                <img src="{{Voyager::image('close.png')}}" alt="Close button">
+                </div>
+                <a href="{{$value->link}}"><img src="{{Voyager::image($value->images)}}" alt="" class="img-responsive"></a>
+            </div>
+        @endforeach
     </div>
+    @endif
 @endsection
          
 

@@ -6,7 +6,7 @@
    <br>
    
    <div class="col-sm-12">
-   <p>Khi search ngày tháng: đối với ngày và tháng đủ 2 số, năm thì 4 số</p>
+   <p>Khi search ngày tháng ghi đầy đủ ngày tháng vd: 30/6/2017</p>
    <a href="{{ URL::to('downloadExcel/xlsx') }}"><button class="btn btn-success">Download Excel xlsx</button></a>
    <br>
    @if(empty($check))
@@ -90,7 +90,7 @@
                                 $post = DB::table('posts')->where('id','=',$value->title)->first(); 
                             }elseif($value->types == "services") {
                                 $post = DB::table('serivcesposts')->where('id','=',$value->title)->first();
-                            }elseif($value->types == 'null' || $value->types == "") {
+                            }elseif($value->types == 'null' || $value->types == "" || $value->types == 'contact') {
                                 $post = '';
                             }
                             if($post) {
@@ -100,8 +100,21 @@
                         }
                     ?>
                     <a target="_blank" style="font-size: 14px;text-align: left;" 
-                       href="@if($post)@if($value->types == 'posts' ){{ URL::to(''.$categoryParent->slug.'/'.$category->slug.'/'.$post->slug) }} 
-                             @elseif($value->types == 'services') {{ URL::to('/dich-vu/'.$category->slug.'/'.$post->header_slug) }} @endif @endif">@if($value->types == 'posts' && $post != "") @if($post->title){{ $post->title}}@endif @elseif ($value->types == 'services') {{ $post->header_title}} @elseif ($value->types == 'contact') 'Form Liên Hệ' @endif </a>
+                       href="@if($post)
+                                    @if($value->types == 'posts' )
+                                        {{ URL::to(''.$categoryParent->slug.'/'.$category->slug.'/'.$post->slug) }} 
+                                    @elseif($value->types == 'services') 
+                                        {{ URL::to('/dich-vu/'.$category->slug.'/'.$post->header_slug) }} @endif @endif">
+                        @if($post)
+                                    @if($value->types == 'posts' && $post != "") 
+                                        @if($post->title)
+                                            {{ $post->title}}
+                                        @endif 
+                                    @elseif ($value->types == 'services') 
+                                        {{ $post->header_title}} 
+                                    @elseif ($value->types == 'contact') 
+                                        'Form Liên Hệ' @endif @endif </a>
+                                 
                      </td>
                      <td>
                         {{ $value-> source}}
@@ -131,6 +144,16 @@
                   @endforeach
                </tbody>
             </table>
+            <div class="row">
+                <div class="col-sm-5">
+                    
+                </div>
+                <div class="col-sm-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                        {{ $customers->links() }}
+                    </div>
+                </div>
+            </div>
          </div>
       </div>
    </div>

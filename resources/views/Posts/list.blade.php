@@ -9,20 +9,21 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" itemprop="headline" content='{{$categories->name}}' />
     <meta property="og:description" content='{{ $categories->name}}' />
+    <meta name="description" content='{{ $categories->name}}' />
     <meta property="og:site_name" content="SVAN CLINIC" />
     <meta property="og:image" content="{{Voyager::image($categories->images)}}"  />
 @stop
 @section('content')
 <div class="news-list">
         <div class="title">
-            <p>
+            <h1>
                 <i>
                     {{ $categories->name }}
                     <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
 
-            </p>
+            </h1>
         </div>
         <div class="news-list-wrapper">
             <div class="container">
@@ -35,11 +36,13 @@
                         <div class="news-list-item">
                         @foreach($news as $key => $value)
                         <?php 
-                             $categoryParent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+                             $parent = DB::table('categories')->where('id','=',$categories->parent_id)->first();
+                             $categoryParent= DB::table('menuhome_trans')->join('menuhomes','menuhomes.id','=','menuhome_trans.trans_id')->where([['menuhomes.child','=',$parent->id],['menuhome_trans.lang_code','=',App::isLocale('en')? 'en': 'vi']])->first();
+                            
                         ?>
                                 <div class="item">
                                     <div class="item-image">
-                                        <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">
+                                        <a target="_blank" href="{{url('/')}}{{App::isLocale('en')? "/en" : ""}}/{{$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug}}">
                                         <div style="height: 300px;background-image: url('{{Voyager::image($value->image)}}');"></div>
                                         </a>
                                     </div>
@@ -54,13 +57,13 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="item-name">
-                                                <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}">{{ $value->title}}</a>
+                                                <a target="_blank" href="{{url('/')}}{{App::isLocale('en')? "/en" : ""}}/{{$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug}}"><h2 class="item-name__title">{{ $value->title}}</h2></a>
                                             </div>
                                             <div class="item-description">
                                                 {!! $value->excerpt !!}
                                             </div>
                                             <div class="read-more">
-                                                <a href="{{ URL::to(''.$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug)}}" class="readmore">Xem Thêm</a>
+                                                <a target="_blank" href="{{url('/')}}{{App::isLocale('en')? "/en" : ""}}/{{$categoryParent->slug.'/'.$categories->slug.'/'.$value->slug}}" class="readmore">{{ __('web.more') }}</a>
                                                 <div class="clearfix"></div>
                                             </div>
                                         </div>

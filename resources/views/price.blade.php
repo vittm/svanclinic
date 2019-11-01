@@ -16,7 +16,7 @@
 <div class="price-list">
         <div class="title">
             <p>
-                <i>Bảng Gi&#225;
+                <i>Bảng Giá
                         <span class="line-left"></span>
                     <span class="line-right"></span>
                 </i>
@@ -36,7 +36,7 @@
                                     <div class="panel-heading" role="tab">
                                         <h4 class="panel-title">
                                             <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab1" aria-expanded="true">
-                                                <span>GIẢM B&#201;O &amp; GIẢM C&#194;N</span>
+                                                <span>GIẢM BÉO GIẢM CÂN</span>
                                             </a>
                                         </h4>
                                     </div>
@@ -47,67 +47,32 @@
 		<tr>
 			<td><u>DỊCH VỤ</u></td>
 			<td><u>THỜI GIAN</u></td>
-			<td style="text-align: right;"><u>GI&Aacute;</u></td>
+			<td style="text-align: right;"><u>GIÁ</u></td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">GIẢM B&Eacute;O C&Ocirc;NG NGHỆ HIFU LIPO</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">GIẢM BÉO CÔNG NGHỆ HIFU LIPO</span></strong></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng bụng</td>
-			<td>từ 36 shots</td>
-			<td>từ 28.800.000</td>
+			<td>Giảm Béo vùng bụng + eo</td>
+			<td>60 shots</td>
+			<td>15.000.000</td>
 		</tr>
 		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng eo</td>
-			<td>từ 8 shots</td>
-			<td>từ 6.400.000</td>
+			<td>Giảm Béo vùng đùi</td>
+			<td>60 shots</td>
+			<td>15.000.000</td>
 		</tr>
 		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng đ&ugrave;i</td>
-			<td>từ 24 shots</td>
-			<td>từ 19.200.000</td>
+			<td>Giảm béo vùng bắp tay</td>
+			<td>30 shots</td>
+			<td>8.500.000</td>
 		</tr>
 		<tr>
-			<td>Giảm b&eacute;o bắp tay</td>
-			<td>từ 18 shots</td>
-			<td>từ 14.400.000</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><strong style="color: rgb(61, 156, 116);">GIẢM B&Eacute;O C&Ocirc;NG NGHỆ CONTRI ULTRASHAPE</strong></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bụng&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
-			<td>1 liệu tr&igrave;nh</td>
-			<td>&nbsp;20.500.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng eo</td>
-			<td>1 liệu tr&igrave;nh</td>
-			<td>&nbsp;20.500.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng đ&ugrave;i</td>
-			<td>1 liệu tr&igrave;nh</td>
-			<td>&nbsp;26.000.000&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 2 v&ugrave;ng&nbsp;</td>
-			<td>1 liệu tr&igrave;nh</td>
-			<td>&nbsp;36.000.000&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 3 v&ugrave;ng</td>
-			<td>1 liệu tr&igrave;nh</td>
-			<td>&nbsp;50.000.000</td>
+			<td>Giảm béo vùng bắp chân</td>
+			<td>40 shots</td>
+			<td>11.000.000</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -115,139 +80,69 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">GIẢM B&Eacute;O TẠO FORM PERFECT SHAPE</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">GIẢM BÉO SUPER-SLINE</span></strong></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bụng</td>
-			<td>1 lần</td>
-			<td>1.900.000</td>
+			<td>Giảm chuyên sâu vùng bụng</td>
+			<td>90 Phút</td>
+			<td>1.600.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng eo</td>
-			<td>1 lần</td>
-			<td>2.050.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng lưng</td>
-			<td>1 lần</td>
-			<td>2.050.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng vai</td>
-			<td>1 lần</td>
-			<td>2.050.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp tay</td>
-			<td>1 lần</td>
-			<td>2.200.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng đ&ugrave;i</td>
-			<td>1 lần</td>
-			<td>2.500.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp ch&acirc;n</td>
-			<td>1 lần</td>
-			<td>2.200.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u 2 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>3.500.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u 3 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>4.800.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u 4 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>6.000.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u 5 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>7.000.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u 6 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>7.900.000</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><strong><span style="color: rgb(61, 156, 116);">GIẢM B&Eacute;O DƯỠNG SINH</span></strong></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bụng</td>
-			<td>1 lần</td>
-			<td>1.300.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng eo</td>
-			<td>1 lần</td>
-			<td>1.450.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng lưng</td>
-			<td>1 lần</td>
-			<td>1.450.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng vai</td>
-			<td>1 lần</td>
-			<td>1.450.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp tay</td>
-			<td>1 lần</td>
-			<td>1.550.000</td>
-		</tr>
-		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng đ&ugrave;i</td>
-			<td>1 lần</td>
+			<td>Giảm chuyên sâu vùng eo</td>
+			<td>90 Phút</td>
 			<td>1.750.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp ch&acirc;n</td>
-			<td>1 lần</td>
-			<td>1.550.000</td>
+			<td>Giảm chuyên sâu vùng lưng</td>
+			<td>75 Phút</td>
+			<td>1.750.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 2 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>2.400.000</td>
+			<td>Giảm chuyên sâu vùng vai</td>
+			<td>75 Phút</td>
+			<td>1.750.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 3 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>3.400.000</td>
+			<td>Giảm chuyên sâu vùng bắp tay</td>
+			<td>75 Phút</td>
+			<td>1.850.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 4 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>4.300.000</td>
+			<td>Giảm chuyên sâu vùng bắp chân</td>
+			<td>75 Phút</td>
+			<td>1.850.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 5 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>5.200.000</td>
+			<td>Giảm chuyên sâu vùng đùi</td>
+			<td>90 Phút</td>
+			<td>2.150.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 6 v&ugrave;ng</td>
-			<td>1 lần</td>
-			<td>6.000.000</td>
+			<td>Giảm chuyên sâu 2 vùng</td>
+			<td>150 Phút</td>
+			<td>2.950.000</td>
+		</tr>
+		<tr>
+			<td>Giảm chuyên sâu 3 vùng</td>
+			<td>150 Phút</td>
+			<td>3.950.000</td>
+		</tr>
+		<tr>
+			<td>Giảm chuyên sâu 4 vùng</td>
+			<td>150 Phút</td>
+			<td>4.950.000</td>
+		</tr>
+		<tr>
+			<td>Giảm chuyên sâu 5 vùng</td>
+			<td>150 Phút</td>
+			<td>5.950.000</td>
+		</tr>
+		<tr>
+			<td>Giảm chuyên sâu 6 vùng</td>
+			<td>150 Phút</td>
+			<td>6.950.000</td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -255,67 +150,67 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color: rgb(61, 156, 116);">GIẢM B&Eacute;O TH&Ocirc;NG KINH HOẠT LẠC</span></strong></td>
+			<td><strong><span style="color: rgb(61, 156, 116);">GIẢM BÉO ULTRA DEFAT</span></strong></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bụng</td>
+			<td>Giảm chuyên sâu vùng bụng</td>
 			<td>1 lần</td>
 			<td>1.000.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng eo</td>
+			<td>Giảm chuyên sâu vùng eo</td>
 			<td>1 lần</td>
 			<td>1.050.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng lưng</td>
+			<td>Giảm chuyên sâu vùng lưng</td>
 			<td>1 lần</td>
 			<td>1.050.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng vai</td>
+			<td>Giảm chuyên sâu vùng vai</td>
 			<td>1 lần</td>
 			<td>1.050.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp tay</td>
+			<td>Giảm chuyên sâu vùng bắp tay</td>
 			<td>1 lần</td>
 			<td>1.150.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng đ&ugrave;i</td>
+			<td>Giảm chuyên sâu vùng đùi</td>
 			<td>1 lần</td>
 			<td>1.400.000</td>
 		</tr>
 		<tr>
-			<td>Giảm chuy&ecirc;n s&acirc;u v&ugrave;ng bắp ch&acirc;n</td>
+			<td>Giảm chuyên sâu vùng chân</td>
 			<td>1 lần</td>
 			<td>1.150.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 2 v&ugrave;ng</td>
+			<td>Combo giảm chuyên sâu 2 vùng</td>
 			<td>1 lần</td>
 			<td>1.800.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 3 v&ugrave;ng</td>
+			<td>Combo giảm chuyên sâu 3 vùng</td>
 			<td>1 lần</td>
 			<td>2.600.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 4 v&ugrave;ng</td>
+			<td>Combo giảm chuyên sâu 4 vùng</td>
 			<td>1 lần</td>
 			<td>3.200.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 5 v&ugrave;ng</td>
+			<td>Combo giảm chuyên sâu 5 vùng</td>
 			<td>1 lần</td>
 			<td>3.800.000</td>
 		</tr>
 		<tr>
-			<td>Combo giảm chuy&ecirc;n s&acirc;u 6 v&ugrave;ng</td>
+			<td>Combo giảm chuyên sâu 6 vùng</td>
 			<td>1 lần</td>
 			<td>4.200.000</td>
 		</tr>
@@ -329,8 +224,6 @@
 
 <p>&nbsp;</p>
 
-<p>&nbsp;</p>
-
                                         </div>
                                     </div>
                                 </div>
@@ -338,7 +231,7 @@
                                     <div class="panel-heading" role="tab">
                                         <h4 class="panel-title">
                                             <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab2" aria-expanded="true">
-                                                <span>DỊCH VỤ C&#212;NG NGHỆ CAO</span>
+                                                <span>DỊCH VỤ CÔNG NGHỆ CAO</span>
                                             </a>
                                         </h4>
                                     </div>
@@ -347,38 +240,10 @@
                                             <table>
 	<tbody>
 		<tr>
-			<td><u>DỊCH VỤ</u></td>
-			<td><u>THỜI GIAN</u></td>
-			<td style="text-align: right;"><u>GI&Aacute;</u></td>
-		</tr>
-		<tr>
-			<td colspan="3"><strong><span style="color:#3d9c74;">GIẢM B&Eacute;O C&Ocirc;NG NGHỆ HIFU LIPO</span></strong></td>
-		</tr>
-		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng bụng</td>
-			<td>từ 36 shots</td>
-			<td>từ 28.800.000</td>
-		</tr>
-		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng eo</td>
-			<td>từ 8 shots</td>
-			<td>từ 6.400.000</td>
-		</tr>
-		<tr>
-			<td>Giảm b&eacute;o v&ugrave;ng đ&ugrave;i</td>
-			<td>từ 24 shots</td>
-			<td>từ 19.200.000</td>
-		</tr>
-		<tr>
-			<td>Giảm b&eacute;o bắp tay</td>
-			<td>từ 18 shots</td>
-			<td>từ 14.400.000</td>
-		</tr>
-		<tr>
 			<td colspan="3">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">N&Acirc;NG CƠ V-LINE NEW ULTHERAPY</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">NÂNG CƠ V-LINE NEW ULTHERAPY</span></strong></td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">từ 15.000.000</td>
 		</tr>
@@ -386,7 +251,7 @@
 			<td colspan="3">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">TRẺ HO&Aacute; DA TẾ B&Agrave;O GỐC TỰ TH&Acirc;N PRP</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">TRẺ HOÁ DA TẾ BÀO GỐC TỰ THÂN PRP</span></strong></td>
 			<td>01 lần</td>
 			<td style="text-align: right;">9.000.000</td>
 		</tr>
@@ -396,7 +261,7 @@
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">TRỊ SEO TẾ B&Agrave;O GỐC TỰ TH&Acirc;N PRP</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">TRỊ SEO TẾ TẾ BÀO GỐC TỰ THÂN PRP</span></strong></td>
 			<td>01 lần</td>
 			<td style="text-align: right;">10.500.000</td>
 		</tr>
@@ -406,7 +271,7 @@
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color:#3d9c74;">CĂNG DA XO&Aacute; NHĂN C&Ocirc;NG NGHỆ UlTRA REJUV</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">CĂNG DA XOÁ NHĂN CÔNG NGHỆ UlTRA REJUV</span></strong></td>
 			<td>01 lần</td>
 			<td style="text-align: right;">2.000.000</td>
 		</tr>
@@ -416,47 +281,17 @@
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color: rgb(61, 156, 116);">TẠO H&Igrave;NH MẶT KH&Ocirc;NG PHẪU THUẬT RESTYLANE</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">TRIỆT LÔNG TRẮNG DA</span></strong></td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td>**Restylane Lodicain</td>
-			<td>01 ml</td>
-			<td style="text-align: right;">12.500.000</td>
-		</tr>
-		<tr>
-			<td>**Restylane Perlane Lodicain</td>
-			<td>01 ml</td>
-			<td style="text-align: right;">14.000.000</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td style="text-align: right;">&nbsp;</td>
-		</tr>
-		<tr>
-			<td><strong><span style="color:#3d9c74;">TRẺ HO&Aacute; DA TO&Agrave;N DIỆN SKIN BOOSTER</span></strong></td>
-			<td>01 ml</td>
-			<td style="text-align: right;">12.000.000</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td style="text-align: right;">&nbsp;</td>
-		</tr>
-		<tr>
-			<td><strong><span style="color:#3d9c74;">TRIỆT L&Ocirc;NG TRẮNG DA</span></strong></td>
-			<td>&nbsp;</td>
-			<td style="text-align: right;">&nbsp;</td>
-		</tr>
-		<tr>
-			<td>M&eacute;p</td>
+			<td>Mép</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;"><span style="text-align: right;">5.000.000</span></td>
 		</tr>
 		<tr>
-			<td>M&eacute;p + cằm</td>
+			<td>Mép + cằm</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;"><span style="text-align: right;">7.000.000</span></td>
 		</tr>
@@ -466,12 +301,12 @@
 			<td style="text-align: right;"><span style="text-align: right;">9.000.000</span></td>
 		</tr>
 		<tr>
-			<td>N&aacute;ch</td>
+			<td>Nách</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;"><span style="text-align: right;">5.800.000</span></td>
 		</tr>
 		<tr>
-			<td>To&agrave;n bộ tay</td>
+			<td>Toàn bộ tay</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;"><span style="text-align: right;">11.500.000</span></td>
 		</tr>
@@ -481,12 +316,12 @@
 			<td style="text-align: right;"><span style="text-align: right;">8.000.000</span></td>
 		</tr>
 		<tr>
-			<td>To&agrave;n bộ ch&acirc;n</td>
+			<td>Toàn bộ chân</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;"><span style="text-align: right;">16.000.000</span></td>
 		</tr>
 		<tr>
-			<td>Nửa ch&acirc;n</td>
+			<td>Nửa chân</td>
 			<td>10 buổi</td>
 			<td style="text-align: right;">11.500.000</td>
 		</tr>
@@ -498,11 +333,11 @@
 		<tr>
 			<td>Bikini</td>
 			<td>10 buổi</td>
-			<td style="text-align: right;"><span style="text-align: right;">9.000.000</span></td>
+			<td style="text-align: right;">9.000.000</span></td>
 		</tr>
 		<tr>
 			<td>Lưng</td>
-			<td>10 buổi&nbsp;</td>
+			<td>10 buổi</td>
 			<td style="text-align: right;">14.000.000</td>
 		</tr>
 		<tr>
@@ -511,92 +346,292 @@
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong><span style="color: rgb(61, 156, 116);">C&Ocirc;NG NGHỆ LASER NANO PLUS</span></strong></td>
+			<td><strong><span style="color:#3d9c74;">PHÁC ĐỒ TRỊ NÁM MELAS LOCK (ĐỘC QUYỀN)</span></strong></td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td><strong>Trị n&aacute;m/T&agrave;n nhang c&ocirc;ng nghệ LASER NANO PLUS</strong></td>
+			<td>Điều trị nám 100%</td>
+			<td>1 liệu trình</td>
+			<td style="text-align: right;"><span style="text-align: right;">48.000.000</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 10 lần trị liệu</td>
+			<td><strong><span style="color: rgb(61, 156, 116);">CÔNG NGHỆ LASER NANO PLUS</span></strong></td>
+			<td>&nbsp;</td>
+			<td style="text-align: right;">&nbsp;</td>
+		</tr>
+		<tr>
+			<td><strong>Trị nám/Tàn nhang công nghệ LASER NANO PLUS</strong></td>
+			<td>&nbsp;</td>
+			<td style="text-align: right;">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Gói 10 lần trị liệu</td>
 			<td>10 lần</td>
 			<td style="text-align: right;">30.000.000</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 20 lần trị liệu</td>
+			<td>Gói 20 lần trị liệu</td>
 			<td>20 lần</td>
 			<td style="text-align: right;">50.000.000</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 30 lần trị liệu</td>
+			<td>Gói 30 lần trị liệu</td>
 			<td>30 lần</td>
 			<td style="text-align: right;">60.000.000</td>
 		</tr>
 		<tr>
-			<td><strong>Trẻ h&oacute;a da&nbsp;c&ocirc;ng nghệ LASER NANO PLUS</strong></td>
+			<td><strong>Trẻ hoá da công nghệ LASER NANO PLUS</strong></td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 10 lần trị liệu</td>
+			<td>Gói 10 lần trị liệu</td>
 			<td>10 lần</td>
 			<td style="text-align: right;">25.000.000</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 20 lần trị liệu</td>
+			<td>Gói 20 lần trị liệu</td>
 			<td>20 lần</td>
 			<td style="text-align: right;">40.000.000</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 30 lần trị liệu</td>
+			<td>Gói 30 lần trị liệu</td>
 			<td>30 lần</td>
 			<td style="text-align: right;">48.000.000</td>
 		</tr>
 		<tr>
-			<td>G&oacute;i 50 lần trị liệu</td>
+			<td>Gói 50 lần trị liệu</td>
 			<td>50 lần</td>
 			<td style="text-align: right;">60.000.000</td>
 		</tr>
 		<tr>
-			<td><strong>X&oacute;a xăm&nbsp;c&ocirc;ng nghệ LASER NANO PLUS</strong></td>
+			<td><strong>Xoá xăm công nghệ LASER NANO PLUS</strong></td>
 			<td>&nbsp;</td>
 			<td style="text-align: right;">&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch dưới 2 cm2</td>
+			<td>Diện tích dưới 2 cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">800.000</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch từ 2cm2 - dưới 4cm2</td>
+			<td>Diện tích từ 2cm2 - dưới 4cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">1.500.000</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch từ 4cm2 - dưới 6cm2</td>
+			<td>Diện tích từ 4cm2 - dưới 6cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">2.000.000</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch từ 6cm2 - dưới 8cm2</td>
+			<td>Diện tích từ 6cm2 - dưới 8cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">2.500.000</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch từ 8cm2 - dưới 10cm2</td>
+			<td>Diện tích từ 8cm2 - dưới 10cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">3.000.000</td>
 		</tr>
 		<tr>
-			<td>Diện t&iacute;ch tr&ecirc;n 10cm2</td>
+			<td>Diện tích trên 10cm2</td>
 			<td>01 lần</td>
 			<td style="text-align: right;">300.000/cm2</td>
 		</tr>
 	</tbody>
 </table>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                                     <div class="panel panel-default panel-price">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab31" aria-expanded="true">
+                                                <span>TẠO HÌNH KHÔNG PHẪU THUẬT</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="tab31" class="panel-collapse collapse" role="tabpanel">
+                                        <div class="panel-body">
+                                            <table>
+	<tbody>
+		<tr>
+			<td><u>DỊCH VỤ</u></td>
+			<td><u>THỜI GIAN</u></td>
+			<td><u>GIÁ</u></td>
+		</tr>
+		<tr>
+			<td><span style="color:#3d9c74;"><strong>PHƯƠNG PHÁP REBORN SKIN MESO</strong></span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Giảm Béo Contri Burnfat</td>
+			<td>1 Ống</td>
+			<td>3.450.000</td>
+		</tr>
+		<tr>
+			<td>Meso Trị Rạn Da</td>
+			<td>1 Ống</td>
+			<td>3.990.000</td>
+		</tr>
+		<tr>
+			<td>Meso Căn Bóng Reborn Skin</td>
+			<td>1 Lần</td>
+			<td>5.950.000</td>
+		</tr>
+		<tr>
+			<td>Meso Xoá Nhăn</td>
+			<td>1 Lần</td>
+			<td>6.450.000</td>
+		</tr>
+		<tr>
+			<td>Meso Điều Trị Nám</td>
+			<td>1 Lần</td>
+			<td>4.590.000</td>
+		</tr>
+			<tr>
+			<td>Meso Xoá Nhăn Vùng Mắt</td>
+			<td>1 Lần</td>
+			<td>3.950.000</td>
+		</tr>
+			<tr>
+			<td>Meso Giảm Nọng Cằm</td>
+			<td>1 Lần</td>
+			<td>4.390.000</td>
+		</tr>
+			<tr>
+			<td>Meso Giảm Bọng Mắt</td>
+			<td>1 Lần</td>
+			<td>4.190.000</td>
+		</tr>
+			<tr>
+			<td>Meso Trị Sẹo</td>
+			<td>1 Lần</td>
+			<td>4.890.000</td>
+		</tr>	
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><span style="color:#3d9c74;"><strong>CẤY CHỈ COLLAGEN TINH THỂ TẠO HÌNH MẶT</strong></span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Nâng cơ - căng da toàn mặt</td>
+			<td>1 lần</td>
+			<td>39.000.000</td>
+		</tr>
+		<tr>
+			<td>Căng da vùng má</td>
+			<td>1 lần</td>
+			<td>29.000.000</td>
+		</tr>
+		<tr>
+			<td>Căng da - giảm nhăn vùng trán</td>
+			<td>1 lần</td>
+			<td>25.000.000</td>
+		</tr>
+		<tr>
+			<td>Nâng cơ - căng da vùng cổ</td>
+			<td>1 lần</td>
+			<td>20.000.000</td>
+		</tr>
+		<tr>
+			<td>Nâng sống mũi</td>
+			<td>1 lần</td>
+			<td>18.000.000</td>
+		</tr>
+		<tr>
+			<td>Nâng trụ mũi</td>
+			<td>1 lần</td>
+			<td>5.000.000</td>
+		</tr>
+		<tr>
+			<td>Thu gọn cánh mũi</td>
+			<td>1 lần</td>
+			<td>5.000.000</td>
+		</tr>
+		<tr>
+			<td>Làm đầy hốc mắt</td>
+			<td>1 lần</td>
+			<td>12.000.000</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><span style="color:#3d9c74;"><strong>TẠO HÌNH MẶT BẰNG RESTYLANE</strong></span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Restylane Lidocain</td>
+			<td>1ml</td>
+			<td>12.500.000</td>
+		</tr>
+		<tr>
+			<td>Restylane Perlane Lidocain</td>
+			<td>1ml</td>
+			<td>14.000.000</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td><span style="color:#3d9c74;"><strong>ĐIỀU TRỊ NẾP NHĂN TOÀN DIỆN BẰNG NEROTOXIN</strong></span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Điều trị nhăn vùng trán (Cấp độ nhẹ)</td>
+			<td>1 lần</td>
+			<td>4.000.000</td>
+		</tr>
+		<tr>
+			<td>Điều trị nhăn vùng trán (Cấp độ nặng)</td>
+			<td>1 lần</td>
+			<td>5.000.000</td>
+		</tr>
+		<tr>
+			<td>Điều trị nhăn cau mày (Tình trạng nông)</td>
+			<td>1 lần</td>
+			<td>3.500.000</td>
+		</tr>
+		<tr>
+			<td>Điều trị nhăn cau mày (Tình trạng sâu)</td>
+			<td>1 lần</td>
+			<td>4.500.000</td>
+		</tr>
+		<tr>
+			<td>Điều trị nhăn đuôi mắt</td>
+			<td>1 lần</td>
+			<td>5.500.000</td>
+		</tr>
+		<tr>
+			<td>Thon gọn mặt</td>
+			<td>1 lần</td>
+			<td>10.000.000</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
 
                                         </div>
                                     </div>
@@ -616,40 +651,35 @@
 		<tr>
 			<td>DỊCH VỤ</td>
 			<td>THỜI GIAN</td>
-			<td>GI&Aacute;</td>
+			<td>GIÁ</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ L&Agrave;M TRẮNG DA MẶT</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ LÀM TRẮNG DA MẶT</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Trắng da trẻ ho&aacute; Rose White</td>
+			<td>Trắng da trẻ hoá Rose White</td>
 			<td>1 lần</td>
 			<td>1.860.000</td>
 		</tr>
 		<tr>
-			<td>Phủ b&oacute;ng trắng da Meso Pure White</td>
-			<td>1 lần</td>
-			<td>4.200.000</td>
-		</tr>
-		<tr>
-			<td>Trắng da thải độc c&ocirc;ng nghệ Hydrogen</td>
+			<td>Trắng da thải độc công nghệ Hydrogen</td>
 			<td>1 lần</td>
 			<td>1.400.000</td>
 		</tr>
 		<tr>
-			<td>Trắng da c&ocirc;ng nghệ Ice Skin</td>
+			<td>Trắng da công nghệ Ice Skin</td>
 			<td>1 lần</td>
 			<td>950.000</td>
 		</tr>
 		<tr>
-			<td>Trắng da c&ocirc;ng nghệ thay da sinh học&nbsp;Ipeel</td>
+			<td>Trắng da công nghệ thay da sinh học Ipeel</td>
 			<td>1 lần</td>
 			<td>1.900.000</td>
 		</tr>
 		<tr>
-			<td>Trị n&aacute;m c&ocirc;ng nghệ thay da sinh học&nbsp;Ipeel</td>
+			<td>Trị nám công nghệ thay da sinh học Ipeel</td>
 			<td>1 lần</td>
 			<td>2.100.000</td>
 		</tr>
@@ -664,22 +694,22 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Trị mụn c&ocirc;ng nghệ thay da sinh học&nbsp;Ipeel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(cấp độ nhẹ)</td>
+			<td>Trị mụn công nghệ thay da sinh học Ipeel (cấp độ nhẹ)</td>
 			<td>1 lần</td>
 			<td>2.000.000</td>
 		</tr>
 		<tr>
-			<td>Trị mụn c&ocirc;ng nghệ thay da sinh học&nbsp;Ipeel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(cấp độ nặng)</td>
+			<td>Trị mụn công nghệ thay da sinh học Ipeel(cấp độ nặng)</td>
 			<td>1 lần</td>
 			<td>2.300.000</td>
 		</tr>
 		<tr>
 			<td>Đặc trị mụn với Oxy tinh khiết</td>
 			<td>1 lần</td>
-			<td>1.400.000</td>
+			<td>1.200.000</td>
 		</tr>
 		<tr>
-			<td>Vệ sinh mụn nhẹ - mụn c&aacute;m</td>
+			<td>Vệ sinh mụn nhẹ - mụn cám</td>
 			<td>1 lần</td>
 			<td>250.000</td>
 		</tr>
@@ -689,17 +719,17 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ TRẺ HO&Aacute; DA</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ TRẺ HOÁ DA</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Trẻ ho&aacute; v&agrave; t&aacute;i tạo da</td>
+			<td>Trẻ hoá và tái tạo da</td>
 			<td>1 lần</td>
 			<td>1.050.000</td>
 		</tr>
 		<tr>
-			<td>Trẻ ho&aacute; da bằng tế b&agrave;o no&atilde;n</td>
+			<td>Trẻ hoá; da bằng tế bào noãn</td>
 			<td>1 lần</td>
 			<td>2.150.000</td>
 		</tr>
@@ -714,12 +744,12 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Chăm s&oacute;c da cơ bản</td>
+			<td>Chăm sóc da cơ bản</td>
 			<td>1 lần</td>
 			<td>550.000</td>
 		</tr>
 		<tr>
-			<td>Thư gi&atilde;n mặt, giảm quầng th&acirc;m</td>
+			<td>Thư giản mặt, giảm quầng thâm</td>
 			<td>1 lần</td>
 			<td>650.000</td>
 		</tr>
@@ -729,11 +759,106 @@
                                         </div>
                                     </div>
                                 </div>
+                                  <div class="panel panel-default panel-price">
+                                    <div class="panel-heading" role="tab">
+                                        <h4 class="panel-title">
+                                            <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab30" aria-expanded="true">
+                                                <span>PHUN THÊU THẨM MỸ</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="tab30" class="panel-collapse collapse" role="tabpanel">
+                                        <div class="panel-body">
+                                            <table>
+	<tbody>
+		<tr>
+			<td><u>Dịch Vụ</u></td>
+			<td><u>Thời Gian</u></td>
+			<td><u>Chuyên Viên</u></td>			
+			<td><u>Gỉảng Viên</u></td>
+		</tr>
+		<tr>
+			<td><span style="color:#3d9c74;"><strong>PHUN THÊU THẨM MỸ</strong></span></td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+
+		</tr>
+		<tr>
+			<td>Phun Mày Classic Siêu Vi Chạm</td>
+			<td>60 - 90 phút</td>
+			<td>1.500.000</td>
+			<td>2.500.000</td>
+		</tr>
+		<tr>
+			<td>Điêu Khắc Mày Châu Âu (Nam)</td>
+			<td>45 - 60 phút</td>
+			<td>2.500.000</td>
+			<td>4.000.000</td>
+		</tr>
+		<tr>
+			<td>Điêu Khắc Kỹ Thuật HD MICROSHADING</td>
+			<td>60 - 90 phút</td>
+			<td>3.500.000</td>
+			<td>5.000.000</td>
+		</tr>
+		<tr>
+			<td>Phun Mày Hiệu Ứng Bút Chì 6D</td>
+			<td>90 - 120 phút</td>
+			<td>5.000.000</td>
+			<td>7.000.000</td>
+		</tr>
+				<tr>
+			<td>Điêu Khắc Hairstroke Mày Đỉnh Cao</td>
+			<td>60 - 90 phút</td>
+			<td>6.000.000</td>
+			<td>8.000.000</td>
+		</tr>
+			<tr>
+			<td>Phun Môi Vi Chạm Công Nghệ Hàn Quốc</td>
+			<td>90 - 120 phút</td>
+			<td>2.500.000</td>
+			<td>3.500.000</td>
+
+		</tr>
+			<tr>
+			<td>Phun Môi Chỉnh Hình HD SHADING</td>
+			<td>90 - 120 phút</td>
+			<td>3.500.000</td>
+			<td>5.000.000</td>
+		</tr>
+			<tr>
+			<td>Phun Mí Mở Tròng Công Nghệ Hàn Quốc</td>
+			<td>45 - 60 phút</td>
+			<td>1.500.000</td>
+			<td>2.500.000</td>
+		</tr>
+			<tr>
+			<td>Hậu Chỉnh Chân Mày Trổ Xanh/Đỏ</td>
+			<td>45 - 60 phút</td>
+		    <td>800.000</td>
+			<td>1.000.000</td>
+		</tr>
+			<tr>
+			<td>Phục Hồi Môi Thâm</td>
+			<td>45 - 60 phút</td>
+			<td>800.000</td>
+			<td>1.000.000</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                  <div class="panel panel-default panel-price">
                                     <div class="panel-heading" role="tab">
                                         <h4 class="panel-title">
                                             <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab27" aria-expanded="true">
-                                                <span>TẮM TRẮNG TO&#192;N TH&#194;N</span>
+                                                <span>TẮM TRẮNG TOÀN THÂN</span>
                                             </a>
                                         </h4>
                                     </div>
@@ -744,32 +869,32 @@
 		<tr>
 			<td><u>DỊCH VỤ</u></td>
 			<td><u>THỜI GIAN</u></td>
-			<td><u>GI&Aacute;</u></td>
+			<td><u>GIÁ</u></td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>TẮM TRẮNG TO&Agrave;N TH&Acirc;N</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>TẮM TRẮNG TOÀN THÂN</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Tắm trắng phun phủ Nano c&ocirc;ng nghệ Lighttherapy</td>
-			<td>05 buổi</td>
-			<td>17.500.000</td>
-		</tr>
-		<tr>
-			<td>Tắm trắng phun phủ Nano c&ocirc;ng nghệ Lighttherapy</td>
+			<td>Tắm trắng White Pro</td>
 			<td>01 buổi</td>
-			<td>4.000.000</td>
+			<td>1.250.000</td>
 		</tr>
 		<tr>
-			<td>Tắm trắng c&ocirc;ng nghệ Micro C Nhật Bản</td>
-			<td>05 buổi</td>
-			<td>10.000.000</td>
-		</tr>
-		<tr>
-			<td>Tắm trắng c&ocirc;ng nghệ Micro C Nhật Bản</td>
+			<td>Tắm trắng phun phủ Nano công nghệ Lighttherapy</td>
 			<td>01 buổi</td>
-			<td>2.300.000</td>
+			<td>3.500.000</td>
+		</tr>
+		<tr>
+			<td>Tắm trắng công nghệ Micro C Nhật Bản</td>
+			<td>01 buổi</td>
+			<td>2.000.000</td>
+		</tr>
+		<tr>
+			<td>Tắm trắng Collagen Bạch Yến</td>
+			<td>01 buổi</td>
+			<td>3.000.000</td>
 		</tr>
 	</tbody>
 </table>
@@ -778,12 +903,13 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> 
+                                           
                                  <div class="panel panel-default panel-price">
                                     <div class="panel-heading" role="tab">
                                         <h4 class="panel-title">
                                             <a role="button" class="panel-btn" data-toggle="collapse" data-parent="#price-list-tab" href="#tab24" aria-expanded="true">
-                                                <span>CHĂM S&#211;C CƠ BẢN</span>
+                                                <span>CHĂM SÓC CƠ BẢN</span>
                                             </a>
                                         </h4>
                                     </div>
@@ -798,62 +924,62 @@
 			<td>NAM</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>MASSAGE THƯ GI&Atilde;N</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>MASSAGE THƯ GIẢN</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Massage thải độc SVAN CLINIC AND SPA</td>
-			<td>60 ph&uacute;t</td>
+			<td>60 phút</td>
 			<td>630.000</td>
 			<td>720.000</td>
 		</tr>
 		<tr>
 			<td>Massage Thuỵ Điển</td>
-			<td>60 ph&uacute;t</td>
+			<td>60 phút</td>
 			<td>450.000</td>
 			<td>520.000</td>
 		</tr>
 		<tr>
 			<td>Massage Thuỵ Điển</td>
-			<td>75 ph&uacute;t</td>
+			<td>75 phút</td>
 			<td>510.000</td>
 			<td>600.000</td>
 		</tr>
 		<tr>
-			<td>Massage đ&aacute; n&oacute;ng</td>
-			<td>60 ph&uacute;t</td>
+			<td>Massage đá nóng</td>
+			<td>60 phút</td>
 			<td>490.000</td>
 			<td>580.000</td>
 		</tr>
 		<tr>
-			<td>Massage đ&aacute; n&oacute;ng</td>
-			<td>75 ph&uacute;t</td>
+			<td>Massage đá nóng</td>
+			<td>75 phút</td>
 			<td>550.000</td>
 			<td>660.000</td>
 		</tr>
 		<tr>
-			<td>Massage cổ vai g&aacute;y</td>
-			<td>30 ph&uacute;t</td>
+			<td>Massage cổ vai gáy</td>
+			<td>30 phút</td>
 			<td>300.000</td>
 			<td>350.000</td>
 		</tr>
 		<tr>
-			<td>Massage ch&acirc;n</td>
-			<td>30 ph&uacute;t</td>
+			<td>Massage chân</td>
+			<td>30 phút</td>
 			<td>300.000</td>
 			<td>350.000</td>
 		</tr>
 		<tr>
 			<td>Massage tay</td>
-			<td>30 ph&uacute;t</td>
+			<td>30 phút</td>
 			<td>300.000</td>
 			<td>350.000</td>
 		</tr>
 		<tr>
 			<td>Jacuzzi/Sauna/Steam bath</td>
-			<td>30 ph&uacute;t</td>
+			<td>30 phút</td>
 			<td>300.000</td>
 			<td>300.000</td>
 		</tr>
@@ -864,32 +990,32 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>CHĂM S&Oacute;C TO&Agrave;N TH&Acirc;N</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>CHĂM SÓC TOÀN THÂN</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Thanh tẩy đ&aacute;nh b&oacute;ng cơ thể với muối biển</td>
-			<td>30 ph&uacute;t</td>
+			<td>Thanh tẩy đánh bóng cơ thể với muối biển</td>
+			<td>30 phút</td>
 			<td>420.000</td>
 			<td>480.000</td>
 		</tr>
 		<tr>
-			<td>Đắp tr&agrave; xanh Uji l&agrave;m dịu v&agrave; trắng da</td>
-			<td>40 ph&uacute;t</td>
+			<td>Đắp trà xanh Uji làm dịu và trắng da</td>
+			<td>40 phút</td>
 			<td>570.000</td>
 			<td>670.000</td>
 		</tr>
 		<tr>
-			<td>Đắp yến mạch v&agrave; sữa non l&agrave;m trắng da</td>
-			<td>40 ph&uacute;t</td>
+			<td>Đắp yến mạch và sữa non làm trắng da</td>
+			<td>40 phút</td>
 			<td>490.000</td>
 			<td>550.000</td>
 		</tr>
 		<tr>
-			<td>Đắp collagen căng b&oacute;ng da</td>
-			<td>40 ph&uacute;t</td>
+			<td>Đắp collagen căng bóng da</td>
+			<td>40 phút</td>
 			<td>550.000</td>
 			<td>650.000</td>
 		</tr>
@@ -900,32 +1026,32 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>TRỊ LIỆU TO&Agrave;N TH&Acirc;N</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>TRỊ LIỆU TOÀN THÂN</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td>Trị liệu muối biển</td>
-			<td>90 ph&uacute;t</td>
+			<td>90 phút</td>
 			<td>820.000</td>
 			<td>950.000</td>
 		</tr>
 		<tr>
-			<td>Trị liệu tr&agrave; xanh Uji Nhật Bản</td>
-			<td>90 ph&uacute;t</td>
+			<td>Trị liệu trà xanh Uji Nhật Bản</td>
+			<td>90 phút</td>
 			<td>950.000</td>
 			<td>1.100.000</td>
 		</tr>
 		<tr>
-			<td>Trị liệu sữa non v&agrave; yến mạch</td>
-			<td>90 ph&uacute;t</td>
+			<td>Trị liệu sữa non và yến mạch</td>
+			<td>90 phút</td>
 			<td>860.000</td>
 			<td>990.000</td>
 		</tr>
 		<tr>
 			<td>Trị liệu collagen</td>
-			<td>90 ph&uacute;t</td>
+			<td>90 phút</td>
 			<td>900.000</td>
 			<td>1.050.000</td>
 		</tr>
@@ -936,163 +1062,13 @@
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td><span style="color:#3d9c74;"><strong>T&Oacute;C</strong></span></td>
+			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ BẢO DƯỠNG NGỰC (dành cho khách hàng nữ)</strong></span></td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td>Gội sấy</td>
-			<td>30 ph&uacute;t</td>
-			<td>150.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Gội sấy v&agrave; tạo kiểu</td>
-			<td>45 ph&uacute;t</td>
-			<td>200.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Gội thư gi&atilde;n v&agrave; sấy kh&ocirc;</td>
-			<td>45 ph&uacute;t</td>
-			<td>200.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Gội thư gi&atilde;n v&agrave; sấy tạo kiểu</td>
-			<td>60 ph&uacute;t</td>
-			<td>250.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Cạo mặt</td>
-			<td>15 ph&uacute;t</td>
-			<td>50.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Tỉa l&ocirc;ng m&agrave;y</td>
-			<td>10 ph&uacute;t</td>
-			<td>30.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><span style="color:#3d9c74;"><strong>M&Oacute;NG</strong></span></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Cắt da ( cắt m&oacute;ng, cắt da )</td>
-			<td>30 ph&uacute;t</td>
-			<td>100.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Cắt da + sơn OPI</td>
-			<td>60 ph&uacute;t</td>
-			<td>180.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Sơn OPI</td>
-			<td>30 ph&uacute;t</td>
-			<td>100.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Đ&aacute;nh b&oacute;ng m&oacute;ng</td>
-			<td>20 ph&uacute;t</td>
-			<td>80.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Th&aacute;o m&oacute;ng</td>
-			<td>15 ph&uacute;t</td>
-			<td>40.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Dặm kim tuyến nguy&ecirc;n m&oacute;ng</td>
-			<td>30 ph&uacute;t</td>
-			<td>100.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Dặm kim tuyến đầu m&oacute;ng</td>
-			<td>30 ph&uacute;t</td>
-			<td>80.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Sơn gel m&agrave;u</td>
-			<td>40 ph&uacute;t</td>
-			<td>250.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Sơn gel French</td>
-			<td>45 ph&uacute;t</td>
-			<td>270.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Sơn OPI French</td>
-			<td>40 ph&uacute;t</td>
-			<td>120.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Tẩy da chết nguy&ecirc;n tay</td>
-			<td>15 ph&uacute;t</td>
-			<td>170.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>T&acirc;y da chết nửa ch&acirc;n</td>
-			<td>15 ph&uacute;t</td>
-			<td>200.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Ch&agrave; g&oacute;t ch&acirc;n</td>
-			<td>10 ph&uacute;t</td>
-			<td>150.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Đ&iacute;nh đ&aacute; ( tuỳ size )</td>
-			<td>&nbsp;</td>
-			<td>5.000-30.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Vẽ m&oacute;ng ( 01 ng&oacute;n )</td>
-			<td>&nbsp;</td>
-			<td>15.000</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><span style="color:#3d9c74;"><strong>DỊCH VỤ BẢO DƯỠNG NGỰC (d&agrave;nh cho kh&aacute;ch h&agrave;ng nữ)</strong></span></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>Bảo dưỡng v&ugrave;ng ngực ngừa ung thư</td>
+			<td>Bảo dưỡng vùng ngực ngừa ung thư</td>
 			<td>1 lần</td>
 			<td>880.000</td>
 			<td>&nbsp;</td>

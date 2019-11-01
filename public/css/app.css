@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);@charset "UTF-8";
 
-/* --------------------------------------------------------
-
+/* --------------------------------------------------------
+
 ----------------------------------------------------------*/
 
 @media (min-width: 1200px) {
@@ -327,8 +327,8 @@ h3:hover {
 }
 
 .btn-hotline {
-  height: 93px;
-  width: 289px;
+  height: 70px;
+  width: 203px;
   position: fixed;
   right: 1px;
   display: -webkit-box;
@@ -347,7 +347,7 @@ h3:hover {
 }
 
 .btn-hotline .icon {
-  width: 130px;
+  width: 107px;
   height: 95px;
   position: relative;
   border-width: 1px;
@@ -355,8 +355,8 @@ h3:hover {
   border-top-left-radius: 18px;
   border-radius: 50%;
   float: left;
-  top: -7px;
-  left: 5px;
+  top: 0px;
+  left: 2px;
   float: left;
 }
 
@@ -374,8 +374,8 @@ h3:hover {
 }
 
 .btn-hotline .hotline-content {
-  width: calc(100% - 46.346875px);
-  height: 55px;
+  width: 100%;
+  height: 46px;
   position: relative;
   top: 17px;
   border-bottom-right-radius: 15px;
@@ -387,10 +387,10 @@ h3:hover {
 }
 
 .btn-hotline .hotline-content h4 {
-  font-size: 21px;
+  font-size: 14px;
   text-align: center;
   margin: 0;
-  line-height: 55px;
+  line-height: 48px;
   font-weight: 700;
   color: #ffffff;
 }
@@ -1335,7 +1335,8 @@ nav.fixed-top {
   position: absolute;
   padding-left: 0;
   left: -25px;
-  top: 70px;
+  top: 62px;
+  padding-top: 10px;
   height: 100%;
   z-index: 8000;
 }
@@ -2073,6 +2074,7 @@ nav.fixed-top {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  margin: auto;
 }
 
 .wrapper .intro-service .intro-service-content .service-slider .item .service-wrapper .service-content {
@@ -2159,7 +2161,7 @@ nav.fixed-top {
 .wrapper .intro-service .intro-service-content .service-slider .item .service-wrapper .service-content .service-text {
   padding: 15px 25px;
   color: #a7b1b0;
-  font-size: 1.4em;
+  font-size: 1.3em;
   text-align: justify;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -2450,7 +2452,6 @@ nav.fixed-top {
   margin: 20px 15px 10px 15px;
   color: #2a8a55;
   font-weight: bold;
-  font-size: 16px;
 }
 
 .wrapper .intro-video .intro-video-wrapper .video-title a {
@@ -2460,6 +2461,13 @@ nav.fixed-top {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   word-break: break-word;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper .intro-video .intro-video-wrapper .video-title a {
+    margin-top: 17px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -2569,6 +2577,12 @@ nav.fixed-top {
   font-size: 20px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .wrapper .intro-feedback .intro-feedback-wrapper .feedback-content-slider .item .client-name > h3 {
+    font-size: 15px;
+  }
+}
+
 .wrapper .intro-feedback .intro-feedback-wrapper .feedback-content-slider .item .star-wrapper ul {
   list-style: none;
   text-align: center;
@@ -2592,6 +2606,12 @@ nav.fixed-top {
   letter-spacing: 1px;
   text-align: center;
   position: relative;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wrapper .intro-feedback .intro-feedback-wrapper .feedback-content-slider .item .client-content {
+    width: 100%;
+  }
 }
 
 .wrapper .intro-feedback .intro-feedback-wrapper .feedback-content-slider .item .client-content .text-content {
@@ -4082,6 +4102,7 @@ nav.fixed-top {
 @media only screen and (max-width: 1024px) {
   .service-detail .service-detail-wrapper .other-service-wrapper {
     width: 100%;
+    display: none;
   }
 }
 
@@ -5487,8 +5508,20 @@ nav.fixed-top {
 
 @media only screen and (max-width: 1024px) {
   .news-list {
+    padding-top: 120px;
+  }
+
+  .news-list .title {
     padding-left: 10px;
-    padding-right: 10px;
+  }
+
+  .news-list .title > p {
+    text-align: left;
+    font-size: 23px;
+  }
+
+  .news-list .title > p > i > span {
+    display: none;
   }
 }
 
@@ -5510,6 +5543,12 @@ nav.fixed-top {
   width: 100%;
   height: 220px;
   margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .news-list .news-list-wrapper .news-list-item .item {
+    height: 168px;
+  }
 }
 
 .news-list .news-list-wrapper .news-list-item .item .item-image {
@@ -5580,6 +5619,12 @@ nav.fixed-top {
   padding-bottom: 5px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .news-list .news-list-wrapper .news-list-item .item .item-content .item-info .item-name {
+    font-size: 17px;
+  }
+}
+
 .news-list .news-list-wrapper .news-list-item .item .item-content .item-info .item-name a {
   color: #2a8a55;
 }
@@ -5596,6 +5641,7 @@ nav.fixed-top {
 .news-list .news-list-wrapper .news-list-item .item .item-content .item-info .readmore {
   float: right;
   height: 30px;
+  top: 10px;
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
@@ -5615,9 +5661,10 @@ nav.fixed-top {
 
 .news-list .news-list-wrapper .news-list-item .item .item-content .item-info .readmore:before {
   font-family: 'FontAwesome';
+  content: '\F101   ';
   position: absolute;
   left: -20px;
-  top: 0px;
+  top: -2px;
   width: 24px;
   height: 24px;
   line-height: 23px;
@@ -7026,7 +7073,7 @@ body .pr0 {
   font-size: 17px;
   font-weight: 500;
   overflow: hidden;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 2;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   word-break: break-word;
@@ -7040,6 +7087,12 @@ body .pr0 {
   -webkit-box-orient: vertical;
   word-break: break-word;
   color: #8ba4b3;
+}
+
+@media only screen and (max-width: 1024px) {
+  .blog-column p > img {
+    width: 100%;
+  }
 }
 
 .blog-content {
@@ -7296,8 +7349,8 @@ button.submit-contact {
   display: block;
 }
 
-/*=========================
-  Icons
+/*=========================
+  Icons
  ================= */
 
 /* footer social icons */
@@ -10272,7 +10325,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -16758,7 +16811,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-control.left {
@@ -16847,7 +16900,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .carousel-indicators .active {
